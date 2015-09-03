@@ -1,0 +1,53 @@
+#+title:     Emacs Org's Column View (video)
+#+email:     bzg@altern.org
+#+date: 2008-01-01
+#+author: Bastien
+#+layout: post
+#+author_url: /author/bzg
+#+author_avatar: bzg
+#+show_avatar: true
+#+category: libre
+#+show_related_posts: false
+#+feature_image: default
+#+excerpt: <p>A quick tutorial on how to use Org's column view.</p>
+
+#+SEQ_TODO:  TODO DONE
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t f:t *:t TeX:t LaTeX:t skip:nil p:nil tags:not-in-toc
+
+#+BEGIN: intro :subtitle "A short introduction to Org's column view" :ts-format "%d/%m/%Y"
+
+#+END:
+
+Ahem. Better *turn the sound off*.  Feel free to download the source of the
+video ([[file:u/org-column-screencast.mpeg][mpeg]], [[file:u/org-column-screencast.ogv][ogv]], [[file:u/org-column-screencast.webm][webm]]) (and add some nice music, and send it back to me!)
+
+See the tutorial for details: [[file:org-column-view-tutorial.org][Org's Column View]]
+
+*Convention*: I use the =transient-mark-mode= (blue background) to
+highlight the part of the text that describes what I will do next.
+
+#+begin_html
+<video style="width:100%;margin:auto;" controls="controls" autoplay="autoplay" id="org-column-view-video">
+  <source src="http://bzg.fr/u/org-column-screencast.webm" type="video/webm" />
+  <source src="http://bzg.fr/u/org-column-screencast.ogv" type="video/ogv" />
+  <source src="http://bzg.fr/u/org-column-screencast.mp4" type="video/mp4" />
+  Video not playing? <a href="http://bzg.fr/u/org-column-screencast.mp4">Download file</a> instead.
+
+  <script type="text/javascript" src="https://media.dreamhost.com/ufo.js"></script>
+  <script type="text/javascript">
+  <p id="org-column-screencast_640x480.flv"></p>
+  var FO = { movie:"https://media.dreamhost.com/mediaplayer.swf",width:"640",height:"480",majorversion:"7",build:"0",bgcolor:"#FFFFFF",
+             flashvars:"file=http://www.relire.org/org-column-screencast_640x480.flv&showdigits=true&autostart=false" };
+  UFO.create(FO,"org-column-screencast_640x480.flv");
+  </script>
+</video>
+
+<script type="text/javascript">
+  var video = document.getElementById('org-column-view-video');
+  video.addEventListener('click',function(){
+    video.play();
+  },false);
+</script>
+#+end_html
+

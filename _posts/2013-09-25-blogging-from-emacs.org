@@ -1,0 +1,241 @@
+#+title: Blogging from GNU Emacs
+#+date: 2013-09-25
+#+author: Bastien
+#+layout: post
+#+author_url: /author/bzg
+#+author_avatar: bzg
+#+show_avatar: true
+#+category: libre
+#+show_related_posts: false
+#+feature_image: default
+#+excerpt: <p>Yes, blogging from Emacs is possible.</p>
+
+Yes, blogging from Emacs is possible.
+
+If you are familiar with [[http://orgmode.org][org-mode]] and if you already know how to
+publish a HTML project, this is straightforward: just download
+[[http://orgmode.org/cgit.cgi/org-mode.git/plain/contrib/lisp/ox-rss.el][ox-rss.el]] and follow the instructions in the comment section.
+
+If you are not so familiar with Org-mode, or with publishing HTML
+project (or just enjoy reviewing the basics from time to time), here
+is a small tutorial describing the steps to let you enjoy an Emacs
+blog.
+
+** Org-mode 15 seconds introduction
+
+ Fire up GNU Emacs.
+
+ Then hit =C-x C-f ~/my-blog.org RET= to create a new Org file named
+ =my-blog.org=.
+
+ In this file, hit =M-RET= to insert a new heading.  Type something
+ sensible as the title of your next blog entry:
+
+ #+BEGIN_SRC org
+ ,* My first blog post with Emacs and Org!
+
+ This will be the content of my blog entry.
+ #+END_SRC
+
+ You're done.
+
+** Publishing =my-blog.org= as a HTML page
+
+ You need to publish your Org page somewhere in your computer.
+
+ So let's create a =public_html/= directory in your home directory:
+
+ : ~$ mkdir public_html
+
+ Now edit your =.emacs.el= file and add this Emacs lisp snippet:
+
+ #+BEGIN_SRC emacs-lisp
+ (setq org-publish-project-alist
+       '(("blog"
+          :base-directory "~/"
+          :html-extension "html"
+          :base-extension "org"
+          :publishing-directory "~/public_html/"
+          :publishing-function (org-html-publish-to-html)
+          :html-preamble nil
+          :html-postamble nil)))
+ #+END_SRC
+
+ The code above defines a HTML /publishing/ project with no preamble
+ and no postamble.  (To learn more on publishing projects, please read
+ the [[http://orgmode.org/manual/Publishing.html][Org manual]].)
+
+ Evaluate this code by hitting =C-x e= at the end of the last
+ parenthesis.
+
+ Now hit =M-x org-publish RET blog RET= anywhere in Emacs to publish
+ the project.
+
+ Your =public_html/= directory now contains a new file, =my-blog.html=,
+ with a HTML export of your =my-blog.org= file.
+
+** Publishing =my-blog.org= as a RSS feed
+
+ You want to publish this page as a RSS feed so that readers can
+ subscribe to it.  (Yes, my own definition of a blog is /that/ simple:
+ some HTML content and a feed.)
+
+ You are three steps away from having a blog---you only need to:
+
+ 1. load =ox-rss.el= to enable RSS publishing;
+ 2. create a RSS publishing project;
+ 3. add some RSS-related info in your HTML publishing project.
+
+*** Enable RSS publishing
+
+ Find ox-rss.el in Org's =contrib/lisp/= directory and make sure this
+ directory is in your Emacs load-path.
+
+ Since Org lives in the =~/install/git/= contrib on my computer, this
+ is my configuration:
+
+ #+BEGIN_SRC emacs-lisp
+ (add-to-list 'load-path "~/install/git/org-mode/contrib/lisp/")
+ (require 'ox-rss)
+ #+END_SRC
+
+ (We use =add-to-list= to append a new project to
+ =org-publish-project-alist=, but you can simply use =setq= with both
+ projects on =org-publish-project-alist=.)
+
+*** Create a RSS publishing project
+
+ Add this new RSS publishing project:
+
+ #+BEGIN_SRC emacs-lisp
+ (add-to-list 'org-publish-project-alist
+              '("blog-rss"
+		:base-directory "~/"
+		:base-extension "org"
+		:publishing-directory "~/public_html/"
+		:publishing-function (org-rss-publish-to-rss)
+		:html-link-home "http://mydomain.org/"
+		:html-link-use-abs-url t))
+ #+END_SRC
+
+ It is pretty similar to our HTML publishing project except that:
+
+ - the publishing function we use is =org-rss-publish-to-rss= instead
+   of =org-html-publish-to-html=;
+
+ - we set the =:html-link-home= publishing option so that relative
+   links in our RSS feed are prefixed with the "http://mydomain.org/"
+   domain name (assuming it will be the final destination of our blog);
+
+ - we set the =:html-link-use-abs-url= publishing option to =t= (true)
+   so that all links in our RSS feed are absolute, since it does not
+   make sense to have relative links in RSS feeds.
+
+ Evaluate the code above with =C-x e= then hit =M-x org-publish RET
+ blog-rss RET= to publish the RSS feed: =public_html/= now contains a
+ =my-blog.xml= file along with the =my-blog.html= file.
+
+*** Add some RSS-related info in your HTML publishing project
+
+ Our last step is to link our RSS feed (the =my-blog.xml= file) with
+ the HTML file.  Let's rewrite our HTML project like this:
+
+ #+BEGIN_SRC emacs-lisp
+ (setq org-publish-project-alist
+       '(("blog"
+          :base-directory "~/"
+          :html-extension "html"
+          :base-extension "org"
+          :publishing-directory "~/public_html/"
+          :publishing-function (org-html-publish-to-html)
+          :html-preamble nil
+          :html-postamble nil
+          :html-head-extra
+          "<link rel=\"alternate\" type=\"application/rss+xml\"
+                 href=\"http://mydomain.org/my-blog.xml\"
+                 title=\"RSS feed for mydomain.org\">")))
+ #+END_SRC
+
+ We just appended the =:html-head-extra= option, which tells what
+ information we want to add in our HTML =<head>...</head>= section.
+
+** Last but not least: a real setup
+
+ Okay, you now have a single file, with a RSS feed that points to
+ headlines in this file.  But what if you want to allow readers to
+ /comment/ your blog posts?
+
+ In this case, you need to have /one page per blog entry/ and to use
+ something like [[http://disqus.com][disqus.com]] to enable comments on this page.
+
+ This is perfectly /fine/!
+
+ Just write your blog posts in dedicated .org files, then use the
+ =my-blog.org= file as a collection of /summaries/ of your blog posts.
+ At the end of each summary, put a link to the Org page where people
+ can comment.
+
+ Then update your RSS publishing project like this:
+
+ #+BEGIN_SRC emacs-lisp
+ (add-to-list 'org-publish-project-alist
+              '("blog-rss"
+		:base-directory "~/"
+		:base-extension "org"
+		:publishing-directory "~/public_html/"
+		:publishing-function (org-rss-publish-to-rss)
+		:html-link-home "http://mydomain.org/"
+		:html-link-use-abs-url t
+		:exclude ".*"
+		:include ("my-blog.org")))
+ #+END_SRC
+
+ Note the options =:exclude= and =:include=---they say: "Don't publish
+ .xml files for all .org files in the base directory, only publish a
+ .xml file for =my-blog.org=."
+
+ This setup may sound weird first, but I find it useful on the long
+ term: quick thoughts get directly in the main =my-blog.org= file, and
+ longer blogs have their dedicated pages, with comments allowed.
+
+** Going beyond
+
+ Of course: you can do a lot more than that---here is a quick list:
+
+ - embed pictures;
+ - embed arbitrary HTML code;
+ - embed code snippets (zero headache to get syntax highlighting);
+ - tweak your RSS publishing project to skip TODO headlines 
+ - use timestamps for drafts that need to be published later;
+ - etc.
+
+ If you are not afraid of raw code with too few comments, you can dive
+ into my [[http://bzg.fr/emacs.html][.emacs.el]] and grab hints from my configuration.
+
+** Why this is cool?
+
+ - Writing in Emacs is just pure delight.
+
+ - Blog posts are now part of your Org agenda.
+
+ - If you already have a habit of taking your notes in Org, then you'll
+   more easily take a habit of publishing blog posts from these notes.
+
+ - Since Org files are plain text, storing a blog as a git repository
+   feels natural: people can contribute your blog with... patches.
+
+ =ox-rss.el= is not very well known so far, I hope this blog post will
+ encourage people to use it!  Let me know if something is not clear.
+
+** Dependencies
+
+ You need to use Emacs version 24.2.1 (or later) and Org 8.0
+ (or later).
+
+** Thanks
+
+ Thanks to Sacha Chua's post here about [[http://sachachua.com/blog/2013/09/when-i-blog-with-emacs-and-when-i-blog-with-something-else/][blogging with Emacs]], as this
+ triggered me to write this post!  Her post is worth exploring for the
+ links it contains to other Emacs-based solutions I didn't mentioned
+ here... but I'm sure you'll discuss them in the comments.
+

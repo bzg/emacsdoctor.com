@@ -1,0 +1,154 @@
+#+title: How To Exit Emacs?
+#+date: 2013-12-23
+#+author: Bastien
+#+LANGUAGE: en
+#+layout: post
+#+author_url: /author/bzg
+#+author_avatar: bzg
+#+show_avatar: true
+#+category: libre
+#+show_related_posts: false
+#+feature_image: emacscrazy
+#+excerpt: <p>Spending the rest of your life in Emacs is a feature, not a bug.</p>
+
+** tl;dr
+
+Spending the rest of your life in Emacs is a feature, not a bug.
+
+#+CAPTION: My empty i3 window manager, after I quit Emacs
+#+ATTR_HTML: :width 90%
+[[file:u/i3.png]]
+
+** tl;dr (take 2)
+
+ This is the magic key combination to exit Emacs:
+
+ : C-x C-c
+
+ Which reads as
+
+ : Control-x Control-c
+
+** --help
+
+ I.e., press the =Control= key with your left pinky, hold it pressed,
+ then press =x=, release =x= (while still holding the =Control= key),
+ press =c=.
+
+ Ta-da!
+
+ You are back to normal life.
+
+** --help --verbose
+
+ In Emacs, key bindings are called =keybindings=, because we like
+ things to be plain.  Some people in other possible worlds called them
+ =shortcuts=, but that's a very narrow view of what a keybinding is,
+ since Emacs keybindings have a personnality of their own, and can be a
+ bit long sometimes.
+
+ The first time you encounter =Control-x=, you think: "Aha... so the
+ =x= stands for eXiting!".  Wrong.
+
+ The "x" stands for eXecuting.
+
+ Let's tell a bit more about keybindings.
+
+** --help --very-verbose
+
+ Emacs keybindings are stored in =keymaps=.
+
+ A =keymap= is a variable containing a list of associations between
+ keys and =commands=.
+
+ The list of all keybindings starting with =Control-x= is stored in a
+ dedicated variable called =ctl-x-map=.
+
+ You can see this list with =C-h v ctl-x-map RET=: this will open a new
+ buffer and display the value of the keymap.
+
+ You can also display the list of commands starting with the =C-x=
+ prefix bit hitting =C-x C-h= (yes, the =h= stands for help).
+
+ Do it /now/, and enjoy the beautiful view!
+
+ #+CAPTION: The buffer displaying Emacs keybindings
+ #+ATTR_HTML: :width 90%
+ [[file:u/emacs-keybindings.png]]
+
+ In this buffer, you can follow links by hitting =RET= (aka =return=):
+ those are links to the descriptions of commands associated with the
+ listed keybindings---or to /sub keymaps/.
+
+ For example, the buffer will let you learn that =C-x C-c= is bound to
+ =save-buffers-kill-terminal=.  Yes, this is the name of the command
+ you call to "exit Emacs", as people call it sometimes.
+
+ But =C-x C-k= is bound to =kmacro-keymap=, which is not a command, but
+ another map.
+
+ If you want to know more about this other keymap, hit =C-x C-k C-h=.
+
+ (And yes, the "h" in =C-h= stands for Help.)
+
+ Of course, since keymaps are just variables, you can change them at
+ will.  I recommend not to change the default keybindings: Emacs is not
+ only a text editor, it's a shared culture, and sticking to the default
+ keybindings helps the community celebrate the same commands together.
+
+** x = ?
+
+ : Happiness is nothing more than good health and a bad memory.
+ : 
+ :                             -- Albert Schweitzer
+
+ The =Control-x= keymap is the most important keymap in Emacs: main
+ commands are called from this keymap.
+
+ The =Control-c= keymap is the second most important one.  Emacs modes
+ use it to associate keybindings with the new commands they define.
+
+ When reading =.emacs.el= file late at night, amont binary dreams and
+ computer fairies, you sometimes encounter a pattern: =C-c x=, where
+ =x= is a letter or a digit.  This pattern is reserved for the user:
+ this is where you, the user, are required to place your keybindings.
+ No decent Emacs mode will ever use this pattern for its keybindings.
+
+ Of course =C-c C-...= is used by all modes: but this is =C-c C-...=,
+ not =C-c ...= --- please note the difference.
+
+ So what does this =x= stand for?
+
+ If you know Emacs, you know a bit of =M-x=: hitting this puts the
+ cursor in the =minibuffer=, and prompts you for the name of a command.
+
+ The name of the command associated with =M-x= is
+ =execute-extended-command=, so my guess is that =x= stands for
+ "execute".
+
+ Which makes sense, right?
+
+ I also guess the =x= in =Control-x= stands for "execute", since this
+ is the main map to /execute/ stuff in Emacs.  At least I want to
+ believe so.
+
+ What does =C-c= stands for in =C-x C-c=?
+
+ If you use =C-c= in shells, you know the answer.  And of course
+ [[http://en.wikipedia.org/wiki/Control-C][Wikipedia]] comes to the rescue:
+
+ #+BEGIN_QUOTE
+ As many keyboards and computer terminals once directly generated ASCII
+ code, the choice of control-C overlapped with the ASCII end-of-text
+ character. This character has a numerical value of three, as "C" is
+ the third letter of the alphabet. It was chosen to cause an interrupt
+ as it is otherwise unlikely to be part of a program's interactive
+ interface. Many other control codes, such as control-D for the
+ end-of-transmission character, do not generate signals and are
+ occasionally used to control a program.
+ #+END_QUOTE
+
+ See?  Now you know why =C-x C-c= exits Emacs.
+
+ But remember: you don't really want to exit Emacs (see [[*tl%3Bdr][tl;dr]]).
+

@@ -1,0 +1,20 @@
+#+title: The Orgfather
+#+date: 2011-08-28
+#+author: Bastien
+#+layout: post
+#+author_url: /author/bzg
+#+author_avatar: bzg
+#+show_avatar: true
+#+category: libre
+#+show_related_posts: false
+#+excerpt: <p>When Carsten stepped down as the Org-mode maintainer.</p>
+
+#+begin_html
+<script type="text/javascript" src="http://s3.www.universalsubtitles.org/embed.js">
+(
+  {video_url: "http://vimeo.com/28194358",
+   video_config: {width: 800, height: 600}
+}
+)
+</script>
+#+end_html

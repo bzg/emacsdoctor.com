@@ -1,0 +1,22 @@
+#+title: Emacs Org-mode at FOSDEM 2011
+#+date: 2011-02-06
+#+author: Bastien
+#+layout: post
+#+author_url: /author/bzg
+#+author_avatar: bzg
+#+show_avatar: true
+#+category: libre
+#+show_related_posts: false
+#+feature_image: default
+
+#+index: Emacs
+#+index: Org-mode
+#+index: GNU
+
+#+begin_html
+<center>
+<iframe src="http://www.slideshare.net/slideshow/embed_code/8401331" width="768" height="630" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/bzg/org-fosdem2011" title="Org fosdem-2011" target="_blank">Org fosdem-2011</a> </strong> from <strong><a href="http://www.slideshare.net/bzg" target="_blank">Bastien Guerry</a></strong> </div>
+</center>
+#+end_html
+
+

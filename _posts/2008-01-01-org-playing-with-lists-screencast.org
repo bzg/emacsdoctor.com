@@ -1,0 +1,47 @@
+#+title:     Emacs Org's plain lists
+#+email:     bzg@altern.org
+#+date:      2008-01-01
+#+author: Bastien
+#+layout: post
+#+author_url: /author/bzg
+#+author_avatar: bzg
+#+show_avatar: true
+#+category: libre
+#+show_related_posts: false
+#+feature_image: default
+#+excerpt: <p>Org is great at handling plain lists.</p>
+
+#+SEQ_TODO:  TODO DONE
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t f:t *:t TeX:t LaTeX:t skip:nil p:nil tags:not-in-toc
+
+#+index: Emacs
+#+index: Org-mode
+
+** Playing with lists in Org-mode
+
+ [[http://orgmode.org][Org]] is great at handling *plain lists* - see the section about [[http://orgmode.org/manual/Plain-lists.html][plain
+ lists]] in the manual.  This small screencast demonstrates a few things
+ you can do with them.  This is with =Emacs 23.0.94.2= and Org
+ =6.27trans=.
+
+ You can also download [[http://relire.org/org_playing_with_list.avi][the .avi source file]] of this screencast.
+
+ #+BEGIN_HTML
+ <iframe src="//player.vimeo.com/video/5374785" width="500" height="388" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+ #+END_HTML
+
+ Here is the list of features I demonstrate:
+
+ - convert a plain list from /itemize/ to /numbered/
+ - re-order the items in this list
+ - show how numbers are automagically updated
+ - add a checkbox to some items of the list
+ - add a [/] cookie to the headline above and update it
+ - replace the [/] cookie with a [%] and update it
+ - export the list contained in the region into HTML
+
+ The good news is that all these features are also available in other
+ mode like =message-mode=, thanks to the =orgstruct-mode= minor mode (see
+ the manual about [[http://orgmode.org/manual/Orgstruct-mode.html][orgstruct-mode]].)
+

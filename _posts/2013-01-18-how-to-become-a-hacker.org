@@ -1,0 +1,27 @@
+#+title: How to Become a Hacker (in the 21st century)?
+#+date: 2013-01-18
+#+author: Bastien
+#+layout: post
+#+author_url: /author/bzg
+#+author_avatar: bzg
+#+show_avatar: true
+#+category: libre
+#+show_related_posts: false
+#+feature_image: default
+
+#+OPTIONS: skip:nil toc:nil
+#+KEYWORDS: How to Become a Hacker (in the 21st century)?
+#+DESCRIPTION: How to Become a Hacker (in the 21st century)?
+#+LANGUAGE: en
+
+
+#+index: hacker
+#+index: Emacs
+#+index: Org-mode
+
+#+begin_html
+<center>
+<iframe src="http://www.slideshare.net/slideshow/embed_code/16070695" width="768" height="630" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/bzg/how-to-become-a-hacker-16070695" title="How to Become A Hacker?" target="_blank">How to Become A Hacker?</a> </strong> from <strong><a href="http://www.slideshare.net/bzg" target="_blank">Bastien Guerry</a></strong> </div>
+</center>
+#+end_html
+

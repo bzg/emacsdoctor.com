@@ -1,0 +1,256 @@
+#+title: Emacs, naked.
+#+date: 2014-01-22
+#+author: Bastien
+#+layout: post
+#+author_url: /author/bzg
+#+author_avatar: bzg
+#+show_avatar: true
+#+category: libre
+#+show_related_posts: false
+#+feature_image: emacscrazy
+
+#+PROPERTY: tangle u/emacs-strip.el
+
+#+BEGIN_QUOTE
+When it gets too cold, you can always put on more layers of
+clothing. But when it gets too hot, after a while you can't
+take off any more. -- RMS
+#+END_QUOTE
+
+# Your CPU is hot, both you and your Emacs needs a treat.
+
+# (And yes, this is a [[http://web.textfiles.com/ezines/EUROHACKER/ISSUE2/a05.html][real]] quote.)
+
+This is GNU Emacs:
+
+#+ATTR_HTML: :width 90%
+[[file:u/bare-emacs.png]]
+
+Now let the show begin...
+
+/Code snippets are for GNU Emacs 24.3 and above./
+
+** A blank stage
+   :PROPERTIES:
+   :ID:       a-naked-stage
+   :END:
+  
+ #+BEGIN_SRC emacs-lisp
+ ;; Prevent the cursor from blinking
+ (blink-cursor-mode 0)
+ ;; Don't use messages that you don't read
+ (setq initial-scratch-message "")
+ (setq inhibit-startup-message t)
+ ;; Don't let Emacs hurt your ears
+ (setq visible-bell t)
+
+ ;; You need to set `inhibit-startup-echo-area-message' from the
+ ;; customization interface:
+ ;; M-x customize-variable RET inhibit-startup-echo-area-message RET
+ ;; then enter your username
+ (setq inhibit-startup-echo-area-message "guerry")
+ #+END_SRC
+
+ #+ATTR_HTML: :width 90%
+ [[file:u/emacs-blank-stage.png]]
+
+** Break the walls
+   :PROPERTIES:
+   :ID:       break-the-walls
+   :END:
+
+ #+BEGIN_SRC emacs-lisp
+ ;; This is bound to f11 in Emacs 24.4
+ (toggle-frame-fullscreen) 
+ ;; Who use the bar to scroll?
+ (scroll-bar-mode 0)
+ #+END_SRC
+
+ #+ATTR_HTML: :width 90%
+ [[file:u/emacs-fullscreen.png]]
+
+** The sky is the limit
+   :PROPERTIES:
+   :ID:       the-sky-is-the-limit
+   :END:
+
+ #+BEGIN_SRC emacs-lisp
+ (tool-bar-mode 0)
+ (menu-bar-mode 0)
+
+ ;; You can also set the initial frame parameters
+ ;; (setq initial-frame-alist
+ ;;       '((menu-bar-lines . 0)
+ ;;         (tool-bar-lines . 0)))
+ #+END_SRC
+
+ #+ATTR_HTML: :width 90%
+ [[file:u/emacs-clear-top.png]]
+
+** Groundless fear
+   :PROPERTIES:
+   :ID:       groundless-fear
+   :END:
+
+ #+BEGIN_SRC emacs-lisp
+ ;; See http://bzg.fr/emacs-hide-mode-line.html
+ (defvar-local hidden-mode-line-mode nil)
+ (defvar-local hide-mode-line nil)
+
+ (define-minor-mode hidden-mode-line-mode
+   "Minor mode to hide the mode-line in the current buffer."
+   :init-value nil
+   :global nil
+   :variable hidden-mode-line-mode
+   :group 'editing-basics
+   (if hidden-mode-line-mode
+       (setq hide-mode-line mode-line-format
+             mode-line-format nil)
+     (setq mode-line-format hide-mode-line
+           hide-mode-line nil))
+   (force-mode-line-update)
+   ;; Apparently force-mode-line-update is not always enough to
+   ;; redisplay the mode-line
+   (redraw-display)
+   (when (and (called-interactively-p 'interactive)
+              hidden-mode-line-mode)
+     (run-with-idle-timer
+      0 nil 'message
+      (concat "Hidden Mode Line Mode enabled.  "
+              "Use M-x hidden-mode-line-mode to make the mode-line appear."))))
+
+ ;; Activate hidden-mode-line-mode
+ (hidden-mode-line-mode 1)
+
+ ;; If you want to hide the mode-line in all new buffers
+ ;; (add-hook 'after-change-major-mode-hook 'hidden-mode-line-mode)
+
+ ;; Alternatively, you can paint your mode-line in White but then
+ ;; you'll have to manually paint it in black again
+ ;; (custom-set-faces
+ ;;  '(mode-line-highlight ((t nil)))
+ ;;  '(mode-line ((t (:foreground "white" :background "white"))))
+ ;;  '(mode-line-inactive ((t (:background "white" :foreground "white")))))
+ #+END_SRC
+
+ #+ATTR_HTML: :width 90%
+ [[file:u/emacs-clear-bottom.png]]
+
+ Well... it's more interesting with some text:
+
+ #+ATTR_HTML: :width 90%
+ [[file:u/emacs-clear-bottom-text.png]]
+
+** In the limelight
+   :PROPERTIES:
+   :ID:       in-the-limelight
+   :END:
+
+ #+BEGIN_SRC emacs-lisp
+ ;; A small minor mode to use a big fringe
+ (defvar bzg-big-fringe-mode nil)
+ (define-minor-mode bzg-big-fringe-mode
+   "Minor mode to use big fringe in the current buffer."
+   :init-value nil
+   :global t
+   :variable bzg-big-fringe-mode
+   :group 'editing-basics
+   (if (not bzg-big-fringe-mode)
+       (set-fringe-style nil)
+     (set-fringe-mode
+      (/ (- (frame-pixel-width)
+            (* 100 (frame-char-width)))
+         2))))
+
+ ;; Now activate this global minor mode
+ (bzg-big-fringe-mode 1)
+
+ ;; To activate the fringe by default and deactivate it when windows
+ ;; are split vertically, uncomment this:
+ ;; (add-hook 'window-configuration-change-hook
+ ;;           (lambda ()
+ ;;             (if (delq nil
+ ;;                       (let ((fw (frame-width)))
+ ;;                         (mapcar (lambda(w) (< (window-width w) (/ fw 2)))
+ ;;                                 (window-list))))
+ ;;                 (bzg-big-fringe-mode 0)
+ ;;               (bzg-big-fringe-mode 1))))
+
+ ;; Use a minimal cursor
+ ;; (setq default-cursor-type 'hbar)
+
+ ;; Get rid of the indicators in the fringe
+ (mapcar (lambda(fb) (set-fringe-bitmap-face fb 'org-hide))
+         fringe-bitmaps)
+ #+END_SRC
+
+ #+ATTR_HTML: :width 90%
+ [[file:u/emacs-big-fringe.png]]
+
+ Oh, but you don't want the grey fringe?
+
+ #+BEGIN_SRC emacs-lisp
+ ;; Set the color of the fringe
+ (custom-set-faces
+  '(fringe ((t (:background "white")))))
+ #+END_SRC
+
+ #+ATTR_HTML: :width 90%
+ [[file:u/emacs-big-white-fringe.png]]
+
+** Let's turn off the light...
+   :PROPERTIES:
+   :ID:       turn-off-the-light
+   :END:
+
+ #+BEGIN_SRC emacs-lisp
+ (custom-set-faces
+   '(default ((t (:background "black" :foreground "grey"))))
+   '(fringe ((t (:background "black")))))
+ #+END_SRC
+
+ #+ATTR_HTML: :width 90%
+ [[file:u/emacs-by-night.png]]
+
+** Enjoy !
+
+ (Keep the sound muted.)
+
+ #+BEGIN_HTML
+ <center>
+ <video style="width:100%;margin:auto;" controls muted>
+   <source src="u/emacs-strip.ogv" type="video/ogg">
+ </video>
+ </center>
+ #+END_HTML
+
+ Download the video [[file:u/emacs-strip.ogv][here]].
+
+ Download the full Elisp file [[file:u/emacs-strip.el][here]] or read it as a [[https://gist.github.com/bzg/8578998][gist]].
+
+** Bonus trick
+
+ Ok, sometimes I *still* want to see what's in the mode-line.
+
+ I use the =C-s-SPC= key for this (Control Super Space) with
+ this simple function to display the mode-line in the header:
+
+ #+BEGIN_SRC emacs-lisp
+ ;; Command to toggle the display of the mode-line as a header
+ (defvar-local header-line-format nil)
+ (defun mode-line-in-header ()
+   (interactive)
+   (if (not header-line-format)
+       (setq header-line-format mode-line-format
+             mode-line-format nil)
+     (setq mode-line-format header-line-format
+           header-line-format nil))
+   (set-window-buffer nil (current-buffer)))
+ (global-set-key (kbd "C-s-SPC") 'mode-line-in-header)
+ #+END_SRC
+
+ #+ATTR_HTML: :width 90%
+ [[file:u/emacs-mode-line-header.png]]
+
+You can check out the [[https://news.ycombinator.com/item?id%3D7107893][discussion]] on Hacker News.
+
