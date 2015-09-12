@@ -1,8 +1,7 @@
 # Site settings
 title: M-x doctor RET
 email: bzg+emacs@bzg.fr
-description: > # this means to ignore newlines until "baseurl:"
-  Everybody needs a good Emacs doctor.
+description: Everybody needs a good Emacs doctor.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://emacs-doctor.com" # the base hostname & protocol for your site
 twitter_username: bzg2
