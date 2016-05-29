@@ -9,7 +9,7 @@
 #+show_related_posts: false
 #+feature_image: emacscrazy
 
-#+PROPERTY: tangle u/emacs-strip.el
+#+PROPERTY: tangle img/emacs-strip.el
 
 #+BEGIN_QUOTE
 When it gets too cold, you can always put on more layers of
@@ -24,7 +24,7 @@ take off any more. -- RMS
 This is GNU Emacs:
 
 #+ATTR_HTML: :width 90%
-[[file:u/bare-emacs.png]]
+[[file:img/bare-emacs.png]]
 
 Now let the show begin...
 
@@ -52,7 +52,7 @@ Now let the show begin...
  #+END_SRC
 
  #+ATTR_HTML: :width 90%
- [[file:u/emacs-blank-stage.png]]
+ [[file:img/emacs-blank-stage.png]]
 
 ** Break the walls
    :PROPERTIES:
@@ -67,7 +67,7 @@ Now let the show begin...
  #+END_SRC
 
  #+ATTR_HTML: :width 90%
- [[file:u/emacs-fullscreen.png]]
+ [[file:img/emacs-fullscreen.png]]
 
 ** The sky is the limit
    :PROPERTIES:
@@ -85,7 +85,7 @@ Now let the show begin...
  #+END_SRC
 
  #+ATTR_HTML: :width 90%
- [[file:u/emacs-clear-top.png]]
+ [[file:img/emacs-clear-top.png]]
 
 ** Groundless fear
    :PROPERTIES:
@@ -134,12 +134,12 @@ Now let the show begin...
  #+END_SRC
 
  #+ATTR_HTML: :width 90%
- [[file:u/emacs-clear-bottom.png]]
+ [[file:img/emacs-clear-bottom.png]]
 
  Well... it's more interesting with some text:
 
  #+ATTR_HTML: :width 90%
- [[file:u/emacs-clear-bottom-text.png]]
+ [[file:img/emacs-clear-bottom-text.png]]
 
 ** In the limelight
    :PROPERTIES:
@@ -185,7 +185,7 @@ Now let the show begin...
  #+END_SRC
 
  #+ATTR_HTML: :width 90%
- [[file:u/emacs-big-fringe.png]]
+ [[file:img/emacs-big-fringe.png]]
 
  Oh, but you don't want the grey fringe?
 
@@ -196,7 +196,7 @@ Now let the show begin...
  #+END_SRC
 
  #+ATTR_HTML: :width 90%
- [[file:u/emacs-big-white-fringe.png]]
+ [[file:img/emacs-big-white-fringe.png]]
 
 ** Let's turn off the light...
    :PROPERTIES:
@@ -210,7 +210,7 @@ Now let the show begin...
  #+END_SRC
 
  #+ATTR_HTML: :width 90%
- [[file:u/emacs-by-night.png]]
+ [[file:img/emacs-by-night.png]]
 
 ** Enjoy !
 
@@ -219,14 +219,14 @@ Now let the show begin...
  #+BEGIN_HTML
  <center>
  <video style="width:100%;margin:auto;" controls muted>
-   <source src="u/emacs-strip.ogv" type="video/ogg">
+   <source src="img/emacs-strip.ogv" type="video/ogg">
  </video>
  </center>
  #+END_HTML
 
- Download the video [[file:u/emacs-strip.ogv][here]].
+ Download the video [[file:img/emacs-strip.ogv][here]].
 
- Download the full Elisp file [[file:u/emacs-strip.el][here]] or read it as a [[https://gist.github.com/bzg/8578998][gist]].
+ Download the full Elisp file [[file:img/emacs-strip.el][here]] or read it as a [[https://gist.github.com/bzg/8578998][gist]].
 
 ** Bonus trick
 
@@ -250,7 +250,7 @@ Now let the show begin...
  #+END_SRC
 
  #+ATTR_HTML: :width 90%
- [[file:u/emacs-mode-line-header.png]]
+ [[file:img/emacs-mode-line-header.png]]
 
 Discussed on HN: [[https://news.ycombinator.com/item?id=7107893]]
 

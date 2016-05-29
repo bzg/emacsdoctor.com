@@ -17,7 +17,7 @@ Spending the rest of your life in Emacs is a feature, not a bug.
 
 #+CAPTION: My empty i3 window manager, after I quit Emacs
 #+ATTR_HTML: :width 90%
-[[file:u/i3.png]]
+[[file:img/i3.png]]
 
 ** tl;dr (take 2)
 
@@ -74,7 +74,7 @@ Spending the rest of your life in Emacs is a feature, not a bug.
 
  #+CAPTION: The buffer displaying Emacs keybindings
  #+ATTR_HTML: :width 90%
- [[file:u/emacs-keybindings.png]]
+ [[file:img/emacs-keybindings.png]]
 
  In this buffer, you can follow links by hitting =RET= (aka =return=):
  those are links to the descriptions of commands associated with the
