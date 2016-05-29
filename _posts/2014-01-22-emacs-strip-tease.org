@@ -252,5 +252,5 @@ Now let the show begin...
  #+ATTR_HTML: :width 90%
  [[file:u/emacs-mode-line-header.png]]
 
-You can check out the [[https://news.ycombinator.com/item?id%3D7107893][discussion]] on Hacker News.
+Discussed on HN: [[https://news.ycombinator.com/item?id=7107893]]
 
