@@ -1,0 +1,1274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>M-x doctor RET</title>
+    <description>Everybody needs a good Emacs doctor.</description>
+    <link>http://emacs-doctor.com/</link>
+    <atom:link href="http://emacs-doctor.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 29 May 2016 11:25:35 +0200</pubDate>
+    <lastBuildDate>Sun, 29 May 2016 11:25:35 +0200</lastBuildDate>
+    <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>Emacs, naked.</title>
+        <description>
+&lt;blockquote&gt;
+  &lt;p&gt;When it gets too cold, you can always put on more layers of
+    clothing. But when it gets too hot, after a while you can&amp;#8217;t
+    take off any more. &amp;#8211; RMS&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is GNU Emacs:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;img/bare-emacs.png&quot; alt=&quot;img/bare-emacs.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Now let the show begin&amp;#8230;&lt;/p&gt;
+&lt;p&gt;&lt;i&gt;Code snippets are for GNU Emacs 24.3 and above.&lt;/i&gt;&lt;/p&gt;
+&lt;h2&gt;A blank stage&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;;; Prevent the cursor from blinking&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;blink-cursor-mode&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Don&amp;#39;t use messages that you don&amp;#39;t read&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;initial-scratch-message&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;inhibit-startup-message&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Don&amp;#39;t let Emacs hurt your ears&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;visible-bell&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; You need to set `inhibit-startup-echo-area-message&amp;#39; from the&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; customization interface:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; M-x customize-variable RET inhibit-startup-echo-area-message RET&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; then enter your username&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;inhibit-startup-echo-area-message&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;guerry&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;img/emacs-blank-stage.png&quot; alt=&quot;img/emacs-blank-stage.png&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;Break the walls&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;;; This is bound to f11 in Emacs 24.4&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;toggle-frame-fullscreen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;c1&quot;&gt;;; Who use the bar to scroll?&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;scroll-bar-mode&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;img/emacs-fullscreen.png&quot; alt=&quot;img/emacs-fullscreen.png&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;The sky is the limit&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;tool-bar-mode&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;menu-bar-mode&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; You can also set the initial frame parameters&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; (setq initial-frame-alist&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;       &amp;#39;((menu-bar-lines . 0)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;         (tool-bar-lines . 0)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;img/emacs-clear-top.png&quot; alt=&quot;img/emacs-clear-top.png&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;Groundless fear&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;;; See http://bzg.fr/emacs-hide-mode-line.html&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defvar-local&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hidden-mode-line-mode&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defvar-local&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hide-mode-line&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;define-minor-mode&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hidden-mode-line-mode&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&amp;quot;Minor mode to hide the mode-line in the current buffer.&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;:init-value&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;:global&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;:variable&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hidden-mode-line-mode&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;:group&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;editing-basics&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;hidden-mode-line-mode&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hide-mode-line&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;mode-line-format&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;mode-line-format&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;mode-line-format&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hide-mode-line&lt;/span&gt;
+          &lt;span class=&quot;nv&quot;&gt;hide-mode-line&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;force-mode-line-update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;;; Apparently force-mode-line-update is not always enough to&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;;; redisplay the mode-line&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;redraw-display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;and &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;called-interactively-p&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;interactive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+             &lt;span class=&quot;nv&quot;&gt;hidden-mode-line-mode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;run-with-idle-timer&lt;/span&gt;
+     &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;message&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;concat&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hidden Mode Line Mode enabled.  &amp;quot;&lt;/span&gt;
+             &lt;span class=&quot;s&quot;&gt;&amp;quot;Use M-x hidden-mode-line-mode to make the mode-line appear.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Activate hidden-mode-line-mode&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hidden-mode-line-mode&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; If you want to hide the mode-line in all new buffers&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; (add-hook &amp;#39;after-change-major-mode-hook &amp;#39;hidden-mode-line-mode)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Alternatively, you can paint your mode-line in White but then&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; you&amp;#39;ll have to manually paint it in black again&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; (custom-set-faces&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;  &amp;#39;(mode-line-highlight ((t nil)))&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;  &amp;#39;(mode-line ((t (:foreground &amp;quot;white&amp;quot; :background &amp;quot;white&amp;quot;))))&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;  &amp;#39;(mode-line-inactive ((t (:background &amp;quot;white&amp;quot; :foreground &amp;quot;white&amp;quot;)))))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;img/emacs-clear-bottom.png&quot; alt=&quot;img/emacs-clear-bottom.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Well&amp;#8230; it&amp;#8217;s more interesting with some text:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;img/emacs-clear-bottom-text.png&quot; alt=&quot;img/emacs-clear-bottom-text.png&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;In the limelight&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;;; A small minor mode to use a big fringe&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defvar&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;bzg-big-fringe-mode&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;define-minor-mode&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;bzg-big-fringe-mode&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&amp;quot;Minor mode to use big fringe in the current buffer.&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;:init-value&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;:global&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;t&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;:variable&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;bzg-big-fringe-mode&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;:group&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;editing-basics&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;not &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;bzg-big-fringe-mode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;set-fringe-style&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;set-fringe-mode&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;/ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;- &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;frame-pixel-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+           &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;* &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;frame-char-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+        &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Now activate this global minor mode&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bzg-big-fringe-mode&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; To activate the fringe by default and deactivate it when windows&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; are split vertically, uncomment this:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; (add-hook &amp;#39;window-configuration-change-hook&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;           (lambda ()&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;             (if (delq nil&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;                       (let ((fw (frame-width)))&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;                         (mapcar (lambda(w) (&amp;lt; (window-width w) (/ fw 2)))&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;                                 (window-list))))&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;                 (bzg-big-fringe-mode 0)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;               (bzg-big-fringe-mode 1))))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Use a minimal cursor&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; (setq default-cursor-type &amp;#39;hbar)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Get rid of the indicators in the fringe&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;mapcar&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;lambda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;set-fringe-bitmap-face&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;fb&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;org-hide&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;fringe-bitmaps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;img/emacs-big-fringe.png&quot; alt=&quot;img/emacs-big-fringe.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Oh, but you don&amp;#8217;t want the grey fringe?&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;;; Set the color of the fringe&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;custom-set-faces&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;fringe&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;:background&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;img/emacs-big-white-fringe.png&quot; alt=&quot;img/emacs-big-white-fringe.png&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;Let&amp;#8217;s turn off the light&amp;#8230;&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;custom-set-faces&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;:background&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;black&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;:foreground&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;grey&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;fringe&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;:background&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;black&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;img/emacs-by-night.png&quot; alt=&quot;img/emacs-by-night.png&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;Enjoy !&lt;/h2&gt;
+&lt;p&gt;(Keep the sound muted.)&lt;/p&gt;
+ &lt;center&gt;
+ &lt;video style=&quot;width:100%;margin:auto;&quot; controls muted&gt;
+   &lt;source src=&quot;img/emacs-strip.ogv&quot; type=&quot;video/ogg&quot;&gt;
+ &lt;/video&gt;
+ &lt;/center&gt;
+&lt;p&gt;Download the video &lt;a href=&quot;img/emacs-strip.ogv&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Download the full Elisp file &lt;a href=&quot;img/emacs-strip.el&quot;&gt;here&lt;/a&gt; or read it as a &lt;a href=&quot;https://gist.github.com/bzg/8578998&quot;&gt;gist&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Bonus trick&lt;/h2&gt;
+&lt;p&gt;Ok, sometimes I &lt;b&gt;still&lt;/b&gt; want to see what&amp;#8217;s in the mode-line.&lt;/p&gt;
+&lt;p&gt;I use the &lt;code&gt;C-s-SPC&lt;/code&gt; key for this (Control Super Space) with
+  this simple function to display the mode-line in the header:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;;; Command to toggle the display of the mode-line as a header&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defvar-local&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;header-line-format&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;mode-line-in-header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;interactive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;not &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;header-line-format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;header-line-format&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;mode-line-format&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;mode-line-format&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;mode-line-format&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;header-line-format&lt;/span&gt;
+          &lt;span class=&quot;nv&quot;&gt;header-line-format&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;set-window-buffer&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;current-buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;global-set-key&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;kbd&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;C-s-SPC&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;mode-line-in-header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;img/emacs-mode-line-header.png&quot; alt=&quot;img/emacs-mode-line-header.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Discussed on HN: &lt;a href=&quot;https://news.ycombinator.com/item?id=7107893&quot;&gt;https://news.ycombinator.com/item?id=7107893&lt;/a&gt;&lt;/p&gt;
+
+
+</description>
+        <pubDate>Wed, 22 Jan 2014 00:00:00 +0100</pubDate>
+        <link>http://emacs-doctor.com/emacs-strip-tease.html</link>
+        <guid isPermaLink="true">http://emacs-doctor.com/emacs-strip-tease.html</guid>
+        
+        
+        <category>libre</category>
+        
+      </item>
+    
+      <item>
+        <title>Emacs mode for hiding the mode-line</title>
+        <description>
+&lt;p&gt;Sometimes I don&amp;#8217;t want to display the &lt;code&gt;mode-line&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This minor mode helps me switching it on and off:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defvar-local&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hidden-mode-line-mode&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;define-minor-mode&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hidden-mode-line-mode&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&amp;quot;Minor mode to hide the mode-line in the current buffer.&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;:init-value&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;:global&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;t&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;:variable&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hidden-mode-line-mode&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;:group&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;editing-basics&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;hidden-mode-line-mode&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hide-mode-line&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;mode-line-format&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;mode-line-format&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;mode-line-format&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hide-mode-line&lt;/span&gt;
+          &lt;span class=&quot;nv&quot;&gt;hide-mode-line&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;force-mode-line-update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;;; Apparently force-mode-line-update is not always enough to&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;;; redisplay the mode-line&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;redraw-display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;and &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;called-interactively-p&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;interactive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+             &lt;span class=&quot;nv&quot;&gt;hidden-mode-line-mode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;run-with-idle-timer&lt;/span&gt;
+     &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;message&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;concat&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hidden Mode Line Mode enabled.  &amp;quot;&lt;/span&gt;
+             &lt;span class=&quot;s&quot;&gt;&amp;quot;Use M-x hidden-mode-line-mode to make the mode-line appear.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; If you want to hide the mode-line in every buffer by default&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; (add-hook &amp;#39;after-change-major-mode-hook &amp;#39;hidden-mode-line-mode)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Just use &lt;code&gt;M-x hidden-mode-line-mode RET&lt;/code&gt; and you&amp;#8217;re done.&lt;/p&gt;
+
+
+</description>
+        <pubDate>Fri, 17 Jan 2014 00:00:00 +0100</pubDate>
+        <link>http://emacs-doctor.com/emacs-hide-mode-line.html</link>
+        <guid isPermaLink="true">http://emacs-doctor.com/emacs-hide-mode-line.html</guid>
+        
+        
+        <category>libre</category>
+        
+      </item>
+    
+      <item>
+        <title>How To Exit Emacs?</title>
+        <description>
+&lt;h2&gt;tl;dr&lt;/h2&gt;
+&lt;p&gt;Spending the rest of your life in Emacs is a feature, not a bug.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;img/i3.png&quot; alt=&quot;img/i3.png&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;tl;dr (take 2)&lt;/h2&gt;
+&lt;p&gt;This is the magic key combination to exit Emacs:&lt;/p&gt;
+&lt;pre class=&quot;example&quot;&gt;
+C-x C-c
+&lt;/pre&gt;
+&lt;p&gt;Which reads as&lt;/p&gt;
+&lt;pre class=&quot;example&quot;&gt;
+Control-x Control-c
+&lt;/pre&gt;
+&lt;h2&gt;&amp;#8211;help&lt;/h2&gt;
+&lt;p&gt;I.e., press the &lt;code&gt;Control&lt;/code&gt; key with your left pinky, hold it pressed,
+  then press &lt;code&gt;x&lt;/code&gt;, release &lt;code&gt;x&lt;/code&gt; (while still holding the &lt;code&gt;Control&lt;/code&gt; key),
+  press &lt;code&gt;c&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Ta-da!&lt;/p&gt;
+&lt;p&gt;You are back to normal life.&lt;/p&gt;
+&lt;h2&gt;&amp;#8211;help &amp;#8211;verbose&lt;/h2&gt;
+&lt;p&gt;In Emacs, key bindings are called &lt;code&gt;keybindings&lt;/code&gt;, because we like
+  things to be plain.  Some people in other possible worlds called them
+  &lt;code&gt;shortcuts&lt;/code&gt;, but that&amp;#8217;s a very narrow view of what a keybinding is,
+  since Emacs keybindings have a personnality of their own, and can be a
+  bit long sometimes.&lt;/p&gt;
+&lt;p&gt;The first time you encounter &lt;code&gt;Control-x&lt;/code&gt;, you think: &amp;#8220;Aha&amp;#8230; so the
+  &lt;code&gt;x&lt;/code&gt; stands for eXiting!&amp;#8221;.  Wrong.&lt;/p&gt;
+&lt;p&gt;The &amp;#8220;x&amp;#8221; stands for eXecuting.&lt;/p&gt;
+&lt;p&gt;Let&amp;#8217;s tell a bit more about keybindings.&lt;/p&gt;
+&lt;h2&gt;&amp;#8211;help &amp;#8211;very-verbose&lt;/h2&gt;
+&lt;p&gt;Emacs keybindings are stored in &lt;code&gt;keymaps&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;A &lt;code&gt;keymap&lt;/code&gt; is a variable containing a list of associations between
+  keys and &lt;code&gt;commands&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The list of all keybindings starting with &lt;code&gt;Control-x&lt;/code&gt; is stored in a
+  dedicated variable called &lt;code&gt;ctl-x-map&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You can see this list with &lt;code&gt;C-h v ctl-x-map RET&lt;/code&gt;: this will open a new
+  buffer and display the value of the keymap.&lt;/p&gt;
+&lt;p&gt;You can also display the list of commands starting with the &lt;code&gt;C-x&lt;/code&gt;
+  prefix bit hitting &lt;code&gt;C-x C-h&lt;/code&gt; (yes, the &lt;code&gt;h&lt;/code&gt; stands for help).&lt;/p&gt;
+&lt;p&gt;Do it &lt;i&gt;now&lt;/i&gt;, and enjoy the beautiful view!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;img/emacs-keybindings.png&quot; alt=&quot;img/emacs-keybindings.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;In this buffer, you can follow links by hitting &lt;code&gt;RET&lt;/code&gt; (aka &lt;code&gt;return&lt;/code&gt;):
+  those are links to the descriptions of commands associated with the
+  listed keybindings&amp;#8212;or to &lt;i&gt;sub keymaps&lt;/i&gt;.&lt;/p&gt;
+&lt;p&gt;For example, the buffer will let you learn that &lt;code&gt;C-x C-c&lt;/code&gt; is bound to
+  &lt;code&gt;save-buffers-kill-terminal&lt;/code&gt;.  Yes, this is the name of the command
+  you call to &amp;#8220;exit Emacs&amp;#8221;, as people call it sometimes.&lt;/p&gt;
+&lt;p&gt;But &lt;code&gt;C-x C-k&lt;/code&gt; is bound to &lt;code&gt;kmacro-keymap&lt;/code&gt;, which is not a command, but
+  another map.&lt;/p&gt;
+&lt;p&gt;If you want to know more about this other keymap, hit &lt;code&gt;C-x C-k C-h&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;(And yes, the &amp;#8220;h&amp;#8221; in &lt;code&gt;C-h&lt;/code&gt; stands for Help.)&lt;/p&gt;
+&lt;p&gt;Of course, since keymaps are just variables, you can change them at
+  will.  I recommend not to change the default keybindings: Emacs is not
+  only a text editor, it&amp;#8217;s a shared culture, and sticking to the default
+  keybindings helps the community celebrate the same commands together.&lt;/p&gt;
+&lt;h2&gt;x = ?&lt;/h2&gt;
+&lt;pre class=&quot;example&quot;&gt;
+Happiness is nothing more than good health and a bad memory.
+
+                            -- Albert Schweitzer
+&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;Control-x&lt;/code&gt; keymap is the most important keymap in Emacs: main
+  commands are called from this keymap.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;Control-c&lt;/code&gt; keymap is the second most important one.  Emacs modes
+  use it to associate keybindings with the new commands they define.&lt;/p&gt;
+&lt;p&gt;When reading &lt;code&gt;.emacs.el&lt;/code&gt; file late at night, amont binary dreams and
+  computer fairies, you sometimes encounter a pattern: &lt;code&gt;C-c x&lt;/code&gt;, where
+  &lt;code&gt;x&lt;/code&gt; is a letter or a digit.  This pattern is reserved for the user:
+  this is where you, the user, are required to place your keybindings.
+  No decent Emacs mode will ever use this pattern for its keybindings.&lt;/p&gt;
+&lt;p&gt;Of course &lt;code&gt;C-c C-...&lt;/code&gt; is used by all modes: but this is &lt;code&gt;C-c C-...&lt;/code&gt;,
+  not &lt;code&gt;C-c ...&lt;/code&gt; &amp;#8212; please note the difference.&lt;/p&gt;
+&lt;p&gt;So what does this &lt;code&gt;x&lt;/code&gt; stand for?&lt;/p&gt;
+&lt;p&gt;If you know Emacs, you know a bit of &lt;code&gt;M-x&lt;/code&gt;: hitting this puts the
+  cursor in the &lt;code&gt;minibuffer&lt;/code&gt;, and prompts you for the name of a command.&lt;/p&gt;
+&lt;p&gt;The name of the command associated with &lt;code&gt;M-x&lt;/code&gt; is
+  &lt;code&gt;execute-extended-command&lt;/code&gt;, so my guess is that &lt;code&gt;x&lt;/code&gt; stands for
+  &amp;#8220;execute&amp;#8221;.&lt;/p&gt;
+&lt;p&gt;Which makes sense, right?&lt;/p&gt;
+&lt;p&gt;I also guess the &lt;code&gt;x&lt;/code&gt; in &lt;code&gt;Control-x&lt;/code&gt; stands for &amp;#8220;execute&amp;#8221;, since this
+  is the main map to &lt;i&gt;execute&lt;/i&gt; stuff in Emacs.  At least I want to
+  believe so.&lt;/p&gt;
+&lt;p&gt;What does &lt;code&gt;C-c&lt;/code&gt; stands for in &lt;code&gt;C-x C-c&lt;/code&gt;?&lt;/p&gt;
+&lt;p&gt;If you use &lt;code&gt;C-c&lt;/code&gt; in shells, you know the answer.  And of course
+  &lt;a href=&quot;http://en.wikipedia.org/wiki/Control-C&quot;&gt;Wikipedia&lt;/a&gt; comes to the rescue:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;As many keyboards and computer terminals once directly generated ASCII
+    code, the choice of control-C overlapped with the ASCII end-of-text
+    character. This character has a numerical value of three, as &amp;#8220;C&amp;#8221; is
+    the third letter of the alphabet. It was chosen to cause an interrupt
+    as it is otherwise unlikely to be part of a program&amp;#8217;s interactive
+    interface. Many other control codes, such as control-D for the
+    end-of-transmission character, do not generate signals and are
+    occasionally used to control a program.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;See?  Now you know why &lt;code&gt;C-x C-c&lt;/code&gt; exits Emacs.&lt;/p&gt;
+&lt;p&gt;But remember: you don&amp;#8217;t really want to exit Emacs (see &lt;a href=&quot;*tl%3Bdr&quot;&gt;tl;dr&lt;/a&gt;).&lt;/p&gt;
+
+
+</description>
+        <pubDate>Mon, 23 Dec 2013 00:00:00 +0100</pubDate>
+        <link>http://emacs-doctor.com/how-to-exit-emacs.html</link>
+        <guid isPermaLink="true">http://emacs-doctor.com/how-to-exit-emacs.html</guid>
+        
+        
+        <category>libre</category>
+        
+      </item>
+    
+      <item>
+        <title>Emacs Org and Overtone quick intro</title>
+        <description>
+&lt;p&gt;This file will take you through installing &lt;a href=&quot;http://www.gnu.org/software/emacs/&quot;&gt;GNU Emacs&lt;/a&gt; and &lt;a href=&quot;http://overtone.github.io/&quot;&gt;Overtone&lt;/a&gt; so
+  that you can play a few notes.&lt;/p&gt;
+&lt;p&gt;You want to read it within GNU Emacs and &lt;a href=&quot;http://orgmode.org/&quot;&gt;Org-mode&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Installation&lt;/h2&gt;
+&lt;h3&gt;Install GNU Emacs&lt;/h3&gt;
+&lt;p&gt;If you are using Debian, &lt;code&gt;~$ apt-get install emacs&lt;/code&gt; will do.&lt;/p&gt;
+&lt;p&gt;To install Emacs from sources, you can download it from &lt;a href=&quot;ftp://ftp.gnu.org/pub/gnu/emacs/&quot;&gt;here&lt;/a&gt; or clone
+  the git mirror:&lt;/p&gt;
+&lt;pre class=&quot;example&quot;&gt;
+~$ git clone git://git.savannah.gnu.org/emacs.git
+&lt;/pre&gt;
+&lt;h3&gt;Configure Emacs&lt;/h3&gt;
+&lt;p&gt;The beginning of your Emacs configuration should contain this to add
+  &lt;code&gt;marmelade&lt;/code&gt; to the list of known repositories for Emacs libraries:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;package&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add-to-list&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;package-archives&lt;/span&gt;
+             &lt;span class=&quot;o&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;marmalade&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;http://marmalade-repo.org/packages/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;package-initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now hit &lt;code&gt;C-c C-v C-t&lt;/code&gt; to &lt;i&gt;tangle&lt;/i&gt; all Emacs Lisp code blocks from this
+  file into a new &lt;code&gt;emacs.el&lt;/code&gt; file in the same directory.&lt;/p&gt;
+&lt;p&gt;When done, go check this new &lt;code&gt;emacs.el&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You can use this &lt;code&gt;emacs.el&lt;/code&gt; to load the minimal configuration needed
+  for this tutorial.&lt;/p&gt;
+&lt;h3&gt;Install Cider (was &amp;#8220;nrepl.el&amp;#8221;)&lt;/h3&gt;
+&lt;p&gt;Now run Emacs like this:&lt;/p&gt;
+&lt;pre class=&quot;example&quot;&gt;
+~$ emacs -l /path/to/overtone-intro/emacs.el
+&lt;/pre&gt;
+&lt;p&gt;In Emacs, get the list of packages:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;M-x list-packages RET&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;and install &lt;code&gt;cider&lt;/code&gt; from that list.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Note&lt;/b&gt;: This will also install &lt;code&gt;clojure-mode-2.0.0&lt;/code&gt;, &lt;code&gt;cl-lib-0.3&lt;/code&gt;,
+  &lt;code&gt;dash-2.1.0&lt;/code&gt; and &lt;code&gt;pkg-info-0.3&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Install Org-mode&lt;/h3&gt;
+&lt;p&gt;Install the latest version of &lt;a href=&quot;http://orgmode.org/&quot;&gt;Org-mode&lt;/a&gt;:&lt;/p&gt;
+&lt;pre class=&quot;example&quot;&gt;
+~$ git clone git://orgmode.org/org-mode.git
+~$ cd org-mode
+~$ make autoloads
+&lt;/pre&gt;
+&lt;p&gt;This will compile Emacs Lisp files in the &lt;code&gt;org-mode/lisp/&lt;/code&gt; directory
+  and create &lt;code&gt;org-loaddefs.el&lt;/code&gt;, containing the necessary autoloads.&lt;/p&gt;
+&lt;h3&gt;Configure Org-mode&lt;/h3&gt;
+&lt;p&gt;This simple Org configuration should do:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add-to-list&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;load-path&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;~/install/git/org-mode/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;org&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; We only need Emacs Lisp and Clojure in this tutorial:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;org-babel-do-load-languages&lt;/span&gt;
+ &lt;span class=&quot;ss&quot;&gt;&amp;#39;org-babel-load-languages&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;emacs-lisp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;clojure&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Use cider as the clojure execution backend&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;org-babel-clojure-backend&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;cider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Let&amp;#39;s have pretty source code blocks&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;org-edit-src-content-indentation&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+      &lt;span class=&quot;nv&quot;&gt;org-src-tab-acts-natively&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;t&lt;/span&gt;
+      &lt;span class=&quot;nv&quot;&gt;org-src-fontify-natively&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;t&lt;/span&gt;
+      &lt;span class=&quot;nv&quot;&gt;org-confirm-babel-evaluate&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Configure cider&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;;; Cider configuration&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;cider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nrepl-hide-special-buffers&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;t&lt;/span&gt;
+      &lt;span class=&quot;nv&quot;&gt;cider-repl-pop-to-buffer-on-connect&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;
+      &lt;span class=&quot;nv&quot;&gt;cider-popup-stacktraces&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;
+      &lt;span class=&quot;nv&quot;&gt;cider-repl-popup-stacktraces&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Install leiningen&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://leiningen.org&quot;&gt;leiningen&lt;/a&gt; is the &lt;i&gt;de facto&lt;/i&gt; standard for running Clojure projects.&lt;/p&gt;
+&lt;p&gt;Check the very simple &lt;a href=&quot;http://leiningen.org/#install&quot;&gt;installation instructions&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Install SuperCollider&lt;/h3&gt;
+&lt;p&gt;Supercollider is the audio synthetizer.&lt;/p&gt;
+&lt;p&gt;You need it to play sounds with Overtone.&lt;/p&gt;
+&lt;p&gt;On Debian, you can install SuperCollider the usual way: &lt;code&gt;~$ apt-get
+  install supercollider&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For other platforms, see the supercollider &lt;a href=&quot;http://supercollider.sourceforge.net/downloads/&quot;&gt;downloads page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In this tutorial, we will play piano, so we need the &lt;a href=&quot;http://sourceforge.net/projects/sc3-plugins/&quot;&gt;sc3-plugins&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to compile supercollider and sc3-plugins from sources,
+  check &lt;a href=&quot;https://github.com/overtone/overtone/wiki/Compiling-SuperCollider&quot;&gt;this page&lt;/a&gt; from the Overtone wiki.&lt;/p&gt;
+&lt;h3&gt;Overtone as a dependency in project.clj&lt;/h3&gt;
+&lt;p&gt;Previously, we hit &lt;code&gt;C-c C-v C-t&lt;/code&gt; to tangle Emacs Lisp code blocks into
+  &lt;code&gt;emacs.el&lt;/code&gt;.  Since &lt;code&gt;C-c C-v C-t&lt;/code&gt; tangles &lt;i&gt;all blocks&lt;/i&gt; in the buffer,
+  we also created &lt;code&gt;project.clj&lt;/code&gt;, which is needed in order to run &lt;code&gt;lein&lt;/code&gt;
+  and to let &lt;code&gt;cider&lt;/code&gt; interact with &lt;code&gt;lein&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;defproject &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;overtone-intro&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;1.0&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;ss&quot;&gt;:dependencies&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;org.clojure/clojure&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;1.5.1&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+                 &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;overtone&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;0.9.1&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;From the &lt;code&gt;overtone-intro&lt;/code&gt; directory, run &lt;code&gt;~$ lein deps&lt;/code&gt; to load all
+  dependencies.&lt;/p&gt;
+&lt;h3&gt;Additional keybindings&lt;/h3&gt;
+&lt;p&gt;During the live demo, I used these keybindings:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;;; Useful keybindings when using Clojure from Org&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;org-defkey&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;org-mode-map&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;\C-x\C-e&amp;quot;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;cider-eval-last-sexp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;org-defkey&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;org-mode-map&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;\C-c\C-d&amp;quot;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;cider-doc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;They allow to execute a Clojure source code block by hitting &lt;code&gt;C-x C-e&lt;/code&gt;
+  after a Clojure sexp, and to get a Clojure docstring by hitting &lt;code&gt;C-c
+  C-d&lt;/code&gt; after a symbol.&lt;/p&gt;
+&lt;p&gt;If you don&amp;#8217;t use these keybindings, executing source code blocks is
+  done by hitting &lt;code&gt;C-c C-c&lt;/code&gt; on the &lt;code&gt;#+BEGIN_SRC&lt;/code&gt; line.&lt;/p&gt;
+&lt;h3&gt;Summary&lt;/h3&gt;
+&lt;p&gt;This is an overview of my configuration:&lt;/p&gt;
+&lt;table&gt;
+  &lt;tr&gt;&lt;th&gt;Prog/Package&lt;/th&gt;&lt;th&gt;Version&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;GNU Emacs&lt;/td&gt;&lt;td&gt;24.3.50.1&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;CIDER&lt;/td&gt;&lt;td&gt;0.5&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;auto-complete&lt;/td&gt;&lt;td&gt;1.4.0&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;dash.el&lt;/td&gt;&lt;td&gt;2.3.0&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;pkg-info&lt;/td&gt;&lt;td&gt;0.4&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Org-mode&lt;/td&gt;&lt;td&gt;8.2.4&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Clojure&lt;/td&gt;&lt;td&gt;1.5.1&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Overtone&lt;/td&gt;&lt;td&gt;0.9.1&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;The tutorial should work with older versions of Emacs, but you need to
+  install Org-mode from its master branch to use &lt;a href=&quot;https://github.com/clojure-emacs/cider&quot;&gt;cider&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Also, remember to hit &lt;code&gt;TAB&lt;/code&gt; for (un)folding a section or a source code
+  block.&lt;/p&gt;
+&lt;h2&gt;Connect to the repl&lt;/h2&gt;
+&lt;p&gt;To connect the current Org buffer to a repl, run&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;M-x cider-jack-in RET&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#8230; and wait until you get a confirmation message in the minibuffer.&lt;/p&gt;
+&lt;p&gt;Do this now, you&amp;#8217;ll need it soon.&lt;/p&gt;
+&lt;h2&gt;A quick intro to Org Babel&lt;/h2&gt;
+&lt;p&gt;To get a gist of what Org Babel is, hit &lt;code&gt;C-c C-c&lt;/code&gt; on the &lt;code&gt;#+BEGIN_SRC&lt;/code&gt;
+  line below:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Yeah!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Emacs minibuffer displays the output: yeah!&lt;/p&gt;
+&lt;h3&gt;Babel: vars&lt;/h3&gt;
+&lt;p&gt;You can bind variables in Babel source code blocks&amp;#8212;hit &lt;code&gt;C-c C-c&lt;/code&gt; on
+  the code blocks below:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;number-to-string&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;-&amp;gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;inc &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+ &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Babel: lists&lt;/h3&gt;
+&lt;p&gt;Okay, you get it: hit &lt;code&gt;C-c C-c&lt;/code&gt; on code blocks to execute them.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;simple&lt;/li&gt;
+  &lt;li&gt;list&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;clojure.string/upper-case&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Babel: tables&lt;/h3&gt;
+&lt;table&gt;
+  &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;a&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;b&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;c&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;d&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;data&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;A quick intro to Overtone&lt;/h2&gt;
+&lt;h3&gt;Overtone: loading and booting&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;overtone.core&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;boot-external-server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;b&gt;Note&lt;/b&gt;: I&amp;#8217;m using GNU/Linux, and I didn&amp;#8217;t take the time to configure
+  jackd properly.  You may want to use this instead:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;overtone.live&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;boot-internal-server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Overtone: playing/fooling around&lt;/h3&gt;
+&lt;p&gt;&lt;b&gt;Note&lt;/b&gt;: the first time you use the &lt;code&gt;overtone.inst.piano&lt;/code&gt; namespace, it
+  will load quite a lot of files from freesound.org &amp;#8211; you may want to
+  do this within a bare &lt;code&gt;lein repl&lt;/code&gt; in order to make sure the process is
+  over.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;overtone.inst.piano&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Play a simple midi note:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;piano&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;doseq &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;note&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;chord&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:C3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;piano&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;note&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;doseq &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;note&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;chord&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:E3&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:minor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;piano&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;note&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;defn &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;play-chord&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;chord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;doseq &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;note&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;chord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;piano&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;note&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;play-chord&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;chord&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:A3&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:minor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;time &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;time &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;play-chord&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;chord&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:C3&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:major&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+ &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;play-chord&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;chord&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:C3&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:major7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+ &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2000&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;play-chord&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;chord&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:E3&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:minor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+ &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3000&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;play-chord&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;chord&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:A2&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:minor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;defsynth&lt;/code&gt; and &lt;code&gt;definst&lt;/code&gt; are the two entry points for creating sounds
+  and instruments &amp;#8211; go check their docstrings, they explain a lot.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defsynth&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;freq&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;440&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sin-osc&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;freq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;kill&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;definst&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;beep&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;note&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;sound-src&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sin-osc&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;midicps&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;note&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+	 &lt;span class=&quot;nv&quot;&gt;env&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;env-gen&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;perc&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.01&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:action&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;FREE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;; sam uses :free&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;* &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;sound-src&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;beep&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defsynth&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pad1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;freq&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;110&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;amp&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;gate&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;out-bus&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;out-bus&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;* &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;saw&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;freq&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;* &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;freq&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)])&lt;/span&gt;
+	   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;env-gen&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;adsr&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.01&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.7&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:gate&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;gate&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:action&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;FREE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;pad1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Let&amp;#39;s try something a bit crazy&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;for &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;range &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;* &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;beep&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Some more copy-and-paste from overtone&amp;#8217;s wiki:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;piano&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;63&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;67&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;piano&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;note&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:C3&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:E4&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:G4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;piano&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;note&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:C#5&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:E4&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:G4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;piano&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;note&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:Cb2&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:E4&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:G4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;definst&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;steel-drum&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;note&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;amp&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;freq&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;midicps&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;note&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;* &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;amp&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;env-gen&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;perc&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.01&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:action&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;FREE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sin-osc&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;/ &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;freq&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+	   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rlpf&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;saw&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;freq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;* &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.1&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;freq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;steel-drum&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;note&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:E3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;steel-drum&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;note&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:E3&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:D#4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Overtone: loading .wav samples&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;;; Hint: adapt this to your own .wav files&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;noa&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sample&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;/path/to/a/file.wav&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;noa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Thread/sleep&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;piano&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;note&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:Cb3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;piano&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;68&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Overtone: using freesound.org&lt;/h3&gt;
+&lt;p&gt;You can download samples directly from freesound.org via Overtone:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;snare&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sample&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;freesound-path&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;26903&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;snare&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;clic&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sample&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;freesound-path&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;406&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;clic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;steam&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sample&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;freesound-path&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30628&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;steam&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;clap&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sample&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;freesound-path&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;48310&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;clap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;clap2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sample&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;freesound-path&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;132676&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;clap2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;boom&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sample&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;freesound-path&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80401&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;boom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Why I love this?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;I love sounds.&lt;/li&gt;
+  &lt;li&gt;I love Org+Cider &lt;i&gt;reactivity&lt;/i&gt;: evaluating Clojure sexps is fast.&lt;/li&gt;
+  &lt;li&gt;I love building (mostly random) sounds so fast, it feels like
+    &lt;i&gt;sculpting&lt;/i&gt; music.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Issues&lt;/h2&gt;
+&lt;p&gt;If you run into issues while following this tutorial, please report
+  them on &lt;a href=&quot;https://github.com/bzg/org-overtone-intro&quot;&gt;github&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Exploring further&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;https://github.com/overtone/overtone&lt;/li&gt;
+  &lt;li&gt;https://github.com/overtone/overtone/blob/master/src/overtone/samples/freesound.clj&lt;/li&gt;
+  &lt;li&gt;http://skillsmatter.com/podcast/home/functional-composition&lt;/li&gt;
+  &lt;li&gt;http://blog.josephwilk.net/clojure/creating-instruments-with-overtone.html&lt;/li&gt;
+  &lt;li&gt;http://www.tonalsoft.com/pub/news/pitch-bend.aspx&lt;/li&gt;
+  &lt;li&gt;http://www.freesound.org/&lt;/li&gt;
+&lt;/ul&gt;
+
+
+</description>
+        <pubDate>Sat, 21 Dec 2013 00:00:00 +0100</pubDate>
+        <link>http://emacs-doctor.com/emacs-org-babel-overtone-intro.html</link>
+        <guid isPermaLink="true">http://emacs-doctor.com/emacs-org-babel-overtone-intro.html</guid>
+        
+        
+        <category>libre</category>
+        
+      </item>
+    
+      <item>
+        <title>Blogging from GNU Emacs</title>
+        <description>
+&lt;p&gt;Yes, blogging from Emacs is possible.&lt;/p&gt;
+&lt;p&gt;If you are familiar with &lt;a href=&quot;http://orgmode.org&quot;&gt;org-mode&lt;/a&gt; and if you already know how to
+  publish a HTML project, this is straightforward: just download
+  &lt;a href=&quot;http://orgmode.org/cgit.cgi/org-mode.git/plain/contrib/lisp/ox-rss.el&quot;&gt;ox-rss.el&lt;/a&gt; and follow the instructions in the comment section.&lt;/p&gt;
+&lt;p&gt;If you are not so familiar with Org-mode, or with publishing HTML
+  project (or just enjoy reviewing the basics from time to time), here
+  is a small tutorial describing the steps to let you enjoy an Emacs
+  blog.&lt;/p&gt;
+&lt;h2&gt;Org-mode 15 seconds introduction&lt;/h2&gt;
+&lt;p&gt;Fire up GNU Emacs.&lt;/p&gt;
+&lt;p&gt;Then hit &lt;code&gt;C-x C-f ~/my-blog.org RET&lt;/code&gt; to create a new Org file named
+  &lt;code&gt;my-blog.org&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In this file, hit &lt;code&gt;M-RET&lt;/code&gt; to insert a new heading.  Type something
+  sensible as the title of your next blog entry:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;* My first blog post with Emacs and Org!
+
+This will be the content of my blog entry.
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You&amp;#8217;re done.&lt;/p&gt;
+&lt;h2&gt;Publishing &lt;code&gt;my-blog.org&lt;/code&gt; as a HTML page&lt;/h2&gt;
+&lt;p&gt;You need to publish your Org page somewhere in your computer.&lt;/p&gt;
+&lt;p&gt;So let&amp;#8217;s create a &lt;code&gt;public_html/&lt;/code&gt; directory in your home directory:&lt;/p&gt;
+&lt;pre class=&quot;example&quot;&gt;
+~$ mkdir public_html
+&lt;/pre&gt;
+&lt;p&gt;Now edit your &lt;code&gt;.emacs.el&lt;/code&gt; file and add this Emacs lisp snippet:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;org-publish-project-alist&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;blog&amp;quot;&lt;/span&gt;
+         &lt;span class=&quot;nv&quot;&gt;:base-directory&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;~/&amp;quot;&lt;/span&gt;
+         &lt;span class=&quot;nv&quot;&gt;:html-extension&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;html&amp;quot;&lt;/span&gt;
+         &lt;span class=&quot;nv&quot;&gt;:base-extension&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;org&amp;quot;&lt;/span&gt;
+         &lt;span class=&quot;nv&quot;&gt;:publishing-directory&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;~/public_html/&amp;quot;&lt;/span&gt;
+         &lt;span class=&quot;nv&quot;&gt;:publishing-function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;org-html-publish-to-html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;nv&quot;&gt;:html-preamble&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;
+         &lt;span class=&quot;nv&quot;&gt;:html-postamble&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The code above defines a HTML &lt;i&gt;publishing&lt;/i&gt; project with no preamble
+  and no postamble.  (To learn more on publishing projects, please read
+  the &lt;a href=&quot;http://orgmode.org/manual/Publishing.html&quot;&gt;Org manual&lt;/a&gt;.)&lt;/p&gt;
+&lt;p&gt;Evaluate this code by hitting &lt;code&gt;C-x e&lt;/code&gt; at the end of the last
+  parenthesis.&lt;/p&gt;
+&lt;p&gt;Now hit &lt;code&gt;M-x org-publish RET blog RET&lt;/code&gt; anywhere in Emacs to publish
+  the project.&lt;/p&gt;
+&lt;p&gt;Your &lt;code&gt;public_html/&lt;/code&gt; directory now contains a new file, &lt;code&gt;my-blog.html&lt;/code&gt;,
+  with a HTML export of your &lt;code&gt;my-blog.org&lt;/code&gt; file.&lt;/p&gt;
+&lt;h2&gt;Publishing &lt;code&gt;my-blog.org&lt;/code&gt; as a RSS feed&lt;/h2&gt;
+&lt;p&gt;You want to publish this page as a RSS feed so that readers can
+  subscribe to it.  (Yes, my own definition of a blog is &lt;i&gt;that&lt;/i&gt; simple:
+  some HTML content and a feed.)&lt;/p&gt;
+&lt;p&gt;You are three steps away from having a blog&amp;#8212;you only need to:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;load &lt;code&gt;ox-rss.el&lt;/code&gt; to enable RSS publishing;&lt;/li&gt;
+  &lt;li&gt;create a RSS publishing project;&lt;/li&gt;
+  &lt;li&gt;add some RSS-related info in your HTML publishing project.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Enable RSS publishing&lt;/h3&gt;
+&lt;p&gt;Find ox-rss.el in Org&amp;#8217;s &lt;code&gt;contrib/lisp/&lt;/code&gt; directory and make sure this
+  directory is in your Emacs load-path.&lt;/p&gt;
+&lt;p&gt;Since Org lives in the &lt;code&gt;~/install/git/&lt;/code&gt; contrib on my computer, this
+  is my configuration:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add-to-list&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;load-path&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;~/install/git/org-mode/contrib/lisp/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;ox-rss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;(We use &lt;code&gt;add-to-list&lt;/code&gt; to append a new project to
+  &lt;code&gt;org-publish-project-alist&lt;/code&gt;, but you can simply use &lt;code&gt;setq&lt;/code&gt; with both
+  projects on &lt;code&gt;org-publish-project-alist&lt;/code&gt;.)&lt;/p&gt;
+&lt;h3&gt;Create a RSS publishing project&lt;/h3&gt;
+&lt;p&gt;Add this new RSS publishing project:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add-to-list&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;org-publish-project-alist&lt;/span&gt;
+             &lt;span class=&quot;o&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;blog-rss&amp;quot;&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;:base-directory&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;~/&amp;quot;&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;:base-extension&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;org&amp;quot;&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;:publishing-directory&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;~/public_html/&amp;quot;&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;:publishing-function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;org-rss-publish-to-rss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;:html-link-home&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;http://mydomain.org/&amp;quot;&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;:html-link-use-abs-url&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It is pretty similar to our HTML publishing project except that:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;the publishing function we use is &lt;code&gt;org-rss-publish-to-rss&lt;/code&gt; instead
+    of &lt;code&gt;org-html-publish-to-html&lt;/code&gt;;&lt;/li&gt;
+  &lt;li&gt;we set the &lt;code&gt;:html-link-home&lt;/code&gt; publishing option so that relative
+    links in our RSS feed are prefixed with the &amp;#8220;http://mydomain.org/&amp;#8221;
+    domain name (assuming it will be the final destination of our blog);&lt;/li&gt;
+  &lt;li&gt;we set the &lt;code&gt;:html-link-use-abs-url&lt;/code&gt; publishing option to &lt;code&gt;t&lt;/code&gt; (true)
+    so that all links in our RSS feed are absolute, since it does not
+    make sense to have relative links in RSS feeds.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Evaluate the code above with &lt;code&gt;C-x e&lt;/code&gt; then hit &lt;code&gt;M-x org-publish RET
+  blog-rss RET&lt;/code&gt; to publish the RSS feed: &lt;code&gt;public_html/&lt;/code&gt; now contains a
+  &lt;code&gt;my-blog.xml&lt;/code&gt; file along with the &lt;code&gt;my-blog.html&lt;/code&gt; file.&lt;/p&gt;
+&lt;h3&gt;Add some RSS-related info in your HTML publishing project&lt;/h3&gt;
+&lt;p&gt;Our last step is to link our RSS feed (the &lt;code&gt;my-blog.xml&lt;/code&gt; file) with
+  the HTML file.  Let&amp;#8217;s rewrite our HTML project like this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;org-publish-project-alist&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;blog&amp;quot;&lt;/span&gt;
+         &lt;span class=&quot;nv&quot;&gt;:base-directory&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;~/&amp;quot;&lt;/span&gt;
+         &lt;span class=&quot;nv&quot;&gt;:html-extension&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;html&amp;quot;&lt;/span&gt;
+         &lt;span class=&quot;nv&quot;&gt;:base-extension&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;org&amp;quot;&lt;/span&gt;
+         &lt;span class=&quot;nv&quot;&gt;:publishing-directory&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;~/public_html/&amp;quot;&lt;/span&gt;
+         &lt;span class=&quot;nv&quot;&gt;:publishing-function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;org-html-publish-to-html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;nv&quot;&gt;:html-preamble&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;
+         &lt;span class=&quot;nv&quot;&gt;:html-postamble&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt;
+         &lt;span class=&quot;nv&quot;&gt;:html-head-extra&lt;/span&gt;
+         &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;lt;link rel=\&amp;quot;alternate\&amp;quot; type=\&amp;quot;application/rss+xml\&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;                href=\&amp;quot;http://mydomain.org/my-blog.xml\&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;                title=\&amp;quot;RSS feed for mydomain.org\&amp;quot;&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We just appended the &lt;code&gt;:html-head-extra&lt;/code&gt; option, which tells what
+  information we want to add in our HTML &lt;code&gt;&amp;lt;head&amp;gt;...&amp;lt;/head&amp;gt;&lt;/code&gt; section.&lt;/p&gt;
+&lt;h2&gt;Last but not least: a real setup&lt;/h2&gt;
+&lt;p&gt;Okay, you now have a single file, with a RSS feed that points to
+  headlines in this file.  But what if you want to allow readers to
+  &lt;i&gt;comment&lt;/i&gt; your blog posts?&lt;/p&gt;
+&lt;p&gt;In this case, you need to have &lt;i&gt;one page per blog entry&lt;/i&gt; and to use
+  something like &lt;a href=&quot;http://disqus.com&quot;&gt;disqus.com&lt;/a&gt; to enable comments on this page.&lt;/p&gt;
+&lt;p&gt;This is perfectly &lt;i&gt;fine&lt;/i&gt;!&lt;/p&gt;
+&lt;p&gt;Just write your blog posts in dedicated .org files, then use the
+  &lt;code&gt;my-blog.org&lt;/code&gt; file as a collection of &lt;i&gt;summaries&lt;/i&gt; of your blog posts.
+  At the end of each summary, put a link to the Org page where people
+  can comment.&lt;/p&gt;
+&lt;p&gt;Then update your RSS publishing project like this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add-to-list&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;org-publish-project-alist&lt;/span&gt;
+             &lt;span class=&quot;o&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;blog-rss&amp;quot;&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;:base-directory&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;~/&amp;quot;&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;:base-extension&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;org&amp;quot;&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;:publishing-directory&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;~/public_html/&amp;quot;&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;:publishing-function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;org-rss-publish-to-rss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;:html-link-home&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;http://mydomain.org/&amp;quot;&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;:html-link-use-abs-url&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;t&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;:exclude&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;.*&amp;quot;&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;:include&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;my-blog.org&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Note the options &lt;code&gt;:exclude&lt;/code&gt; and &lt;code&gt;:include&lt;/code&gt;&amp;#8212;they say: &amp;#8220;Don&amp;#8217;t publish
+  .xml files for all .org files in the base directory, only publish a
+  .xml file for &lt;code&gt;my-blog.org&lt;/code&gt;.&amp;#8221;&lt;/p&gt;
+&lt;p&gt;This setup may sound weird first, but I find it useful on the long
+  term: quick thoughts get directly in the main &lt;code&gt;my-blog.org&lt;/code&gt; file, and
+  longer blogs have their dedicated pages, with comments allowed.&lt;/p&gt;
+&lt;h2&gt;Going beyond&lt;/h2&gt;
+&lt;p&gt;Of course: you can do a lot more than that&amp;#8212;here is a quick list:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;embed pictures;&lt;/li&gt;
+  &lt;li&gt;embed arbitrary HTML code;&lt;/li&gt;
+  &lt;li&gt;embed code snippets (zero headache to get syntax highlighting);&lt;/li&gt;
+  &lt;li&gt;tweak your RSS publishing project to skip TODO headlines&lt;/li&gt;
+  &lt;li&gt;use timestamps for drafts that need to be published later;&lt;/li&gt;
+  &lt;li&gt;etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you are not afraid of raw code with too few comments, you can dive
+  into my &lt;a href=&quot;http://bzg.fr/emacs.html&quot;&gt;.emacs.el&lt;/a&gt; and grab hints from my configuration.&lt;/p&gt;
+&lt;h2&gt;Why this is cool?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Writing in Emacs is just pure delight.&lt;/li&gt;
+  &lt;li&gt;Blog posts are now part of your Org agenda.&lt;/li&gt;
+  &lt;li&gt;If you already have a habit of taking your notes in Org, then you&amp;#8217;ll
+    more easily take a habit of publishing blog posts from these notes.&lt;/li&gt;
+  &lt;li&gt;Since Org files are plain text, storing a blog as a git repository
+    feels natural: people can contribute your blog with&amp;#8230; patches.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;ox-rss.el&lt;/code&gt; is not very well known so far, I hope this blog post will
+  encourage people to use it!  Let me know if something is not clear.&lt;/p&gt;
+&lt;h2&gt;Dependencies&lt;/h2&gt;
+&lt;p&gt;You need to use Emacs version 24.2.1 (or later) and Org 8.0
+  (or later).&lt;/p&gt;
+&lt;h2&gt;Thanks&lt;/h2&gt;
+&lt;p&gt;Thanks to Sacha Chua&amp;#8217;s post here about &lt;a href=&quot;http://sachachua.com/blog/2013/09/when-i-blog-with-emacs-and-when-i-blog-with-something-else/&quot;&gt;blogging with Emacs&lt;/a&gt;, as this
+  triggered me to write this post!  Her post is worth exploring for the
+  links it contains to other Emacs-based solutions I didn&amp;#8217;t mentioned
+  here&amp;#8230; but I&amp;#8217;m sure you&amp;#8217;ll discuss them in the comments.&lt;/p&gt;
+
+
+</description>
+        <pubDate>Wed, 25 Sep 2013 00:00:00 +0200</pubDate>
+        <link>http://emacs-doctor.com/blogging-from-emacs.html</link>
+        <guid isPermaLink="true">http://emacs-doctor.com/blogging-from-emacs.html</guid>
+        
+        
+        <category>libre</category>
+        
+      </item>
+    
+      <item>
+        <title>Learn Emacs Lisp in 15 minutes</title>
+        <description>
+&lt;p&gt;I was surprised not to find an introduction to Emacs Lisp on
+  &lt;a href=&quot;http://learnxinyminutes.com&quot;&gt;http://learnxinyminutes.com&lt;/a&gt; so I created one.  This page is now on
+  http://learnxinyminutes.com/docs/elisp/ too.&lt;/p&gt;
+&lt;p&gt;Comments and feedback are welcome !&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;;; This gives an introduction to Emacs Lisp in 15 minutes (v0.2d)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Author: Bastien / @bzg2 / http://bzg.fr&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; First make sure you read this text by Peter Norvig:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; http://norvig.com/21-days.html&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Then install GNU Emacs 24.3:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Debian: apt-get install emacs (or see your distro instructions)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; MacOSX: http://emacsformacosx.com/emacs-builds/Emacs-24.3-universal-10.6.8.dmg&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Windows: http://ftp.gnu.org/gnu/windows/emacs/emacs-24.3-bin-i386.zip&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; More general information can be found at:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; http://www.gnu.org/software/emacs/#Obtaining&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Important warning:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Going through this tutorial won&amp;#39;t damage your computer unless&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; you get so angry that you throw it on the floor.  In that case,&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; I hereby decline any responsability.  Have fun!&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Fire up Emacs.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Hit the `q&amp;#39; key to dismiss the welcome message.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Now look at the gray line at the bottom of the window:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; &amp;quot;*scratch*&amp;quot; is the name of the editing space you are now in.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; This editing space is called a &amp;quot;buffer&amp;quot;.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; The scratch buffer is the default buffer when opening Emacs.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; You are never editing files: you are editing buffers that you&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; can save to a file.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; &amp;quot;Lisp interaction&amp;quot; refers to a set of commands available here.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Emacs has a built-in set of commands available in every buffer,&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; and several subsets of commands available when you activate a&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; specific mode.  Here we use the `lisp-interaction-mode&amp;#39;, which&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; comes with commands to evaluate and navigate within Elisp code.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Semi-colons start comments anywhere on a line.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Elisp programs are made of symbolic expressions (&amp;quot;sexps&amp;quot;):&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+ &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; This symbolic expression reads as &amp;quot;Add 2 to 2&amp;quot;.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Sexps are enclosed into parentheses, possibly nested:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+ &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+ &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; A symbolic expression contains atoms or other symbolic&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; expressions.  In the above examples, 1 and 2 are atoms,&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; (+ 2 (+ 1 1)) and (+ 1 1) are symbolic expressions.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; From `lisp-interaction-mode&amp;#39; you can evaluate sexps.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Put the cursor right after the closing parenthesis then&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; hold down the control and hit the j keys (&amp;quot;C-j&amp;quot; for short).&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+ &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+ &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;           ^ cursor here&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-j&amp;#39; =&amp;gt; 6&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; `C-j&amp;#39; inserts the result of the evaluation in the buffer.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; displays the same result in Emacs bottom line,&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; called the &amp;quot;minibuffer&amp;quot;.  We will generally use `C-xC-e&amp;#39;,&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; as we don&amp;#39;t want to clutter the buffer with useless text.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; `setq&amp;#39; stores a value into a variable:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;my-name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Bastien&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Bastien&amp;quot; (displayed in the mini-buffer)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; `insert&amp;#39; will insert &amp;quot;Hello!&amp;quot; where the cursor is:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Hello!&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; We used `insert&amp;#39; with only one argument &amp;quot;Hello!&amp;quot;, but&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; we can pass more arguments -- here we use two:&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello&amp;quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot; world!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Hello world!&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; You can use variables instead of strings:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello, I am &amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;my-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Hello, I am Bastien&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; You can combine sexps into functions:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello, I am &amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;my-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; hello&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; You can evaluate functions:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; Hello, I am Bastien&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; The empty parentheses in the function&amp;#39;s definition means that&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; it does not accept arguments.  But always using `my-name&amp;#39; is&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; boring, let&amp;#39;s tell the function to accept one argument (here&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; the argument is called &amp;quot;name&amp;quot;): &lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello &amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; hello&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Now let&amp;#39;s call the function with the string &amp;quot;you&amp;quot; as the value&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; for its unique argument:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;you&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Hello you&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Yeah!&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Take a breath.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Now switch to a new buffer named &amp;quot;*test*&amp;quot; in another window:&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; =&amp;gt; [screen has two windows and cursor is in the *test* buffer]&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Mouse over the top window and left-click to go back.  Or you can&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; use `C-xo&amp;#39; (i.e. hold down control-x and hit o) to go to the other&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; window interactively.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; You can combine several sexps with `progn&amp;#39;:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;progn&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;you&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; =&amp;gt; [The screen has two windows and cursor is in the *test* buffer]&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Now if you don&amp;#39;t mind, I&amp;#39;ll stop asking you to hit `C-xC-e&amp;#39;: do it&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; for every sexp that follows.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Always go back to the *scratch* buffer with the mouse or `C-xo&amp;#39;.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; It&amp;#39;s often useful to erase the buffer:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;progn&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;erase-buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;there&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Or to go back to the other window:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;progn&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;erase-buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;you&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;other-window&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; You can bind a value to a local variable with `let&amp;#39;:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;local-name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;you&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;erase-buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;local-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;other-window&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; No need to use `progn&amp;#39; in that case, since `let&amp;#39; also combines&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; several sexps.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Let&amp;#39;s format a string:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello %s!\n&amp;quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;visitor&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; %s is a place-holder for a string, replaced by &amp;quot;visitor&amp;quot;.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; \n is the newline character.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Let&amp;#39;s refine our function by using format:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello %s!\n&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;you&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Let&amp;#39;s create another function which uses `let&amp;#39;:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;greeting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;your-name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Bastien&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello %s!\n\nI am %s.&amp;quot;&lt;/span&gt;
+                    &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;; the argument of the function&lt;/span&gt;
+                    &lt;span class=&quot;nv&quot;&gt;your-name&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;; the let-bound variable &amp;quot;Bastien&amp;quot;&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; And evaluate it:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;greeting&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;you&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Some function are interactive:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;read-from-minibuffer&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Enter your name: &amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Evaluating this function returns what you entered at the prompt.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Let&amp;#39;s make our `greeting&amp;#39; function prompt for your name:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;greeting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;from-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;your-name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;read-from-minibuffer&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Enter your name: &amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello!\n\nI am %s and you are %s.&amp;quot;&lt;/span&gt;
+                    &lt;span class=&quot;nv&quot;&gt;from-name&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;; the argument of the function&lt;/span&gt;
+                    &lt;span class=&quot;nv&quot;&gt;your-name&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;; the let-bound var, entered at prompt&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;greeting&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Bastien&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Let&amp;#39;s complete it by displaying the results in the other window:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;greeting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;from-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;your-name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;read-from-minibuffer&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Enter your name: &amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;erase-buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello %s!\n\nI am %s.&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;your-name&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;from-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;other-window&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Now test it:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;greeting&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Bastien&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Take a breath.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Let&amp;#39;s store a list of names:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;list-of-names&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Sarah&amp;quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Chloe&amp;quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Mathilde&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Get the first element of this list with `car&amp;#39;:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;car &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;list-of-names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Get a list of all but the first element with `cdr&amp;#39;:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cdr &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;list-of-names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Add an element to the beginning of a list with `push&amp;#39;:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;push&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Stephanie&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;list-of-names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; NOTE: `car&amp;#39; and `cdr&amp;#39; don&amp;#39;t modify the list, but `push&amp;#39; does.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; This is an important difference: some functions don&amp;#39;t have any&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; side-effects (like `car&amp;#39;) while others have (like `push&amp;#39;).&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Let&amp;#39;s call `hello&amp;#39; for each element in `list-of-names&amp;#39;:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;mapcar&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;hello&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;list-of-names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Refine `greeting&amp;#39; to say hello to everyone in `list-of-names&amp;#39;:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;greeting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;erase-buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;mapcar&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;hello&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;list-of-names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;other-window&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;greeting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Remember the `hello&amp;#39; function we defined above?  It takes one&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; argument, a name.  `mapcar&amp;#39; calls `hello&amp;#39;, successively using each&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; element of `list-of-names&amp;#39; as the argument for `hello&amp;#39;.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Now let&amp;#39;s arrange a bit what we have in the displayed buffer:&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;replace-hello-by-bonjour&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;goto-char&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;point-min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;search-forward&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;replace-match&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Bonjour&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;other-window&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; (goto-char (point-min)) goes to the beginning of the buffer.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; (search-forward &amp;quot;Hello&amp;quot;) searches for the string &amp;quot;Hello&amp;quot;.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; (while x y) evaluates the y sexp(s) while x returns something.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; If x returns `nil&amp;#39; (nothing), we exit the while loop.&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;replace-hello-by-bonjour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; You should see all occurrences of &amp;quot;Hello&amp;quot; in the *test* buffer&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; replaced by &amp;quot;Bonjour&amp;quot;.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; You should also get an error: &amp;quot;Search failed: Hello&amp;quot;.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; To avoid this error, you need to tell `search-forward&amp;#39; whether it&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; should stop searching at some point in the buffer, and whether it&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; should silently fail when nothing is found:&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; (search-forward &amp;quot;Hello&amp;quot; nil t) does the trick:&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; The `nil&amp;#39; argument says: the search is not bound to a position.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; The `t&amp;#39; argument says: silently fail when nothing is found.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; We use this sexp in the function below, which doesn&amp;#39;t throw an error:&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hello-to-bonjour&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;erase-buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;;; Say hello to names in `list-of-names&amp;#39;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;mapcar&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;hello&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;list-of-names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;goto-char&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;point-min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;;; Replace &amp;quot;Hello&amp;quot; by &amp;quot;Bonjour&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;search-forward&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;replace-match&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Bonjour&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;other-window&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello-to-bonjour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Let&amp;#39;s colorize the names:&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;boldify-names&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;goto-char&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;point-min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;re-search-forward&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Bonjour \\(.+\\)!&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add-text-properties&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;match-beginning&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                           &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;match-end&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                           &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list &lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;&amp;#39;face&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;bold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;other-window&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; This functions introduces `re-search-forward&amp;#39;: instead of&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; searching for the string &amp;quot;Bonjour&amp;quot;, you search for a pattern,&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; using a &amp;quot;regular expression&amp;quot; (abbreviated in the prefix &amp;quot;re-&amp;quot;).&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; The regular expression is &amp;quot;Bonjour \\(.+\\)!&amp;quot; and it reads:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; the string &amp;quot;Bonjour &amp;quot;, and&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; a group of           | this is the \\( ... \\) construct&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;   any character      | this is the .&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;   possibly repeated  | this is the +&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; and the &amp;quot;!&amp;quot; string.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Ready?  Test it!&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;boldify-names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; `add-text-properties&amp;#39; adds... text properties, like a face.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; OK, we are done.  Happy hacking!&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; If you want to know more about a variable or a function:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; C-h v a-variable RET&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; C-h f a-function RET&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; To read the Emacs Lisp manual with Emacs:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; C-h i m elisp RET&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; To read an online introduction to Emacs Lisp:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; https://www.gnu.org/software/emacs/manual/html_node/eintr/index.html&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Thanks to these people for their feedback and suggestions:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; - Wes Hardaker&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; - notbob&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; - Kevin Montuori&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; - Arne Babenhauserheide&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; - Alan Schmitt&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; - LinXitoW&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; - Aaron Meurer&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+</description>
+        <pubDate>Thu, 25 Jul 2013 00:00:00 +0200</pubDate>
+        <link>http://emacs-doctor.com/learn-emacs-lisp-in-15-minutes.html</link>
+        <guid isPermaLink="true">http://emacs-doctor.com/learn-emacs-lisp-in-15-minutes.html</guid>
+        
+        
+        <category>libre</category>
+        
+      </item>
+    
+      <item>
+        <title>Bastien Guerry Orgmode Emacs Chat with Sacha Chua</title>
+        <description>
+&lt;p&gt;Thanks to Sacha Chua for inviting me to chat with her!  (Check &lt;a href=&quot;http://sachachua.com/blog/2013/05/emacs-chat-bastien-guerry/&quot;&gt;her blog
+  post&lt;/a&gt; about it.)  So here are some bits about Emacs, Org-mode&amp;#8230; and a few
+  others things.&lt;/p&gt;
+&lt;center&gt;
+&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;http://www.youtube.com/embed/fnk0TJC7iJI?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/center&gt;
+&lt;br/&gt;
+
+
+</description>
+        <pubDate>Sun, 26 May 2013 00:00:00 +0200</pubDate>
+        <link>http://emacs-doctor.com/bastien_guerry_orgmode_emacs_chat.html</link>
+        <guid isPermaLink="true">http://emacs-doctor.com/bastien_guerry_orgmode_emacs_chat.html</guid>
+        
+        
+        <category>libre</category>
+        
+      </item>
+    
+      <item>
+        <title>How to Become a Hacker (in the 21st century)?</title>
+        <description>
+&lt;center&gt;
+&lt;iframe src=&quot;http://www.slideshare.net/slideshow/embed_code/16070695&quot; width=&quot;768&quot; height=&quot;630&quot; frameborder=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; style=&quot;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px&quot; allowfullscreen webkitallowfullscreen mozallowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&quot;margin-bottom:5px&quot;&gt; &lt;strong&gt; &lt;a href=&quot;http://www.slideshare.net/bzg/how-to-become-a-hacker-16070695&quot; title=&quot;How to Become A Hacker?&quot; target=&quot;_blank&quot;&gt;How to Become A Hacker?&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&quot;http://www.slideshare.net/bzg&quot; target=&quot;_blank&quot;&gt;Bastien Guerry&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;/center&gt;
+
+
+</description>
+        <pubDate>Fri, 18 Jan 2013 00:00:00 +0100</pubDate>
+        <link>http://emacs-doctor.com/how-to-become-a-hacker.html</link>
+        <guid isPermaLink="true">http://emacs-doctor.com/how-to-become-a-hacker.html</guid>
+        
+        
+        <category>libre</category>
+        
+      </item>
+    
+      <item>
+        <title>The Orgfather</title>
+        <description>
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://s3.www.universalsubtitles.org/embed.js&quot;&gt;
+(
+  {video_url: &quot;http://vimeo.com/28194358&quot;,
+   video_config: {width: 800, height: 600}
+}
+)
+&lt;/script&gt;
+
+
+</description>
+        <pubDate>Sun, 28 Aug 2011 00:00:00 +0200</pubDate>
+        <link>http://emacs-doctor.com/theorgfather.html</link>
+        <guid isPermaLink="true">http://emacs-doctor.com/theorgfather.html</guid>
+        
+        
+        <category>libre</category>
+        
+      </item>
+    
+      <item>
+        <title>Emacs Org-mode at the GNU Hackers Meeting 2011</title>
+        <description>
+&lt;center&gt;
+&lt;iframe src=&quot;http://www.slideshare.net/slideshow/embed_code/9188827&quot; width=&quot;768&quot; height=&quot;630&quot; frameborder=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; style=&quot;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px&quot; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&quot;margin-bottom:5px&quot;&gt; &lt;strong&gt; &lt;a href=&quot;http://www.slideshare.net/bzg/emacs-orgmode-gnu-hackers-meeting-paris-2011&quot; title=&quot;Emacs org-mode -- GNU hackers meeting Paris 2011&quot; target=&quot;_blank&quot;&gt;Emacs org-mode &amp;#8211; GNU hackers meeting Paris 2011&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&quot;http://www.slideshare.net/bzg&quot; target=&quot;_blank&quot;&gt;Bastien Guerry&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;/center&gt;
+
+
+</description>
+        <pubDate>Sun, 28 Aug 2011 00:00:00 +0200</pubDate>
+        <link>http://emacs-doctor.com/emacs-orgmode-gnu-hackers-meeting-2011.html</link>
+        <guid isPermaLink="true">http://emacs-doctor.com/emacs-orgmode-gnu-hackers-meeting-2011.html</guid>
+        
+        
+        <category>libre</category>
+        
+      </item>
+    
+  </channel>
+</rss>

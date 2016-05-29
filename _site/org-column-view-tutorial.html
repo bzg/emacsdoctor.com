@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Emacs Org's Column View (tutorial)</title>
+  <meta name="description" content="A short introduction to Org&#8217;s column view @&lt;br/&gt;  By Bastien GuerryPlease check the screencast demonstrating some of the possibilities I&#8217;m ...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://emacs-doctor.com/org-column-view-tutorial.html">
+  <link rel="alternate" type="application/rss+xml" title="M-x doctor RET" href="http://emacs-doctor.com/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">M-x doctor RET</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/emacs-paris/">Emacs Paris</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Emacs Org's Column View (tutorial)</h1>
+    <p class="post-meta">Oct 15, 2007 • Bastien</p>
+  </header>
+
+  <article class="post-content">
+    
+<p>A short introduction to Org&#8217;s column view @&lt;br/&gt;
+  By <a href="mailto:bzg%20AT%20altern%20DOT%20org">Bastien Guerry</a></p>
+<p>Please check the <a href="org-column-screencast.org">screencast</a> demonstrating some of the possibilities I&#8217;m
+  discussing here.</p>
+<h2>Introduction: the default column view</h2>
+<p>First press <code>C-c C-x C-c</code> to show the default column view.  It turns
+  each outline item into a table row displaying some of its properties.</p>
+<p><a href="images/org-col-default-view.png"><img src="images/thumbs/org-col-default-view.png" alt="images/thumbs/org-col-default-view.png" /></a></p>
+<p>You can switch the column view <i>off</i> and return to the normal view by
+  pressing `q&#8217; while the cursor is on the highlighted entry &#8211; but you can
+  turn the column view <i>on</i> from any location in the buffer.</p>
+<p>The first headline is now a row of <i>browsable columns</i> displaying
+  properties. The first highlighted line of the buffer briefly tells you
+  what property is displayed in each columns.  In this screenshot it
+  reads:</p>
+<pre class="example">
+ITEM for the headline title)
+   T for the TODO keyword
+   P for the priority cookie
+   T for the tags
+</pre>
+<p>The default column only shows the item, the TODO state, the priority of
+  the item and its tags, we will see later how to add other properties of
+  your own.</p>
+<p>This default setup is driven by the variable
+  <code>org-columns-default-format</code>, which global value is:</p>
+<pre class="example">
+#+COLUMNS: %25ITEM %TODO %3PRIORITY %TAGS
+</pre>
+<table>
+  <tr><th>Element</th><th>Description</th></tr>
+  <tr><td>%25ITEM</td><td>display the item in a 25-characters-width field</td></tr>
+  <tr><td>%TODO</td><td>display the TODO state of the item</td></tr>
+  <tr><td>%3PRIORITY</td><td>display the priority in a 3-chars-width field</td></tr>
+  <tr><td>%TAGS</td><td>display the tags of the entry</td></tr>
+</table>
+<h2>Slight customization of the default column view</h2>
+<p>Okay, so now we&#8217;re like to customize the column display.</p>
+<p>For example, we&#8217;d like to change the <i>width</i> of the &#8220;priority&#8221; field and
+  the &#8220;tags&#8221; field in the column:</p>
+<pre class="example">
+#+COLUMNS: %25ITEM %5TODO %1PRIORITY %10TAGS
+</pre>
+<p><a href="images/org-col-default-customized-view1.png"><img src="images/thumbs/org-col-default-customized-view1.png" alt="images/thumbs/org-col-default-customized-view1.png" /></a></p>
+<p>The TODO field (<code>%5TODO</code>) is now 5 characters wide, whereas the priority
+  and the tags fields are 1 and 10.</p>
+<p>Now we&#8217;d like to change the <i>title</i> of the columns.  For example &#8211; and
+  since we are such <b>hardworkers</b> &#8211; each so-called item is in fact&#8230; a
+  &#8220;task&#8221; :</p>
+<pre class="example">
+#+COLUMNS: %25ITEM(Task) %5TODO(To-do) %1PRIORITY %10TAGS
+</pre>
+<p><a href="images/org-col-default-customized-view2.png"><img src="images/thumbs/org-col-default-customized-view2.png" alt="images/thumbs/org-col-default-customized-view2.png" /></a></p>
+<p>We also add a &#8220;To-do&#8221; label for displaying the TODO state for this
+  entry.</p>
+<h2>Displaying other properties</h2>
+<p>What if you want to display <b>other properties</b> in the column view? For
+  example, we&#8217;d like to display the <code>SCHEDULED</code> property. Then we need to
+  redefine the global #+COLUMNS option like this:</p>
+<pre class="example">
+#+COLUMNS: %30ITEM %10SCHEDULED %TODO %3PRIORITY %TAGS
+</pre>
+<p>Refresh your Org buffer to take this change into account, then C-c C-x
+  C-c again on the entry.  The column now shows the <code>SCHEDULED</code> property.</p>
+<p><a href="images/org-col-default-customized-view3.png"><img src="images/thumbs/org-col-default-customized-view3.png" alt="images/thumbs/org-col-default-customized-view3.png" /></a></p>
+<pre class="example">
+** Exemple of outline item with a SCHEDULED property
+   SCHEDULED: &lt;2007-10-14 dim&gt;
+</pre>
+<p>What is the list of available properties?  Here it is:</p>
+<pre class="example">
+ITEM         The content of the headline.
+TODO         The TODO keyword of the entry.
+TAGS         The tags defined directly in the headline.
+ALLTAGS      All tags, including inherited ones.
+PRIORITY     The priority of the entry, a string with a single letter.
+DEADLINE     The deadline time string, without the angular brackets.
+SCHEDULED    The scheduling time stamp, without the angular brackets.
+</pre>
+<p>These are all <b>special properties</b>, but of course you can define your
+  own properties.</p>
+<p>Before going to the rather complex stuff you can do with your own
+  properties, we&#8217;d like to know how to use different column views for
+  different subtrees.</p>
+<h2>Defining a column format for a subtree</h2>
+<p>To define a colum view for a specific item, just add the special
+  property <code>:COLUMNS:</code> to it:</p>
+<pre class="example">
+** Top node for columns view
+   :PROPERTIES:
+   :COLUMNS:  %25ITEM %TAGS %PRIORITY %TODO
+   :END:
+</pre>
+<p>This view will be used for the entry and its entire subtree &#8211; unless
+  some of its children has its own column view.</p>
+<p>See for example this:</p>
+<pre class="example">
+** Top node for columns view
+   :PROPERTIES:
+   :COLUMNS: %25ITEM %TAGS %PRIORITY %TODO
+   :END:
+*** TODO Example 1
+*** TODO Example 2
+*** DONE Example 3
+</pre>
+<p><a href="images/org-col-default-customized-view4.png"><img src="images/thumbs/org-col-default-customized-view4.png" alt="images/thumbs/org-col-default-customized-view4.png" /></a></p>
+<p>Good.</p>
+<p>But what if you suddenly prefer <code>%TAGS</code> to be at the right of <code>%TODO</code>?
+  Put the cursor in the <code>%TAGS</code> field and press <code>M-&lt;right&gt;</code>, it will move
+  the field to the right.</p>
+<p>What if you want to make a field larger?  No problem.  Just go to that
+  field and press `&gt;&#8217; to widen the field (or `&lt;&#8217; to narrow it.)</p>
+<p>If you want to interactively define the column element of a property, go
+  the its field and press `s&#8217;.</p>
+<p>So now that we know how to customize the column view for each entry,
+  it&#8217;s time to play with user-defined properties.</p>
+<h2>Adding summary-types for some properties</h2>
+<p>Let&#8217;s define a new entry with its own column view and a few properties:</p>
+<pre class="example">
+** My project
+   :PROPERTIES:
+   :COLUMNS:  %20ITEM %9Approved(Approved?){X} %Owner %11Status %10Time_Spent{:}
+   :END:
+</pre>
+<p><a href="images/org-col-default-customized-view5.png"><img src="images/thumbs/org-col-default-customized-view5.png" alt="images/thumbs/org-col-default-customized-view5.png" /></a></p>
+<p>Let&#8217;s comment this a bit.</p>
+<p>We have a <code>:COLUMNS:</code> property, defining the column view. It says:</p>
+<table>
+  <tr><th>Element</th><th>Description</th></tr>
+  <tr><td>%20ITEM</td><td>display the item (20 characters for this field)</td></tr>
+  <tr><td>%9Approved(Approved?){X}</td><td>display the &#8220;Approved&#8221; property</td></tr>
+  <tr><td>%Owner</td><td>display the &#8220;Owner&#8221; property</td></tr>
+  <tr><td>%11Status</td><td>display the &#8220;Status&#8221; property</td></tr>
+  <tr><td>%10Time_Spent{:}</td><td>display the &#8220;Time_spent&#8221; property</td></tr>
+</table>
+<p>What are <code>{X}</code> and <code>{:}</code>?</p>
+<p>It defines <b>summary-types</b>.</p>
+<p><code>{X}</code> means: display <code>[X]</code> if all entries have a <code>[X]</code> value for their
+  &#8220;Approved&#8221; property (<code>[-]</code> or <code>[ ]</code> otherwise).</p>
+<p><code>{:}</code> means: display a summary of the time spend, by adding all the time
+  values found in the property &#8220;Time_Spent&#8221;.</p>
+<p>Once you get the <code>:COLUMN:</code> property defined, you can interactively add
+  any property with <code>C-c C-x p</code>.  It will prompt you for the name of the
+  property, and offer default possible values depending on the <code>_ALL</code>
+  friend of the property (if any) or on the values found in the buffer.</p>
+<h2>Defining all the possible values for a property</h2>
+<p>Defining summary-types implies that you need to have a limited set of
+  possible values for certain properties.</p>
+<p>For example, the &#8220;Approved&#8221; value discussed above should take only two
+  values: <code>[ ]</code> and <code>[X]</code>.</p>
+<p>Same for the &#8220;Status&#8221; property: you might want to define only a few
+  status like &#8220;In progress&#8221; &#8220;Not started yet&#8221; &#8220;Finished&#8221;.</p>
+<p>You can restrict the allowed values for any property using the <code>_ALL</code>
+  suffix like this:</p>
+<pre class="example">
+** My project
+   :PROPERTIES:
+   :COLUMNS:  %20ITEM %9Approved(Approved?){X} %Owner %11Status %10Time_Spent{:}
+   :Owner_ALL:    Tammy Mark Karl Lisa Don
+   :Status_ALL:   &quot;In progress&quot; &quot;Not started yet&quot; &quot;Finished&quot; &quot;&quot;
+   :Approved_ALL: &quot;[ ]&quot; &quot;[X]&quot;
+   :END:
+</pre>
+<pre class="example">
+| Owner_ALL    | only accept Tammy Mark Karl Lisa Don                   |
+| Status_ALL   | only accept &quot;In progress&quot; &quot;Not started yet&quot; &quot;Finished&quot; |
+| Approved_ALL | only accept &quot;[ ]&quot; &quot;[X]&quot;                                |
+</pre>
+<p>Note: <code>*_ALL</code> properties are meta-properties, defining rules on how to
+  use the properties themselves.</p>
+<p>When you&#8217;re in a field of the column, you can define all the possible
+  values for the associated property by pressing `a&#8217;: it will prompt the
+  current set of allowed values and you will be able to edit it.</p>
+<h2>Complete example with three items in the subtree</h2>
+<p>Here is a example on how the column view affect the display of an entry
+  and its subtree.  Take it and test it.</p>
+<pre class="example">
+** My project
+   :PROPERTIES:
+   :COLUMNS:  %20ITEM %9Approved(Approved?){X} %Owner %11Status %10Time_Spent{:}
+   :Owner_ALL:    Tammy Mark Karl Lisa Don
+   :Status_ALL:   &quot;In progress&quot; &quot;Not started yet&quot; &quot;Finished&quot; &quot;&quot;
+   :Approved_ALL: &quot;[ ]&quot; &quot;[X]&quot;
+   :END:
+
+*** Item 1
+    :PROPERTIES:
+    :Owner:    Tammy
+    :Time_spent:   1:45
+    :Status:   Finished
+    :END:
+
+*** Item 2
+    :PROPERTIES:
+    :Owner:    Tammy
+    :Status:   In progress
+    :Time_spent:   0:15
+    :END:
+
+*** Item 3
+    :PROPERTIES:
+    :Owner:    Lisa
+    :Status:   Not started yet
+    :Approved: [X]
+    :END:
+</pre>
+<h2>Editing properties from the column view</h2>
+<p>So far, so good.  But one great thing about the column view is that it
+  lets you access and edit any property very quickly.</p>
+<p>See this:</p>
+<pre class="example">
+** My project
+   :PROPERTIES:
+   :COLUMNS:  %20ITEM %10Approved(Approved?){X} %Owner %11Status %10Time_Spent{:}
+   :Owner_ALL:    Tammy Mark Karl Lisa Don
+   :Status_ALL:   &quot;In progress&quot; &quot;Not started yet&quot; &quot;Finished&quot; &quot;&quot;
+   :Approved_ALL: &quot;[ ]&quot; &quot;[X]&quot;
+   :END:
+</pre>
+<p>Use `v&#8217; to display the field value in the minibuffer.</p>
+<p>Use `e&#8217; to interactively select/edit the value.</p>
+<p>Use `S-left/right&#8217; to cycle through the allowed values in a field.</p>
+<p>Use `a&#8217; to edit the allowed values for this property.</p>
+<p>Nice, isn&#8217;t?</p>
+<h2>Conclusion: more to come</h2>
+<p>Okay, that&#8217;s all for today. But let me drop two last hints to let you
+  explore column views further:</p>
+<ul>
+  <li><code>#1</code> You can use the column view and cycle through visibility.</li>
+  <li><code>#2</code> The column view also works in agenda buffers.</li>
+</ul>
+<p>I guess this is already suggestive enough&#8230;</p>
+<p>Enjoy!</p>
+<ul>
+  <li>http://orgmode.org/</li>
+  <li>http://orgmode.org/org.html#Column-view</li>
+  <li>http://www.cognition.ens.fr/~guerry/bastien-org-mode.html</li>
+</ul>
+
+
+
+  </article>
+
+  <p><a href="//www.reddit.com/submit" onclick="window.location = '//www.reddit.com/submit?url=' + encodeURIComponent(window.location); return false"> <img src="//www.redditstatic.com/spreddit12.gif" alt="submit to reddit" border="0" /> </a></p>
+
+  <p><a href="https://twitter.com/share" class="twitter-share-button" data-via="bzg2" data-size="large">Tweet</a></p>
+  <script>!function(d,s,id){var
+  js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,
+  'script', 'twitter-wjs');</script>
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+  var disqus_shortname = 'bastienguerryshomepage';
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">M-x doctor RET</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>M-x doctor RET</li>
+          <li><a href="mailto:bzg+emacs@bzg.fr">bzg+emacs@bzg.fr</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/bzg">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">bzg</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/bzg2">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">bzg2</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Everybody needs a good Emacs doctor.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
