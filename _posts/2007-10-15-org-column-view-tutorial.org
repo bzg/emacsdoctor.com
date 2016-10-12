@@ -241,21 +241,21 @@ discussing here.
  :    :Status_ALL:   "In progress" "Not started yet" "Finished" ""
  :    :Approved_ALL: "[ ]" "[X]"
  :    :END:
- : 
+ :
  : *** Item 1
  :     :PROPERTIES:
  :     :Owner:    Tammy
  :     :Time_spent:   1:45
  :     :Status:   Finished
  :     :END:
- : 
+ :
  : *** Item 2
  :     :PROPERTIES:
  :     :Owner:    Tammy
  :     :Status:   In progress
  :     :Time_spent:   0:15
  :     :END:
- : 
+ :
  : *** Item 3
  :     :PROPERTIES:
  :     :Owner:    Lisa
