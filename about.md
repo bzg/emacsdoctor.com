@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 <video style="width:100%;margin:auto;" controls muted>
-  <source src="/u/emacs-doctor.ogv" type="video/ogg">
+  <source src="/img/emacs-doctor.ogv" type="video/ogg">
 </video>
 
 If you enjoy my work, please consider making a donation.
