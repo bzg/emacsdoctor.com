@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-<video style="width:100%;margin:auto;" controls muted>
+<video style="width:100%;margin:auto;" controls autoplay muted>
   <source src="/img/emacs-doctor.ogv" type="video/ogg">
 </video>
 
