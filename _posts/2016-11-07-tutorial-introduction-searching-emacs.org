@@ -23,6 +23,8 @@ Perform an incremental search for "lisp" with =C-s lisp=.
 Hit =RET= to deactivate the search and the highlighting of search
 matches.
 
+Hit =C-r= to search backwards.
+
 Now hit =C-s C-s= to search for the last search string again.
 
 Hit =M-e= to edit the search string.  Delete "string" in the minibuffer
@@ -50,8 +52,10 @@ Hit =C-s= and search for =Mail=.
 /Notice that both "Mail" and "mail" will be matched: the search is not
 case sensitive./
 
-While in the search loop, hit =M-c= to toggle case sensitivity: you
-will notice that now only "mail" is highlighted.
+Hit =C-u C-SPC= to go back to your position before your search.
+
+While in the search loop, hit =M-c= (or =M-s c=) to toggle case
+sensitivity: you will notice that now only "mail" is highlighted.
 
 While in the search loop, hit =M-s SPC= to toggle "match spaces
 loosely": when matching spaces loosely, you can search for a string
@@ -59,6 +63,9 @@ like "mail   client" (with three hard spaces) and still match the
 "mail client" string.
 
 [[file:img/2016-11-07-emacs-search-loosely.png]]
+
+Still in the search loop, =M-w= will perform word-based searches.  For
+example, word-based search for "mail" will not match "email".
 
 Now try searching for =maii= instead of =mail= and then hit =DEL= to
 edit the search string by deleting the last character.
@@ -98,7 +105,7 @@ Now hit =M-s o= to list lines where "mail" occurs.
 
 [[file:img/2016-11-07-emacs-search-occur.png]]
 
-Hit =C-s= and =M-s r= to switch to regular expression search.
+Hit =C-s= and =M-r= (or =M-s r=) to switch to regular expression search.
 
 Go to an org-mode buffer.  Hit =M-TAB= to cycle through visibility
 status and stop when in the =OVERVIEW= mode (everything is folded).
@@ -118,10 +125,12 @@ In any buffer, hit =C-s C-h b= to browse the search options.
 
 - =C-s M-e= to edit the search string
 - =C-s M-w= to search for word at point
-- =C-s M-s r= to toggle search by regular expressions
+- =C-s M-r= to toggle search by regular expressions
 - =C-s M-s o= to run =occur= on the current search string
 - =C-s C-M-i= to complete the current search string
 
 Enjoy, and check the [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Incremental-Search.html][Emacs manual]] for more.
 
 And you, what are your Emacs search "ahah!" moment?
+
+Thank [[https://www.reddit.com/r/emacs/comments/5bkp0g/tutorial_introduction_to_searching_in_emacs/d9pdd0x/][martijntje]] for his suggestions.

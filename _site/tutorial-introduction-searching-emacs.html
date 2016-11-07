@@ -82,6 +82,7 @@
 <p><img src="img/2016-11-07-emacs-search-lisp.png" alt="img/2016-11-07-emacs-search-lisp.png" /></p>
 <p>Hit <code>RET</code> to deactivate the search and the highlighting of search
   matches.</p>
+<p>Hit <code>C-r</code> to search backwards.</p>
 <p>Now hit <code>C-s C-s</code> to search for the last search string again.</p>
 <p>Hit <code>M-e</code> to edit the search string.  Delete &#8220;string&#8221; in the minibuffer
   prompt, type &#8220;mode&#8221; and <code>RET</code> to reenter the search loop.</p>
@@ -98,13 +99,16 @@
 <p>Hit <code>C-s</code> and search for <code>Mail</code>.</p>
 <p><i>Notice that both &#8220;Mail&#8221; and &#8220;mail&#8221; will be matched: the search is not
   case sensitive.</i></p>
-<p>While in the search loop, hit <code>M-c</code> to toggle case sensitivity: you
-  will notice that now only &#8220;mail&#8221; is highlighted.</p>
+<p>Hit <code>C-u C-SPC</code> to go back to your position before your search.</p>
+<p>While in the search loop, hit <code>M-c</code> (or <code>M-s c</code>) to toggle case
+  sensitivity: you will notice that now only &#8220;mail&#8221; is highlighted.</p>
 <p>While in the search loop, hit <code>M-s SPC</code> to toggle &#8220;match spaces
   loosely&#8221;: when matching spaces loosely, you can search for a string
   like &#8220;mail   client&#8221; (with three hard spaces) and still match the
   &#8220;mail client&#8221; string.</p>
 <p><img src="img/2016-11-07-emacs-search-loosely.png" alt="img/2016-11-07-emacs-search-loosely.png" /></p>
+<p>Still in the search loop, <code>M-w</code> will perform word-based searches.  For
+  example, word-based search for &#8220;mail&#8221; will not match &#8220;email&#8221;.</p>
 <p>Now try searching for <code>maii</code> instead of <code>mail</code> and then hit <code>DEL</code> to
   edit the search string by deleting the last character.</p>
 <p>Hit <code>C-s</code> and search again for &#8220;mail&#8221;.</p>
@@ -127,7 +131,7 @@
 <p>Hit <code>M-&lt;</code> and <code>C-s</code> to search for &#8220;mail&#8221;.</p>
 <p>Now hit <code>M-s o</code> to list lines where &#8220;mail&#8221; occurs.</p>
 <p><img src="img/2016-11-07-emacs-search-occur.png" alt="img/2016-11-07-emacs-search-occur.png" /></p>
-<p>Hit <code>C-s</code> and <code>M-s r</code> to switch to regular expression search.</p>
+<p>Hit <code>C-s</code> and <code>M-r</code> (or <code>M-s r</code>) to switch to regular expression search.</p>
 <p>Go to an org-mode buffer.  Hit <code>M-TAB</code> to cycle through visibility
   status and stop when in the <code>OVERVIEW</code> mode (everything is folded).</p>
 <p>Search for hidden text: the matched string is automatically unfolded
@@ -141,12 +145,13 @@
 <ul>
   <li><code>C-s M-e</code> to edit the search string</li>
   <li><code>C-s M-w</code> to search for word at point</li>
-  <li><code>C-s M-s r</code> to toggle search by regular expressions</li>
+  <li><code>C-s M-r</code> to toggle search by regular expressions</li>
   <li><code>C-s M-s o</code> to run <code>occur</code> on the current search string</li>
   <li><code>C-s C-M-i</code> to complete the current search string</li>
 </ul>
 <p>Enjoy, and check the <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Incremental-Search.html">Emacs manual</a> for more.</p>
 <p>And you, what are your Emacs search &#8220;ahah!&#8221; moment?</p>
+<p>Thank <a href="https://www.reddit.com/r/emacs/comments/5bkp0g/tutorial_introduction_to_searching_in_emacs/d9pdd0x/">martijntje</a> for his suggestions.</p>
 
 
 

@@ -5,8 +5,8 @@
     <description>Everybody needs a good Emacs doctor.</description>
     <link>http://emacs-doctor.com/</link>
     <atom:link href="http://emacs-doctor.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 07 Nov 2016 07:11:34 +0100</pubDate>
-    <lastBuildDate>Mon, 07 Nov 2016 07:11:34 +0100</lastBuildDate>
+    <pubDate>Mon, 07 Nov 2016 11:58:22 +0100</pubDate>
+    <lastBuildDate>Mon, 07 Nov 2016 11:58:22 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -19,6 +19,7 @@
 &lt;p&gt;&lt;img src=&quot;img/2016-11-07-emacs-search-lisp.png&quot; alt=&quot;img/2016-11-07-emacs-search-lisp.png&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Hit &lt;code&gt;RET&lt;/code&gt; to deactivate the search and the highlighting of search
   matches.&lt;/p&gt;
+&lt;p&gt;Hit &lt;code&gt;C-r&lt;/code&gt; to search backwards.&lt;/p&gt;
 &lt;p&gt;Now hit &lt;code&gt;C-s C-s&lt;/code&gt; to search for the last search string again.&lt;/p&gt;
 &lt;p&gt;Hit &lt;code&gt;M-e&lt;/code&gt; to edit the search string.  Delete &amp;#8220;string&amp;#8221; in the minibuffer
   prompt, type &amp;#8220;mode&amp;#8221; and &lt;code&gt;RET&lt;/code&gt; to reenter the search loop.&lt;/p&gt;
@@ -35,13 +36,16 @@
 &lt;p&gt;Hit &lt;code&gt;C-s&lt;/code&gt; and search for &lt;code&gt;Mail&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;i&gt;Notice that both &amp;#8220;Mail&amp;#8221; and &amp;#8220;mail&amp;#8221; will be matched: the search is not
   case sensitive.&lt;/i&gt;&lt;/p&gt;
-&lt;p&gt;While in the search loop, hit &lt;code&gt;M-c&lt;/code&gt; to toggle case sensitivity: you
-  will notice that now only &amp;#8220;mail&amp;#8221; is highlighted.&lt;/p&gt;
+&lt;p&gt;Hit &lt;code&gt;C-u C-SPC&lt;/code&gt; to go back to your position before your search.&lt;/p&gt;
+&lt;p&gt;While in the search loop, hit &lt;code&gt;M-c&lt;/code&gt; (or &lt;code&gt;M-s c&lt;/code&gt;) to toggle case
+  sensitivity: you will notice that now only &amp;#8220;mail&amp;#8221; is highlighted.&lt;/p&gt;
 &lt;p&gt;While in the search loop, hit &lt;code&gt;M-s SPC&lt;/code&gt; to toggle &amp;#8220;match spaces
   loosely&amp;#8221;: when matching spaces loosely, you can search for a string
   like &amp;#8220;mail   client&amp;#8221; (with three hard spaces) and still match the
   &amp;#8220;mail client&amp;#8221; string.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;img/2016-11-07-emacs-search-loosely.png&quot; alt=&quot;img/2016-11-07-emacs-search-loosely.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Still in the search loop, &lt;code&gt;M-w&lt;/code&gt; will perform word-based searches.  For
+  example, word-based search for &amp;#8220;mail&amp;#8221; will not match &amp;#8220;email&amp;#8221;.&lt;/p&gt;
 &lt;p&gt;Now try searching for &lt;code&gt;maii&lt;/code&gt; instead of &lt;code&gt;mail&lt;/code&gt; and then hit &lt;code&gt;DEL&lt;/code&gt; to
   edit the search string by deleting the last character.&lt;/p&gt;
 &lt;p&gt;Hit &lt;code&gt;C-s&lt;/code&gt; and search again for &amp;#8220;mail&amp;#8221;.&lt;/p&gt;
@@ -64,7 +68,7 @@
 &lt;p&gt;Hit &lt;code&gt;M-&amp;lt;&lt;/code&gt; and &lt;code&gt;C-s&lt;/code&gt; to search for &amp;#8220;mail&amp;#8221;.&lt;/p&gt;
 &lt;p&gt;Now hit &lt;code&gt;M-s o&lt;/code&gt; to list lines where &amp;#8220;mail&amp;#8221; occurs.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;img/2016-11-07-emacs-search-occur.png&quot; alt=&quot;img/2016-11-07-emacs-search-occur.png&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;Hit &lt;code&gt;C-s&lt;/code&gt; and &lt;code&gt;M-s r&lt;/code&gt; to switch to regular expression search.&lt;/p&gt;
+&lt;p&gt;Hit &lt;code&gt;C-s&lt;/code&gt; and &lt;code&gt;M-r&lt;/code&gt; (or &lt;code&gt;M-s r&lt;/code&gt;) to switch to regular expression search.&lt;/p&gt;
 &lt;p&gt;Go to an org-mode buffer.  Hit &lt;code&gt;M-TAB&lt;/code&gt; to cycle through visibility
   status and stop when in the &lt;code&gt;OVERVIEW&lt;/code&gt; mode (everything is folded).&lt;/p&gt;
 &lt;p&gt;Search for hidden text: the matched string is automatically unfolded
@@ -78,12 +82,13 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;code&gt;C-s M-e&lt;/code&gt; to edit the search string&lt;/li&gt;
   &lt;li&gt;&lt;code&gt;C-s M-w&lt;/code&gt; to search for word at point&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;C-s M-s r&lt;/code&gt; to toggle search by regular expressions&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;C-s M-r&lt;/code&gt; to toggle search by regular expressions&lt;/li&gt;
   &lt;li&gt;&lt;code&gt;C-s M-s o&lt;/code&gt; to run &lt;code&gt;occur&lt;/code&gt; on the current search string&lt;/li&gt;
   &lt;li&gt;&lt;code&gt;C-s C-M-i&lt;/code&gt; to complete the current search string&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Enjoy, and check the &lt;a href=&quot;https://www.gnu.org/software/emacs/manual/html_node/emacs/Incremental-Search.html&quot;&gt;Emacs manual&lt;/a&gt; for more.&lt;/p&gt;
 &lt;p&gt;And you, what are your Emacs search &amp;#8220;ahah!&amp;#8221; moment?&lt;/p&gt;
+&lt;p&gt;Thank &lt;a href=&quot;https://www.reddit.com/r/emacs/comments/5bkp0g/tutorial_introduction_to_searching_in_emacs/d9pdd0x/&quot;&gt;martijntje&lt;/a&gt; for his suggestions.&lt;/p&gt;
 
 
 </description>
@@ -1278,6 +1283,374 @@ This will be the content of my blog entry.
       </item>
     
       <item>
+        <title>Apprendre Emacs Lisp en 15 minutes</title>
+        <description>
+&lt;p&gt;Les commentaires et les retours sont les bienvenus !&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;;; Ceci est une introduction à Emacs Lisp en 15 minutes (v0.2d)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Auteur: Bastien / @bzg2 / http://bzg.fr&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Prenez d&amp;#39;abord le temps de lire ce texte en anglais de Peter Norvig:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; http://norvig.com/21-days.html&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Ensuite installez GNU Emacs 24.3 (ou une version ultérieure):&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Debian: apt-get install emacs (or see your distro instructions)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; MacOSX: http://emacsformacosx.com/emacs-builds/Emacs-24.3-universal-10.6.8.dmg&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Windows: http://ftp.gnu.org/gnu/windows/emacs/emacs-24.3-bin-i386.zip&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Vous trouverez plus d&amp;#39;informations sur l&amp;#39;installation:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; http://www.gnu.org/software/emacs/#Obtaining&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Avertissement important:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Suivre ce tutoriel ne risque pas d&amp;#39;endommager votre ordinateur,&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; sauf si vous vous énervez au point de le jeter par terre.  En tous&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; cas, je décline toute responsabilité en cas de problème.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Amusez-vous bien !&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Lancez Emacs.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Tapez la touche `q&amp;#39; pour enlever le message d&amp;#39;accueil.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Maintenant regardez la ligne grise au pied de la fenêtre:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; &amp;quot;*scratch*&amp;quot; est le nom de l&amp;#39;espace d&amp;#39;édition dans lequel vous vous&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; trouvez.  Cet espace d&amp;#39;édition est appelé un &amp;quot;buffer&amp;quot;.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Le buffer scratch est le buffer par défaut quand on ouvre Emacs.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Vous n&amp;#39;éditez jamais de fichier directement: vous éditez des&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; buffers que vous pouvez sauvegarder dans des fichiers.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; &amp;quot;Lisp interaction&amp;quot; désigne le jeu de commandes disponible ici.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Emacs a un jeu de commandes par défaut pour chaque buffer, et&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; plusieurs autres jeux de commandes disponibles quand vous activez&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; un mode particulier.  Ici nous utilisons `lisp-interaction-mode&amp;#39;,&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; qui propose des commandes pour évaluer et naviguer dans du code&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Elisp.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Le point-virgule commence un commentaire partout sur une ligne.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Les programmes Elisp sont composés d&amp;#39;expressions symboliques aussi&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; appelées &amp;quot;sexps&amp;quot;:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+ &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Cette expression symbolique se lit &amp;quot;Ajouter 2 à 2&amp;quot;.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Les sexps sont placées entre parenthèses, possiblement sur&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; plusieurs niveaux:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+ &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+ &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Une expression symbolique contient des atomes ou d&amp;#39;autres&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; expressions symboliques.  Dans les exemples ci-dessus, 1 et 2 sont&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; des atomes et (+ 2 (+ 1 1)) et (+ 1 1) des expressions symboliques.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Dans le mode `lisp-interaction-mode&amp;#39; vous pouvez évaluer les sexps.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Placez le curseur juste après la parenthèse fermante, tenez la&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; touche &amp;quot;Control&amp;quot; enfoncée et appuyez sur la touche &amp;quot;j&amp;quot; (soit le&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; raccourci &amp;quot;C-j&amp;quot;).&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+ &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+ &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;           ^ curseur ici&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-j&amp;#39; =&amp;gt; 6&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; `C-j&amp;#39; insère le résultat de l&amp;#39;évaluation dans le buffer.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; affiche le même résultat dans la ligne tout en bas&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; d&amp;#39;Emacs, appelée le &amp;quot;minibuffer&amp;quot;.  On utilise en général `C-xC-e&amp;#39;,&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; pour ne pas encombrer le buffer avec du texte inutile.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; ###&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; `setq&amp;#39; stores a value into a variable:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;my-name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Bastien&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Bastien&amp;quot; (displayed in the mini-buffer)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; `insert&amp;#39; will insert &amp;quot;Hello!&amp;quot; where the cursor is:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Hello!&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; We used `insert&amp;#39; with only one argument &amp;quot;Hello!&amp;quot;, but&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; we can pass more arguments -- here we use two:&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello&amp;quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot; world!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Hello world!&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; You can use variables instead of strings:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello, I am &amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;my-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Hello, I am Bastien&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; You can combine sexps into functions:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello, I am &amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;my-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; hello&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; You can evaluate functions:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; Hello, I am Bastien&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; The empty parentheses in the function&amp;#39;s definition means that&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; it does not accept arguments.  But always using `my-name&amp;#39; is&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; boring, let&amp;#39;s tell the function to accept one argument (here&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; the argument is called &amp;quot;name&amp;quot;): &lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello &amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; hello&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Now let&amp;#39;s call the function with the string &amp;quot;you&amp;quot; as the value&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; for its unique argument:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;you&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Hello you&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Yeah!&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Take a breath.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Now switch to a new buffer named &amp;quot;*test*&amp;quot; in another window:&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; =&amp;gt; [screen has two windows and cursor is in the *test* buffer]&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Mouse over the top window and left-click to go back.  Or you can&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; use `C-xo&amp;#39; (i.e. hold down control-x and hit o) to go to the other&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; window interactively.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; You can combine several sexps with `progn&amp;#39;:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;progn&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;you&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; =&amp;gt; [The screen has two windows and cursor is in the *test* buffer]&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Now if you don&amp;#39;t mind, I&amp;#39;ll stop asking you to hit `C-xC-e&amp;#39;: do it&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; for every sexp that follows.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Always go back to the *scratch* buffer with the mouse or `C-xo&amp;#39;.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; It&amp;#39;s often useful to erase the buffer:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;progn&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;erase-buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;there&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Or to go back to the other window:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;progn&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;erase-buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;you&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;other-window&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; You can bind a value to a local variable with `let&amp;#39;:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;local-name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;you&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;erase-buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;local-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;other-window&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; No need to use `progn&amp;#39; in that case, since `let&amp;#39; also combines&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; several sexps.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Let&amp;#39;s format a string:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello %s!\n&amp;quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;visitor&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; %s is a place-holder for a string, replaced by &amp;quot;visitor&amp;quot;.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; \n is the newline character.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Let&amp;#39;s refine our function by using format:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello %s!\n&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;you&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Let&amp;#39;s create another function which uses `let&amp;#39;:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;greeting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;your-name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Bastien&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello %s!\n\nI am %s.&amp;quot;&lt;/span&gt;
+                    &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;; the argument of the function&lt;/span&gt;
+                    &lt;span class=&quot;nv&quot;&gt;your-name&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;; the let-bound variable &amp;quot;Bastien&amp;quot;&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; And evaluate it:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;greeting&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;you&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Some function are interactive:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;read-from-minibuffer&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Enter your name: &amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Evaluating this function returns what you entered at the prompt.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Let&amp;#39;s make our `greeting&amp;#39; function prompt for your name:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;greeting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;from-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;your-name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;read-from-minibuffer&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Enter your name: &amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello!\n\nI am %s and you are %s.&amp;quot;&lt;/span&gt;
+                    &lt;span class=&quot;nv&quot;&gt;from-name&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;; the argument of the function&lt;/span&gt;
+                    &lt;span class=&quot;nv&quot;&gt;your-name&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;; the let-bound var, entered at prompt&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;greeting&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Bastien&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Let&amp;#39;s complete it by displaying the results in the other window:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;greeting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;from-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;your-name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;read-from-minibuffer&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Enter your name: &amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;erase-buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello %s!\n\nI am %s.&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;your-name&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;from-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;other-window&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Now test it:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;greeting&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Bastien&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Take a breath.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Let&amp;#39;s store a list of names:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;list-of-names&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Sarah&amp;quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Chloe&amp;quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Mathilde&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Get the first element of this list with `car&amp;#39;:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;car &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;list-of-names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Get a list of all but the first element with `cdr&amp;#39;:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cdr &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;list-of-names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Add an element to the beginning of a list with `push&amp;#39;:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;push&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Stephanie&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;list-of-names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; NOTE: `car&amp;#39; and `cdr&amp;#39; don&amp;#39;t modify the list, but `push&amp;#39; does.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; This is an important difference: some functions don&amp;#39;t have any&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; side-effects (like `car&amp;#39;) while others have (like `push&amp;#39;).&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Let&amp;#39;s call `hello&amp;#39; for each element in `list-of-names&amp;#39;:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;mapcar&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;hello&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;list-of-names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Refine `greeting&amp;#39; to say hello to everyone in `list-of-names&amp;#39;:&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;greeting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;erase-buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;mapcar&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;hello&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;list-of-names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;other-window&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;greeting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Remember the `hello&amp;#39; function we defined above?  It takes one&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; argument, a name.  `mapcar&amp;#39; calls `hello&amp;#39;, successively using each&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; element of `list-of-names&amp;#39; as the argument for `hello&amp;#39;.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Now let&amp;#39;s arrange a bit what we have in the displayed buffer:&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;replace-hello-by-bonjour&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;goto-char&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;point-min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;search-forward&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;replace-match&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Bonjour&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;other-window&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; (goto-char (point-min)) goes to the beginning of the buffer.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; (search-forward &amp;quot;Hello&amp;quot;) searches for the string &amp;quot;Hello&amp;quot;.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; (while x y) evaluates the y sexp(s) while x returns something.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; If x returns `nil&amp;#39; (nothing), we exit the while loop.&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;replace-hello-by-bonjour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; You should see all occurrences of &amp;quot;Hello&amp;quot; in the *test* buffer&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; replaced by &amp;quot;Bonjour&amp;quot;.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; You should also get an error: &amp;quot;Search failed: Hello&amp;quot;.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; To avoid this error, you need to tell `search-forward&amp;#39; whether it&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; should stop searching at some point in the buffer, and whether it&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; should silently fail when nothing is found:&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; (search-forward &amp;quot;Hello&amp;quot; nil t) does the trick:&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; The `nil&amp;#39; argument says: the search is not bound to a position.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; The `t&amp;#39; argument says: silently fail when nothing is found.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; We use this sexp in the function below, which doesn&amp;#39;t throw an error:&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hello-to-bonjour&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;erase-buffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;;; Say hello to names in `list-of-names&amp;#39;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;mapcar&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;hello&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;list-of-names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;goto-char&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;point-min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;;; Replace &amp;quot;Hello&amp;quot; by &amp;quot;Bonjour&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;search-forward&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;replace-match&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Bonjour&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;other-window&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello-to-bonjour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Let&amp;#39;s colorize the names:&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;boldify-names&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;goto-char&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;point-min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;re-search-forward&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Bonjour \\(.+\\)!&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add-text-properties&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;match-beginning&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                           &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;match-end&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                           &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list &lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;&amp;#39;face&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;&amp;#39;bold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;other-window&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; This functions introduces `re-search-forward&amp;#39;: instead of&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; searching for the string &amp;quot;Bonjour&amp;quot;, you search for a pattern,&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; using a &amp;quot;regular expression&amp;quot; (abbreviated in the prefix &amp;quot;re-&amp;quot;).&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; The regular expression is &amp;quot;Bonjour \\(.+\\)!&amp;quot; and it reads:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; the string &amp;quot;Bonjour &amp;quot;, and&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; a group of           | this is the \\( ... \\) construct&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;   any character      | this is the .&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;   possibly repeated  | this is the +&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; and the &amp;quot;!&amp;quot; string.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Ready?  Test it!&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;boldify-names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; `add-text-properties&amp;#39; adds... text properties, like a face.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; OK, we are done.  Happy hacking!&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; If you want to know more about a variable or a function:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; C-h v a-variable RET&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; C-h f a-function RET&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; To read the Emacs Lisp manual with Emacs:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; C-h i m elisp RET&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; To read an online introduction to Emacs Lisp:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; https://www.gnu.org/software/emacs/manual/html_node/eintr/index.html&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Thanks to these people for their feedback and suggestions:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; - Wes Hardaker&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; - notbob&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; - Kevin Montuori&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; - Arne Babenhauserheide&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; - Alan Schmitt&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; - LinXitoW&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; - Aaron Meurer&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+</description>
+        <pubDate>Thu, 25 Jul 2013 00:00:00 +0200</pubDate>
+        <link>http://emacs-doctor.com/apprendre-emacs-lisp-en-15-minutes.html</link>
+        <guid isPermaLink="true">http://emacs-doctor.com/apprendre-emacs-lisp-en-15-minutes.html</guid>
+        
+        
+        <category>libre</category>
+        
+      </item>
+    
+      <item>
         <title>Bastien Guerry Orgmode Emacs Chat with Sacha Chua</title>
         <description>
 &lt;p&gt;Thanks to Sacha Chua for inviting me to chat with her!  (Check &lt;a href=&quot;http://sachachua.com/blog/2013/05/emacs-chat-bastien-guerry/&quot;&gt;her blog
@@ -1311,28 +1684,6 @@ This will be the content of my blog entry.
         <pubDate>Fri, 18 Jan 2013 00:00:00 +0100</pubDate>
         <link>http://emacs-doctor.com/how-to-become-a-hacker.html</link>
         <guid isPermaLink="true">http://emacs-doctor.com/how-to-become-a-hacker.html</guid>
-        
-        
-        <category>libre</category>
-        
-      </item>
-    
-      <item>
-        <title>The Orgfather</title>
-        <description>
-&lt;script type=&quot;text/javascript&quot; src=&quot;http://s3.www.universalsubtitles.org/embed.js&quot;&gt;
-(
-  {video_url: &quot;http://vimeo.com/28194358&quot;,
-   video_config: {width: 800, height: 600}
-}
-)
-&lt;/script&gt;
-
-
-</description>
-        <pubDate>Sun, 28 Aug 2011 00:00:00 +0200</pubDate>
-        <link>http://emacs-doctor.com/theorgfather.html</link>
-        <guid isPermaLink="true">http://emacs-doctor.com/theorgfather.html</guid>
         
         
         <category>libre</category>

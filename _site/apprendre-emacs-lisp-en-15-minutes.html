@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Apprendre Emacs Lisp en 15 minutes</title>
+  <meta name="description" content="J'étais surpris de ne pas trouver d'introduction à Emacs Lisp sur http://learnxinyminutes.com alors j'ai écrit ce tutoriel.  Cette page est désormais sur htt...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://emacs-doctor.com/apprendre-emacs-lisp-en-15-minutes.html">
+  <link rel="alternate" type="application/rss+xml" title="M-x doctor RET" href="http://emacs-doctor.com/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">M-x doctor RET</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/emacs-paris-user-group/">Paris</a>
+          
+        
+          
+          <a class="page-link" href="/emacs-training/">Training</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/newsletter/">Newsletter</a>
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Apprendre Emacs Lisp en 15 minutes</h1>
+    <p class="post-meta">Jul 25, 2013 • Bastien</p>
+  </header>
+
+  <article class="post-content">
+    
+<p>Les commentaires et les retours sont les bienvenus !</p>
+<div class="highlight"><pre><span class="c1">;; Ceci est une introduction à Emacs Lisp en 15 minutes (v0.2d)</span>
+<span class="c1">;;</span>
+<span class="c1">;; Auteur: Bastien / @bzg2 / http://bzg.fr</span>
+<span class="c1">;;</span>
+<span class="c1">;; Prenez d&#39;abord le temps de lire ce texte en anglais de Peter Norvig:</span>
+<span class="c1">;; http://norvig.com/21-days.html</span>
+<span class="c1">;;</span>
+<span class="c1">;; Ensuite installez GNU Emacs 24.3 (ou une version ultérieure):</span>
+<span class="c1">;;</span>
+<span class="c1">;; Debian: apt-get install emacs (or see your distro instructions)</span>
+<span class="c1">;; MacOSX: http://emacsformacosx.com/emacs-builds/Emacs-24.3-universal-10.6.8.dmg</span>
+<span class="c1">;; Windows: http://ftp.gnu.org/gnu/windows/emacs/emacs-24.3-bin-i386.zip</span>
+<span class="c1">;;</span>
+<span class="c1">;; Vous trouverez plus d&#39;informations sur l&#39;installation:</span>
+<span class="c1">;; http://www.gnu.org/software/emacs/#Obtaining</span>
+
+<span class="c1">;; Avertissement important:</span>
+<span class="c1">;;</span>
+<span class="c1">;; Suivre ce tutoriel ne risque pas d&#39;endommager votre ordinateur,</span>
+<span class="c1">;; sauf si vous vous énervez au point de le jeter par terre.  En tous</span>
+<span class="c1">;; cas, je décline toute responsabilité en cas de problème.</span>
+<span class="c1">;; Amusez-vous bien !</span>
+
+<span class="c1">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span class="c1">;; </span>
+<span class="c1">;; Lancez Emacs.</span>
+<span class="c1">;;</span>
+<span class="c1">;; Tapez la touche `q&#39; pour enlever le message d&#39;accueil.</span>
+<span class="c1">;;</span>
+<span class="c1">;; Maintenant regardez la ligne grise au pied de la fenêtre:</span>
+<span class="c1">;;</span>
+<span class="c1">;; &quot;*scratch*&quot; est le nom de l&#39;espace d&#39;édition dans lequel vous vous</span>
+<span class="c1">;; trouvez.  Cet espace d&#39;édition est appelé un &quot;buffer&quot;.</span>
+<span class="c1">;;</span>
+<span class="c1">;; Le buffer scratch est le buffer par défaut quand on ouvre Emacs.</span>
+<span class="c1">;; Vous n&#39;éditez jamais de fichier directement: vous éditez des</span>
+<span class="c1">;; buffers que vous pouvez sauvegarder dans des fichiers.</span>
+<span class="c1">;; </span>
+<span class="c1">;; &quot;Lisp interaction&quot; désigne le jeu de commandes disponible ici.</span>
+<span class="c1">;; </span>
+<span class="c1">;; Emacs a un jeu de commandes par défaut pour chaque buffer, et</span>
+<span class="c1">;; plusieurs autres jeux de commandes disponibles quand vous activez</span>
+<span class="c1">;; un mode particulier.  Ici nous utilisons `lisp-interaction-mode&#39;,</span>
+<span class="c1">;; qui propose des commandes pour évaluer et naviguer dans du code</span>
+<span class="c1">;; Elisp.</span>
+
+<span class="c1">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span class="c1">;;</span>
+<span class="c1">;; Le point-virgule commence un commentaire partout sur une ligne.</span>
+<span class="c1">;;</span>
+<span class="c1">;; Les programmes Elisp sont composés d&#39;expressions symboliques aussi</span>
+<span class="c1">;; appelées &quot;sexps&quot;:</span>
+<span class="p">(</span><span class="nb">+ </span><span class="mi">2</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">;; Cette expression symbolique se lit &quot;Ajouter 2 à 2&quot;.</span>
+
+<span class="c1">;; Les sexps sont placées entre parenthèses, possiblement sur</span>
+<span class="c1">;; plusieurs niveaux:</span>
+<span class="p">(</span><span class="nb">+ </span><span class="mi">2</span> <span class="p">(</span><span class="nb">+ </span><span class="mi">1</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1">;; Une expression symbolique contient des atomes ou d&#39;autres</span>
+<span class="c1">;; expressions symboliques.  Dans les exemples ci-dessus, 1 et 2 sont</span>
+<span class="c1">;; des atomes et (+ 2 (+ 1 1)) et (+ 1 1) des expressions symboliques.</span>
+
+<span class="c1">;; Dans le mode `lisp-interaction-mode&#39; vous pouvez évaluer les sexps.</span>
+<span class="c1">;; Placez le curseur juste après la parenthèse fermante, tenez la</span>
+<span class="c1">;; touche &quot;Control&quot; enfoncée et appuyez sur la touche &quot;j&quot; (soit le</span>
+<span class="c1">;; raccourci &quot;C-j&quot;).</span>
+
+<span class="p">(</span><span class="nb">+ </span><span class="mi">3</span> <span class="p">(</span><span class="nb">+ </span><span class="mi">1</span> <span class="mi">2</span><span class="p">))</span>
+<span class="c1">;;           ^ curseur ici</span>
+<span class="c1">;; `C-j&#39; =&gt; 6</span>
+
+<span class="c1">;; `C-j&#39; insère le résultat de l&#39;évaluation dans le buffer.</span>
+
+<span class="c1">;; `C-xC-e&#39; affiche le même résultat dans la ligne tout en bas</span>
+<span class="c1">;; d&#39;Emacs, appelée le &quot;minibuffer&quot;.  On utilise en général `C-xC-e&#39;,</span>
+<span class="c1">;; pour ne pas encombrer le buffer avec du texte inutile.</span>
+
+<span class="c1">;; ###</span>
+
+<span class="c1">;; `setq&#39; stores a value into a variable:</span>
+<span class="p">(</span><span class="nf">setq</span> <span class="nv">my-name</span> <span class="s">&quot;Bastien&quot;</span><span class="p">)</span>
+<span class="c1">;; `C-xC-e&#39; =&gt; &quot;Bastien&quot; (displayed in the mini-buffer)</span>
+
+<span class="c1">;; `insert&#39; will insert &quot;Hello!&quot; where the cursor is:</span>
+<span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello!&quot;</span><span class="p">)</span>
+<span class="c1">;; `C-xC-e&#39; =&gt; &quot;Hello!&quot;</span>
+
+<span class="c1">;; We used `insert&#39; with only one argument &quot;Hello!&quot;, but</span>
+<span class="c1">;; we can pass more arguments -- here we use two:</span>
+
+<span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello&quot;</span> <span class="s">&quot; world!&quot;</span><span class="p">)</span>
+<span class="c1">;; `C-xC-e&#39; =&gt; &quot;Hello world!&quot;</span>
+
+<span class="c1">;; You can use variables instead of strings:</span>
+<span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello, I am &quot;</span> <span class="nv">my-name</span><span class="p">)</span>
+<span class="c1">;; `C-xC-e&#39; =&gt; &quot;Hello, I am Bastien&quot;</span>
+
+<span class="c1">;; You can combine sexps into functions:</span>
+<span class="p">(</span><span class="nf">defun</span> <span class="nv">hello</span> <span class="p">()</span> <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello, I am &quot;</span> <span class="nv">my-name</span><span class="p">))</span>
+<span class="c1">;; `C-xC-e&#39; =&gt; hello</span>
+
+<span class="c1">;; You can evaluate functions:</span>
+<span class="p">(</span><span class="nf">hello</span><span class="p">)</span>
+<span class="c1">;; `C-xC-e&#39; =&gt; Hello, I am Bastien</span>
+
+<span class="c1">;; The empty parentheses in the function&#39;s definition means that</span>
+<span class="c1">;; it does not accept arguments.  But always using `my-name&#39; is</span>
+<span class="c1">;; boring, let&#39;s tell the function to accept one argument (here</span>
+<span class="c1">;; the argument is called &quot;name&quot;): </span>
+
+<span class="p">(</span><span class="nf">defun</span> <span class="nv">hello</span> <span class="p">(</span><span class="nf">name</span><span class="p">)</span> <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello &quot;</span> <span class="nv">name</span><span class="p">))</span>
+<span class="c1">;; `C-xC-e&#39; =&gt; hello</span>
+
+<span class="c1">;; Now let&#39;s call the function with the string &quot;you&quot; as the value</span>
+<span class="c1">;; for its unique argument:</span>
+<span class="p">(</span><span class="nf">hello</span> <span class="s">&quot;you&quot;</span><span class="p">)</span>
+<span class="c1">;; `C-xC-e&#39; =&gt; &quot;Hello you&quot;</span>
+
+<span class="c1">;; Yeah!</span>
+
+<span class="c1">;; Take a breath.</span>
+
+<span class="c1">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span class="c1">;;</span>
+<span class="c1">;; Now switch to a new buffer named &quot;*test*&quot; in another window:</span>
+
+<span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
+<span class="c1">;; `C-xC-e&#39;</span>
+<span class="c1">;; =&gt; [screen has two windows and cursor is in the *test* buffer]</span>
+
+<span class="c1">;; Mouse over the top window and left-click to go back.  Or you can</span>
+<span class="c1">;; use `C-xo&#39; (i.e. hold down control-x and hit o) to go to the other</span>
+<span class="c1">;; window interactively.</span>
+
+<span class="c1">;; You can combine several sexps with `progn&#39;:</span>
+<span class="p">(</span><span class="nf">progn</span>
+  <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">hello</span> <span class="s">&quot;you&quot;</span><span class="p">))</span>
+<span class="c1">;; `C-xC-e&#39;</span>
+<span class="c1">;; =&gt; [The screen has two windows and cursor is in the *test* buffer]</span>
+
+<span class="c1">;; Now if you don&#39;t mind, I&#39;ll stop asking you to hit `C-xC-e&#39;: do it</span>
+<span class="c1">;; for every sexp that follows.</span>
+
+<span class="c1">;; Always go back to the *scratch* buffer with the mouse or `C-xo&#39;.</span>
+
+<span class="c1">;; It&#39;s often useful to erase the buffer:</span>
+<span class="p">(</span><span class="nf">progn</span>
+  <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">erase-buffer</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">hello</span> <span class="s">&quot;there&quot;</span><span class="p">))</span>
+
+<span class="c1">;; Or to go back to the other window:</span>
+<span class="p">(</span><span class="nf">progn</span>
+  <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">erase-buffer</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">hello</span> <span class="s">&quot;you&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">other-window</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1">;; You can bind a value to a local variable with `let&#39;:</span>
+<span class="p">(</span><span class="k">let </span><span class="p">((</span><span class="nf">local-name</span> <span class="s">&quot;you&quot;</span><span class="p">))</span>
+  <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">erase-buffer</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">hello</span> <span class="nv">local-name</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">other-window</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1">;; No need to use `progn&#39; in that case, since `let&#39; also combines</span>
+<span class="c1">;; several sexps.</span>
+
+<span class="c1">;; Let&#39;s format a string:</span>
+<span class="p">(</span><span class="nf">format</span> <span class="s">&quot;Hello %s!\n&quot;</span> <span class="s">&quot;visitor&quot;</span><span class="p">)</span>
+
+<span class="c1">;; %s is a place-holder for a string, replaced by &quot;visitor&quot;.</span>
+<span class="c1">;; \n is the newline character.</span>
+
+<span class="c1">;; Let&#39;s refine our function by using format:</span>
+<span class="p">(</span><span class="nf">defun</span> <span class="nv">hello</span> <span class="p">(</span><span class="nf">name</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">insert</span> <span class="p">(</span><span class="nf">format</span> <span class="s">&quot;Hello %s!\n&quot;</span> <span class="nv">name</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="nf">hello</span> <span class="s">&quot;you&quot;</span><span class="p">)</span>
+
+<span class="c1">;; Let&#39;s create another function which uses `let&#39;:</span>
+<span class="p">(</span><span class="nf">defun</span> <span class="nv">greeting</span> <span class="p">(</span><span class="nf">name</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let </span><span class="p">((</span><span class="nf">your-name</span> <span class="s">&quot;Bastien&quot;</span><span class="p">))</span>
+    <span class="p">(</span><span class="nf">insert</span> <span class="p">(</span><span class="nf">format</span> <span class="s">&quot;Hello %s!\n\nI am %s.&quot;</span>
+                    <span class="nv">name</span>       <span class="c1">; the argument of the function</span>
+                    <span class="nv">your-name</span>  <span class="c1">; the let-bound variable &quot;Bastien&quot;</span>
+                    <span class="p">))))</span>
+
+<span class="c1">;; And evaluate it:</span>
+<span class="p">(</span><span class="nf">greeting</span> <span class="s">&quot;you&quot;</span><span class="p">)</span>
+
+<span class="c1">;; Some function are interactive:</span>
+<span class="p">(</span><span class="nf">read-from-minibuffer</span> <span class="s">&quot;Enter your name: &quot;</span><span class="p">)</span>
+
+<span class="c1">;; Evaluating this function returns what you entered at the prompt.</span>
+
+<span class="c1">;; Let&#39;s make our `greeting&#39; function prompt for your name:</span>
+<span class="p">(</span><span class="nf">defun</span> <span class="nv">greeting</span> <span class="p">(</span><span class="nf">from-name</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let </span><span class="p">((</span><span class="nf">your-name</span> <span class="p">(</span><span class="nf">read-from-minibuffer</span> <span class="s">&quot;Enter your name: &quot;</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nf">insert</span> <span class="p">(</span><span class="nf">format</span> <span class="s">&quot;Hello!\n\nI am %s and you are %s.&quot;</span>
+                    <span class="nv">from-name</span> <span class="c1">; the argument of the function</span>
+                    <span class="nv">your-name</span> <span class="c1">; the let-bound var, entered at prompt</span>
+                    <span class="p">))))</span>
+
+<span class="p">(</span><span class="nf">greeting</span> <span class="s">&quot;Bastien&quot;</span><span class="p">)</span>
+
+<span class="c1">;; Let&#39;s complete it by displaying the results in the other window:</span>
+<span class="p">(</span><span class="nf">defun</span> <span class="nv">greeting</span> <span class="p">(</span><span class="nf">from-name</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let </span><span class="p">((</span><span class="nf">your-name</span> <span class="p">(</span><span class="nf">read-from-minibuffer</span> <span class="s">&quot;Enter your name: &quot;</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">erase-buffer</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">insert</span> <span class="p">(</span><span class="nf">format</span> <span class="s">&quot;Hello %s!\n\nI am %s.&quot;</span> <span class="nv">your-name</span> <span class="nv">from-name</span><span class="p">))</span>
+    <span class="p">(</span><span class="nf">other-window</span> <span class="mi">1</span><span class="p">)))</span>
+
+<span class="c1">;; Now test it:</span>
+<span class="p">(</span><span class="nf">greeting</span> <span class="s">&quot;Bastien&quot;</span><span class="p">)</span>
+
+<span class="c1">;; Take a breath.</span>
+
+<span class="c1">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span class="c1">;;</span>
+<span class="c1">;; Let&#39;s store a list of names:</span>
+<span class="p">(</span><span class="nf">setq</span> <span class="nv">list-of-names</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;Sarah&quot;</span> <span class="s">&quot;Chloe&quot;</span> <span class="s">&quot;Mathilde&quot;</span><span class="p">))</span>
+
+<span class="c1">;; Get the first element of this list with `car&#39;:</span>
+<span class="p">(</span><span class="nb">car </span><span class="nv">list-of-names</span><span class="p">)</span>
+
+<span class="c1">;; Get a list of all but the first element with `cdr&#39;:</span>
+<span class="p">(</span><span class="nb">cdr </span><span class="nv">list-of-names</span><span class="p">)</span>
+
+<span class="c1">;; Add an element to the beginning of a list with `push&#39;:</span>
+<span class="p">(</span><span class="nf">push</span> <span class="s">&quot;Stephanie&quot;</span> <span class="nv">list-of-names</span><span class="p">)</span>
+
+<span class="c1">;; NOTE: `car&#39; and `cdr&#39; don&#39;t modify the list, but `push&#39; does.</span>
+<span class="c1">;; This is an important difference: some functions don&#39;t have any</span>
+<span class="c1">;; side-effects (like `car&#39;) while others have (like `push&#39;).</span>
+
+<span class="c1">;; Let&#39;s call `hello&#39; for each element in `list-of-names&#39;:</span>
+<span class="p">(</span><span class="nf">mapcar</span> <span class="ss">&#39;hello</span> <span class="nv">list-of-names</span><span class="p">)</span>
+
+<span class="c1">;; Refine `greeting&#39; to say hello to everyone in `list-of-names&#39;:</span>
+<span class="p">(</span><span class="nf">defun</span> <span class="nv">greeting</span> <span class="p">()</span>
+    <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">erase-buffer</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">mapcar</span> <span class="ss">&#39;hello</span> <span class="nv">list-of-names</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">other-window</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nf">greeting</span><span class="p">)</span>
+
+<span class="c1">;; Remember the `hello&#39; function we defined above?  It takes one</span>
+<span class="c1">;; argument, a name.  `mapcar&#39; calls `hello&#39;, successively using each</span>
+<span class="c1">;; element of `list-of-names&#39; as the argument for `hello&#39;.</span>
+
+<span class="c1">;; Now let&#39;s arrange a bit what we have in the displayed buffer:</span>
+
+<span class="p">(</span><span class="nf">defun</span> <span class="nv">replace-hello-by-bonjour</span> <span class="p">()</span>
+    <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">goto-char</span> <span class="p">(</span><span class="nf">point-min</span><span class="p">))</span>
+    <span class="p">(</span><span class="nf">while</span> <span class="p">(</span><span class="nf">search-forward</span> <span class="s">&quot;Hello&quot;</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">replace-match</span> <span class="s">&quot;Bonjour&quot;</span><span class="p">))</span>
+    <span class="p">(</span><span class="nf">other-window</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1">;; (goto-char (point-min)) goes to the beginning of the buffer.</span>
+<span class="c1">;; (search-forward &quot;Hello&quot;) searches for the string &quot;Hello&quot;.</span>
+<span class="c1">;; (while x y) evaluates the y sexp(s) while x returns something.</span>
+<span class="c1">;; If x returns `nil&#39; (nothing), we exit the while loop.</span>
+
+<span class="p">(</span><span class="nf">replace-hello-by-bonjour</span><span class="p">)</span>
+
+<span class="c1">;; You should see all occurrences of &quot;Hello&quot; in the *test* buffer</span>
+<span class="c1">;; replaced by &quot;Bonjour&quot;.</span>
+
+<span class="c1">;; You should also get an error: &quot;Search failed: Hello&quot;.</span>
+<span class="c1">;;</span>
+<span class="c1">;; To avoid this error, you need to tell `search-forward&#39; whether it</span>
+<span class="c1">;; should stop searching at some point in the buffer, and whether it</span>
+<span class="c1">;; should silently fail when nothing is found:</span>
+
+<span class="c1">;; (search-forward &quot;Hello&quot; nil t) does the trick:</span>
+
+<span class="c1">;; The `nil&#39; argument says: the search is not bound to a position.</span>
+<span class="c1">;; The `t&#39; argument says: silently fail when nothing is found.</span>
+
+<span class="c1">;; We use this sexp in the function below, which doesn&#39;t throw an error:</span>
+
+<span class="p">(</span><span class="nf">defun</span> <span class="nv">hello-to-bonjour</span> <span class="p">()</span>
+    <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">erase-buffer</span><span class="p">)</span>
+    <span class="c1">;; Say hello to names in `list-of-names&#39;</span>
+    <span class="p">(</span><span class="nf">mapcar</span> <span class="ss">&#39;hello</span> <span class="nv">list-of-names</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">goto-char</span> <span class="p">(</span><span class="nf">point-min</span><span class="p">))</span>
+    <span class="c1">;; Replace &quot;Hello&quot; by &quot;Bonjour&quot;</span>
+    <span class="p">(</span><span class="nf">while</span> <span class="p">(</span><span class="nf">search-forward</span> <span class="s">&quot;Hello&quot;</span> <span class="nv">nil</span> <span class="nv">t</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">replace-match</span> <span class="s">&quot;Bonjour&quot;</span><span class="p">))</span>
+    <span class="p">(</span><span class="nf">other-window</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nf">hello-to-bonjour</span><span class="p">)</span>
+
+<span class="c1">;; Let&#39;s colorize the names:</span>
+
+<span class="p">(</span><span class="nf">defun</span> <span class="nv">boldify-names</span> <span class="p">()</span>
+    <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">goto-char</span> <span class="p">(</span><span class="nf">point-min</span><span class="p">))</span>
+    <span class="p">(</span><span class="nf">while</span> <span class="p">(</span><span class="nf">re-search-forward</span> <span class="s">&quot;Bonjour \\(.+\\)!&quot;</span> <span class="nv">nil</span> <span class="nv">t</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">add-text-properties</span> <span class="p">(</span><span class="nf">match-beginning</span> <span class="mi">1</span><span class="p">)</span>
+                           <span class="p">(</span><span class="nf">match-end</span> <span class="mi">1</span><span class="p">)</span>
+                           <span class="p">(</span><span class="nb">list </span><span class="ss">&#39;face</span> <span class="ss">&#39;bold</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nf">other-window</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1">;; This functions introduces `re-search-forward&#39;: instead of</span>
+<span class="c1">;; searching for the string &quot;Bonjour&quot;, you search for a pattern,</span>
+<span class="c1">;; using a &quot;regular expression&quot; (abbreviated in the prefix &quot;re-&quot;).</span>
+
+<span class="c1">;; The regular expression is &quot;Bonjour \\(.+\\)!&quot; and it reads:</span>
+<span class="c1">;; the string &quot;Bonjour &quot;, and</span>
+<span class="c1">;; a group of           | this is the \\( ... \\) construct</span>
+<span class="c1">;;   any character      | this is the .</span>
+<span class="c1">;;   possibly repeated  | this is the +</span>
+<span class="c1">;; and the &quot;!&quot; string.</span>
+
+<span class="c1">;; Ready?  Test it!</span>
+
+<span class="p">(</span><span class="nf">boldify-names</span><span class="p">)</span>
+
+<span class="c1">;; `add-text-properties&#39; adds... text properties, like a face.</span>
+
+<span class="c1">;; OK, we are done.  Happy hacking!</span>
+
+<span class="c1">;; If you want to know more about a variable or a function:</span>
+<span class="c1">;;</span>
+<span class="c1">;; C-h v a-variable RET</span>
+<span class="c1">;; C-h f a-function RET</span>
+<span class="c1">;;</span>
+<span class="c1">;; To read the Emacs Lisp manual with Emacs:</span>
+<span class="c1">;;</span>
+<span class="c1">;; C-h i m elisp RET</span>
+<span class="c1">;;</span>
+<span class="c1">;; To read an online introduction to Emacs Lisp:</span>
+<span class="c1">;; https://www.gnu.org/software/emacs/manual/html_node/eintr/index.html</span>
+
+<span class="c1">;; Thanks to these people for their feedback and suggestions:</span>
+<span class="c1">;; - Wes Hardaker</span>
+<span class="c1">;; - notbob</span>
+<span class="c1">;; - Kevin Montuori</span>
+<span class="c1">;; - Arne Babenhauserheide</span>
+<span class="c1">;; - Alan Schmitt</span>
+<span class="c1">;; - LinXitoW</span>
+<span class="c1">;; - Aaron Meurer</span>
+</pre></div>
+
+
+
+  </article>
+
+  <p><a href="//www.reddit.com/submit" onclick="window.location = '//www.reddit.com/submit?url=' + encodeURIComponent(window.location); return false"> <img src="//www.redditstatic.com/spreddit12.gif" alt="submit to reddit" border="0" /> </a></p>
+
+  <p><a href="https://twitter.com/share" class="twitter-share-button" data-via="bzg2" data-size="large">Tweet</a></p>
+  <script>!function(d,s,id){var
+  js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,
+  'script', 'twitter-wjs');</script>
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+  var disqus_shortname = 'bastienguerryshomepage';
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">M-x doctor RET</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>M-x doctor RET</li>
+          <li><a href="mailto:bzg+emacs@bzg.fr">bzg+emacs@bzg.fr</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/bzg">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">bzg</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/bzg2">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">bzg2</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Everybody needs a good Emacs doctor.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
