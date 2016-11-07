@@ -1,0 +1,107 @@
+#+title: Minimal interactive tutorial to searching in Emacs
+#+date: 2016-11-07
+#+author: Bastien
+#+layout: post
+#+author_url: /author/bzg
+#+author_avatar: bzg
+#+show_avatar: true
+#+category: libre
+#+show_related_posts: false
+#+feature_image: emacscrazy
+
+#+index: Emacs
+#+index: Search
+
+Go to the main Info buffer with =C-h i=.  Hit =d= to make sure you are
+at the top-level of the Info documentation, and go at the beginning of
+the buffer with =M-<=.
+
+Perform an incremental search for "lisp" with =C-s lisp=.
+
+[[file:img/2016-11-07-emacs-search-lisp.png]]
+
+Hit =RET= to deactivate the search and the highlighting of search
+matches.
+
+Now hit =C-s C-s= to search for the last search string again.
+
+Hit =M-e= to edit the search string.  Delete "string" in the minibuffer
+prompt, type "mode" and =RET= to reenter the search loop.
+
+[[file:img/2016-11-07-emacs-search-mode.png]]
+
+Hit =M-p=.  Your cursor will be back in the minibuffer prompt and you
+can hit =M-p= and =M-n= to cycle through previous search strings, and =RET=
+to search the selected string again.
+
+Go back to the beginning of the Info buffer with =M-<=.
+
+Hit =C-s= to start the search.
+
+Hit =C-q C-j= to search for the newline character.
+
+/=C-q= is used to insert =C-j= and =RET= literally: if you don't use =C-q=,
+typing =C-j= and =RET= in the search prompt will exit the prompt./
+
+Hit =C-g= to abort the search.
+
+Hit =C-s= and search for =Mail=.
+
+/Notice that both "Mail" and "mail" will be matched: the search is not
+case sensitive./
+
+While in the search loop, hit =M-c= to toggle case sensitivity.
+
+While in the search loop, hit =M-s SPC= to toggle "match spaces
+loosely": when matching spaces loosely, you can search for a string
+like "mail   client" (with three hard spaces) and still match the
+"mail client" string.
+
+Try searching for =maii= instead of =mail= and then hit =DEL= to edit the
+search string by deleting the last character.
+
+Hit =C-s= and search for "mail".
+
+Hit =RET= on the first occurrence and go one word backward with =M-b=.
+
+Now hit =C-s C-w= to search for the word at point (it should be "mail").
+
+Try again with =C-s C-w C-w= to search for several words at point.
+
+Hit =C-s C-M-y= to search for the character at point.
+
+Hit =C-M-y C-M-y= to add the next two characters to the search string.
+
+Hit =C-M-w= to remove the last character from the search string.
+
+Exit the search with =C-g=.
+
+Info buffers are read-only by default: hit =M-d= on a word to copy it.
+In normal buffers, you would use =C-M-SPC= to mark the "sexp" under
+cursor (here, the "sexp" is simply a word), then =M-w= to copy it
+(i.e. to "add it to the kill-ring).
+
+Now hit =C-s= again, then =C-y= to paste (i.e. "yank") the text in the
+search area.
+
+Hit =C-s C-M-i=: it displays a new window with a list of previous
+searches.
+
+Hit =M-<= and =C-s= search for =mail=.  Now hit =M-s o= to list lines where
+"mail" occurs.
+
+Hit =C-s= and =M-s r= to switch to regular expression search.
+
+Go to an org-mode buffer.  Hit =M-TAB= to cycle through visibility
+status and stop when in the =OVERVIEW= mode (everything is folded).
+
+Search for hidden text: the matched string is automatically unfolded
+when the cursor moves to it.
+
+Exit the search.
+
+Still in this org-mode buffer, hit =M-TAB= to fold the subtrees and hit
+=C-s M-s i= to search for visible text only.  Invisible text won't be
+matched.
+
+In any buffer, hit =C-s C-h b= to browse the search options.
