@@ -5,8 +5,8 @@
     <description>Everybody needs a good Emacs doctor.</description>
     <link>http://emacs-doctor.com/</link>
     <atom:link href="http://emacs-doctor.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 07 Nov 2016 06:29:04 +0100</pubDate>
-    <lastBuildDate>Mon, 07 Nov 2016 06:29:04 +0100</lastBuildDate>
+    <pubDate>Mon, 07 Nov 2016 06:40:44 +0100</pubDate>
+    <lastBuildDate>Mon, 07 Nov 2016 06:40:44 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -29,20 +29,22 @@
 &lt;p&gt;Go back to the beginning of the Info buffer with &lt;code&gt;M-&amp;lt;&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Hit &lt;code&gt;C-s&lt;/code&gt; to start the search.&lt;/p&gt;
 &lt;p&gt;Hit &lt;code&gt;C-q C-j&lt;/code&gt; to search for the newline character.&lt;/p&gt;
-&lt;p&gt;&lt;i&gt;=C-q= is used to insert =C-j= and =RET= literally: if you don&amp;#8217;t use =C-q=,
-  typing =C-j= and =RET= in the search prompt will exit the prompt.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;C-q&lt;/code&gt; is used to insert &lt;code&gt;C-j&lt;/code&gt; and &lt;code&gt;RET&lt;/code&gt; literally: if you don&amp;#8217;t use &lt;code&gt;C-q&lt;/code&gt;,
+  typing &lt;code&gt;C-j&lt;/code&gt; and &lt;code&gt;RET&lt;/code&gt; in the search prompt will exit the prompt.&lt;/p&gt;
 &lt;p&gt;Hit &lt;code&gt;C-g&lt;/code&gt; to abort the search.&lt;/p&gt;
 &lt;p&gt;Hit &lt;code&gt;C-s&lt;/code&gt; and search for &lt;code&gt;Mail&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;i&gt;Notice that both &amp;#8220;Mail&amp;#8221; and &amp;#8220;mail&amp;#8221; will be matched: the search is not
   case sensitive.&lt;/i&gt;&lt;/p&gt;
-&lt;p&gt;While in the search loop, hit &lt;code&gt;M-c&lt;/code&gt; to toggle case sensitivity.&lt;/p&gt;
+&lt;p&gt;While in the search loop, hit &lt;code&gt;M-c&lt;/code&gt; to toggle case sensitivity: you
+  will notice that now only &amp;#8220;mail&amp;#8221; is highlighted.&lt;/p&gt;
 &lt;p&gt;While in the search loop, hit &lt;code&gt;M-s SPC&lt;/code&gt; to toggle &amp;#8220;match spaces
   loosely&amp;#8221;: when matching spaces loosely, you can search for a string
   like &amp;#8220;mail   client&amp;#8221; (with three hard spaces) and still match the
   &amp;#8220;mail client&amp;#8221; string.&lt;/p&gt;
-&lt;p&gt;Try searching for &lt;code&gt;maii&lt;/code&gt; instead of &lt;code&gt;mail&lt;/code&gt; and then hit &lt;code&gt;DEL&lt;/code&gt; to edit the
-  search string by deleting the last character.&lt;/p&gt;
-&lt;p&gt;Hit &lt;code&gt;C-s&lt;/code&gt; and search for &amp;#8220;mail&amp;#8221;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;img/2016-11-07-emacs-search-loosely.png&quot; alt=&quot;img/2016-11-07-emacs-search-loosely.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Now try searching for &lt;code&gt;maii&lt;/code&gt; instead of &lt;code&gt;mail&lt;/code&gt; and then hit &lt;code&gt;DEL&lt;/code&gt; to
+  edit the search string by deleting the last character.&lt;/p&gt;
+&lt;p&gt;Hit &lt;code&gt;C-s&lt;/code&gt; and search again for &amp;#8220;mail&amp;#8221;.&lt;/p&gt;
 &lt;p&gt;Hit &lt;code&gt;RET&lt;/code&gt; on the first occurrence and go one word backward with &lt;code&gt;M-b&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Now hit &lt;code&gt;C-s C-w&lt;/code&gt; to search for the word at point (it should be &amp;#8220;mail&amp;#8221;).&lt;/p&gt;
 &lt;p&gt;Try again with &lt;code&gt;C-s C-w C-w&lt;/code&gt; to search for several words at point.&lt;/p&gt;
@@ -56,10 +58,12 @@
   (i.e. to &amp;#8220;add it to the kill-ring).&lt;/p&gt;
 &lt;p&gt;Now hit &lt;code&gt;C-s&lt;/code&gt; again, then &lt;code&gt;C-y&lt;/code&gt; to paste (i.e. &amp;#8220;yank&amp;#8221;) the text in the
   search area.&lt;/p&gt;
-&lt;p&gt;Hit &lt;code&gt;C-s C-M-i&lt;/code&gt;: it displays a new window with a list of previous
-  searches.&lt;/p&gt;
-&lt;p&gt;Hit &lt;code&gt;M-&amp;lt;&lt;/code&gt; and &lt;code&gt;C-s&lt;/code&gt; search for &lt;code&gt;mail&lt;/code&gt;.  Now hit &lt;code&gt;M-s o&lt;/code&gt; to list lines where
-  &amp;#8220;mail&amp;#8221; occurs.&lt;/p&gt;
+&lt;p&gt;Hit &lt;code&gt;C-s C-M-i&lt;/code&gt;.  This will displays a new window with a list of
+  previous searches.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;img/2016-11-07-emacs-search-completion.png&quot; alt=&quot;img/2016-11-07-emacs-search-completion.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Hit &lt;code&gt;M-&amp;lt;&lt;/code&gt; and &lt;code&gt;C-s&lt;/code&gt; to search for &lt;code&gt;mail&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now hit &lt;code&gt;M-s o&lt;/code&gt; to list lines where &amp;#8220;mail&amp;#8221; occurs.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;img/2016-11-07-emacs-search-occur.png&quot; alt=&quot;img/2016-11-07-emacs-search-occur.png&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Hit &lt;code&gt;C-s&lt;/code&gt; and &lt;code&gt;M-s r&lt;/code&gt; to switch to regular expression search.&lt;/p&gt;
 &lt;p&gt;Go to an org-mode buffer.  Hit &lt;code&gt;M-TAB&lt;/code&gt; to cycle through visibility
   status and stop when in the &lt;code&gt;OVERVIEW&lt;/code&gt; mode (everything is folded).&lt;/p&gt;
@@ -70,6 +74,14 @@
   &lt;code&gt;C-s M-s i&lt;/code&gt; to search for visible text only.  Invisible text won&amp;#8217;t be
   matched.&lt;/p&gt;
 &lt;p&gt;In any buffer, hit &lt;code&gt;C-s C-h b&lt;/code&gt; to browse the search options.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Things I wish I knew sooner:&lt;/b&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;C-s M-e&lt;/code&gt; to edit the search string&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;C-s M-s r&lt;/code&gt; to toggle search by regular expressions&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;C-s M-w&lt;/code&gt; to search for word at point&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;
+&lt;p&gt;And check the &lt;a href=&quot;https://www.gnu.org/software/emacs/manual/html_node/emacs/Incremental-Search.html&quot;&gt;Emacs manual&lt;/a&gt; for more.&lt;/p&gt;
 
 
 </description>

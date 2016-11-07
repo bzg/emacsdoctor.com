@@ -92,20 +92,22 @@
 <p>Go back to the beginning of the Info buffer with <code>M-&lt;</code>.</p>
 <p>Hit <code>C-s</code> to start the search.</p>
 <p>Hit <code>C-q C-j</code> to search for the newline character.</p>
-<p><i>=C-q= is used to insert =C-j= and =RET= literally: if you don&#8217;t use =C-q=,
-  typing =C-j= and =RET= in the search prompt will exit the prompt.</i></p>
+<p><code>C-q</code> is used to insert <code>C-j</code> and <code>RET</code> literally: if you don&#8217;t use <code>C-q</code>,
+  typing <code>C-j</code> and <code>RET</code> in the search prompt will exit the prompt.</p>
 <p>Hit <code>C-g</code> to abort the search.</p>
 <p>Hit <code>C-s</code> and search for <code>Mail</code>.</p>
 <p><i>Notice that both &#8220;Mail&#8221; and &#8220;mail&#8221; will be matched: the search is not
   case sensitive.</i></p>
-<p>While in the search loop, hit <code>M-c</code> to toggle case sensitivity.</p>
+<p>While in the search loop, hit <code>M-c</code> to toggle case sensitivity: you
+  will notice that now only &#8220;mail&#8221; is highlighted.</p>
 <p>While in the search loop, hit <code>M-s SPC</code> to toggle &#8220;match spaces
   loosely&#8221;: when matching spaces loosely, you can search for a string
   like &#8220;mail   client&#8221; (with three hard spaces) and still match the
   &#8220;mail client&#8221; string.</p>
-<p>Try searching for <code>maii</code> instead of <code>mail</code> and then hit <code>DEL</code> to edit the
-  search string by deleting the last character.</p>
-<p>Hit <code>C-s</code> and search for &#8220;mail&#8221;.</p>
+<p><img src="img/2016-11-07-emacs-search-loosely.png" alt="img/2016-11-07-emacs-search-loosely.png" /></p>
+<p>Now try searching for <code>maii</code> instead of <code>mail</code> and then hit <code>DEL</code> to
+  edit the search string by deleting the last character.</p>
+<p>Hit <code>C-s</code> and search again for &#8220;mail&#8221;.</p>
 <p>Hit <code>RET</code> on the first occurrence and go one word backward with <code>M-b</code>.</p>
 <p>Now hit <code>C-s C-w</code> to search for the word at point (it should be &#8220;mail&#8221;).</p>
 <p>Try again with <code>C-s C-w C-w</code> to search for several words at point.</p>
@@ -119,10 +121,12 @@
   (i.e. to &#8220;add it to the kill-ring).</p>
 <p>Now hit <code>C-s</code> again, then <code>C-y</code> to paste (i.e. &#8220;yank&#8221;) the text in the
   search area.</p>
-<p>Hit <code>C-s C-M-i</code>: it displays a new window with a list of previous
-  searches.</p>
-<p>Hit <code>M-&lt;</code> and <code>C-s</code> search for <code>mail</code>.  Now hit <code>M-s o</code> to list lines where
-  &#8220;mail&#8221; occurs.</p>
+<p>Hit <code>C-s C-M-i</code>.  This will displays a new window with a list of
+  previous searches.</p>
+<p><img src="img/2016-11-07-emacs-search-completion.png" alt="img/2016-11-07-emacs-search-completion.png" /></p>
+<p>Hit <code>M-&lt;</code> and <code>C-s</code> to search for <code>mail</code>.</p>
+<p>Now hit <code>M-s o</code> to list lines where &#8220;mail&#8221; occurs.</p>
+<p><img src="img/2016-11-07-emacs-search-occur.png" alt="img/2016-11-07-emacs-search-occur.png" /></p>
 <p>Hit <code>C-s</code> and <code>M-s r</code> to switch to regular expression search.</p>
 <p>Go to an org-mode buffer.  Hit <code>M-TAB</code> to cycle through visibility
   status and stop when in the <code>OVERVIEW</code> mode (everything is folded).</p>
@@ -133,6 +137,14 @@
   <code>C-s M-s i</code> to search for visible text only.  Invisible text won&#8217;t be
   matched.</p>
 <p>In any buffer, hit <code>C-s C-h b</code> to browse the search options.</p>
+<p><b>Things I wish I knew sooner:</b></p>
+<ul>
+  <li><code>C-s M-e</code> to edit the search string</li>
+  <li><code>C-s M-s r</code> to toggle search by regular expressions</li>
+  <li><code>C-s M-w</code> to search for word at point</li>
+</ul>
+<p>Enjoy!</p>
+<p>And check the <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Incremental-Search.html">Emacs manual</a> for more.</p>
 
 
 

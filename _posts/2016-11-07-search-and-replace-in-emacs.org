@@ -40,8 +40,8 @@ Hit =C-s= to start the search.
 
 Hit =C-q C-j= to search for the newline character.
 
-/=C-q= is used to insert =C-j= and =RET= literally: if you don't use =C-q=,
-typing =C-j= and =RET= in the search prompt will exit the prompt./
+=C-q= is used to insert =C-j= and =RET= literally: if you don't use =C-q=,
+typing =C-j= and =RET= in the search prompt will exit the prompt.
 
 Hit =C-g= to abort the search.
 
@@ -50,17 +50,20 @@ Hit =C-s= and search for =Mail=.
 /Notice that both "Mail" and "mail" will be matched: the search is not
 case sensitive./
 
-While in the search loop, hit =M-c= to toggle case sensitivity.
+While in the search loop, hit =M-c= to toggle case sensitivity: you
+will notice that now only "mail" is highlighted.
 
 While in the search loop, hit =M-s SPC= to toggle "match spaces
 loosely": when matching spaces loosely, you can search for a string
 like "mail   client" (with three hard spaces) and still match the
 "mail client" string.
 
-Try searching for =maii= instead of =mail= and then hit =DEL= to edit the
-search string by deleting the last character.
+[[file:img/2016-11-07-emacs-search-loosely.png]]
 
-Hit =C-s= and search for "mail".
+Now try searching for =maii= instead of =mail= and then hit =DEL= to
+edit the search string by deleting the last character.
+
+Hit =C-s= and search again for "mail".
 
 Hit =RET= on the first occurrence and go one word backward with =M-b=.
 
@@ -84,11 +87,16 @@ cursor (here, the "sexp" is simply a word), then =M-w= to copy it
 Now hit =C-s= again, then =C-y= to paste (i.e. "yank") the text in the
 search area.
 
-Hit =C-s C-M-i=: it displays a new window with a list of previous
-searches.
+Hit =C-s C-M-i=.  This will displays a new window with a list of
+previous searches.
 
-Hit =M-<= and =C-s= search for =mail=.  Now hit =M-s o= to list lines where
-"mail" occurs.
+[[file:img/2016-11-07-emacs-search-completion.png]]
+
+Hit =M-<= and =C-s= to search for =mail=.
+
+Now hit =M-s o= to list lines where "mail" occurs.
+
+[[file:img/2016-11-07-emacs-search-occur.png]]
 
 Hit =C-s= and =M-s r= to switch to regular expression search.
 
@@ -105,3 +113,14 @@ Still in this org-mode buffer, hit =M-TAB= to fold the subtrees and hit
 matched.
 
 In any buffer, hit =C-s C-h b= to browse the search options.
+
+*Things I wish I knew sooner:*
+
+- =C-s M-e= to edit the search string
+- =C-s M-s r= to toggle search by regular expressions
+- =C-s M-w= to search for word at point
+
+Enjoy!
+
+And check the [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Incremental-Search.html][Emacs manual]] for more.
+
