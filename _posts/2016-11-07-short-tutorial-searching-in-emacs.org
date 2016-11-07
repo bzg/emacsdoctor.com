@@ -1,4 +1,4 @@
-#+title: Minimal tutorial to searching in Emacs
+#+title: A short tutorial to searching in Emacs
 #+date: 2016-11-07
 #+author: Bastien
 #+layout: post
