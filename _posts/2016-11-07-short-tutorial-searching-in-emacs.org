@@ -88,11 +88,11 @@ Now hit =C-s= again, then =C-y= to paste (i.e. "yank") the text in the
 search area.
 
 Hit =C-s C-M-i=.  This will displays a new window with a list of
-previous searches.
+possible completions for the current search string.
 
 [[file:img/2016-11-07-emacs-search-completion.png]]
 
-Hit =M-<= and =C-s= to search for =mail=.
+Hit =M-<= and =C-s= to search for "mail".
 
 Now hit =M-s o= to list lines where "mail" occurs.
 
@@ -117,10 +117,11 @@ In any buffer, hit =C-s C-h b= to browse the search options.
 *Things I wish I knew sooner:*
 
 - =C-s M-e= to edit the search string
-- =C-s M-s r= to toggle search by regular expressions
 - =C-s M-w= to search for word at point
+- =C-s M-s r= to toggle search by regular expressions
+- =C-s M-s o= to run =occur= on the current search string
+- =C-s C-M-i= to complete the current search string
 
-Enjoy!
+Enjoy, and check the [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Incremental-Search.html][Emacs manual]] for more.
 
-And check the [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Incremental-Search.html][Emacs manual]] for more.
-
+And you, what are your Emacs search "ahah!" moment?

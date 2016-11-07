@@ -5,8 +5,8 @@
     <description>Everybody needs a good Emacs doctor.</description>
     <link>http://emacs-doctor.com/</link>
     <atom:link href="http://emacs-doctor.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 07 Nov 2016 06:47:09 +0100</pubDate>
-    <lastBuildDate>Mon, 07 Nov 2016 06:47:09 +0100</lastBuildDate>
+    <pubDate>Mon, 07 Nov 2016 06:57:21 +0100</pubDate>
+    <lastBuildDate>Mon, 07 Nov 2016 06:57:21 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -59,9 +59,9 @@
 &lt;p&gt;Now hit &lt;code&gt;C-s&lt;/code&gt; again, then &lt;code&gt;C-y&lt;/code&gt; to paste (i.e. &amp;#8220;yank&amp;#8221;) the text in the
   search area.&lt;/p&gt;
 &lt;p&gt;Hit &lt;code&gt;C-s C-M-i&lt;/code&gt;.  This will displays a new window with a list of
-  previous searches.&lt;/p&gt;
+  possible completions for the current search string.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;img/2016-11-07-emacs-search-completion.png&quot; alt=&quot;img/2016-11-07-emacs-search-completion.png&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;Hit &lt;code&gt;M-&amp;lt;&lt;/code&gt; and &lt;code&gt;C-s&lt;/code&gt; to search for &lt;code&gt;mail&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Hit &lt;code&gt;M-&amp;lt;&lt;/code&gt; and &lt;code&gt;C-s&lt;/code&gt; to search for &amp;#8220;mail&amp;#8221;.&lt;/p&gt;
 &lt;p&gt;Now hit &lt;code&gt;M-s o&lt;/code&gt; to list lines where &amp;#8220;mail&amp;#8221; occurs.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;img/2016-11-07-emacs-search-occur.png&quot; alt=&quot;img/2016-11-07-emacs-search-occur.png&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Hit &lt;code&gt;C-s&lt;/code&gt; and &lt;code&gt;M-s r&lt;/code&gt; to switch to regular expression search.&lt;/p&gt;
@@ -77,11 +77,13 @@
 &lt;p&gt;&lt;b&gt;Things I wish I knew sooner:&lt;/b&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;code&gt;C-s M-e&lt;/code&gt; to edit the search string&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;C-s M-s r&lt;/code&gt; to toggle search by regular expressions&lt;/li&gt;
   &lt;li&gt;&lt;code&gt;C-s M-w&lt;/code&gt; to search for word at point&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;C-s M-s r&lt;/code&gt; to toggle search by regular expressions&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;C-s M-s o&lt;/code&gt; to run &lt;code&gt;occur&lt;/code&gt; on the current search string&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;C-s C-M-i&lt;/code&gt; to complete the current search string&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Enjoy!&lt;/p&gt;
-&lt;p&gt;And check the &lt;a href=&quot;https://www.gnu.org/software/emacs/manual/html_node/emacs/Incremental-Search.html&quot;&gt;Emacs manual&lt;/a&gt; for more.&lt;/p&gt;
+&lt;p&gt;Enjoy, and check the &lt;a href=&quot;https://www.gnu.org/software/emacs/manual/html_node/emacs/Incremental-Search.html&quot;&gt;Emacs manual&lt;/a&gt; for more.&lt;/p&gt;
+&lt;p&gt;And you, what are your Emacs search &amp;#8220;ahah!&amp;#8221; moment?&lt;/p&gt;
 
 
 </description>
