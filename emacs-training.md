@@ -1,15 +1,19 @@
 ---
 layout: page
-title: Training
+title: Emacs Training
 permalink: /emacs-training/
 ---
 
-I'm giving professional support to Emacs developers who want to boost
-their Emacs fluency or learn Emacs Lisp for specific purpose.
+If you are a french company and need Emacs training for your
+employees, see [this page](http://www.2i2l.fr/spip.php?article278).
 
-Check out [this link](http://www.2i2l.fr/spip.php?article278) for more
-information.
+If you are an individual and need GNU Emacs support, please book
+an [appointment online](https://rdv.bzg.fr).
 
-I'm also giving one-to-one support online.
+If will receive your appointment request and you
+can [send me an email](mailto:bzg+emacsREMOVEME@bzg.fr) to tell me
+more about your needs: `.emacs.el` cleanup, list of things you'd like
+to do with Emacs, etc.
 
-Drop me an email for more information: `bzg+emacs@bzg.fr`
+I charge 80€ per hour for Emacs coaching and we can discuss the price
+for regular support or custom development.
