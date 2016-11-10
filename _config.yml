@@ -3,7 +3,7 @@ title: M-x doctor RET
 email: bzg+emacsREMOVEME@bzg.fr
 description: Everybody needs a good Emacs doctor.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://emacs-doctor.com" # the base hostname & protocol for your site
+url: "https://emacs-doctor.com" # the base hostname & protocol for your site
 twitter_username: bzg2
 github_username:  bzg
 permalink: /:title.html
