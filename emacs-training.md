@@ -10,6 +10,11 @@ employees, see [this page](http://www.2i2l.fr/spip.php?article278).
 **Xmas gift!** Join a 3-days Emacs workshop organized
 by [2l2l](http://www.2i2l.fr/spip.php?article278) at Paris
 Montparnasse for 500€ TTC per day per participant.
+See [this repository](https://github.com/bzg/emacs-training) for an
+overview of the topics covered.
+
+You can check here
+for an overview of the contents.
 
 If you are an individual and need GNU Emacs support, please book
 an [appointment online](https://rdv.bzg.fr).
