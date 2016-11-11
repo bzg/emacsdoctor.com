@@ -7,7 +7,7 @@ permalink: /emacs-training/
 If you are a french company and need Emacs training for your
 employees, see [this page](http://www.2i2l.fr/spip.php?article278).
 
-**Xmas gift!** Join a 3-days Emacs/orgmode workshop organized
+**Xmas gift!** Join a 3-days Emacs workshop organized
 by [2l2l](http://www.2i2l.fr/spip.php?article278) at Paris
 Montparnasse for 500€ TTC per day per participant.
 
