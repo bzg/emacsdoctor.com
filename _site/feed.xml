@@ -5,8 +5,8 @@
     <description>Everybody needs a good Emacs doctor.</description>
     <link>https://emacs-doctor.com/</link>
     <atom:link href="https://emacs-doctor.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 15 Nov 2016 15:06:55 +0100</pubDate>
-    <lastBuildDate>Tue, 15 Nov 2016 15:06:55 +0100</lastBuildDate>
+    <pubDate>Tue, 15 Nov 2016 15:07:32 +0100</pubDate>
+    <lastBuildDate>Tue, 15 Nov 2016 15:07:32 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -1295,7 +1295,7 @@ This will be the content of my blog entry.
 &lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; Ensuite installez GNU Emacs 24.3 (ou une version ultérieure) :&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; Debian: apt-get install emacs (or see your distro instructions)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Debian: apt-get install emacs (voir les instructions pour votre distribution)&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; MacOSX: http://emacsformacosx.com/emacs-builds/Emacs-24.3-universal-10.6.8.dmg&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; Windows: http://ftp.gnu.org/gnu/windows/emacs/emacs-24.3-bin-i386.zip&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
