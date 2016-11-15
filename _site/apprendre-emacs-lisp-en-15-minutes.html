@@ -155,137 +155,139 @@
 <span class="c1">;; d&#39;Emacs, appelée le &quot;minibuffer&quot;.  On utilise en général `C-xC-e&#39;,</span>
 <span class="c1">;; pour ne pas encombrer le buffer avec du texte inutile.</span>
 
-<span class="c1">;; ###</span>
-
-<span class="c1">;; `setq&#39; stores a value into a variable:</span>
+<span class="c1">;; `setq&#39; assigne une valeur à une variable:</span>
 <span class="p">(</span><span class="nf">setq</span> <span class="nv">my-name</span> <span class="s">&quot;Bastien&quot;</span><span class="p">)</span>
-<span class="c1">;; `C-xC-e&#39; =&gt; &quot;Bastien&quot; (displayed in the mini-buffer)</span>
+<span class="c1">;; `C-xC-e&#39; =&gt; &quot;Bastien&quot; (affiché dans le mini-buffer)</span>
 
-<span class="c1">;; `insert&#39; will insert &quot;Hello!&quot; where the cursor is:</span>
+<span class="c1">;; `insert&#39; va insérer &quot;Hello!&quot; là où se trouve le curseur :</span>
 <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello!&quot;</span><span class="p">)</span>
 <span class="c1">;; `C-xC-e&#39; =&gt; &quot;Hello!&quot;</span>
 
-<span class="c1">;; We used `insert&#39; with only one argument &quot;Hello!&quot;, but</span>
-<span class="c1">;; we can pass more arguments -- here we use two:</span>
+<span class="c1">;; Nous utilisons `insert&#39; avec un seul argument &quot;Hello!&quot;, mais</span>
+<span class="c1">;; nous pouvons passer plus d&#39;arguments -- ici nous en passons deux:</span>
 
 <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello&quot;</span> <span class="s">&quot; world!&quot;</span><span class="p">)</span>
 <span class="c1">;; `C-xC-e&#39; =&gt; &quot;Hello world!&quot;</span>
 
-<span class="c1">;; You can use variables instead of strings:</span>
+<span class="c1">;; Vous pouvez utiliser des variables au lieu de chaînes de caractères :</span>
 <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello, I am &quot;</span> <span class="nv">my-name</span><span class="p">)</span>
 <span class="c1">;; `C-xC-e&#39; =&gt; &quot;Hello, I am Bastien&quot;</span>
 
-<span class="c1">;; You can combine sexps into functions:</span>
+<span class="c1">;; Vous pouvez combiner les sexps en fonctions :</span>
 <span class="p">(</span><span class="nf">defun</span> <span class="nv">hello</span> <span class="p">()</span> <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello, I am &quot;</span> <span class="nv">my-name</span><span class="p">))</span>
 <span class="c1">;; `C-xC-e&#39; =&gt; hello</span>
 
-<span class="c1">;; You can evaluate functions:</span>
+<span class="c1">;; Vous pouvez évaluer les fonctions:</span>
 <span class="p">(</span><span class="nf">hello</span><span class="p">)</span>
 <span class="c1">;; `C-xC-e&#39; =&gt; Hello, I am Bastien</span>
 
-<span class="c1">;; The empty parentheses in the function&#39;s definition means that</span>
-<span class="c1">;; it does not accept arguments.  But always using `my-name&#39; is</span>
-<span class="c1">;; boring, let&#39;s tell the function to accept one argument (here</span>
-<span class="c1">;; the argument is called &quot;name&quot;): </span>
+<span class="c1">;; Les parenthèses vides dans la définition de la fonction signifient</span>
+<span class="c1">;; qu&#39;elle ne prend pas d&#39;argument.  Mais toujours utiliser `my-name&#39;</span>
+<span class="c1">;; est ennuyant, demandons à la fonction d&#39;accepter un argument (ici</span>
+<span class="c1">;; l&#39;argument est appelé &quot;name&quot;):</span>
 
 <span class="p">(</span><span class="nf">defun</span> <span class="nv">hello</span> <span class="p">(</span><span class="nf">name</span><span class="p">)</span> <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello &quot;</span> <span class="nv">name</span><span class="p">))</span>
 <span class="c1">;; `C-xC-e&#39; =&gt; hello</span>
 
-<span class="c1">;; Now let&#39;s call the function with the string &quot;you&quot; as the value</span>
-<span class="c1">;; for its unique argument:</span>
+<span class="c1">;; Maintenant appelons la fonction avec la chaîne de caractères &quot;you&quot;</span>
+<span class="c1">;; comme valeur de son unique argument :</span>
 <span class="p">(</span><span class="nf">hello</span> <span class="s">&quot;you&quot;</span><span class="p">)</span>
 <span class="c1">;; `C-xC-e&#39; =&gt; &quot;Hello you&quot;</span>
 
-<span class="c1">;; Yeah!</span>
+<span class="c1">;; Youpi!</span>
 
-<span class="c1">;; Take a breath.</span>
+<span class="c1">;; Faites une pause.</span>
 
 <span class="c1">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
 <span class="c1">;;</span>
-<span class="c1">;; Now switch to a new buffer named &quot;*test*&quot; in another window:</span>
+<span class="c1">;; Maintenant ouvrez un nouveau buffer appelé &quot;*test*&quot; dans une</span>
+<span class="c1">;; nouvelle fenêtre :</span>
 
 <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
 <span class="c1">;; `C-xC-e&#39;</span>
-<span class="c1">;; =&gt; [screen has two windows and cursor is in the *test* buffer]</span>
+<span class="c1">;; =&gt; [l&#39;écran a deux fenêtres et le curseur est dans le buffer *test*]</span>
 
-<span class="c1">;; Mouse over the top window and left-click to go back.  Or you can</span>
-<span class="c1">;; use `C-xo&#39; (i.e. hold down control-x and hit o) to go to the other</span>
-<span class="c1">;; window interactively.</span>
+<span class="c1">;; Placez la souris sur la fenêtre du haut et cliquez-gauche pour</span>
+<span class="c1">;; retourner dans cette fenêtre.  Ou bien utilisez `C-xo&#39; (i.e. tenez</span>
+<span class="c1">;; control-x appuyé et appuyez sur o) pour aller dans l&#39;autre fenêtre</span>
+<span class="c1">;; interactivement.</span>
 
-<span class="c1">;; You can combine several sexps with `progn&#39;:</span>
+<span class="c1">;; Vous pouvez combiner plusieurs sexps avec `progn&#39;:</span>
 <span class="p">(</span><span class="nf">progn</span>
   <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">hello</span> <span class="s">&quot;you&quot;</span><span class="p">))</span>
 <span class="c1">;; `C-xC-e&#39;</span>
-<span class="c1">;; =&gt; [The screen has two windows and cursor is in the *test* buffer]</span>
+<span class="c1">;; =&gt; [L&#39;écran a deux fenêtres et le curseur est dans le buffer *test*]</span>
 
-<span class="c1">;; Now if you don&#39;t mind, I&#39;ll stop asking you to hit `C-xC-e&#39;: do it</span>
-<span class="c1">;; for every sexp that follows.</span>
+<span class="c1">;; Maintenant si ça ne vous dérange pas, je vais arrêter de vous</span>
+<span class="c1">;; demander de faire `C-xC-e&#39;: faites-le pour chaque sexp qui suit.</span>
 
-<span class="c1">;; Always go back to the *scratch* buffer with the mouse or `C-xo&#39;.</span>
+<span class="c1">;; Retournez toujours dans le buffer *scratch* avec la souris ou `C-xo&#39;.</span>
 
-<span class="c1">;; It&#39;s often useful to erase the buffer:</span>
+<span class="c1">;; Il est souvent utile d&#39;effacer le contenu du buffer :</span>
 <span class="p">(</span><span class="nf">progn</span>
   <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">erase-buffer</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">hello</span> <span class="s">&quot;there&quot;</span><span class="p">))</span>
 
-<span class="c1">;; Or to go back to the other window:</span>
+<span class="c1">;; Ou d&#39;aller à l&#39;autre fenêtre :</span>
 <span class="p">(</span><span class="nf">progn</span>
   <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">erase-buffer</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">hello</span> <span class="s">&quot;you&quot;</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">other-window</span> <span class="mi">1</span><span class="p">))</span>
 
-<span class="c1">;; You can bind a value to a local variable with `let&#39;:</span>
+<span class="c1">;; Vous pouvez associer une valeur à une variable locale avec `let&#39; :</span>
 <span class="p">(</span><span class="k">let </span><span class="p">((</span><span class="nf">local-name</span> <span class="s">&quot;you&quot;</span><span class="p">))</span>
   <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">erase-buffer</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">hello</span> <span class="nv">local-name</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">other-window</span> <span class="mi">1</span><span class="p">))</span>
 
-<span class="c1">;; No need to use `progn&#39; in that case, since `let&#39; also combines</span>
-<span class="c1">;; several sexps.</span>
+<span class="c1">;; Dans ce cas pas besoin d&#39;utiliser `progn&#39; puisque `let&#39; combine</span>
+<span class="c1">;; aussi plusieurs sexps.</span>
 
-<span class="c1">;; Let&#39;s format a string:</span>
+<span class="c1">;; Mettons en forme une chaîne de caractères :</span>
 <span class="p">(</span><span class="nf">format</span> <span class="s">&quot;Hello %s!\n&quot;</span> <span class="s">&quot;visitor&quot;</span><span class="p">)</span>
 
-<span class="c1">;; %s is a place-holder for a string, replaced by &quot;visitor&quot;.</span>
-<span class="c1">;; \n is the newline character.</span>
+<span class="c1">;; %s désigne l&#39;emplacement de la chaîne, remplacé par &quot;visitor&quot;.</span>
+<span class="c1">;; \n est le caractère de saut de ligne.</span>
 
-<span class="c1">;; Let&#39;s refine our function by using format:</span>
+<span class="c1">;; Améliorons notre fonction en utilisant &quot;format&quot; :</span>
 <span class="p">(</span><span class="nf">defun</span> <span class="nv">hello</span> <span class="p">(</span><span class="nf">name</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">insert</span> <span class="p">(</span><span class="nf">format</span> <span class="s">&quot;Hello %s!\n&quot;</span> <span class="nv">name</span><span class="p">)))</span>
 
 <span class="p">(</span><span class="nf">hello</span> <span class="s">&quot;you&quot;</span><span class="p">)</span>
 
-<span class="c1">;; Let&#39;s create another function which uses `let&#39;:</span>
+<span class="c1">;; Créons une autre fonction qui utilise `let&#39;:</span>
 <span class="p">(</span><span class="nf">defun</span> <span class="nv">greeting</span> <span class="p">(</span><span class="nf">name</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let </span><span class="p">((</span><span class="nf">your-name</span> <span class="s">&quot;Bastien&quot;</span><span class="p">))</span>
     <span class="p">(</span><span class="nf">insert</span> <span class="p">(</span><span class="nf">format</span> <span class="s">&quot;Hello %s!\n\nI am %s.&quot;</span>
-                    <span class="nv">name</span>       <span class="c1">; the argument of the function</span>
-                    <span class="nv">your-name</span>  <span class="c1">; the let-bound variable &quot;Bastien&quot;</span>
+                    <span class="nv">name</span>       <span class="c1">; l&#39;argument de la fonction</span>
+                    <span class="nv">your-name</span>  <span class="c1">; la variable &quot;let-bindée&quot; &quot;Bastien&quot;</span>
                     <span class="p">))))</span>
 
-<span class="c1">;; And evaluate it:</span>
+<span class="c1">;; Et évaluons-la :</span>
 <span class="p">(</span><span class="nf">greeting</span> <span class="s">&quot;you&quot;</span><span class="p">)</span>
 
-<span class="c1">;; Some function are interactive:</span>
+<span class="c1">;; Certaines fonctions sont interactives :</span>
 <span class="p">(</span><span class="nf">read-from-minibuffer</span> <span class="s">&quot;Enter your name: &quot;</span><span class="p">)</span>
 
-<span class="c1">;; Evaluating this function returns what you entered at the prompt.</span>
+<span class="c1">;; Évaluer cette fonction va renvoyer ce que vous avez saisi dans le</span>
+<span class="c1">;; mini-buffer.</span>
 
-<span class="c1">;; Let&#39;s make our `greeting&#39; function prompt for your name:</span>
+<span class="c1">;; Faisons que notre fonction `greeting&#39; vous demande votre nom :</span>
 <span class="p">(</span><span class="nf">defun</span> <span class="nv">greeting</span> <span class="p">(</span><span class="nf">from-name</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let </span><span class="p">((</span><span class="nf">your-name</span> <span class="p">(</span><span class="nf">read-from-minibuffer</span> <span class="s">&quot;Enter your name: &quot;</span><span class="p">)))</span>
     <span class="p">(</span><span class="nf">insert</span> <span class="p">(</span><span class="nf">format</span> <span class="s">&quot;Hello!\n\nI am %s and you are %s.&quot;</span>
-                    <span class="nv">from-name</span> <span class="c1">; the argument of the function</span>
-                    <span class="nv">your-name</span> <span class="c1">; the let-bound var, entered at prompt</span>
+                    <span class="nv">from-name</span> <span class="c1">; l&#39;argument de la fonction</span>
+                    <span class="nv">your-name</span> <span class="c1">; la variable &quot;let-bindée&quot;, entrée dans le mini-buffer</span>
                     <span class="p">))))</span>
 
 <span class="p">(</span><span class="nf">greeting</span> <span class="s">&quot;Bastien&quot;</span><span class="p">)</span>
 
-<span class="c1">;; Let&#39;s complete it by displaying the results in the other window:</span>
+<span class="c1">;; Complétons la fonction pour qu&#39;elle affiche le résultat dans</span>
+<span class="c1">;; l&#39;autre fenêtre :</span>
 <span class="p">(</span><span class="nf">defun</span> <span class="nv">greeting</span> <span class="p">(</span><span class="nf">from-name</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let </span><span class="p">((</span><span class="nf">your-name</span> <span class="p">(</span><span class="nf">read-from-minibuffer</span> <span class="s">&quot;Enter your name: &quot;</span><span class="p">)))</span>
     <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
@@ -293,33 +295,33 @@
     <span class="p">(</span><span class="nf">insert</span> <span class="p">(</span><span class="nf">format</span> <span class="s">&quot;Hello %s!\n\nI am %s.&quot;</span> <span class="nv">your-name</span> <span class="nv">from-name</span><span class="p">))</span>
     <span class="p">(</span><span class="nf">other-window</span> <span class="mi">1</span><span class="p">)))</span>
 
-<span class="c1">;; Now test it:</span>
+<span class="c1">;; Maintenant testons :</span>
 <span class="p">(</span><span class="nf">greeting</span> <span class="s">&quot;Bastien&quot;</span><span class="p">)</span>
 
-<span class="c1">;; Take a breath.</span>
+<span class="c1">;; Faites une pause.</span>
 
 <span class="c1">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
 <span class="c1">;;</span>
-<span class="c1">;; Let&#39;s store a list of names:</span>
+<span class="c1">;; Stockons une liste de noms :</span>
 <span class="p">(</span><span class="nf">setq</span> <span class="nv">list-of-names</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;Sarah&quot;</span> <span class="s">&quot;Chloe&quot;</span> <span class="s">&quot;Mathilde&quot;</span><span class="p">))</span>
 
-<span class="c1">;; Get the first element of this list with `car&#39;:</span>
+<span class="c1">;; Récupérez le premier élément de la liste avec `car&#39; :</span>
 <span class="p">(</span><span class="nb">car </span><span class="nv">list-of-names</span><span class="p">)</span>
 
-<span class="c1">;; Get a list of all but the first element with `cdr&#39;:</span>
+<span class="c1">;; Récupérez tous les élements sauf le premier avec `cdr&#39; :</span>
 <span class="p">(</span><span class="nb">cdr </span><span class="nv">list-of-names</span><span class="p">)</span>
 
-<span class="c1">;; Add an element to the beginning of a list with `push&#39;:</span>
+<span class="c1">;; Ajoutez un élément au début avec `push&#39; :</span>
 <span class="p">(</span><span class="nf">push</span> <span class="s">&quot;Stephanie&quot;</span> <span class="nv">list-of-names</span><span class="p">)</span>
 
-<span class="c1">;; NOTE: `car&#39; and `cdr&#39; don&#39;t modify the list, but `push&#39; does.</span>
-<span class="c1">;; This is an important difference: some functions don&#39;t have any</span>
-<span class="c1">;; side-effects (like `car&#39;) while others have (like `push&#39;).</span>
+<span class="c1">;; NOTE: `car&#39; et `cdr&#39; ne modifient pas la liste, mais `push&#39; oui.</span>
+<span class="c1">;; C&#39;est une différence importante : certaines fonctions n&#39;ont pas</span>
+<span class="c1">;; d&#39;effets secondaires (comme `car&#39;) et d&#39;autres oui (comme `push&#39;).</span>
 
-<span class="c1">;; Let&#39;s call `hello&#39; for each element in `list-of-names&#39;:</span>
+<span class="c1">;; Évaluons `hello&#39; pour tous les éléments dans `list-of-names&#39; :</span>
 <span class="p">(</span><span class="nf">mapcar</span> <span class="ss">&#39;hello</span> <span class="nv">list-of-names</span><span class="p">)</span>
 
-<span class="c1">;; Refine `greeting&#39; to say hello to everyone in `list-of-names&#39;:</span>
+<span class="c1">;; Améliorons `greeting&#39; pour dire hello aux noms de `list-of-names&#39; :</span>
 <span class="p">(</span><span class="nf">defun</span> <span class="nv">greeting</span> <span class="p">()</span>
     <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">erase-buffer</span><span class="p">)</span>
@@ -328,11 +330,12 @@
 
 <span class="p">(</span><span class="nf">greeting</span><span class="p">)</span>
 
-<span class="c1">;; Remember the `hello&#39; function we defined above?  It takes one</span>
-<span class="c1">;; argument, a name.  `mapcar&#39; calls `hello&#39;, successively using each</span>
-<span class="c1">;; element of `list-of-names&#39; as the argument for `hello&#39;.</span>
+<span class="c1">;; Vous vous souvenez de la fonction `hello&#39; définie ci-dessus ?  Elle</span>
+<span class="c1">;; prend seulement un argument, un nom.  `mapcar&#39; appelle `hello&#39; en</span>
+<span class="c1">;; utilisant successivement tous les éléments de `list-of-names&#39; comme</span>
+<span class="c1">;; argument de `hello&#39;.</span>
 
-<span class="c1">;; Now let&#39;s arrange a bit what we have in the displayed buffer:</span>
+<span class="c1">;; Maintenant arrangeons un peu ce qui est affiché dans le buffer :</span>
 
 <span class="p">(</span><span class="nf">defun</span> <span class="nv">replace-hello-by-bonjour</span> <span class="p">()</span>
     <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
@@ -341,43 +344,45 @@
       <span class="p">(</span><span class="nf">replace-match</span> <span class="s">&quot;Bonjour&quot;</span><span class="p">))</span>
     <span class="p">(</span><span class="nf">other-window</span> <span class="mi">1</span><span class="p">))</span>
 
-<span class="c1">;; (goto-char (point-min)) goes to the beginning of the buffer.</span>
-<span class="c1">;; (search-forward &quot;Hello&quot;) searches for the string &quot;Hello&quot;.</span>
-<span class="c1">;; (while x y) evaluates the y sexp(s) while x returns something.</span>
-<span class="c1">;; If x returns `nil&#39; (nothing), we exit the while loop.</span>
+<span class="c1">;; (goto-char (point-min)) va au début du buffer.</span>
+<span class="c1">;; (search-forward &quot;Hello&quot;) chercher  la chaîne &quot;Hello&quot;.</span>
+<span class="c1">;; (while x y) évalue la sexp(s) y tant que x renvoie something.</span>
+<span class="c1">;; Si x renvoie `nil&#39; (rien), nous sortons de la boucle.</span>
 
 <span class="p">(</span><span class="nf">replace-hello-by-bonjour</span><span class="p">)</span>
 
-<span class="c1">;; You should see all occurrences of &quot;Hello&quot; in the *test* buffer</span>
-<span class="c1">;; replaced by &quot;Bonjour&quot;.</span>
+<span class="c1">;; Vous devriez voir toutes les occurrences de &quot;Hello&quot; dans le buffer</span>
+<span class="c1">;; *test* remplacées par &quot;Bonjour&quot;.</span>
 
-<span class="c1">;; You should also get an error: &quot;Search failed: Hello&quot;.</span>
+<span class="c1">;; Vous devriez aussi avoir une erreur : &quot;Search failed: Hello&quot;.</span>
 <span class="c1">;;</span>
-<span class="c1">;; To avoid this error, you need to tell `search-forward&#39; whether it</span>
-<span class="c1">;; should stop searching at some point in the buffer, and whether it</span>
-<span class="c1">;; should silently fail when nothing is found:</span>
+<span class="c1">;; Pour éviter cette erreur, il faut dire à `search-forward&#39; si la</span>
+<span class="c1">;; recherche doit s&#39;arrêter à un certain point du buffer, et si elle</span>
+<span class="c1">;; doit s&#39;arrêter silencieusement si aucune chaîne n&#39;est trouvée.</span>
 
-<span class="c1">;; (search-forward &quot;Hello&quot; nil t) does the trick:</span>
+<span class="c1">;; (search-forward &quot;Hello&quot; nil t) fait ça :</span>
 
-<span class="c1">;; The `nil&#39; argument says: the search is not bound to a position.</span>
-<span class="c1">;; The `t&#39; argument says: silently fail when nothing is found.</span>
+<span class="c1">;; L&#39;argument `nil&#39; indique que la recherche n&#39;est pas limitée à une</span>
+<span class="c1">;; position.  L&#39;argument `t&#39; indique de s&#39;arrêter silencieusement si</span>
+<span class="c1">;; rien n&#39;est trouvé.</span>
 
-<span class="c1">;; We use this sexp in the function below, which doesn&#39;t throw an error:</span>
+<span class="c1">;; Nous utilisons cette sexp dans la fonction ci-dessous, qui ne</span>
+<span class="c1">;; renvoie pas d&#39;erreur :</span>
 
 <span class="p">(</span><span class="nf">defun</span> <span class="nv">hello-to-bonjour</span> <span class="p">()</span>
     <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">erase-buffer</span><span class="p">)</span>
-    <span class="c1">;; Say hello to names in `list-of-names&#39;</span>
+    <span class="c1">;; Dit hello aux noms de `list-of-names&#39;</span>
     <span class="p">(</span><span class="nf">mapcar</span> <span class="ss">&#39;hello</span> <span class="nv">list-of-names</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">goto-char</span> <span class="p">(</span><span class="nf">point-min</span><span class="p">))</span>
-    <span class="c1">;; Replace &quot;Hello&quot; by &quot;Bonjour&quot;</span>
+    <span class="c1">;; Remplace &quot;Hello&quot; par &quot;Bonjour&quot;</span>
     <span class="p">(</span><span class="nf">while</span> <span class="p">(</span><span class="nf">search-forward</span> <span class="s">&quot;Hello&quot;</span> <span class="nv">nil</span> <span class="nv">t</span><span class="p">)</span>
       <span class="p">(</span><span class="nf">replace-match</span> <span class="s">&quot;Bonjour&quot;</span><span class="p">))</span>
     <span class="p">(</span><span class="nf">other-window</span> <span class="mi">1</span><span class="p">))</span>
 
 <span class="p">(</span><span class="nf">hello-to-bonjour</span><span class="p">)</span>
 
-<span class="c1">;; Let&#39;s colorize the names:</span>
+<span class="c1">;; Mettons de la couleur sur les noms :</span>
 
 <span class="p">(</span><span class="nf">defun</span> <span class="nv">boldify-names</span> <span class="p">()</span>
     <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
@@ -388,38 +393,41 @@
                            <span class="p">(</span><span class="nb">list </span><span class="ss">&#39;face</span> <span class="ss">&#39;bold</span><span class="p">)))</span>
     <span class="p">(</span><span class="nf">other-window</span> <span class="mi">1</span><span class="p">))</span>
 
-<span class="c1">;; This functions introduces `re-search-forward&#39;: instead of</span>
-<span class="c1">;; searching for the string &quot;Bonjour&quot;, you search for a pattern,</span>
-<span class="c1">;; using a &quot;regular expression&quot; (abbreviated in the prefix &quot;re-&quot;).</span>
+<span class="c1">;; Cette fonction introduit `re-search-forward&#39; : au lieu de chercher</span>
+<span class="c1">;; la chaîne &quot;Bonjour&quot;, nous cherchons un &quot;pattern&quot; en utilisant une</span>
+<span class="c1">;; &quot;expression régulière&quot; (le préfixe &quot;re-&quot; signifie &quot;regular</span>
+<span class="c1">;; expression&quot;).</span>
 
-<span class="c1">;; The regular expression is &quot;Bonjour \\(.+\\)!&quot; and it reads:</span>
-<span class="c1">;; the string &quot;Bonjour &quot;, and</span>
-<span class="c1">;; a group of           | this is the \\( ... \\) construct</span>
-<span class="c1">;;   any character      | this is the .</span>
-<span class="c1">;;   possibly repeated  | this is the +</span>
-<span class="c1">;; and the &quot;!&quot; string.</span>
+<span class="c1">;; L&#39;expression régulière est &quot;Bonjour \\(.+\\)!&quot; et se lit :</span>
+<span class="c1">;; la chaîne &quot;Bonjour &quot;, et</span>
+<span class="c1">;; un groupe de                | c&#39;est la syntaxe \\( ... \\)</span>
+<span class="c1">;;   n&#39;importe quel caractère  | c&#39;est le .</span>
+<span class="c1">;;   peut-être plusieurs       | c&#39;est le +</span>
+<span class="c1">;; et la chaîne &quot;!&quot;.</span>
 
-<span class="c1">;; Ready?  Test it!</span>
+<span class="c1">;; Prêt ?  Testons !</span>
 
 <span class="p">(</span><span class="nf">boldify-names</span><span class="p">)</span>
 
-<span class="c1">;; `add-text-properties&#39; adds... text properties, like a face.</span>
+<span class="c1">;; `add-text-properties&#39; ajoute des propriétés textuelles telle que</span>
+<span class="c1">;; des &quot;faces&quot; (une &quot;face&quot; définit la fonte, la couleur, la taille et</span>
+<span class="c1">;; d&#39;autres propriétés du texte.)</span>
 
-<span class="c1">;; OK, we are done.  Happy hacking!</span>
+<span class="c1">;; Et voilà, c&#39;est fini.  Happy hacking!</span>
 
-<span class="c1">;; If you want to know more about a variable or a function:</span>
+<span class="c1">;; Si vous voulez en savoir plus sur une variable ou une fonction :</span>
 <span class="c1">;;</span>
-<span class="c1">;; C-h v a-variable RET</span>
-<span class="c1">;; C-h f a-function RET</span>
+<span class="c1">;; C-h v une-variable RET</span>
+<span class="c1">;; C-h f une-fonction RET</span>
 <span class="c1">;;</span>
-<span class="c1">;; To read the Emacs Lisp manual with Emacs:</span>
+<span class="c1">;; Pour lire le manuel Emacs Lisp avec Emacs :</span>
 <span class="c1">;;</span>
 <span class="c1">;; C-h i m elisp RET</span>
 <span class="c1">;;</span>
-<span class="c1">;; To read an online introduction to Emacs Lisp:</span>
+<span class="c1">;; Pour lire en ligne une introduction à Emacs Lisp :</span>
 <span class="c1">;; https://www.gnu.org/software/emacs/manual/html_node/eintr/index.html</span>
 
-<span class="c1">;; Thanks to these people for their feedback and suggestions:</span>
+<span class="c1">;; Merci à ces personnes pour leurs retours et suggetions :</span>
 <span class="c1">;; - Wes Hardaker</span>
 <span class="c1">;; - notbob</span>
 <span class="c1">;; - Kevin Montuori</span>

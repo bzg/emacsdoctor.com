@@ -92,137 +92,139 @@ Les commentaires et les retours sont les bienvenus !
 ;; d'Emacs, appelée le "minibuffer".  On utilise en général `C-xC-e',
 ;; pour ne pas encombrer le buffer avec du texte inutile.
 
-;; ###
-
-;; `setq' stores a value into a variable:
+;; `setq' assigne une valeur à une variable:
 (setq my-name "Bastien")
-;; `C-xC-e' => "Bastien" (displayed in the mini-buffer)
+;; `C-xC-e' => "Bastien" (affiché dans le mini-buffer)
 
-;; `insert' will insert "Hello!" where the cursor is:
+;; `insert' va insérer "Hello!" là où se trouve le curseur :
 (insert "Hello!")
 ;; `C-xC-e' => "Hello!"
 
-;; We used `insert' with only one argument "Hello!", but
-;; we can pass more arguments -- here we use two:
+;; Nous utilisons `insert' avec un seul argument "Hello!", mais
+;; nous pouvons passer plus d'arguments -- ici nous en passons deux:
 
 (insert "Hello" " world!")
 ;; `C-xC-e' => "Hello world!"
 
-;; You can use variables instead of strings:
+;; Vous pouvez utiliser des variables au lieu de chaînes de caractères :
 (insert "Hello, I am " my-name)
 ;; `C-xC-e' => "Hello, I am Bastien"
 
-;; You can combine sexps into functions:
+;; Vous pouvez combiner les sexps en fonctions :
 (defun hello () (insert "Hello, I am " my-name))
 ;; `C-xC-e' => hello
 
-;; You can evaluate functions:
+;; Vous pouvez évaluer les fonctions:
 (hello)
 ;; `C-xC-e' => Hello, I am Bastien
 
-;; The empty parentheses in the function's definition means that
-;; it does not accept arguments.  But always using `my-name' is
-;; boring, let's tell the function to accept one argument (here
-;; the argument is called "name"): 
+;; Les parenthèses vides dans la définition de la fonction signifient
+;; qu'elle ne prend pas d'argument.  Mais toujours utiliser `my-name'
+;; est ennuyant, demandons à la fonction d'accepter un argument (ici
+;; l'argument est appelé "name"):
 
 (defun hello (name) (insert "Hello " name))
 ;; `C-xC-e' => hello
 
-;; Now let's call the function with the string "you" as the value
-;; for its unique argument:
+;; Maintenant appelons la fonction avec la chaîne de caractères "you"
+;; comme valeur de son unique argument :
 (hello "you")
 ;; `C-xC-e' => "Hello you"
 
-;; Yeah!
+;; Youpi!
 
-;; Take a breath.
+;; Faites une pause.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
-;; Now switch to a new buffer named "*test*" in another window:
+;; Maintenant ouvrez un nouveau buffer appelé "*test*" dans une
+;; nouvelle fenêtre :
 
 (switch-to-buffer-other-window "*test*")
 ;; `C-xC-e'
-;; => [screen has two windows and cursor is in the *test* buffer]
+;; => [l'écran a deux fenêtres et le curseur est dans le buffer *test*]
 
-;; Mouse over the top window and left-click to go back.  Or you can
-;; use `C-xo' (i.e. hold down control-x and hit o) to go to the other
-;; window interactively.
+;; Placez la souris sur la fenêtre du haut et cliquez-gauche pour
+;; retourner dans cette fenêtre.  Ou bien utilisez `C-xo' (i.e. tenez
+;; control-x appuyé et appuyez sur o) pour aller dans l'autre fenêtre
+;; interactivement.
 
-;; You can combine several sexps with `progn':
+;; Vous pouvez combiner plusieurs sexps avec `progn':
 (progn
   (switch-to-buffer-other-window "*test*")
   (hello "you"))
 ;; `C-xC-e'
-;; => [The screen has two windows and cursor is in the *test* buffer]
+;; => [L'écran a deux fenêtres et le curseur est dans le buffer *test*]
 
-;; Now if you don't mind, I'll stop asking you to hit `C-xC-e': do it
-;; for every sexp that follows.
+;; Maintenant si ça ne vous dérange pas, je vais arrêter de vous
+;; demander de faire `C-xC-e': faites-le pour chaque sexp qui suit.
 
-;; Always go back to the *scratch* buffer with the mouse or `C-xo'.
+;; Retournez toujours dans le buffer *scratch* avec la souris ou `C-xo'.
 
-;; It's often useful to erase the buffer:
+;; Il est souvent utile d'effacer le contenu du buffer :
 (progn
   (switch-to-buffer-other-window "*test*")
   (erase-buffer)
   (hello "there"))
 
-;; Or to go back to the other window:
+;; Ou d'aller à l'autre fenêtre :
 (progn
   (switch-to-buffer-other-window "*test*")
   (erase-buffer)
   (hello "you")
   (other-window 1))
 
-;; You can bind a value to a local variable with `let':
+;; Vous pouvez associer une valeur à une variable locale avec `let' :
 (let ((local-name "you"))
   (switch-to-buffer-other-window "*test*")
   (erase-buffer)
   (hello local-name)
   (other-window 1))
 
-;; No need to use `progn' in that case, since `let' also combines
-;; several sexps.
+;; Dans ce cas pas besoin d'utiliser `progn' puisque `let' combine
+;; aussi plusieurs sexps.
 
-;; Let's format a string:
+;; Mettons en forme une chaîne de caractères :
 (format "Hello %s!\n" "visitor")
 
-;; %s is a place-holder for a string, replaced by "visitor".
-;; \n is the newline character.
+;; %s désigne l'emplacement de la chaîne, remplacé par "visitor".
+;; \n est le caractère de saut de ligne.
 
-;; Let's refine our function by using format:
+;; Améliorons notre fonction en utilisant "format" :
 (defun hello (name)
   (insert (format "Hello %s!\n" name)))
 
 (hello "you")
 
-;; Let's create another function which uses `let':
+;; Créons une autre fonction qui utilise `let':
 (defun greeting (name)
   (let ((your-name "Bastien"))
     (insert (format "Hello %s!\n\nI am %s."
-                    name       ; the argument of the function
-                    your-name  ; the let-bound variable "Bastien"
+                    name       ; l'argument de la fonction
+                    your-name  ; la variable "let-bindée" "Bastien"
                     ))))
 
-;; And evaluate it:
+;; Et évaluons-la :
 (greeting "you")
 
-;; Some function are interactive:
+;; Certaines fonctions sont interactives :
 (read-from-minibuffer "Enter your name: ")
 
-;; Evaluating this function returns what you entered at the prompt.
+;; Évaluer cette fonction va renvoyer ce que vous avez saisi dans le
+;; mini-buffer.
 
-;; Let's make our `greeting' function prompt for your name:
+;; Faisons que notre fonction `greeting' vous demande votre nom :
 (defun greeting (from-name)
   (let ((your-name (read-from-minibuffer "Enter your name: ")))
     (insert (format "Hello!\n\nI am %s and you are %s."
-                    from-name ; the argument of the function
-                    your-name ; the let-bound var, entered at prompt
+                    from-name ; l'argument de la fonction
+                    your-name ; la variable "let-bindée", entrée dans le mini-buffer
                     ))))
 
 (greeting "Bastien")
 
-;; Let's complete it by displaying the results in the other window:
+;; Complétons la fonction pour qu'elle affiche le résultat dans
+;; l'autre fenêtre :
 (defun greeting (from-name)
   (let ((your-name (read-from-minibuffer "Enter your name: ")))
     (switch-to-buffer-other-window "*test*")
@@ -230,33 +232,33 @@ Les commentaires et les retours sont les bienvenus !
     (insert (format "Hello %s!\n\nI am %s." your-name from-name))
     (other-window 1)))
 
-;; Now test it:
+;; Maintenant testons :
 (greeting "Bastien")
 
-;; Take a breath.
+;; Faites une pause.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
-;; Let's store a list of names:
+;; Stockons une liste de noms :
 (setq list-of-names '("Sarah" "Chloe" "Mathilde"))
 
-;; Get the first element of this list with `car':
+;; Récupérez le premier élément de la liste avec `car' :
 (car list-of-names)
 
-;; Get a list of all but the first element with `cdr':
+;; Récupérez tous les élements sauf le premier avec `cdr' :
 (cdr list-of-names)
 
-;; Add an element to the beginning of a list with `push':
+;; Ajoutez un élément au début avec `push' :
 (push "Stephanie" list-of-names)
 
-;; NOTE: `car' and `cdr' don't modify the list, but `push' does.
-;; This is an important difference: some functions don't have any
-;; side-effects (like `car') while others have (like `push').
+;; NOTE: `car' et `cdr' ne modifient pas la liste, mais `push' oui.
+;; C'est une différence importante : certaines fonctions n'ont pas
+;; d'effets secondaires (comme `car') et d'autres oui (comme `push').
 
-;; Let's call `hello' for each element in `list-of-names':
+;; Évaluons `hello' pour tous les éléments dans `list-of-names' :
 (mapcar 'hello list-of-names)
 
-;; Refine `greeting' to say hello to everyone in `list-of-names':
+;; Améliorons `greeting' pour dire hello aux noms de `list-of-names' :
 (defun greeting ()
     (switch-to-buffer-other-window "*test*")
     (erase-buffer)
@@ -265,11 +267,12 @@ Les commentaires et les retours sont les bienvenus !
 
 (greeting)
 
-;; Remember the `hello' function we defined above?  It takes one
-;; argument, a name.  `mapcar' calls `hello', successively using each
-;; element of `list-of-names' as the argument for `hello'.
+;; Vous vous souvenez de la fonction `hello' définie ci-dessus ?  Elle
+;; prend seulement un argument, un nom.  `mapcar' appelle `hello' en
+;; utilisant successivement tous les éléments de `list-of-names' comme
+;; argument de `hello'.
 
-;; Now let's arrange a bit what we have in the displayed buffer:
+;; Maintenant arrangeons un peu ce qui est affiché dans le buffer :
 
 (defun replace-hello-by-bonjour ()
     (switch-to-buffer-other-window "*test*")
@@ -278,43 +281,45 @@ Les commentaires et les retours sont les bienvenus !
       (replace-match "Bonjour"))
     (other-window 1))
 
-;; (goto-char (point-min)) goes to the beginning of the buffer.
-;; (search-forward "Hello") searches for the string "Hello".
-;; (while x y) evaluates the y sexp(s) while x returns something.
-;; If x returns `nil' (nothing), we exit the while loop.
+;; (goto-char (point-min)) va au début du buffer.
+;; (search-forward "Hello") chercher  la chaîne "Hello".
+;; (while x y) évalue la sexp(s) y tant que x renvoie something.
+;; Si x renvoie `nil' (rien), nous sortons de la boucle.
 
 (replace-hello-by-bonjour)
 
-;; You should see all occurrences of "Hello" in the *test* buffer
-;; replaced by "Bonjour".
+;; Vous devriez voir toutes les occurrences de "Hello" dans le buffer
+;; *test* remplacées par "Bonjour".
 
-;; You should also get an error: "Search failed: Hello".
+;; Vous devriez aussi avoir une erreur : "Search failed: Hello".
 ;;
-;; To avoid this error, you need to tell `search-forward' whether it
-;; should stop searching at some point in the buffer, and whether it
-;; should silently fail when nothing is found:
+;; Pour éviter cette erreur, il faut dire à `search-forward' si la
+;; recherche doit s'arrêter à un certain point du buffer, et si elle
+;; doit s'arrêter silencieusement si aucune chaîne n'est trouvée.
 
-;; (search-forward "Hello" nil t) does the trick:
+;; (search-forward "Hello" nil t) fait ça :
 
-;; The `nil' argument says: the search is not bound to a position.
-;; The `t' argument says: silently fail when nothing is found.
+;; L'argument `nil' indique que la recherche n'est pas limitée à une
+;; position.  L'argument `t' indique de s'arrêter silencieusement si
+;; rien n'est trouvé.
 
-;; We use this sexp in the function below, which doesn't throw an error:
+;; Nous utilisons cette sexp dans la fonction ci-dessous, qui ne
+;; renvoie pas d'erreur :
 
 (defun hello-to-bonjour ()
     (switch-to-buffer-other-window "*test*")
     (erase-buffer)
-    ;; Say hello to names in `list-of-names'
+    ;; Dit hello aux noms de `list-of-names'
     (mapcar 'hello list-of-names)
     (goto-char (point-min))
-    ;; Replace "Hello" by "Bonjour"
+    ;; Remplace "Hello" par "Bonjour"
     (while (search-forward "Hello" nil t)
       (replace-match "Bonjour"))
     (other-window 1))
 
 (hello-to-bonjour)
 
-;; Let's colorize the names:
+;; Mettons de la couleur sur les noms :
 
 (defun boldify-names ()
     (switch-to-buffer-other-window "*test*")
@@ -325,38 +330,41 @@ Les commentaires et les retours sont les bienvenus !
                            (list 'face 'bold)))
     (other-window 1))
 
-;; This functions introduces `re-search-forward': instead of
-;; searching for the string "Bonjour", you search for a pattern,
-;; using a "regular expression" (abbreviated in the prefix "re-").
+;; Cette fonction introduit `re-search-forward' : au lieu de chercher
+;; la chaîne "Bonjour", nous cherchons un "pattern" en utilisant une
+;; "expression régulière" (le préfixe "re-" signifie "regular
+;; expression").
 
-;; The regular expression is "Bonjour \\(.+\\)!" and it reads:
-;; the string "Bonjour ", and
-;; a group of           | this is the \\( ... \\) construct
-;;   any character      | this is the .
-;;   possibly repeated  | this is the +
-;; and the "!" string.
+;; L'expression régulière est "Bonjour \\(.+\\)!" et se lit :
+;; la chaîne "Bonjour ", et
+;; un groupe de                | c'est la syntaxe \\( ... \\)
+;;   n'importe quel caractère  | c'est le .
+;;   peut-être plusieurs       | c'est le +
+;; et la chaîne "!".
 
-;; Ready?  Test it!
+;; Prêt ?  Testons !
 
 (boldify-names)
 
-;; `add-text-properties' adds... text properties, like a face.
+;; `add-text-properties' ajoute des propriétés textuelles telle que
+;; des "faces" (une "face" définit la fonte, la couleur, la taille et
+;; d'autres propriétés du texte.)
 
-;; OK, we are done.  Happy hacking!
+;; Et voilà, c'est fini.  Happy hacking!
 
-;; If you want to know more about a variable or a function:
+;; Si vous voulez en savoir plus sur une variable ou une fonction :
 ;;
-;; C-h v a-variable RET
-;; C-h f a-function RET
+;; C-h v une-variable RET
+;; C-h f une-fonction RET
 ;;
-;; To read the Emacs Lisp manual with Emacs:
+;; Pour lire le manuel Emacs Lisp avec Emacs :
 ;;
 ;; C-h i m elisp RET
 ;;
-;; To read an online introduction to Emacs Lisp:
+;; Pour lire en ligne une introduction à Emacs Lisp :
 ;; https://www.gnu.org/software/emacs/manual/html_node/eintr/index.html
 
-;; Thanks to these people for their feedback and suggestions:
+;; Merci à ces personnes pour leurs retours et suggetions :
 ;; - Wes Hardaker
 ;; - notbob
 ;; - Kevin Montuori
