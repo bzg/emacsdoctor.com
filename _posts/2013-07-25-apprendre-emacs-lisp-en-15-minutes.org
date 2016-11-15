@@ -15,7 +15,7 @@ Les commentaires et les retours sont les bienvenus !
 #+begin_src emacs-lisp
 ;; Ceci est une introduction à Emacs Lisp en 15 minutes (v0.2d)
 ;;
-;; Auteur: Bastien / @bzg2 / http://bzg.fr
+;; Auteur : Bastien / @bzg2 / http://bzg.fr
 ;;
 ;; Prenez d'abord le temps de lire ce texte en anglais de Peter Norvig:
 ;; http://norvig.com/21-days.html
