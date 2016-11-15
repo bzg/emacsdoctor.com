@@ -80,19 +80,19 @@
 <span class="c1">;;</span>
 <span class="c1">;; Auteur : Bastien / @bzg2 / https://bzg.fr</span>
 <span class="c1">;;</span>
-<span class="c1">;; Prenez d&#39;abord le temps de lire ce texte en anglais de Peter Norvig:</span>
+<span class="c1">;; Prenez d&#39;abord le temps de lire ce texte en anglais de Peter Norvig :</span>
 <span class="c1">;; http://norvig.com/21-days.html</span>
 <span class="c1">;;</span>
 <span class="c1">;; Ensuite installez GNU Emacs 24.3 (ou une version ultérieure) :</span>
 <span class="c1">;;</span>
-<span class="c1">;; Debian: apt-get install emacs (voir les instructions pour votre distribution)</span>
-<span class="c1">;; MacOSX: http://emacsformacosx.com/emacs-builds/Emacs-24.3-universal-10.6.8.dmg</span>
-<span class="c1">;; Windows: http://ftp.gnu.org/gnu/windows/emacs/emacs-24.3-bin-i386.zip</span>
+<span class="c1">;; Debian : apt-get install emacs (voir les instructions pour votre distribution)</span>
+<span class="c1">;; MacOSX : http://emacsformacosx.com/emacs-builds/Emacs-24.3-universal-10.6.8.dmg</span>
+<span class="c1">;; Windows : http://ftp.gnu.org/gnu/windows/emacs/emacs-24.3-bin-i386.zip</span>
 <span class="c1">;;</span>
-<span class="c1">;; Vous trouverez plus d&#39;informations sur l&#39;installation:</span>
+<span class="c1">;; Vous trouverez plus d&#39;informations sur l&#39;installation :</span>
 <span class="c1">;; http://www.gnu.org/software/emacs/#Obtaining</span>
 
-<span class="c1">;; Avertissement important:</span>
+<span class="c1">;; Avertissement important :</span>
 <span class="c1">;;</span>
 <span class="c1">;; Suivre ce tutoriel ne risque pas d&#39;endommager votre ordinateur,</span>
 <span class="c1">;; sauf si vous vous énervez au point de le jeter par terre.  En tout</span>
@@ -105,13 +105,13 @@
 <span class="c1">;;</span>
 <span class="c1">;; Tapez la touche `q&#39; pour enlever le message d&#39;accueil.</span>
 <span class="c1">;;</span>
-<span class="c1">;; Maintenant regardez la ligne grise au pied de la fenêtre:</span>
+<span class="c1">;; Maintenant regardez la ligne grise au pied de la fenêtre :</span>
 <span class="c1">;;</span>
 <span class="c1">;; &quot;*scratch*&quot; est le nom de l&#39;espace d&#39;édition dans lequel vous vous</span>
 <span class="c1">;; trouvez.  Cet espace d&#39;édition est appelé un &quot;buffer&quot;.</span>
 <span class="c1">;;</span>
 <span class="c1">;; Le buffer scratch est le buffer par défaut quand on ouvre Emacs.</span>
-<span class="c1">;; Vous n&#39;éditez jamais de fichier directement: vous éditez des</span>
+<span class="c1">;; Vous n&#39;éditez jamais de fichier directement : vous éditez des</span>
 <span class="c1">;; buffers que vous pouvez sauvegarder dans des fichiers.</span>
 <span class="c1">;; </span>
 <span class="c1">;; &quot;Lisp interaction&quot; désigne le jeu de commandes disponible ici.</span>
@@ -127,13 +127,13 @@
 <span class="c1">;; Le point-virgule commence un commentaire partout sur une ligne.</span>
 <span class="c1">;;</span>
 <span class="c1">;; Les programmes Elisp sont composés d&#39;expressions symboliques aussi</span>
-<span class="c1">;; appelées &quot;sexps&quot;:</span>
+<span class="c1">;; appelées &quot;sexps&quot; :</span>
 <span class="p">(</span><span class="nb">+ </span><span class="mi">2</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="c1">;; Cette expression symbolique se lit &quot;Ajouter 2 à 2&quot;.</span>
 
 <span class="c1">;; Les sexps sont placées entre parenthèses, possiblement sur</span>
-<span class="c1">;; plusieurs niveaux:</span>
+<span class="c1">;; plusieurs niveaux :</span>
 <span class="p">(</span><span class="nb">+ </span><span class="mi">2</span> <span class="p">(</span><span class="nb">+ </span><span class="mi">1</span> <span class="mi">1</span><span class="p">))</span>
 
 <span class="c1">;; Une expression symbolique contient des atomes ou d&#39;autres</span>
@@ -155,7 +155,7 @@
 <span class="c1">;; d&#39;Emacs, appelée le &quot;minibuffer&quot;.  On utilise en général `C-xC-e&#39;,</span>
 <span class="c1">;; pour ne pas encombrer le buffer avec du texte inutile.</span>
 
-<span class="c1">;; `setq&#39; assigne une valeur à une variable:</span>
+<span class="c1">;; `setq&#39; assigne une valeur à une variable :</span>
 <span class="p">(</span><span class="nf">setq</span> <span class="nv">my-name</span> <span class="s">&quot;Bastien&quot;</span><span class="p">)</span>
 <span class="c1">;; `C-xC-e&#39; =&gt; &quot;Bastien&quot; (affiché dans le mini-buffer)</span>
 
@@ -164,7 +164,7 @@
 <span class="c1">;; `C-xC-e&#39; =&gt; &quot;Hello!&quot;</span>
 
 <span class="c1">;; Nous utilisons `insert&#39; avec un seul argument &quot;Hello!&quot;, mais</span>
-<span class="c1">;; nous pouvons passer plus d&#39;arguments -- ici nous en passons deux:</span>
+<span class="c1">;; nous pouvons passer plus d&#39;arguments - ici nous en passons deux :</span>
 
 <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello&quot;</span> <span class="s">&quot; world!&quot;</span><span class="p">)</span>
 <span class="c1">;; `C-xC-e&#39; =&gt; &quot;Hello world!&quot;</span>
@@ -177,14 +177,14 @@
 <span class="p">(</span><span class="nf">defun</span> <span class="nv">hello</span> <span class="p">()</span> <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello, I am &quot;</span> <span class="nv">my-name</span><span class="p">))</span>
 <span class="c1">;; `C-xC-e&#39; =&gt; hello</span>
 
-<span class="c1">;; Vous pouvez évaluer les fonctions:</span>
+<span class="c1">;; Vous pouvez évaluer les fonctions :</span>
 <span class="p">(</span><span class="nf">hello</span><span class="p">)</span>
 <span class="c1">;; `C-xC-e&#39; =&gt; Hello, I am Bastien</span>
 
 <span class="c1">;; Les parenthèses vides dans la définition de la fonction signifient</span>
 <span class="c1">;; qu&#39;elle ne prend pas d&#39;argument.  Mais toujours utiliser `my-name&#39;</span>
 <span class="c1">;; est ennuyant, demandons à la fonction d&#39;accepter un argument (ici</span>
-<span class="c1">;; l&#39;argument est appelé &quot;name&quot;):</span>
+<span class="c1">;; l&#39;argument est appelé &quot;name&quot;) :</span>
 
 <span class="p">(</span><span class="nf">defun</span> <span class="nv">hello</span> <span class="p">(</span><span class="nf">name</span><span class="p">)</span> <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello &quot;</span> <span class="nv">name</span><span class="p">))</span>
 <span class="c1">;; `C-xC-e&#39; =&gt; hello</span>
@@ -212,7 +212,7 @@
 <span class="c1">;; control-x appuyé et appuyez sur o) pour aller dans l&#39;autre fenêtre</span>
 <span class="c1">;; interactivement.</span>
 
-<span class="c1">;; Vous pouvez combiner plusieurs sexps avec `progn&#39;:</span>
+<span class="c1">;; Vous pouvez combiner plusieurs sexps avec `progn&#39; :</span>
 <span class="p">(</span><span class="nf">progn</span>
   <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">hello</span> <span class="s">&quot;you&quot;</span><span class="p">))</span>
@@ -220,7 +220,7 @@
 <span class="c1">;; =&gt; [L&#39;écran a deux fenêtres et le curseur est dans le buffer *test*]</span>
 
 <span class="c1">;; Maintenant si ça ne vous dérange pas, je vais arrêter de vous</span>
-<span class="c1">;; demander de faire `C-xC-e&#39;: faites-le pour chaque sexp qui suit.</span>
+<span class="c1">;; demander de faire `C-xC-e&#39; : faites-le pour chaque sexp qui suit.</span>
 
 <span class="c1">;; Retournez toujours dans le buffer *scratch* avec la souris ou `C-xo&#39;.</span>
 
@@ -259,7 +259,7 @@
 
 <span class="p">(</span><span class="nf">hello</span> <span class="s">&quot;you&quot;</span><span class="p">)</span>
 
-<span class="c1">;; Créons une autre fonction qui utilise `let&#39;:</span>
+<span class="c1">;; Créons une autre fonction qui utilise `let&#39; :</span>
 <span class="p">(</span><span class="nf">defun</span> <span class="nv">greeting</span> <span class="p">(</span><span class="nf">name</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let </span><span class="p">((</span><span class="nf">your-name</span> <span class="s">&quot;Bastien&quot;</span><span class="p">))</span>
     <span class="p">(</span><span class="nf">insert</span> <span class="p">(</span><span class="nf">format</span> <span class="s">&quot;Hello %s!\n\nI am %s.&quot;</span>
@@ -314,7 +314,7 @@
 <span class="c1">;; Ajoutez un élément au début avec `push&#39; :</span>
 <span class="p">(</span><span class="nf">push</span> <span class="s">&quot;Stephanie&quot;</span> <span class="nv">list-of-names</span><span class="p">)</span>
 
-<span class="c1">;; NOTE: `car&#39; et `cdr&#39; ne modifient pas la liste, mais `push&#39; oui.</span>
+<span class="c1">;; Note : `car&#39; et `cdr&#39; ne modifient pas la liste, mais `push&#39; oui.</span>
 <span class="c1">;; C&#39;est une différence importante : certaines fonctions n&#39;ont pas</span>
 <span class="c1">;; d&#39;effets secondaires (comme `car&#39;) et d&#39;autres oui (comme `push&#39;).</span>
 
@@ -413,7 +413,7 @@
 <span class="c1">;; des &quot;faces&quot; (une &quot;face&quot; définit la fonte, la couleur, la taille et</span>
 <span class="c1">;; d&#39;autres propriétés du texte.)</span>
 
-<span class="c1">;; Et voilà, c&#39;est fini.  Happy hacking!</span>
+<span class="c1">;; Et voilà, c&#39;est fini. Happy hacking!</span>
 
 <span class="c1">;; Si vous voulez en savoir plus sur une variable ou une fonction :</span>
 <span class="c1">;;</span>
