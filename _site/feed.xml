@@ -5,8 +5,8 @@
     <description>Everybody needs a good Emacs doctor.</description>
     <link>https://emacs-doctor.com/</link>
     <atom:link href="https://emacs-doctor.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 15 Nov 2016 15:12:59 +0100</pubDate>
-    <lastBuildDate>Tue, 15 Nov 2016 15:12:59 +0100</lastBuildDate>
+    <pubDate>Tue, 15 Nov 2016 15:17:19 +0100</pubDate>
+    <lastBuildDate>Tue, 15 Nov 2016 15:17:19 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -1367,7 +1367,7 @@ This will be the content of my blog entry.
 
 &lt;span class=&quot;c1&quot;&gt;;; `setq&amp;#39; assigne une valeur à une variable :&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;my-name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Bastien&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Bastien&amp;quot; (affiché dans le mini-buffer)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Bastien&amp;quot; (affiché dans le minibuffer)&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; `insert&amp;#39; va insérer &amp;quot;Hello!&amp;quot; là où se trouve le curseur :&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -1484,14 +1484,14 @@ This will be the content of my blog entry.
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;read-from-minibuffer&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Enter your name: &amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; Évaluer cette fonction va renvoyer ce que vous avez saisi dans le&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; mini-buffer.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; minibuffer.&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; Faisons que notre fonction `greeting&amp;#39; vous demande votre nom :&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;greeting&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;from-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;your-name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;read-from-minibuffer&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Enter your name: &amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello!\n\nI am %s and you are %s.&amp;quot;&lt;/span&gt;
                     &lt;span class=&quot;nv&quot;&gt;from-name&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;; l&amp;#39;argument de la fonction&lt;/span&gt;
-                    &lt;span class=&quot;nv&quot;&gt;your-name&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;; la variable &amp;quot;let-bindée&amp;quot;, entrée dans le mini-buffer&lt;/span&gt;
+                    &lt;span class=&quot;nv&quot;&gt;your-name&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;; la variable &amp;quot;let-bindée&amp;quot;, entrée dans le minibuffer&lt;/span&gt;
                     &lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
 
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;greeting&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Bastien&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;

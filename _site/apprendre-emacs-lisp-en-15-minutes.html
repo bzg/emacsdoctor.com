@@ -157,7 +157,7 @@
 
 <span class="c1">;; `setq&#39; assigne une valeur à une variable :</span>
 <span class="p">(</span><span class="nf">setq</span> <span class="nv">my-name</span> <span class="s">&quot;Bastien&quot;</span><span class="p">)</span>
-<span class="c1">;; `C-xC-e&#39; =&gt; &quot;Bastien&quot; (affiché dans le mini-buffer)</span>
+<span class="c1">;; `C-xC-e&#39; =&gt; &quot;Bastien&quot; (affiché dans le minibuffer)</span>
 
 <span class="c1">;; `insert&#39; va insérer &quot;Hello!&quot; là où se trouve le curseur :</span>
 <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello!&quot;</span><span class="p">)</span>
@@ -274,14 +274,14 @@
 <span class="p">(</span><span class="nf">read-from-minibuffer</span> <span class="s">&quot;Enter your name: &quot;</span><span class="p">)</span>
 
 <span class="c1">;; Évaluer cette fonction va renvoyer ce que vous avez saisi dans le</span>
-<span class="c1">;; mini-buffer.</span>
+<span class="c1">;; minibuffer.</span>
 
 <span class="c1">;; Faisons que notre fonction `greeting&#39; vous demande votre nom :</span>
 <span class="p">(</span><span class="nf">defun</span> <span class="nv">greeting</span> <span class="p">(</span><span class="nf">from-name</span><span class="p">)</span>
   <span class="p">(</span><span class="k">let </span><span class="p">((</span><span class="nf">your-name</span> <span class="p">(</span><span class="nf">read-from-minibuffer</span> <span class="s">&quot;Enter your name: &quot;</span><span class="p">)))</span>
     <span class="p">(</span><span class="nf">insert</span> <span class="p">(</span><span class="nf">format</span> <span class="s">&quot;Hello!\n\nI am %s and you are %s.&quot;</span>
                     <span class="nv">from-name</span> <span class="c1">; l&#39;argument de la fonction</span>
-                    <span class="nv">your-name</span> <span class="c1">; la variable &quot;let-bindée&quot;, entrée dans le mini-buffer</span>
+                    <span class="nv">your-name</span> <span class="c1">; la variable &quot;let-bindée&quot;, entrée dans le minibuffer</span>
                     <span class="p">))))</span>
 
 <span class="p">(</span><span class="nf">greeting</span> <span class="s">&quot;Bastien&quot;</span><span class="p">)</span>
