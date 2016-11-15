@@ -20,7 +20,7 @@ Les commentaires et les retours sont les bienvenus !
 ;; Prenez d'abord le temps de lire ce texte en anglais de Peter Norvig:
 ;; http://norvig.com/21-days.html
 ;;
-;; Ensuite installez GNU Emacs 24.3 (ou une version ultérieure):
+;; Ensuite installez GNU Emacs 24.3 (ou une version ultérieure) :
 ;;
 ;; Debian: apt-get install emacs (or see your distro instructions)
 ;; MacOSX: http://emacsformacosx.com/emacs-builds/Emacs-24.3-universal-10.6.8.dmg
