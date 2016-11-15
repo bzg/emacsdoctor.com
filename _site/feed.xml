@@ -5,8 +5,8 @@
     <description>Everybody needs a good Emacs doctor.</description>
     <link>https://emacs-doctor.com/</link>
     <atom:link href="https://emacs-doctor.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 15 Nov 2016 12:36:52 +0100</pubDate>
-    <lastBuildDate>Tue, 15 Nov 2016 12:36:52 +0100</lastBuildDate>
+    <pubDate>Tue, 15 Nov 2016 15:06:55 +0100</pubDate>
+    <lastBuildDate>Tue, 15 Nov 2016 15:06:55 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -1288,7 +1288,7 @@ This will be the content of my blog entry.
 &lt;p&gt;Les commentaires et les retours sont les bienvenus !&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;;; Ceci est une introduction à Emacs Lisp en 15 minutes (v0.2d)&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; Auteur : Bastien / @bzg2 / http://bzg.fr&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Auteur : Bastien / @bzg2 / https://bzg.fr&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; Prenez d&amp;#39;abord le temps de lire ce texte en anglais de Peter Norvig:&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; http://norvig.com/21-days.html&lt;/span&gt;
@@ -1305,7 +1305,7 @@ This will be the content of my blog entry.
 &lt;span class=&quot;c1&quot;&gt;;; Avertissement important:&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; Suivre ce tutoriel ne risque pas d&amp;#39;endommager votre ordinateur,&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; sauf si vous vous énervez au point de le jeter par terre.  En tous&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; sauf si vous vous énervez au point de le jeter par terre.  En tout&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; cas, je décline toute responsabilité en cas de problème.&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; Amusez-vous bien !&lt;/span&gt;
 
