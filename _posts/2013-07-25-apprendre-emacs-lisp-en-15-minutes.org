@@ -339,7 +339,7 @@ Les commentaires et les retours sont les bienvenus !
 ;; la chaîne "Bonjour ", et
 ;; un groupe de                | c'est la syntaxe \\( ... \\)
 ;;   n'importe quel caractère  | c'est le .
-;;   un ou plusieurs fois      | c'est le +
+;;   une ou plusieurs fois     | c'est le +
 ;; et la chaîne "!".
 
 ;; Prêt ?  Testons !
