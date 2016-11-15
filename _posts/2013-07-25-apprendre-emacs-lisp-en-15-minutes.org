@@ -319,7 +319,7 @@ Les commentaires et les retours sont les bienvenus !
 
 (hello-to-bonjour)
 
-;; Mettons de la couleur sur les noms :
+;; Mettons les noms en gras :
 
 (defun boldify-names ()
     (switch-to-buffer-other-window "*test*")
