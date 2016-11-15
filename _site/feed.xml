@@ -5,8 +5,8 @@
     <description>Everybody needs a good Emacs doctor.</description>
     <link>https://emacs-doctor.com/</link>
     <atom:link href="https://emacs-doctor.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 15 Nov 2016 15:17:56 +0100</pubDate>
-    <lastBuildDate>Tue, 15 Nov 2016 15:17:56 +0100</lastBuildDate>
+    <pubDate>Tue, 15 Nov 2016 15:18:51 +0100</pubDate>
+    <lastBuildDate>Tue, 15 Nov 2016 15:18:51 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -1542,7 +1542,7 @@ This will be the content of my blog entry.
 
 &lt;span class=&quot;c1&quot;&gt;;; Vous vous souvenez de la fonction `hello&amp;#39; définie ci-dessus ?  Elle&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; prend seulement un argument, un nom.  `mapcar&amp;#39; appelle `hello&amp;#39; en&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; utilisant successivement tous les éléments de `list-of-names&amp;#39; comme&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; utilisant successivement chaque élément de `list-of-names&amp;#39; comme&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; argument de `hello&amp;#39;.&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; Maintenant arrangeons un peu ce qui est affiché dans le buffer :&lt;/span&gt;
