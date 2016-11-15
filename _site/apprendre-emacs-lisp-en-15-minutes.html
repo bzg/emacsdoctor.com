@@ -151,35 +151,35 @@
 
 <span class="c1">;; `C-j&#39; insère le résultat de l&#39;évaluation dans le buffer.</span>
 
-<span class="c1">;; `C-xC-e&#39; affiche le même résultat dans la ligne tout en bas</span>
-<span class="c1">;; d&#39;Emacs, appelée le &quot;minibuffer&quot;.  On utilise en général `C-xC-e&#39;,</span>
+<span class="c1">;; `C-x C-e&#39; affiche le même résultat dans la ligne tout en bas</span>
+<span class="c1">;; d&#39;Emacs, appelée le &quot;minibuffer&quot;.  On utilise en général `C-x C-e&#39;,</span>
 <span class="c1">;; pour ne pas encombrer le buffer avec du texte inutile.</span>
 
 <span class="c1">;; `setq&#39; assigne une valeur à une variable :</span>
 <span class="p">(</span><span class="nf">setq</span> <span class="nv">my-name</span> <span class="s">&quot;Bastien&quot;</span><span class="p">)</span>
-<span class="c1">;; `C-xC-e&#39; =&gt; &quot;Bastien&quot; (affiché dans le minibuffer)</span>
+<span class="c1">;; `C-x C-e&#39; =&gt; &quot;Bastien&quot; (affiché dans le minibuffer)</span>
 
 <span class="c1">;; `insert&#39; va insérer &quot;Hello!&quot; là où se trouve le curseur :</span>
 <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello!&quot;</span><span class="p">)</span>
-<span class="c1">;; `C-xC-e&#39; =&gt; &quot;Hello!&quot;</span>
+<span class="c1">;; `C-x C-e&#39; =&gt; &quot;Hello!&quot;</span>
 
 <span class="c1">;; Nous utilisons `insert&#39; avec un seul argument &quot;Hello!&quot;, mais</span>
 <span class="c1">;; nous pouvons passer plus d&#39;arguments - ici nous en passons deux :</span>
 
 <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello&quot;</span> <span class="s">&quot; world!&quot;</span><span class="p">)</span>
-<span class="c1">;; `C-xC-e&#39; =&gt; &quot;Hello world!&quot;</span>
+<span class="c1">;; `C-x C-e&#39; =&gt; &quot;Hello world!&quot;</span>
 
 <span class="c1">;; Vous pouvez utiliser des variables au lieu de chaînes de caractères :</span>
 <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello, I am &quot;</span> <span class="nv">my-name</span><span class="p">)</span>
-<span class="c1">;; `C-xC-e&#39; =&gt; &quot;Hello, I am Bastien&quot;</span>
+<span class="c1">;; `C-x C-e&#39; =&gt; &quot;Hello, I am Bastien&quot;</span>
 
 <span class="c1">;; Vous pouvez combiner les sexps en fonctions :</span>
 <span class="p">(</span><span class="nf">defun</span> <span class="nv">hello</span> <span class="p">()</span> <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello, I am &quot;</span> <span class="nv">my-name</span><span class="p">))</span>
-<span class="c1">;; `C-xC-e&#39; =&gt; hello</span>
+<span class="c1">;; `C-x C-e&#39; =&gt; hello</span>
 
 <span class="c1">;; Vous pouvez évaluer les fonctions :</span>
 <span class="p">(</span><span class="nf">hello</span><span class="p">)</span>
-<span class="c1">;; `C-xC-e&#39; =&gt; Hello, I am Bastien</span>
+<span class="c1">;; `C-x C-e&#39; =&gt; Hello, I am Bastien</span>
 
 <span class="c1">;; Les parenthèses vides dans la définition de la fonction signifient</span>
 <span class="c1">;; qu&#39;elle ne prend pas d&#39;argument.  Mais toujours utiliser `my-name&#39;</span>
@@ -187,12 +187,12 @@
 <span class="c1">;; l&#39;argument est appelé &quot;name&quot;) :</span>
 
 <span class="p">(</span><span class="nf">defun</span> <span class="nv">hello</span> <span class="p">(</span><span class="nf">name</span><span class="p">)</span> <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello &quot;</span> <span class="nv">name</span><span class="p">))</span>
-<span class="c1">;; `C-xC-e&#39; =&gt; hello</span>
+<span class="c1">;; `C-x C-e&#39; =&gt; hello</span>
 
 <span class="c1">;; Maintenant appelons la fonction avec la chaîne de caractères &quot;you&quot;</span>
 <span class="c1">;; comme valeur de son unique argument :</span>
 <span class="p">(</span><span class="nf">hello</span> <span class="s">&quot;you&quot;</span><span class="p">)</span>
-<span class="c1">;; `C-xC-e&#39; =&gt; &quot;Hello you&quot;</span>
+<span class="c1">;; `C-x C-e&#39; =&gt; &quot;Hello you&quot;</span>
 
 <span class="c1">;; Youpi!</span>
 
@@ -204,11 +204,11 @@
 <span class="c1">;; nouvelle fenêtre :</span>
 
 <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
-<span class="c1">;; `C-xC-e&#39;</span>
+<span class="c1">;; `C-x C-e&#39;</span>
 <span class="c1">;; =&gt; [l&#39;écran a deux fenêtres et le curseur est dans le buffer *test*]</span>
 
 <span class="c1">;; Placez la souris sur la fenêtre du haut et cliquez-gauche pour</span>
-<span class="c1">;; retourner dans cette fenêtre.  Ou bien utilisez `C-xo&#39; (i.e. tenez</span>
+<span class="c1">;; retourner dans cette fenêtre.  Ou bien utilisez `C-x o&#39; (i.e. tenez</span>
 <span class="c1">;; control-x appuyé et appuyez sur o) pour aller dans l&#39;autre fenêtre</span>
 <span class="c1">;; interactivement.</span>
 
@@ -216,13 +216,13 @@
 <span class="p">(</span><span class="nf">progn</span>
   <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">hello</span> <span class="s">&quot;you&quot;</span><span class="p">))</span>
-<span class="c1">;; `C-xC-e&#39;</span>
+<span class="c1">;; `C-x C-e&#39;</span>
 <span class="c1">;; =&gt; [L&#39;écran a deux fenêtres et le curseur est dans le buffer *test*]</span>
 
 <span class="c1">;; Maintenant si ça ne vous dérange pas, je vais arrêter de vous</span>
-<span class="c1">;; demander de faire `C-xC-e&#39; : faites-le pour chaque sexp qui suit.</span>
+<span class="c1">;; demander de faire `C-x C-e&#39; : faites-le pour chaque sexp qui suit.</span>
 
-<span class="c1">;; Retournez toujours dans le buffer *scratch* avec la souris ou `C-xo&#39;.</span>
+<span class="c1">;; Retournez toujours dans le buffer *scratch* avec la souris ou `C-x o&#39;.</span>
 
 <span class="c1">;; Il est souvent utile d&#39;effacer le contenu du buffer :</span>
 <span class="p">(</span><span class="nf">progn</span>

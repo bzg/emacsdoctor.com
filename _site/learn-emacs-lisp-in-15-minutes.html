@@ -81,7 +81,7 @@
 <p>Comments and feedback are welcome !</p>
 <div class="highlight"><pre><span class="c1">;; This gives an introduction to Emacs Lisp in 15 minutes (v0.2d)</span>
 <span class="c1">;;</span>
-<span class="c1">;; Author: Bastien / @bzg2 / http://bzg.fr</span>
+<span class="c1">;; Author: Bastien / @bzg2 / https://bzg.fr</span>
 <span class="c1">;;</span>
 <span class="c1">;; First make sure you read this text by Peter Norvig:</span>
 <span class="c1">;; http://norvig.com/21-days.html</span>
@@ -149,35 +149,35 @@
 
 <span class="c1">;; `C-j&#39; inserts the result of the evaluation in the buffer.</span>
 
-<span class="c1">;; `C-xC-e&#39; displays the same result in Emacs bottom line,</span>
-<span class="c1">;; called the &quot;minibuffer&quot;.  We will generally use `C-xC-e&#39;,</span>
+<span class="c1">;; `C-x C-e&#39; displays the same result in Emacs bottom line,</span>
+<span class="c1">;; called the &quot;minibuffer&quot;.  We will generally use `C-x C-e&#39;,</span>
 <span class="c1">;; as we don&#39;t want to clutter the buffer with useless text.</span>
 
 <span class="c1">;; `setq&#39; stores a value into a variable:</span>
 <span class="p">(</span><span class="nf">setq</span> <span class="nv">my-name</span> <span class="s">&quot;Bastien&quot;</span><span class="p">)</span>
-<span class="c1">;; `C-xC-e&#39; =&gt; &quot;Bastien&quot; (displayed in the mini-buffer)</span>
+<span class="c1">;; `C-x C-e&#39; =&gt; &quot;Bastien&quot; (displayed in the mini-buffer)</span>
 
 <span class="c1">;; `insert&#39; will insert &quot;Hello!&quot; where the cursor is:</span>
 <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello!&quot;</span><span class="p">)</span>
-<span class="c1">;; `C-xC-e&#39; =&gt; &quot;Hello!&quot;</span>
+<span class="c1">;; `C-x C-e&#39; =&gt; &quot;Hello!&quot;</span>
 
 <span class="c1">;; We used `insert&#39; with only one argument &quot;Hello!&quot;, but</span>
 <span class="c1">;; we can pass more arguments -- here we use two:</span>
 
 <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello&quot;</span> <span class="s">&quot; world!&quot;</span><span class="p">)</span>
-<span class="c1">;; `C-xC-e&#39; =&gt; &quot;Hello world!&quot;</span>
+<span class="c1">;; `C-x C-e&#39; =&gt; &quot;Hello world!&quot;</span>
 
 <span class="c1">;; You can use variables instead of strings:</span>
 <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello, I am &quot;</span> <span class="nv">my-name</span><span class="p">)</span>
-<span class="c1">;; `C-xC-e&#39; =&gt; &quot;Hello, I am Bastien&quot;</span>
+<span class="c1">;; `C-x C-e&#39; =&gt; &quot;Hello, I am Bastien&quot;</span>
 
 <span class="c1">;; You can combine sexps into functions:</span>
 <span class="p">(</span><span class="nf">defun</span> <span class="nv">hello</span> <span class="p">()</span> <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello, I am &quot;</span> <span class="nv">my-name</span><span class="p">))</span>
-<span class="c1">;; `C-xC-e&#39; =&gt; hello</span>
+<span class="c1">;; `C-x C-e&#39; =&gt; hello</span>
 
 <span class="c1">;; You can evaluate functions:</span>
 <span class="p">(</span><span class="nf">hello</span><span class="p">)</span>
-<span class="c1">;; `C-xC-e&#39; =&gt; Hello, I am Bastien</span>
+<span class="c1">;; `C-x C-e&#39; =&gt; Hello, I am Bastien</span>
 
 <span class="c1">;; The empty parentheses in the function&#39;s definition means that</span>
 <span class="c1">;; it does not accept arguments.  But always using `my-name&#39; is</span>
@@ -185,12 +185,12 @@
 <span class="c1">;; the argument is called &quot;name&quot;): </span>
 
 <span class="p">(</span><span class="nf">defun</span> <span class="nv">hello</span> <span class="p">(</span><span class="nf">name</span><span class="p">)</span> <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot;Hello &quot;</span> <span class="nv">name</span><span class="p">))</span>
-<span class="c1">;; `C-xC-e&#39; =&gt; hello</span>
+<span class="c1">;; `C-x C-e&#39; =&gt; hello</span>
 
 <span class="c1">;; Now let&#39;s call the function with the string &quot;you&quot; as the value</span>
 <span class="c1">;; for its unique argument:</span>
 <span class="p">(</span><span class="nf">hello</span> <span class="s">&quot;you&quot;</span><span class="p">)</span>
-<span class="c1">;; `C-xC-e&#39; =&gt; &quot;Hello you&quot;</span>
+<span class="c1">;; `C-x C-e&#39; =&gt; &quot;Hello you&quot;</span>
 
 <span class="c1">;; Yeah!</span>
 
@@ -201,24 +201,24 @@
 <span class="c1">;; Now switch to a new buffer named &quot;*test*&quot; in another window:</span>
 
 <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
-<span class="c1">;; `C-xC-e&#39;</span>
+<span class="c1">;; `C-x C-e&#39;</span>
 <span class="c1">;; =&gt; [screen has two windows and cursor is in the *test* buffer]</span>
 
 <span class="c1">;; Mouse over the top window and left-click to go back.  Or you can</span>
-<span class="c1">;; use `C-xo&#39; (i.e. hold down control-x and hit o) to go to the other</span>
+<span class="c1">;; use `C-x o&#39; (i.e. hold down control-x and hit o) to go to the other</span>
 <span class="c1">;; window interactively.</span>
 
 <span class="c1">;; You can combine several sexps with `progn&#39;:</span>
 <span class="p">(</span><span class="nf">progn</span>
   <span class="p">(</span><span class="nf">switch-to-buffer-other-window</span> <span class="s">&quot;*test*&quot;</span><span class="p">)</span>
   <span class="p">(</span><span class="nf">hello</span> <span class="s">&quot;you&quot;</span><span class="p">))</span>
-<span class="c1">;; `C-xC-e&#39;</span>
+<span class="c1">;; `C-x C-e&#39;</span>
 <span class="c1">;; =&gt; [The screen has two windows and cursor is in the *test* buffer]</span>
 
-<span class="c1">;; Now if you don&#39;t mind, I&#39;ll stop asking you to hit `C-xC-e&#39;: do it</span>
+<span class="c1">;; Now if you don&#39;t mind, I&#39;ll stop asking you to hit `C-x C-e&#39;: do it</span>
 <span class="c1">;; for every sexp that follows.</span>
 
-<span class="c1">;; Always go back to the *scratch* buffer with the mouse or `C-xo&#39;.</span>
+<span class="c1">;; Always go back to the *scratch* buffer with the mouse or `C-x o&#39;.</span>
 
 <span class="c1">;; It&#39;s often useful to erase the buffer:</span>
 <span class="p">(</span><span class="nf">progn</span>

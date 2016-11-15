@@ -19,7 +19,7 @@ Comments and feedback are welcome !
 #+begin_src emacs-lisp
 ;; This gives an introduction to Emacs Lisp in 15 minutes (v0.2d)
 ;;
-;; Author: Bastien / @bzg2 / http://bzg.fr
+;; Author: Bastien / @bzg2 / https://bzg.fr
 ;;
 ;; First make sure you read this text by Peter Norvig:
 ;; http://norvig.com/21-days.html
@@ -87,35 +87,35 @@ Comments and feedback are welcome !
 
 ;; `C-j' inserts the result of the evaluation in the buffer.
 
-;; `C-xC-e' displays the same result in Emacs bottom line,
-;; called the "minibuffer".  We will generally use `C-xC-e',
+;; `C-x C-e' displays the same result in Emacs bottom line,
+;; called the "minibuffer".  We will generally use `C-x C-e',
 ;; as we don't want to clutter the buffer with useless text.
 
 ;; `setq' stores a value into a variable:
 (setq my-name "Bastien")
-;; `C-xC-e' => "Bastien" (displayed in the mini-buffer)
+;; `C-x C-e' => "Bastien" (displayed in the mini-buffer)
 
 ;; `insert' will insert "Hello!" where the cursor is:
 (insert "Hello!")
-;; `C-xC-e' => "Hello!"
+;; `C-x C-e' => "Hello!"
 
 ;; We used `insert' with only one argument "Hello!", but
 ;; we can pass more arguments -- here we use two:
 
 (insert "Hello" " world!")
-;; `C-xC-e' => "Hello world!"
+;; `C-x C-e' => "Hello world!"
 
 ;; You can use variables instead of strings:
 (insert "Hello, I am " my-name)
-;; `C-xC-e' => "Hello, I am Bastien"
+;; `C-x C-e' => "Hello, I am Bastien"
 
 ;; You can combine sexps into functions:
 (defun hello () (insert "Hello, I am " my-name))
-;; `C-xC-e' => hello
+;; `C-x C-e' => hello
 
 ;; You can evaluate functions:
 (hello)
-;; `C-xC-e' => Hello, I am Bastien
+;; `C-x C-e' => Hello, I am Bastien
 
 ;; The empty parentheses in the function's definition means that
 ;; it does not accept arguments.  But always using `my-name' is
@@ -123,12 +123,12 @@ Comments and feedback are welcome !
 ;; the argument is called "name"): 
 
 (defun hello (name) (insert "Hello " name))
-;; `C-xC-e' => hello
+;; `C-x C-e' => hello
 
 ;; Now let's call the function with the string "you" as the value
 ;; for its unique argument:
 (hello "you")
-;; `C-xC-e' => "Hello you"
+;; `C-x C-e' => "Hello you"
 
 ;; Yeah!
 
@@ -139,24 +139,24 @@ Comments and feedback are welcome !
 ;; Now switch to a new buffer named "*test*" in another window:
 
 (switch-to-buffer-other-window "*test*")
-;; `C-xC-e'
+;; `C-x C-e'
 ;; => [screen has two windows and cursor is in the *test* buffer]
 
 ;; Mouse over the top window and left-click to go back.  Or you can
-;; use `C-xo' (i.e. hold down control-x and hit o) to go to the other
+;; use `C-x o' (i.e. hold down control-x and hit o) to go to the other
 ;; window interactively.
 
 ;; You can combine several sexps with `progn':
 (progn
   (switch-to-buffer-other-window "*test*")
   (hello "you"))
-;; `C-xC-e'
+;; `C-x C-e'
 ;; => [The screen has two windows and cursor is in the *test* buffer]
 
-;; Now if you don't mind, I'll stop asking you to hit `C-xC-e': do it
+;; Now if you don't mind, I'll stop asking you to hit `C-x C-e': do it
 ;; for every sexp that follows.
 
-;; Always go back to the *scratch* buffer with the mouse or `C-xo'.
+;; Always go back to the *scratch* buffer with the mouse or `C-x o'.
 
 ;; It's often useful to erase the buffer:
 (progn

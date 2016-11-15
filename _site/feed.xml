@@ -5,8 +5,8 @@
     <description>Everybody needs a good Emacs doctor.</description>
     <link>https://emacs-doctor.com/</link>
     <atom:link href="https://emacs-doctor.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 15 Nov 2016 15:22:24 +0100</pubDate>
-    <lastBuildDate>Tue, 15 Nov 2016 15:22:24 +0100</lastBuildDate>
+    <pubDate>Tue, 15 Nov 2016 15:26:09 +0100</pubDate>
+    <lastBuildDate>Tue, 15 Nov 2016 15:26:09 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -927,7 +927,7 @@ This will be the content of my blog entry.
 &lt;p&gt;Comments and feedback are welcome !&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;;; This gives an introduction to Emacs Lisp in 15 minutes (v0.2d)&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; Author: Bastien / @bzg2 / http://bzg.fr&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Author: Bastien / @bzg2 / https://bzg.fr&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;;&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; First make sure you read this text by Peter Norvig:&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; http://norvig.com/21-days.html&lt;/span&gt;
@@ -995,35 +995,35 @@ This will be the content of my blog entry.
 
 &lt;span class=&quot;c1&quot;&gt;;; `C-j&amp;#39; inserts the result of the evaluation in the buffer.&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; displays the same result in Emacs bottom line,&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; called the &amp;quot;minibuffer&amp;quot;.  We will generally use `C-xC-e&amp;#39;,&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39; displays the same result in Emacs bottom line,&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; called the &amp;quot;minibuffer&amp;quot;.  We will generally use `C-x C-e&amp;#39;,&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; as we don&amp;#39;t want to clutter the buffer with useless text.&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; `setq&amp;#39; stores a value into a variable:&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;my-name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Bastien&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Bastien&amp;quot; (displayed in the mini-buffer)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39; =&amp;gt; &amp;quot;Bastien&amp;quot; (displayed in the mini-buffer)&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; `insert&amp;#39; will insert &amp;quot;Hello!&amp;quot; where the cursor is:&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Hello!&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39; =&amp;gt; &amp;quot;Hello!&amp;quot;&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; We used `insert&amp;#39; with only one argument &amp;quot;Hello!&amp;quot;, but&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; we can pass more arguments -- here we use two:&lt;/span&gt;
 
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello&amp;quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot; world!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Hello world!&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39; =&amp;gt; &amp;quot;Hello world!&amp;quot;&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; You can use variables instead of strings:&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello, I am &amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;my-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Hello, I am Bastien&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39; =&amp;gt; &amp;quot;Hello, I am Bastien&amp;quot;&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; You can combine sexps into functions:&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello, I am &amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;my-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; hello&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39; =&amp;gt; hello&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; You can evaluate functions:&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; Hello, I am Bastien&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39; =&amp;gt; Hello, I am Bastien&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; The empty parentheses in the function&amp;#39;s definition means that&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; it does not accept arguments.  But always using `my-name&amp;#39; is&lt;/span&gt;
@@ -1031,12 +1031,12 @@ This will be the content of my blog entry.
 &lt;span class=&quot;c1&quot;&gt;;; the argument is called &amp;quot;name&amp;quot;): &lt;/span&gt;
 
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello &amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; hello&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39; =&amp;gt; hello&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; Now let&amp;#39;s call the function with the string &amp;quot;you&amp;quot; as the value&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; for its unique argument:&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;you&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Hello you&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39; =&amp;gt; &amp;quot;Hello you&amp;quot;&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; Yeah!&lt;/span&gt;
 
@@ -1047,24 +1047,24 @@ This will be the content of my blog entry.
 &lt;span class=&quot;c1&quot;&gt;;; Now switch to a new buffer named &amp;quot;*test*&amp;quot; in another window:&lt;/span&gt;
 
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39;&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; =&amp;gt; [screen has two windows and cursor is in the *test* buffer]&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; Mouse over the top window and left-click to go back.  Or you can&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; use `C-xo&amp;#39; (i.e. hold down control-x and hit o) to go to the other&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; use `C-x o&amp;#39; (i.e. hold down control-x and hit o) to go to the other&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; window interactively.&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; You can combine several sexps with `progn&amp;#39;:&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;progn&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;you&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39;&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; =&amp;gt; [The screen has two windows and cursor is in the *test* buffer]&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;;; Now if you don&amp;#39;t mind, I&amp;#39;ll stop asking you to hit `C-xC-e&amp;#39;: do it&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Now if you don&amp;#39;t mind, I&amp;#39;ll stop asking you to hit `C-x C-e&amp;#39;: do it&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; for every sexp that follows.&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;;; Always go back to the *scratch* buffer with the mouse or `C-xo&amp;#39;.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Always go back to the *scratch* buffer with the mouse or `C-x o&amp;#39;.&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; It&amp;#39;s often useful to erase the buffer:&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;progn&lt;/span&gt;
@@ -1361,35 +1361,35 @@ This will be the content of my blog entry.
 
 &lt;span class=&quot;c1&quot;&gt;;; `C-j&amp;#39; insère le résultat de l&amp;#39;évaluation dans le buffer.&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; affiche le même résultat dans la ligne tout en bas&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; d&amp;#39;Emacs, appelée le &amp;quot;minibuffer&amp;quot;.  On utilise en général `C-xC-e&amp;#39;,&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39; affiche le même résultat dans la ligne tout en bas&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; d&amp;#39;Emacs, appelée le &amp;quot;minibuffer&amp;quot;.  On utilise en général `C-x C-e&amp;#39;,&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; pour ne pas encombrer le buffer avec du texte inutile.&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; `setq&amp;#39; assigne une valeur à une variable :&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;my-name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Bastien&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Bastien&amp;quot; (affiché dans le minibuffer)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39; =&amp;gt; &amp;quot;Bastien&amp;quot; (affiché dans le minibuffer)&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; `insert&amp;#39; va insérer &amp;quot;Hello!&amp;quot; là où se trouve le curseur :&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Hello!&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39; =&amp;gt; &amp;quot;Hello!&amp;quot;&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; Nous utilisons `insert&amp;#39; avec un seul argument &amp;quot;Hello!&amp;quot;, mais&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; nous pouvons passer plus d&amp;#39;arguments - ici nous en passons deux :&lt;/span&gt;
 
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello&amp;quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot; world!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Hello world!&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39; =&amp;gt; &amp;quot;Hello world!&amp;quot;&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; Vous pouvez utiliser des variables au lieu de chaînes de caractères :&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello, I am &amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;my-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Hello, I am Bastien&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39; =&amp;gt; &amp;quot;Hello, I am Bastien&amp;quot;&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; Vous pouvez combiner les sexps en fonctions :&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello, I am &amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;my-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; hello&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39; =&amp;gt; hello&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; Vous pouvez évaluer les fonctions :&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; Hello, I am Bastien&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39; =&amp;gt; Hello, I am Bastien&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; Les parenthèses vides dans la définition de la fonction signifient&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; qu&amp;#39;elle ne prend pas d&amp;#39;argument.  Mais toujours utiliser `my-name&amp;#39;&lt;/span&gt;
@@ -1397,12 +1397,12 @@ This will be the content of my blog entry.
 &lt;span class=&quot;c1&quot;&gt;;; l&amp;#39;argument est appelé &amp;quot;name&amp;quot;) :&lt;/span&gt;
 
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Hello &amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; hello&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39; =&amp;gt; hello&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; Maintenant appelons la fonction avec la chaîne de caractères &amp;quot;you&amp;quot;&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; comme valeur de son unique argument :&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;you&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39; =&amp;gt; &amp;quot;Hello you&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39; =&amp;gt; &amp;quot;Hello you&amp;quot;&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; Youpi!&lt;/span&gt;
 
@@ -1414,11 +1414,11 @@ This will be the content of my blog entry.
 &lt;span class=&quot;c1&quot;&gt;;; nouvelle fenêtre :&lt;/span&gt;
 
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39;&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; =&amp;gt; [l&amp;#39;écran a deux fenêtres et le curseur est dans le buffer *test*]&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; Placez la souris sur la fenêtre du haut et cliquez-gauche pour&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; retourner dans cette fenêtre.  Ou bien utilisez `C-xo&amp;#39; (i.e. tenez&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; retourner dans cette fenêtre.  Ou bien utilisez `C-x o&amp;#39; (i.e. tenez&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; control-x appuyé et appuyez sur o) pour aller dans l&amp;#39;autre fenêtre&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; interactivement.&lt;/span&gt;
 
@@ -1426,13 +1426,13 @@ This will be the content of my blog entry.
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;progn&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;switch-to-buffer-other-window&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;*test*&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;you&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; `C-xC-e&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; `C-x C-e&amp;#39;&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;;; =&amp;gt; [L&amp;#39;écran a deux fenêtres et le curseur est dans le buffer *test*]&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; Maintenant si ça ne vous dérange pas, je vais arrêter de vous&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;;; demander de faire `C-xC-e&amp;#39; : faites-le pour chaque sexp qui suit.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; demander de faire `C-x C-e&amp;#39; : faites-le pour chaque sexp qui suit.&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;;; Retournez toujours dans le buffer *scratch* avec la souris ou `C-xo&amp;#39;.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; Retournez toujours dans le buffer *scratch* avec la souris ou `C-x o&amp;#39;.&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;;; Il est souvent utile d&amp;#39;effacer le contenu du buffer :&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;progn&lt;/span&gt;
