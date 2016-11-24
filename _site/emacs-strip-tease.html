@@ -12,6 +12,25 @@
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="https://emacs-doctor.com/emacs-strip-tease.html">
   <link rel="alternate" type="application/rss+xml" title="M-x doctor RET" href="https://emacs-doctor.com/feed.xml" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
 </head>
 
 
@@ -85,130 +104,137 @@
 <p>Now let the show begin&#8230;</p>
 <p><i>Code snippets are for GNU Emacs 24.3 and above.</i></p>
 <h2>A blank stage</h2>
-<div class="highlight"><pre><span class="c1">;; Prevent the cursor from blinking</span>
-<span class="p">(</span><span class="nf">blink-cursor-mode</span> <span class="mi">0</span><span class="p">)</span>
-<span class="c1">;; Don&#39;t use messages that you don&#39;t read</span>
-<span class="p">(</span><span class="nf">setq</span> <span class="nv">initial-scratch-message</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">setq</span> <span class="nv">inhibit-startup-message</span> <span class="nv">t</span><span class="p">)</span>
-<span class="c1">;; Don&#39;t let Emacs hurt your ears</span>
-<span class="p">(</span><span class="nf">setq</span> <span class="nv">visible-bell</span> <span class="nv">t</span><span class="p">)</span>
+<pre class="src" lang="emacs-lisp">
+;; Prevent the cursor from blinking
+(blink-cursor-mode 0)
+;; Don&#39;t use messages that you don&#39;t read
+(setq initial-scratch-message &quot;&quot;)
+(setq inhibit-startup-message t)
+;; Don&#39;t let Emacs hurt your ears
+(setq visible-bell t)
 
-<span class="c1">;; You need to set `inhibit-startup-echo-area-message&#39; from the</span>
-<span class="c1">;; customization interface:</span>
-<span class="c1">;; M-x customize-variable RET inhibit-startup-echo-area-message RET</span>
-<span class="c1">;; then enter your username</span>
-<span class="p">(</span><span class="nf">setq</span> <span class="nv">inhibit-startup-echo-area-message</span> <span class="s">&quot;guerry&quot;</span><span class="p">)</span>
-</pre></div>
+;; You need to set `inhibit-startup-echo-area-message&#39; from the
+;; customization interface:
+;; M-x customize-variable RET inhibit-startup-echo-area-message RET
+;; then enter your username
+(setq inhibit-startup-echo-area-message &quot;guerry&quot;)
+</pre>
 <p><img src="img/emacs-blank-stage.png" alt="img/emacs-blank-stage.png" /></p>
 <h2>Break the walls</h2>
-<div class="highlight"><pre><span class="c1">;; This is bound to f11 in Emacs 24.4</span>
-<span class="p">(</span><span class="nf">toggle-frame-fullscreen</span><span class="p">)</span> 
-<span class="c1">;; Who use the bar to scroll?</span>
-<span class="p">(</span><span class="nf">scroll-bar-mode</span> <span class="mi">0</span><span class="p">)</span>
-</pre></div>
+<pre class="src" lang="emacs-lisp">
+;; This is bound to f11 in Emacs 24.4
+(toggle-frame-fullscreen) 
+;; Who use the bar to scroll?
+(scroll-bar-mode 0)
+</pre>
 <p><img src="img/emacs-fullscreen.png" alt="img/emacs-fullscreen.png" /></p>
 <h2>The sky is the limit</h2>
-<div class="highlight"><pre><span class="p">(</span><span class="nf">tool-bar-mode</span> <span class="mi">0</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">menu-bar-mode</span> <span class="mi">0</span><span class="p">)</span>
+<pre class="src" lang="emacs-lisp">
+(tool-bar-mode 0)
+(menu-bar-mode 0)
 
-<span class="c1">;; You can also set the initial frame parameters</span>
-<span class="c1">;; (setq initial-frame-alist</span>
-<span class="c1">;;       &#39;((menu-bar-lines . 0)</span>
-<span class="c1">;;         (tool-bar-lines . 0)))</span>
-</pre></div>
+;; You can also set the initial frame parameters
+;; (setq initial-frame-alist
+;;       &#39;((menu-bar-lines . 0)
+;;         (tool-bar-lines . 0)))
+</pre>
 <p><img src="img/emacs-clear-top.png" alt="img/emacs-clear-top.png" /></p>
 <h2>Groundless fear</h2>
-<div class="highlight"><pre><span class="c1">;; See http://bzg.fr/emacs-hide-mode-line.html</span>
-<span class="p">(</span><span class="nf">defvar-local</span> <span class="nv">hidden-mode-line-mode</span> <span class="nv">nil</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">defvar-local</span> <span class="nv">hide-mode-line</span> <span class="nv">nil</span><span class="p">)</span>
+<pre class="src" lang="emacs-lisp">
+;; See http://bzg.fr/emacs-hide-mode-line.html
+(defvar-local hidden-mode-line-mode nil)
+(defvar-local hide-mode-line nil)
 
-<span class="p">(</span><span class="nf">define-minor-mode</span> <span class="nv">hidden-mode-line-mode</span>
-  <span class="s">&quot;Minor mode to hide the mode-line in the current buffer.&quot;</span>
-  <span class="nv">:init-value</span> <span class="nv">nil</span>
-  <span class="nv">:global</span> <span class="nv">nil</span>
-  <span class="nv">:variable</span> <span class="nv">hidden-mode-line-mode</span>
-  <span class="nv">:group</span> <span class="ss">&#39;editing-basics</span>
-  <span class="p">(</span><span class="k">if </span><span class="nv">hidden-mode-line-mode</span>
-      <span class="p">(</span><span class="nf">setq</span> <span class="nv">hide-mode-line</span> <span class="nv">mode-line-format</span>
-            <span class="nv">mode-line-format</span> <span class="nv">nil</span><span class="p">)</span>
-    <span class="p">(</span><span class="nf">setq</span> <span class="nv">mode-line-format</span> <span class="nv">hide-mode-line</span>
-          <span class="nv">hide-mode-line</span> <span class="nv">nil</span><span class="p">))</span>
-  <span class="p">(</span><span class="nf">force-mode-line-update</span><span class="p">)</span>
-  <span class="c1">;; Apparently force-mode-line-update is not always enough to</span>
-  <span class="c1">;; redisplay the mode-line</span>
-  <span class="p">(</span><span class="nf">redraw-display</span><span class="p">)</span>
-  <span class="p">(</span><span class="nf">when</span> <span class="p">(</span><span class="k">and </span><span class="p">(</span><span class="nf">called-interactively-p</span> <span class="ss">&#39;interactive</span><span class="p">)</span>
-             <span class="nv">hidden-mode-line-mode</span><span class="p">)</span>
-    <span class="p">(</span><span class="nf">run-with-idle-timer</span>
-     <span class="mi">0</span> <span class="nv">nil</span> <span class="ss">&#39;message</span>
-     <span class="p">(</span><span class="nf">concat</span> <span class="s">&quot;Hidden Mode Line Mode enabled.  &quot;</span>
-             <span class="s">&quot;Use M-x hidden-mode-line-mode to make the mode-line appear.&quot;</span><span class="p">))))</span>
+(define-minor-mode hidden-mode-line-mode
+  &quot;Minor mode to hide the mode-line in the current buffer.&quot;
+  :init-value nil
+  :global nil
+  :variable hidden-mode-line-mode
+  :group &#39;editing-basics
+  (if hidden-mode-line-mode
+      (setq hide-mode-line mode-line-format
+            mode-line-format nil)
+    (setq mode-line-format hide-mode-line
+          hide-mode-line nil))
+  (force-mode-line-update)
+  ;; Apparently force-mode-line-update is not always enough to
+  ;; redisplay the mode-line
+  (redraw-display)
+  (when (and (called-interactively-p &#39;interactive)
+             hidden-mode-line-mode)
+    (run-with-idle-timer
+     0 nil &#39;message
+     (concat &quot;Hidden Mode Line Mode enabled.  &quot;
+             &quot;Use M-x hidden-mode-line-mode to make the mode-line appear.&quot;))))
 
-<span class="c1">;; Activate hidden-mode-line-mode</span>
-<span class="p">(</span><span class="nf">hidden-mode-line-mode</span> <span class="mi">1</span><span class="p">)</span>
+;; Activate hidden-mode-line-mode
+(hidden-mode-line-mode 1)
 
-<span class="c1">;; If you want to hide the mode-line in all new buffers</span>
-<span class="c1">;; (add-hook &#39;after-change-major-mode-hook &#39;hidden-mode-line-mode)</span>
+;; If you want to hide the mode-line in all new buffers
+;; (add-hook &#39;after-change-major-mode-hook &#39;hidden-mode-line-mode)
 
-<span class="c1">;; Alternatively, you can paint your mode-line in White but then</span>
-<span class="c1">;; you&#39;ll have to manually paint it in black again</span>
-<span class="c1">;; (custom-set-faces</span>
-<span class="c1">;;  &#39;(mode-line-highlight ((t nil)))</span>
-<span class="c1">;;  &#39;(mode-line ((t (:foreground &quot;white&quot; :background &quot;white&quot;))))</span>
-<span class="c1">;;  &#39;(mode-line-inactive ((t (:background &quot;white&quot; :foreground &quot;white&quot;)))))</span>
-</pre></div>
+;; Alternatively, you can paint your mode-line in White but then
+;; you&#39;ll have to manually paint it in black again
+;; (custom-set-faces
+;;  &#39;(mode-line-highlight ((t nil)))
+;;  &#39;(mode-line ((t (:foreground &quot;white&quot; :background &quot;white&quot;))))
+;;  &#39;(mode-line-inactive ((t (:background &quot;white&quot; :foreground &quot;white&quot;)))))
+</pre>
 <p><img src="img/emacs-clear-bottom.png" alt="img/emacs-clear-bottom.png" /></p>
 <p>Well&#8230; it&#8217;s more interesting with some text:</p>
 <p><img src="img/emacs-clear-bottom-text.png" alt="img/emacs-clear-bottom-text.png" /></p>
 <h2>In the limelight</h2>
-<div class="highlight"><pre><span class="c1">;; A small minor mode to use a big fringe</span>
-<span class="p">(</span><span class="nf">defvar</span> <span class="nv">bzg-big-fringe-mode</span> <span class="nv">nil</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">define-minor-mode</span> <span class="nv">bzg-big-fringe-mode</span>
-  <span class="s">&quot;Minor mode to use big fringe in the current buffer.&quot;</span>
-  <span class="nv">:init-value</span> <span class="nv">nil</span>
-  <span class="nv">:global</span> <span class="nv">t</span>
-  <span class="nv">:variable</span> <span class="nv">bzg-big-fringe-mode</span>
-  <span class="nv">:group</span> <span class="ss">&#39;editing-basics</span>
-  <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">not </span><span class="nv">bzg-big-fringe-mode</span><span class="p">)</span>
-      <span class="p">(</span><span class="nf">set-fringe-style</span> <span class="nv">nil</span><span class="p">)</span>
-    <span class="p">(</span><span class="nf">set-fringe-mode</span>
-     <span class="p">(</span><span class="nb">/ </span><span class="p">(</span><span class="nb">- </span><span class="p">(</span><span class="nf">frame-pixel-width</span><span class="p">)</span>
-           <span class="p">(</span><span class="nb">* </span><span class="mi">100</span> <span class="p">(</span><span class="nf">frame-char-width</span><span class="p">)))</span>
-        <span class="mi">2</span><span class="p">))))</span>
+<pre class="src" lang="emacs-lisp">
+;; A small minor mode to use a big fringe
+(defvar bzg-big-fringe-mode nil)
+(define-minor-mode bzg-big-fringe-mode
+  &quot;Minor mode to use big fringe in the current buffer.&quot;
+  :init-value nil
+  :global t
+  :variable bzg-big-fringe-mode
+  :group &#39;editing-basics
+  (if (not bzg-big-fringe-mode)
+      (set-fringe-style nil)
+    (set-fringe-mode
+     (/ (- (frame-pixel-width)
+           (* 100 (frame-char-width)))
+        2))))
 
-<span class="c1">;; Now activate this global minor mode</span>
-<span class="p">(</span><span class="nf">bzg-big-fringe-mode</span> <span class="mi">1</span><span class="p">)</span>
+;; Now activate this global minor mode
+(bzg-big-fringe-mode 1)
 
-<span class="c1">;; To activate the fringe by default and deactivate it when windows</span>
-<span class="c1">;; are split vertically, uncomment this:</span>
-<span class="c1">;; (add-hook &#39;window-configuration-change-hook</span>
-<span class="c1">;;           (lambda ()</span>
-<span class="c1">;;             (if (delq nil</span>
-<span class="c1">;;                       (let ((fw (frame-width)))</span>
-<span class="c1">;;                         (mapcar (lambda(w) (&lt; (window-width w) (/ fw 2)))</span>
-<span class="c1">;;                                 (window-list))))</span>
-<span class="c1">;;                 (bzg-big-fringe-mode 0)</span>
-<span class="c1">;;               (bzg-big-fringe-mode 1))))</span>
+;; To activate the fringe by default and deactivate it when windows
+;; are split vertically, uncomment this:
+;; (add-hook &#39;window-configuration-change-hook
+;;           (lambda ()
+;;             (if (delq nil
+;;                       (let ((fw (frame-width)))
+;;                         (mapcar (lambda(w) (&lt; (window-width w) (/ fw 2)))
+;;                                 (window-list))))
+;;                 (bzg-big-fringe-mode 0)
+;;               (bzg-big-fringe-mode 1))))
 
-<span class="c1">;; Use a minimal cursor</span>
-<span class="c1">;; (setq default-cursor-type &#39;hbar)</span>
+;; Use a minimal cursor
+;; (setq default-cursor-type &#39;hbar)
 
-<span class="c1">;; Get rid of the indicators in the fringe</span>
-<span class="p">(</span><span class="nf">mapcar</span> <span class="p">(</span><span class="nf">lambda</span><span class="p">(</span><span class="nf">fb</span><span class="p">)</span> <span class="p">(</span><span class="nf">set-fringe-bitmap-face</span> <span class="nv">fb</span> <span class="ss">&#39;org-hide</span><span class="p">))</span>
-        <span class="nv">fringe-bitmaps</span><span class="p">)</span>
-</pre></div>
+;; Get rid of the indicators in the fringe
+(mapcar (lambda(fb) (set-fringe-bitmap-face fb &#39;org-hide))
+        fringe-bitmaps)
+</pre>
 <p><img src="img/emacs-big-fringe.png" alt="img/emacs-big-fringe.png" /></p>
 <p>Oh, but you don&#8217;t want the grey fringe?</p>
-<div class="highlight"><pre><span class="c1">;; Set the color of the fringe</span>
-<span class="p">(</span><span class="nf">custom-set-faces</span>
- <span class="o">&#39;</span><span class="p">(</span><span class="nv">fringe</span> <span class="p">((</span><span class="nf">t</span> <span class="p">(</span><span class="nf">:background</span> <span class="s">&quot;white&quot;</span><span class="p">)))))</span>
-</pre></div>
+<pre class="src" lang="emacs-lisp">
+;; Set the color of the fringe
+(custom-set-faces
+ &#39;(fringe ((t (:background &quot;white&quot;)))))
+</pre>
 <p><img src="img/emacs-big-white-fringe.png" alt="img/emacs-big-white-fringe.png" /></p>
 <h2>Let&#8217;s turn off the light&#8230;</h2>
-<div class="highlight"><pre><span class="p">(</span><span class="nf">custom-set-faces</span>
-  <span class="o">&#39;</span><span class="p">(</span><span class="nv">default</span> <span class="p">((</span><span class="nf">t</span> <span class="p">(</span><span class="nf">:background</span> <span class="s">&quot;black&quot;</span> <span class="nv">:foreground</span> <span class="s">&quot;grey&quot;</span><span class="p">))))</span>
-  <span class="o">&#39;</span><span class="p">(</span><span class="nv">fringe</span> <span class="p">((</span><span class="nf">t</span> <span class="p">(</span><span class="nf">:background</span> <span class="s">&quot;black&quot;</span><span class="p">)))))</span>
-</pre></div>
+<pre class="src" lang="emacs-lisp">
+(custom-set-faces
+  &#39;(default ((t (:background &quot;black&quot; :foreground &quot;grey&quot;))))
+  &#39;(fringe ((t (:background &quot;black&quot;)))))
+</pre>
 <p><img src="img/emacs-by-night.png" alt="img/emacs-by-night.png" /></p>
 <h2>Enjoy !</h2>
 <p>(Keep the sound muted.)</p>
@@ -223,18 +249,19 @@
 <p>Ok, sometimes I <b>still</b> want to see what&#8217;s in the mode-line.</p>
 <p>I use the <code>C-s-SPC</code> key for this (Control Super Space) with
   this simple function to display the mode-line in the header:</p>
-<div class="highlight"><pre><span class="c1">;; Command to toggle the display of the mode-line as a header</span>
-<span class="p">(</span><span class="nf">defvar-local</span> <span class="nv">header-line-format</span> <span class="nv">nil</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">defun</span> <span class="nv">mode-line-in-header</span> <span class="p">()</span>
-  <span class="p">(</span><span class="nf">interactive</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">not </span><span class="nv">header-line-format</span><span class="p">)</span>
-      <span class="p">(</span><span class="nf">setq</span> <span class="nv">header-line-format</span> <span class="nv">mode-line-format</span>
-            <span class="nv">mode-line-format</span> <span class="nv">nil</span><span class="p">)</span>
-    <span class="p">(</span><span class="nf">setq</span> <span class="nv">mode-line-format</span> <span class="nv">header-line-format</span>
-          <span class="nv">header-line-format</span> <span class="nv">nil</span><span class="p">))</span>
-  <span class="p">(</span><span class="nf">set-window-buffer</span> <span class="nv">nil</span> <span class="p">(</span><span class="nf">current-buffer</span><span class="p">)))</span>
-<span class="p">(</span><span class="nf">global-set-key</span> <span class="p">(</span><span class="nf">kbd</span> <span class="s">&quot;C-s-SPC&quot;</span><span class="p">)</span> <span class="ss">&#39;mode-line-in-header</span><span class="p">)</span>
-</pre></div>
+<pre class="src" lang="emacs-lisp">
+;; Command to toggle the display of the mode-line as a header
+(defvar-local header-line-format nil)
+(defun mode-line-in-header ()
+  (interactive)
+  (if (not header-line-format)
+      (setq header-line-format mode-line-format
+            mode-line-format nil)
+    (setq mode-line-format header-line-format
+          header-line-format nil))
+  (set-window-buffer nil (current-buffer)))
+(global-set-key (kbd &quot;C-s-SPC&quot;) &#39;mode-line-in-header)
+</pre>
 <p><img src="img/emacs-mode-line-header.png" alt="img/emacs-mode-line-header.png" /></p>
 <p>Discussed on HN: <a href="https://news.ycombinator.com/item?id=7107893">https://news.ycombinator.com/item?id=7107893</a></p>
 

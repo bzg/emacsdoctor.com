@@ -12,6 +12,25 @@
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="https://emacs-doctor.com/emacs-org-babel-overtone-intro.html">
   <link rel="alternate" type="application/rss+xml" title="M-x doctor RET" href="https://emacs-doctor.com/feed.xml" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
 </head>
 
 
@@ -89,11 +108,12 @@
 <h3>Configure Emacs</h3>
 <p>The beginning of your Emacs configuration should contain this to add
   <code>marmelade</code> to the list of known repositories for Emacs libraries:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="nf">require</span> <span class="ss">&#39;package</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">add-to-list</span> <span class="ss">&#39;package-archives</span>
-             <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;marmalade&quot;</span> <span class="o">.</span> <span class="s">&quot;http://marmalade-repo.org/packages/&quot;</span><span class="p">))</span>
-<span class="p">(</span><span class="nf">package-initialize</span><span class="p">)</span>
-</pre></div>
+<pre class="src" lang="emacs-lisp">
+(require &#39;package)
+(add-to-list &#39;package-archives
+             &#39;(&quot;marmalade&quot; . &quot;http://marmalade-repo.org/packages/&quot;))
+(package-initialize)
+</pre>
 <p>Now hit <code>C-c C-v C-t</code> to <i>tangle</i> all Emacs Lisp code blocks from this
   file into a new <code>emacs.el</code> file in the same directory.</p>
 <p>When done, go check this new <code>emacs.el</code>.</p>
@@ -120,32 +140,34 @@
   and create <code>org-loaddefs.el</code>, containing the necessary autoloads.</p>
 <h3>Configure Org-mode</h3>
 <p>This simple Org configuration should do:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="nf">add-to-list</span> <span class="ss">&#39;load-path</span> <span class="s">&quot;~/install/git/org-mode/&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">require</span> <span class="ss">&#39;org</span><span class="p">)</span>
+<pre class="src" lang="emacs-lisp">
+(add-to-list &#39;load-path &quot;~/install/git/org-mode/&quot;)
+(require &#39;org)
 
-<span class="c1">;; We only need Emacs Lisp and Clojure in this tutorial:</span>
-<span class="p">(</span><span class="nf">org-babel-do-load-languages</span>
- <span class="ss">&#39;org-babel-load-languages</span>
- <span class="o">&#39;</span><span class="p">((</span><span class="nf">emacs-lisp</span> <span class="o">.</span> <span class="nv">t</span><span class="p">)</span>
-   <span class="p">(</span><span class="nf">clojure</span> <span class="o">.</span> <span class="nv">t</span><span class="p">)))</span>
+;; We only need Emacs Lisp and Clojure in this tutorial:
+(org-babel-do-load-languages
+ &#39;org-babel-load-languages
+ &#39;((emacs-lisp . t)
+   (clojure . t)))
 
-<span class="c1">;; Use cider as the clojure execution backend</span>
-<span class="p">(</span><span class="nf">setq</span> <span class="nv">org-babel-clojure-backend</span> <span class="ss">&#39;cider</span><span class="p">)</span>
+;; Use cider as the clojure execution backend
+(setq org-babel-clojure-backend &#39;cider)
 
-<span class="c1">;; Let&#39;s have pretty source code blocks</span>
-<span class="p">(</span><span class="nf">setq</span> <span class="nv">org-edit-src-content-indentation</span> <span class="mi">0</span>
-      <span class="nv">org-src-tab-acts-natively</span> <span class="nv">t</span>
-      <span class="nv">org-src-fontify-natively</span> <span class="nv">t</span>
-      <span class="nv">org-confirm-babel-evaluate</span> <span class="nv">nil</span><span class="p">)</span>
-</pre></div>
+;; Let&#39;s have pretty source code blocks
+(setq org-edit-src-content-indentation 0
+      org-src-tab-acts-natively t
+      org-src-fontify-natively t
+      org-confirm-babel-evaluate nil)
+</pre>
 <h3>Configure cider</h3>
-<div class="highlight"><pre><span class="c1">;; Cider configuration</span>
-<span class="p">(</span><span class="nf">require</span> <span class="ss">&#39;cider</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">setq</span> <span class="nv">nrepl-hide-special-buffers</span> <span class="nv">t</span>
-      <span class="nv">cider-repl-pop-to-buffer-on-connect</span> <span class="nv">nil</span>
-      <span class="nv">cider-popup-stacktraces</span> <span class="nv">nil</span>
-      <span class="nv">cider-repl-popup-stacktraces</span> <span class="nv">t</span><span class="p">)</span>
-</pre></div>
+<pre class="src" lang="emacs-lisp">
+;; Cider configuration
+(require &#39;cider)
+(setq nrepl-hide-special-buffers t
+      cider-repl-pop-to-buffer-on-connect nil
+      cider-popup-stacktraces nil
+      cider-repl-popup-stacktraces t)
+</pre>
 <h3>Install leiningen</h3>
 <p><a href="http://leiningen.org">leiningen</a> is the <i>de facto</i> standard for running Clojure projects.</p>
 <p>Check the very simple <a href="http://leiningen.org/#install">installation instructions</a>.</p>
@@ -163,18 +185,20 @@
   <code>emacs.el</code>.  Since <code>C-c C-v C-t</code> tangles <i>all blocks</i> in the buffer,
   we also created <code>project.clj</code>, which is needed in order to run <code>lein</code>
   and to let <code>cider</code> interact with <code>lein</code>.</p>
-<div class="highlight"><pre><span class="p">(</span><span class="kd">defproject </span><span class="nv">overtone-intro</span> <span class="s">&quot;1.0&quot;</span>
-  <span class="ss">:dependencies</span> <span class="p">[[</span><span class="nv">org.clojure/clojure</span> <span class="s">&quot;1.5.1&quot;</span><span class="p">]</span>
-                 <span class="p">[</span><span class="nv">overtone</span> <span class="s">&quot;0.9.1&quot;</span><span class="p">]])</span>
-</pre></div>
+<pre class="src" lang="clojure">
+(defproject overtone-intro &quot;1.0&quot;
+  :dependencies [[org.clojure/clojure &quot;1.5.1&quot;]
+                 [overtone &quot;0.9.1&quot;]])
+</pre>
 <p>From the <code>overtone-intro</code> directory, run <code>~$ lein deps</code> to load all
   dependencies.</p>
 <h3>Additional keybindings</h3>
 <p>During the live demo, I used these keybindings:</p>
-<div class="highlight"><pre><span class="c1">;; Useful keybindings when using Clojure from Org</span>
-<span class="p">(</span><span class="nf">org-defkey</span> <span class="nv">org-mode-map</span> <span class="s">&quot;\C-x\C-e&quot;</span> <span class="ss">&#39;cider-eval-last-sexp</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">org-defkey</span> <span class="nv">org-mode-map</span> <span class="s">&quot;\C-c\C-d&quot;</span> <span class="ss">&#39;cider-doc</span><span class="p">)</span>
-</pre></div>
+<pre class="src" lang="emacs-lisp">
+;; Useful keybindings when using Clojure from Org
+(org-defkey org-mode-map &quot;\C-x\C-e&quot; &#39;cider-eval-last-sexp)
+(org-defkey org-mode-map &quot;\C-c\C-d&quot; &#39;cider-doc)
+</pre>
 <p>They allow to execute a Clojure source code block by hitting <code>C-x C-e</code>
   after a Clojure sexp, and to get a Clojure docstring by hitting <code>C-c
   C-d</code> after a symbol.</p>
@@ -205,26 +229,31 @@
 <h2>A quick intro to Org Babel</h2>
 <p>To get a gist of what Org Babel is, hit <code>C-c C-c</code> on the <code>#+BEGIN_SRC</code>
   line below:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="nf">message</span> <span class="s">&quot;Yeah!&quot;</span><span class="p">)</span>
-</pre></div>
+<pre class="src" lang="emacs-lisp">
+(message &quot;Yeah!&quot;)
+</pre>
 <p>Emacs minibuffer displays the output: yeah!</p>
 <h3>Babel: vars</h3>
 <p>You can bind variables in Babel source code blocks&#8212;hit <code>C-c C-c</code> on
   the code blocks below:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="nf">message</span> <span class="p">(</span><span class="nf">number-to-string</span> <span class="nv">n</span><span class="p">))</span>
-</pre></div>
-<div class="highlight"><pre><span class="p">(</span><span class="nb">-&gt; </span><span class="nv">n</span> <span class="nb">inc </span><span class="p">(</span><span class="nb">+ </span><span class="nv">m</span><span class="p">))</span>
-</pre></div>
+<pre class="src" lang="emacs-lisp">
+(message (number-to-string n))
+</pre>
+<pre class="src" lang="clojure">
+(-&gt; n inc (+ m))
+</pre>
 <h3>Babel: lists</h3>
 <p>Okay, you get it: hit <code>C-c C-c</code> on code blocks to execute them.</p>
 <ul>
   <li>simple</li>
   <li>list</li>
 </ul>
-<div class="highlight"><pre><span class="p">(</span><span class="nf">print</span> <span class="nv">x</span><span class="p">)</span>
-</pre></div>
-<div class="highlight"><pre><span class="p">(</span><span class="nb">map </span><span class="nv">clojure.string/upper-case</span> <span class="nv">x</span><span class="p">)</span>
-</pre></div>
+<pre class="src" lang="emacs-lisp">
+(print x)
+</pre>
+<pre class="src" lang="clojure">
+(map clojure.string/upper-case x)
+</pre>
 <h3>Babel: tables</h3>
 <table>
   <tr><td>1</td><td>a</td></tr>
@@ -232,114 +261,128 @@
   <tr><td>3</td><td>c</td></tr>
   <tr><td>4</td><td>d</td></tr>
 </table>
-<div class="highlight"><pre><span class="nv">data</span>
-</pre></div>
+<pre class="src" lang="emacs-lisp">
+data
+</pre>
 <h2>A quick intro to Overtone</h2>
 <h3>Overtone: loading and booting</h3>
-<div class="highlight"><pre><span class="p">(</span><span class="nf">use</span> <span class="ss">&#39;overtone.core</span><span class="p">)</span>
-</pre></div>
-<div class="highlight"><pre><span class="p">(</span><span class="nf">boot-external-server</span><span class="p">)</span>
-</pre></div>
+<pre class="src" lang="clojure">
+(use &#39;overtone.core)
+</pre>
+<pre class="src" lang="clojure">
+(boot-external-server)
+</pre>
 <p><b>Note</b>: I&#8217;m using GNU/Linux, and I didn&#8217;t take the time to configure
   jackd properly.  You may want to use this instead:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="nf">use</span> <span class="ss">&#39;overtone.live</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">boot-internal-server</span><span class="p">)</span>
-</pre></div>
+<pre class="src" lang="clojure">
+(use &#39;overtone.live)
+(boot-internal-server)
+</pre>
 <h3>Overtone: playing/fooling around</h3>
 <p><b>Note</b>: the first time you use the <code>overtone.inst.piano</code> namespace, it
   will load quite a lot of files from freesound.org &#8211; you may want to
   do this within a bare <code>lein repl</code> in order to make sure the process is
   over.</p>
-<div class="highlight"><pre><span class="p">(</span><span class="nf">use</span> <span class="ss">&#39;overtone.inst.piano</span><span class="p">)</span>
-</pre></div>
+<pre class="src" lang="clojure">
+(use &#39;overtone.inst.piano)
+</pre>
 <p>Play a simple midi note:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="nf">piano</span> <span class="mi">60</span><span class="p">)</span>
-</pre></div>
-<div class="highlight"><pre><span class="p">(</span><span class="nb">doseq </span><span class="p">[</span><span class="nv">note</span> <span class="p">(</span><span class="nf">chord</span> <span class="ss">:C3</span><span class="p">)]</span> <span class="p">(</span><span class="nf">piano</span> <span class="nv">note</span><span class="p">))</span>
-</pre></div>
-<div class="highlight"><pre><span class="p">(</span><span class="nb">doseq </span><span class="p">[</span><span class="nv">note</span> <span class="p">(</span><span class="nf">chord</span> <span class="ss">:E3</span> <span class="ss">:minor</span><span class="p">)]</span> <span class="p">(</span><span class="nf">piano</span> <span class="nv">note</span><span class="p">))</span>
-</pre></div>
-<div class="highlight"><pre><span class="p">(</span><span class="kd">defn </span><span class="nv">play-chord</span> <span class="p">[</span><span class="nv">chord</span><span class="p">]</span>
-  <span class="p">(</span><span class="nb">doseq </span><span class="p">[</span><span class="nv">note</span> <span class="nv">chord</span><span class="p">]</span> <span class="p">(</span><span class="nf">piano</span> <span class="nv">note</span><span class="p">)))</span>
+<pre class="src" lang="clojure">
+(piano 60)
+</pre>
+<pre class="src" lang="clojure">
+(doseq [note (chord :C3)] (piano note))
+</pre>
+<pre class="src" lang="clojure">
+(doseq [note (chord :E3 :minor)] (piano note))
+</pre>
+<pre class="src" lang="clojure">
+(defn play-chord [chord]
+  (doseq [note chord] (piano note)))
 
-<span class="p">(</span><span class="nf">play-chord</span> <span class="p">(</span><span class="nf">chord</span> <span class="ss">:A3</span> <span class="ss">:minor</span><span class="p">))</span>
-</pre></div>
-<div class="highlight"><pre><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nb">time </span><span class="p">(</span><span class="nf">now</span><span class="p">)]</span>
-  <span class="p">(</span><span class="nf">at</span> <span class="nb">time </span><span class="p">(</span><span class="nf">play-chord</span> <span class="p">(</span><span class="nf">chord</span> <span class="ss">:C3</span> <span class="ss">:major</span><span class="p">)))</span>
-  <span class="p">(</span><span class="nf">at</span> <span class="p">(</span><span class="nb">+ </span><span class="mi">1000</span> <span class="nv">time</span><span class="p">)</span> <span class="p">(</span><span class="nf">play-chord</span> <span class="p">(</span><span class="nf">chord</span> <span class="ss">:C3</span> <span class="ss">:major7</span><span class="p">)))</span>
-  <span class="p">(</span><span class="nf">at</span> <span class="p">(</span><span class="nb">+ </span><span class="mi">2000</span> <span class="nv">time</span><span class="p">)</span> <span class="p">(</span><span class="nf">play-chord</span> <span class="p">(</span><span class="nf">chord</span> <span class="ss">:E3</span> <span class="ss">:minor</span><span class="p">)))</span>
-  <span class="p">(</span><span class="nf">at</span> <span class="p">(</span><span class="nb">+ </span><span class="mi">3000</span> <span class="nv">time</span><span class="p">)</span> <span class="p">(</span><span class="nf">play-chord</span> <span class="p">(</span><span class="nf">chord</span> <span class="ss">:A2</span> <span class="ss">:minor</span><span class="p">))))</span>
-</pre></div>
+(play-chord (chord :A3 :minor))
+</pre>
+<pre class="src" lang="clojure">
+(let [time (now)]
+  (at time (play-chord (chord :C3 :major)))
+  (at (+ 1000 time) (play-chord (chord :C3 :major7)))
+  (at (+ 2000 time) (play-chord (chord :E3 :minor)))
+  (at (+ 3000 time) (play-chord (chord :A2 :minor))))
+</pre>
 <p><code>defsynth</code> and <code>definst</code> are the two entry points for creating sounds
   and instruments &#8211; go check their docstrings, they explain a lot.</p>
-<div class="highlight"><pre><span class="p">(</span><span class="nf">defsynth</span> <span class="nv">bar</span> <span class="p">[</span><span class="nv">freq</span> <span class="mi">440</span><span class="p">]</span>
-  <span class="p">(</span><span class="nf">out</span> <span class="mi">0</span> <span class="p">(</span><span class="nf">sin-osc</span> <span class="nv">freq</span><span class="p">)))</span>
+<pre class="src" lang="clojure">
+(defsynth bar [freq 440]
+  (out 0 (sin-osc freq)))
 
-<span class="p">(</span><span class="nf">bar</span> <span class="mi">500</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">kill</span> <span class="nv">bar</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">stop</span><span class="p">)</span>
+(bar 500)
+(kill bar)
+(stop)
 
-<span class="p">(</span><span class="nf">definst</span> <span class="nv">beep</span> <span class="p">[</span><span class="nv">note</span> <span class="mi">60</span><span class="p">]</span>
-  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">sound-src</span> <span class="p">(</span><span class="nf">sin-osc</span> <span class="p">(</span><span class="nf">midicps</span> <span class="nv">note</span><span class="p">))</span>
-	 <span class="nv">env</span> <span class="p">(</span><span class="nf">env-gen</span> <span class="p">(</span><span class="nf">perc</span> <span class="mf">0.01</span> <span class="mf">1.0</span><span class="p">)</span> <span class="ss">:action</span> <span class="nv">FREE</span><span class="p">)]</span> <span class="c1">; sam uses :free</span>
-    <span class="p">(</span><span class="nb">* </span><span class="nv">sound-src</span> <span class="nv">env</span><span class="p">)))</span>
+(definst beep [note 60]
+  (let [sound-src (sin-osc (midicps note))
+	 env (env-gen (perc 0.01 1.0) :action FREE)] ; sam uses :free
+    (* sound-src env)))
 
-<span class="p">(</span><span class="nf">beep</span> <span class="mi">60</span><span class="p">)</span>
+(beep 60)
 
-<span class="p">(</span><span class="nf">defsynth</span> <span class="nv">pad1</span> <span class="p">[</span><span class="nv">freq</span> <span class="mi">110</span> <span class="nv">amp</span> <span class="mi">1</span> <span class="nv">gate</span> <span class="mi">1</span> <span class="nv">out-bus</span> <span class="mi">0</span><span class="p">]</span>
-  <span class="p">(</span><span class="nf">out</span> <span class="nv">out-bus</span>
-	<span class="p">(</span><span class="nb">* </span><span class="p">(</span><span class="nf">saw</span> <span class="p">[</span><span class="nv">freq</span> <span class="p">(</span><span class="nb">* </span><span class="nv">freq</span> <span class="mf">1.01</span><span class="p">)])</span>
-	   <span class="p">(</span><span class="nf">env-gen</span> <span class="p">(</span><span class="nf">adsr</span> <span class="mf">0.01</span> <span class="mf">0.1</span> <span class="mf">0.7</span> <span class="mf">0.5</span><span class="p">)</span> <span class="ss">:gate</span> <span class="nv">gate</span> <span class="ss">:action</span> <span class="nv">FREE</span><span class="p">))))</span>
+(defsynth pad1 [freq 110 amp 1 gate 1 out-bus 0]
+  (out out-bus
+	(* (saw [freq (* freq 1.01)])
+	   (env-gen (adsr 0.01 0.1 0.7 0.5) :gate gate :action FREE))))
 
-<span class="p">(</span><span class="nf">pad1</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">stop</span><span class="p">)</span>
+(pad1)
+(stop)
 
-<span class="c1">;; Let&#39;s try something a bit crazy</span>
-<span class="p">(</span><span class="nb">for </span><span class="p">[</span><span class="nv">i</span> <span class="p">(</span><span class="nb">range </span><span class="mi">200</span><span class="p">)]</span> <span class="p">(</span><span class="nf">at</span> <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nf">now</span><span class="p">)</span> <span class="p">(</span><span class="nb">* </span><span class="nv">i</span> <span class="mi">20</span><span class="p">))</span> <span class="p">(</span><span class="nf">beep</span> <span class="nv">i</span><span class="p">)))</span>
-</pre></div>
+;; Let&#39;s try something a bit crazy
+(for [i (range 200)] (at (+ (now) (* i 20)) (beep i)))
+</pre>
 <p>Some more copy-and-paste from overtone&#8217;s wiki:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="nb">map </span><span class="nv">piano</span> <span class="p">[</span><span class="mi">60</span> <span class="mi">63</span> <span class="mi">67</span><span class="p">])</span>
-<span class="p">(</span><span class="nb">map </span><span class="nv">piano</span> <span class="p">(</span><span class="nb">map </span><span class="nv">note</span> <span class="p">[</span><span class="ss">:C3</span> <span class="ss">:E4</span> <span class="ss">:G4</span><span class="p">]))</span>
-<span class="p">(</span><span class="nb">map </span><span class="nv">piano</span> <span class="p">(</span><span class="nb">map </span><span class="nv">note</span> <span class="p">[</span><span class="ss">:C#5</span> <span class="ss">:E4</span> <span class="ss">:G4</span><span class="p">]))</span>
-<span class="p">(</span><span class="nb">map </span><span class="nv">piano</span> <span class="p">(</span><span class="nb">map </span><span class="nv">note</span> <span class="p">[</span><span class="ss">:Cb2</span> <span class="ss">:E4</span> <span class="ss">:G4</span><span class="p">]))</span>
+<pre class="src" lang="clojure">
+(map piano [60 63 67])
+(map piano (map note [:C3 :E4 :G4]))
+(map piano (map note [:C#5 :E4 :G4]))
+(map piano (map note [:Cb2 :E4 :G4]))
 
-<span class="p">(</span><span class="nf">definst</span> <span class="nv">steel-drum</span> <span class="p">[</span><span class="nv">note</span> <span class="mi">60</span> <span class="nv">amp</span> <span class="mf">0.8</span><span class="p">]</span>
-  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">freq</span> <span class="p">(</span><span class="nf">midicps</span> <span class="nv">note</span><span class="p">)]</span>
-    <span class="p">(</span><span class="nb">* </span><span class="nv">amp</span>
-	<span class="p">(</span><span class="nf">env-gen</span> <span class="p">(</span><span class="nf">perc</span> <span class="mf">0.01</span> <span class="mf">0.2</span><span class="p">)</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="ss">:action</span> <span class="nv">FREE</span><span class="p">)</span>
-	<span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nf">sin-osc</span> <span class="p">(</span><span class="nb">/ </span><span class="nv">freq</span> <span class="mi">2</span><span class="p">))</span>
-	   <span class="p">(</span><span class="nf">rlpf</span> <span class="p">(</span><span class="nf">saw</span> <span class="nv">freq</span><span class="p">)</span> <span class="p">(</span><span class="nb">* </span><span class="mf">1.1</span> <span class="nv">freq</span><span class="p">)</span> <span class="mf">0.4</span><span class="p">)))))</span>
+(definst steel-drum [note 60 amp 0.8]
+  (let [freq (midicps note)]
+    (* amp
+	(env-gen (perc 0.01 0.2) 1 1 0 1 :action FREE)
+	(+ (sin-osc (/ freq 2))
+	   (rlpf (saw freq) (* 1.1 freq) 0.4)))))
 
-<span class="p">(</span><span class="nf">steel-drum</span> <span class="p">(</span><span class="nf">note</span> <span class="ss">:E3</span><span class="p">))</span>
-<span class="p">(</span><span class="nb">map </span><span class="nv">steel-drum</span> <span class="p">(</span><span class="nb">map </span><span class="nv">note</span> <span class="p">[</span><span class="ss">:E3</span> <span class="ss">:D#4</span><span class="p">]))</span>
-</pre></div>
+(steel-drum (note :E3))
+(map steel-drum (map note [:E3 :D#4]))
+</pre>
 <h3>Overtone: loading .wav samples</h3>
-<div class="highlight"><pre><span class="c1">;; Hint: adapt this to your own .wav files</span>
-<span class="p">(</span><span class="k">def </span><span class="nv">noa</span> <span class="p">(</span><span class="nf">sample</span> <span class="s">&quot;/path/to/a/file.wav&quot;</span><span class="p">))</span>
+<pre class="src" lang="clojure">
+;; Hint: adapt this to your own .wav files
+(def noa (sample &quot;/path/to/a/file.wav&quot;))
 
-<span class="p">(</span><span class="k">let </span><span class="p">[]</span>
-  <span class="p">(</span><span class="nf">noa</span><span class="p">)</span>
-  <span class="p">(</span><span class="nf">Thread/sleep</span> <span class="mi">3000</span><span class="p">)</span>
-  <span class="p">(</span><span class="nf">piano</span> <span class="p">(</span><span class="nf">note</span> <span class="ss">:Cb3</span><span class="p">))</span>
-  <span class="p">(</span><span class="nf">piano</span> <span class="mi">68</span><span class="p">))</span>
+(let []
+  (noa)
+  (Thread/sleep 3000)
+  (piano (note :Cb3))
+  (piano 68))
 
-<span class="p">(</span><span class="nf">stop</span><span class="p">)</span>
-</pre></div>
+(stop)
+</pre>
 <h3>Overtone: using freesound.org</h3>
 <p>You can download samples directly from freesound.org via Overtone:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="k">def </span><span class="nv">snare</span> <span class="p">(</span><span class="nf">sample</span> <span class="p">(</span><span class="nf">freesound-path</span> <span class="mi">26903</span><span class="p">)))</span>
-<span class="p">(</span><span class="nf">snare</span><span class="p">)</span>
-<span class="p">(</span><span class="k">def </span><span class="nv">clic</span> <span class="p">(</span><span class="nf">sample</span> <span class="p">(</span><span class="nf">freesound-path</span> <span class="mi">406</span><span class="p">)))</span>
-<span class="p">(</span><span class="nf">clic</span><span class="p">)</span>
-<span class="p">(</span><span class="k">def </span><span class="nv">steam</span> <span class="p">(</span><span class="nf">sample</span> <span class="p">(</span><span class="nf">freesound-path</span> <span class="mi">30628</span><span class="p">)))</span>
-<span class="p">(</span><span class="nf">steam</span><span class="p">)</span>
-<span class="p">(</span><span class="k">def </span><span class="nv">clap</span> <span class="p">(</span><span class="nf">sample</span> <span class="p">(</span><span class="nf">freesound-path</span> <span class="mi">48310</span><span class="p">)))</span>
-<span class="p">(</span><span class="nf">clap</span><span class="p">)</span>
-<span class="p">(</span><span class="k">def </span><span class="nv">clap2</span> <span class="p">(</span><span class="nf">sample</span> <span class="p">(</span><span class="nf">freesound-path</span> <span class="mi">132676</span><span class="p">)))</span>
-<span class="p">(</span><span class="nf">clap2</span><span class="p">)</span>
-<span class="p">(</span><span class="k">def </span><span class="nv">boom</span> <span class="p">(</span><span class="nf">sample</span> <span class="p">(</span><span class="nf">freesound-path</span> <span class="mi">80401</span><span class="p">)))</span>
-<span class="p">(</span><span class="nf">boom</span><span class="p">)</span>
-</pre></div>
+<pre class="src" lang="clojure">
+(def snare (sample (freesound-path 26903)))
+(snare)
+(def clic (sample (freesound-path 406)))
+(clic)
+(def steam (sample (freesound-path 30628)))
+(steam)
+(def clap (sample (freesound-path 48310)))
+(clap)
+(def clap2 (sample (freesound-path 132676)))
+(clap2)
+(def boom (sample (freesound-path 80401)))
+(boom)
+</pre>
 <h2>Why I love this?</h2>
 <ul>
   <li>I love sounds.</li>

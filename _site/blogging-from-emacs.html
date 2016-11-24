@@ -12,6 +12,25 @@
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="https://emacs-doctor.com/blogging-from-emacs.html">
   <link rel="alternate" type="application/rss+xml" title="M-x doctor RET" href="https://emacs-doctor.com/feed.xml" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
 </head>
 
 
@@ -89,10 +108,11 @@
   <code>my-blog.org</code>.</p>
 <p>In this file, hit <code>M-RET</code> to insert a new heading.  Type something
   sensible as the title of your next blog entry:</p>
-<div class="highlight"><pre>* My first blog post with Emacs and Org!
+<pre class="src" lang="org">
+* My first blog post with Emacs and Org!
 
 This will be the content of my blog entry.
-</pre></div>
+</pre>
 <p>You&#8217;re done.</p>
 <h2>Publishing <code>my-blog.org</code> as a HTML page</h2>
 <p>You need to publish your Org page somewhere in your computer.</p>
@@ -101,16 +121,17 @@ This will be the content of my blog entry.
 ~$ mkdir public_html
 </pre>
 <p>Now edit your <code>.emacs.el</code> file and add this Emacs lisp snippet:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="nf">setq</span> <span class="nv">org-publish-project-alist</span>
-      <span class="o">&#39;</span><span class="p">((</span><span class="s">&quot;blog&quot;</span>
-         <span class="nv">:base-directory</span> <span class="s">&quot;~/&quot;</span>
-         <span class="nv">:html-extension</span> <span class="s">&quot;html&quot;</span>
-         <span class="nv">:base-extension</span> <span class="s">&quot;org&quot;</span>
-         <span class="nv">:publishing-directory</span> <span class="s">&quot;~/public_html/&quot;</span>
-         <span class="nv">:publishing-function</span> <span class="p">(</span><span class="nf">org-html-publish-to-html</span><span class="p">)</span>
-         <span class="nv">:html-preamble</span> <span class="nv">nil</span>
-         <span class="nv">:html-postamble</span> <span class="nv">nil</span><span class="p">)))</span>
-</pre></div>
+<pre class="src" lang="emacs-lisp">
+(setq org-publish-project-alist
+      &#39;((&quot;blog&quot;
+         :base-directory &quot;~/&quot;
+         :html-extension &quot;html&quot;
+         :base-extension &quot;org&quot;
+         :publishing-directory &quot;~/public_html/&quot;
+         :publishing-function (org-html-publish-to-html)
+         :html-preamble nil
+         :html-postamble nil)))
+</pre>
 <p>The code above defines a HTML <i>publishing</i> project with no preamble
   and no postamble.  (To learn more on publishing projects, please read
   the <a href="http://orgmode.org/manual/Publishing.html">Org manual</a>.)</p>
@@ -135,23 +156,25 @@ This will be the content of my blog entry.
   directory is in your Emacs load-path.</p>
 <p>Since Org lives in the <code>~/install/git/</code> contrib on my computer, this
   is my configuration:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="nf">add-to-list</span> <span class="ss">&#39;load-path</span> <span class="s">&quot;~/install/git/org-mode/contrib/lisp/&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="nf">require</span> <span class="ss">&#39;ox-rss</span><span class="p">)</span>
-</pre></div>
+<pre class="src" lang="emacs-lisp">
+(add-to-list &#39;load-path &quot;~/install/git/org-mode/contrib/lisp/&quot;)
+(require &#39;ox-rss)
+</pre>
 <p>(We use <code>add-to-list</code> to append a new project to
   <code>org-publish-project-alist</code>, but you can simply use <code>setq</code> with both
   projects on <code>org-publish-project-alist</code>.)</p>
 <h3>Create a RSS publishing project</h3>
 <p>Add this new RSS publishing project:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="nf">add-to-list</span> <span class="ss">&#39;org-publish-project-alist</span>
-             <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;blog-rss&quot;</span>
-		<span class="nv">:base-directory</span> <span class="s">&quot;~/&quot;</span>
-		<span class="nv">:base-extension</span> <span class="s">&quot;org&quot;</span>
-		<span class="nv">:publishing-directory</span> <span class="s">&quot;~/public_html/&quot;</span>
-		<span class="nv">:publishing-function</span> <span class="p">(</span><span class="nf">org-rss-publish-to-rss</span><span class="p">)</span>
-		<span class="nv">:html-link-home</span> <span class="s">&quot;http://mydomain.org/&quot;</span>
-		<span class="nv">:html-link-use-abs-url</span> <span class="nv">t</span><span class="p">))</span>
-</pre></div>
+<pre class="src" lang="emacs-lisp">
+(add-to-list &#39;org-publish-project-alist
+             &#39;(&quot;blog-rss&quot;
+		:base-directory &quot;~/&quot;
+		:base-extension &quot;org&quot;
+		:publishing-directory &quot;~/public_html/&quot;
+		:publishing-function (org-rss-publish-to-rss)
+		:html-link-home &quot;http://mydomain.org/&quot;
+		:html-link-use-abs-url t))
+</pre>
 <p>It is pretty similar to our HTML publishing project except that:</p>
 <ul>
   <li>the publishing function we use is <code>org-rss-publish-to-rss</code> instead
@@ -169,20 +192,21 @@ This will be the content of my blog entry.
 <h3>Add some RSS-related info in your HTML publishing project</h3>
 <p>Our last step is to link our RSS feed (the <code>my-blog.xml</code> file) with
   the HTML file.  Let&#8217;s rewrite our HTML project like this:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="nf">setq</span> <span class="nv">org-publish-project-alist</span>
-      <span class="o">&#39;</span><span class="p">((</span><span class="s">&quot;blog&quot;</span>
-         <span class="nv">:base-directory</span> <span class="s">&quot;~/&quot;</span>
-         <span class="nv">:html-extension</span> <span class="s">&quot;html&quot;</span>
-         <span class="nv">:base-extension</span> <span class="s">&quot;org&quot;</span>
-         <span class="nv">:publishing-directory</span> <span class="s">&quot;~/public_html/&quot;</span>
-         <span class="nv">:publishing-function</span> <span class="p">(</span><span class="nf">org-html-publish-to-html</span><span class="p">)</span>
-         <span class="nv">:html-preamble</span> <span class="nv">nil</span>
-         <span class="nv">:html-postamble</span> <span class="nv">nil</span>
-         <span class="nv">:html-head-extra</span>
-         <span class="s">&quot;&lt;link rel=\&quot;alternate\&quot; type=\&quot;application/rss+xml\&quot;</span>
-<span class="s">                href=\&quot;http://mydomain.org/my-blog.xml\&quot;</span>
-<span class="s">                title=\&quot;RSS feed for mydomain.org\&quot;&gt;&quot;</span><span class="p">)))</span>
-</pre></div>
+<pre class="src" lang="emacs-lisp">
+(setq org-publish-project-alist
+      &#39;((&quot;blog&quot;
+         :base-directory &quot;~/&quot;
+         :html-extension &quot;html&quot;
+         :base-extension &quot;org&quot;
+         :publishing-directory &quot;~/public_html/&quot;
+         :publishing-function (org-html-publish-to-html)
+         :html-preamble nil
+         :html-postamble nil
+         :html-head-extra
+         &quot;&lt;link rel=\&quot;alternate\&quot; type=\&quot;application/rss+xml\&quot;
+                href=\&quot;http://mydomain.org/my-blog.xml\&quot;
+                title=\&quot;RSS feed for mydomain.org\&quot;&gt;&quot;)))
+</pre>
 <p>We just appended the <code>:html-head-extra</code> option, which tells what
   information we want to add in our HTML <code>&lt;head&gt;...&lt;/head&gt;</code> section.</p>
 <h2>Last but not least: a real setup</h2>
@@ -197,17 +221,18 @@ This will be the content of my blog entry.
   At the end of each summary, put a link to the Org page where people
   can comment.</p>
 <p>Then update your RSS publishing project like this:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="nf">add-to-list</span> <span class="ss">&#39;org-publish-project-alist</span>
-             <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;blog-rss&quot;</span>
-		<span class="nv">:base-directory</span> <span class="s">&quot;~/&quot;</span>
-		<span class="nv">:base-extension</span> <span class="s">&quot;org&quot;</span>
-		<span class="nv">:publishing-directory</span> <span class="s">&quot;~/public_html/&quot;</span>
-		<span class="nv">:publishing-function</span> <span class="p">(</span><span class="nf">org-rss-publish-to-rss</span><span class="p">)</span>
-		<span class="nv">:html-link-home</span> <span class="s">&quot;http://mydomain.org/&quot;</span>
-		<span class="nv">:html-link-use-abs-url</span> <span class="nv">t</span>
-		<span class="nv">:exclude</span> <span class="s">&quot;.*&quot;</span>
-		<span class="nv">:include</span> <span class="p">(</span><span class="s">&quot;my-blog.org&quot;</span><span class="p">)))</span>
-</pre></div>
+<pre class="src" lang="emacs-lisp">
+(add-to-list &#39;org-publish-project-alist
+             &#39;(&quot;blog-rss&quot;
+		:base-directory &quot;~/&quot;
+		:base-extension &quot;org&quot;
+		:publishing-directory &quot;~/public_html/&quot;
+		:publishing-function (org-rss-publish-to-rss)
+		:html-link-home &quot;http://mydomain.org/&quot;
+		:html-link-use-abs-url t
+		:exclude &quot;.*&quot;
+		:include (&quot;my-blog.org&quot;)))
+</pre>
 <p>Note the options <code>:exclude</code> and <code>:include</code>&#8212;they say: &#8220;Don&#8217;t publish
   .xml files for all .org files in the base directory, only publish a
   .xml file for <code>my-blog.org</code>.&#8221;</p>
