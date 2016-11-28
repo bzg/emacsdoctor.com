@@ -103,7 +103,7 @@
   matches.</p>
 <p>Hit <code>C-r</code> to search backwards.</p>
 <p>Now hit <code>C-s C-s</code> to search for the last search string again.</p>
-<p>Hit <code>M-e</code> to edit the search string.  Delete &#8220;string&#8221; in the minibuffer
+<p>Hit <code>M-e</code> to edit the search string.  Delete &#8220;lisp&#8221; in the minibuffer
   prompt, type &#8220;mode&#8221; and <code>RET</code> to reenter the search loop.</p>
 <p><img src="img/2016-11-07-emacs-search-mode.png" alt="img/2016-11-07-emacs-search-mode.png" /></p>
 <p>Hit <code>M-p</code>.  Your cursor will be back in the minibuffer prompt and you
@@ -115,7 +115,7 @@
 <p><code>C-q</code> is used to insert <code>C-j</code> and <code>RET</code> literally: if you don&#8217;t use <code>C-q</code>,
   typing <code>C-j</code> and <code>RET</code> in the search prompt will exit the prompt.</p>
 <p>Hit <code>C-g</code> to abort the search.</p>
-<p>Hit <code>C-s</code> and search for <code>Mail</code>.</p>
+<p>Hit <code>C-s</code> and search for <code>mail</code>.</p>
 <p><i>Notice that both &#8220;Mail&#8221; and &#8220;mail&#8221; will be matched: the search is not
   case sensitive.</i></p>
 <p>Hit <code>C-u C-SPC</code> to go back to your position before your search.</p>
@@ -126,7 +126,7 @@
   like &#8220;mail   client&#8221; (with three hard spaces) and still match the
   &#8220;mail client&#8221; string.</p>
 <p><img src="img/2016-11-07-emacs-search-loosely.png" alt="img/2016-11-07-emacs-search-loosely.png" /></p>
-<p>Still in the search loop, <code>M-w</code> will perform word-based searches.  For
+<p>Still in the search loop, <code>M-s w</code> will perform word-based searches.  For
   example, word-based search for &#8220;mail&#8221; will not match &#8220;email&#8221;.</p>
 <p>Now try searching for <code>maii</code> instead of <code>mail</code> and then hit <code>DEL</code> to
   edit the search string by deleting the last character.</p>

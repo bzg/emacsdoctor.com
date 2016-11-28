@@ -5,8 +5,8 @@
     <description>Everybody needs a good Emacs doctor.</description>
     <link>https://emacs-doctor.com/</link>
     <atom:link href="https://emacs-doctor.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 24 Nov 2016 10:48:39 +0100</pubDate>
-    <lastBuildDate>Thu, 24 Nov 2016 10:48:39 +0100</lastBuildDate>
+    <pubDate>Mon, 28 Nov 2016 09:19:44 +0100</pubDate>
+    <lastBuildDate>Mon, 28 Nov 2016 09:19:44 +0100</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
@@ -21,7 +21,7 @@
   matches.&lt;/p&gt;
 &lt;p&gt;Hit &lt;code&gt;C-r&lt;/code&gt; to search backwards.&lt;/p&gt;
 &lt;p&gt;Now hit &lt;code&gt;C-s C-s&lt;/code&gt; to search for the last search string again.&lt;/p&gt;
-&lt;p&gt;Hit &lt;code&gt;M-e&lt;/code&gt; to edit the search string.  Delete &amp;#8220;string&amp;#8221; in the minibuffer
+&lt;p&gt;Hit &lt;code&gt;M-e&lt;/code&gt; to edit the search string.  Delete &amp;#8220;lisp&amp;#8221; in the minibuffer
   prompt, type &amp;#8220;mode&amp;#8221; and &lt;code&gt;RET&lt;/code&gt; to reenter the search loop.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;img/2016-11-07-emacs-search-mode.png&quot; alt=&quot;img/2016-11-07-emacs-search-mode.png&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;Hit &lt;code&gt;M-p&lt;/code&gt;.  Your cursor will be back in the minibuffer prompt and you
@@ -33,7 +33,7 @@
 &lt;p&gt;&lt;code&gt;C-q&lt;/code&gt; is used to insert &lt;code&gt;C-j&lt;/code&gt; and &lt;code&gt;RET&lt;/code&gt; literally: if you don&amp;#8217;t use &lt;code&gt;C-q&lt;/code&gt;,
   typing &lt;code&gt;C-j&lt;/code&gt; and &lt;code&gt;RET&lt;/code&gt; in the search prompt will exit the prompt.&lt;/p&gt;
 &lt;p&gt;Hit &lt;code&gt;C-g&lt;/code&gt; to abort the search.&lt;/p&gt;
-&lt;p&gt;Hit &lt;code&gt;C-s&lt;/code&gt; and search for &lt;code&gt;Mail&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Hit &lt;code&gt;C-s&lt;/code&gt; and search for &lt;code&gt;mail&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;i&gt;Notice that both &amp;#8220;Mail&amp;#8221; and &amp;#8220;mail&amp;#8221; will be matched: the search is not
   case sensitive.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;Hit &lt;code&gt;C-u C-SPC&lt;/code&gt; to go back to your position before your search.&lt;/p&gt;
@@ -44,7 +44,7 @@
   like &amp;#8220;mail   client&amp;#8221; (with three hard spaces) and still match the
   &amp;#8220;mail client&amp;#8221; string.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;img/2016-11-07-emacs-search-loosely.png&quot; alt=&quot;img/2016-11-07-emacs-search-loosely.png&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;Still in the search loop, &lt;code&gt;M-w&lt;/code&gt; will perform word-based searches.  For
+&lt;p&gt;Still in the search loop, &lt;code&gt;M-s w&lt;/code&gt; will perform word-based searches.  For
   example, word-based search for &amp;#8220;mail&amp;#8221; will not match &amp;#8220;email&amp;#8221;.&lt;/p&gt;
 &lt;p&gt;Now try searching for &lt;code&gt;maii&lt;/code&gt; instead of &lt;code&gt;mail&lt;/code&gt; and then hit &lt;code&gt;DEL&lt;/code&gt; to
   edit the search string by deleting the last character.&lt;/p&gt;

@@ -27,7 +27,7 @@ Hit =C-r= to search backwards.
 
 Now hit =C-s C-s= to search for the last search string again.
 
-Hit =M-e= to edit the search string.  Delete "string" in the minibuffer
+Hit =M-e= to edit the search string.  Delete "lisp" in the minibuffer
 prompt, type "mode" and =RET= to reenter the search loop.
 
 [[file:img/2016-11-07-emacs-search-mode.png]]
@@ -47,7 +47,7 @@ typing =C-j= and =RET= in the search prompt will exit the prompt.
 
 Hit =C-g= to abort the search.
 
-Hit =C-s= and search for =Mail=.
+Hit =C-s= and search for =mail=.
 
 /Notice that both "Mail" and "mail" will be matched: the search is not
 case sensitive./
@@ -64,7 +64,7 @@ like "mail   client" (with three hard spaces) and still match the
 
 [[file:img/2016-11-07-emacs-search-loosely.png]]
 
-Still in the search loop, =M-w= will perform word-based searches.  For
+Still in the search loop, =M-s w= will perform word-based searches.  For
 example, word-based search for "mail" will not match "email".
 
 Now try searching for =maii= instead of =mail= and then hit =DEL= to
