@@ -128,6 +128,7 @@ In any buffer, hit =C-s C-h b= to browse the search options.
 - =C-s M-r= to toggle search by regular expressions
 - =C-s M-s o= to run =occur= on the current search string
 - =C-s C-M-i= to complete the current search string
+- =C-s a-test-string M-x= to replace the matched string in the buffer
 
 Enjoy, and check the [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Incremental-Search.html][Emacs manual]] for more.
 
