@@ -13,6 +13,14 @@
 <script type="text/javascript" src="https://amara.org/embedder-iframe">
 </script>
 
-<div class="amara-embed" data-height="480px" data-width="854px" data-url="https://vimeo.com/28194358"></div>
+<div
+class="amara-embed"
+data-height="480px"
+data-width="854px"
+data-initial-language="en"
+data-show-subtitles-default="true"
+data-resizable="true"
+data-url="https://vimeo.com/28194358">
+</div>
 </script>
 #+end_html
