@@ -26,4 +26,4 @@ Envoyez un mail à [Bastien](mailto:bzg+emacs@bzg.fr?subject=EmacsParis) pour vo
 
 Il y a 12 places disponibles pour chaque atelier.
 
-
+<!-- https://gitlab.com/bzg2/emacsparis -->
