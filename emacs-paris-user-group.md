@@ -1,34 +1,34 @@
 ---
 layout: page
-title: Paris
+title: Paris Meetup (fr)
 permalink: /emacs-paris-user-group/
 ---
 
-# Emacs in Paris
-
-A bunch of Emacs users in Paris are regularily gathering to discuss
-Emacs.
-
-Check [this pad](https://annuel.framapad.org/p/emacspourtousaparis) to
-subscribe to the next meetups.
-
-Check [this repository](https://gitlab.com/bzg2/emacsparis) for notes
-taken during the meetups.
-
-Please send an email to `bzg+emacs@bzg.fr` to join the mailing list
-and be invited to the next sessions.
-
 # Emacs à Paris
 
+Ateliers GNU Emacs ouverts aux non-emacs, aux emacsien débutants et/ou
+expérimentés
+
 Nous sommes quelques emacsiens à nous réunir régulièrement à Paris
-pour échanger sur nos pratiques.
+pour échanger sur nos pratiques : c'est ouvert aux non-emacsiens, aux
+débutants et aux utilisateurs avancés.
 
-Allez sur [ce pad](https://annuel.framapad.org/p/emacspourtousaparis)
-pour vous inscrire aux prochaines réunions.
+## Prochaines rencontres
+    
+- Mardi 20 juin 2017 de 19h à 22h
+- Mardi 18 juillet 2017 de 19h à 22h
+- Mardi 19 septembre 2017 de 19h à 22h
+- ...
 
-Voir [ce dépôt](https://gitlab.com/bzg2/emacsparis) pour les notes
-prises pendant les réunions.
+## Où ?
 
-Merci d'envoyer un mail à `bzg+emacs@bzg.fr` pour rejoindre la liste
-de discussion et pour être invité aux prochaines sessions.
+Les rencontres ont lieu chez [inno3.fr](http://inno3.fr) au 137 Boulevard de Magenta
+75010 Paris.
+
+## Comment je m'inscris ?
+
+Envoyez un mail à [Bastien](mailto:bzg+emacs@bzg.fr?subject=EmacsParis) pour vous inscrire.
+
+Il y a 12 places disponibles pour chaque atelier.
+
 
