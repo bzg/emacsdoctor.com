@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Paris Meetup (fr)
+title: Emacs à Paris (fr)
 permalink: /emacs-paris-user-group/
 ---
 
