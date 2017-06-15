@@ -8,7 +8,7 @@ permalink: /about/
   <source src="/img/emacs-doctor.ogv" type="video/ogg">
 </video>
 
-If you enjoy my work, please consider making a donation.
+If you enjoy my work, please consider making a donation!
 
 Donate through [gratipay](https://gratipay.com/~bzg/).
 
