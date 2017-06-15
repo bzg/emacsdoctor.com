@@ -1,0 +1,19 @@
+#+title:     Bloguer avec Emacs, Org-mode, Git et Jekyll
+#+date: 2017-06-15
+#+author: Bastien
+#+layout: post
+#+author_url: /author/bzg
+#+author_avatar: bzg
+#+show_avatar: true
+#+category: libre
+#+show_related_posts: false
+#+feature_image: default
+#+excerpt: <p>Bloguer avec Emacs, Org-mode, Git et Jekyll.</p>
+
+
+#+BEGIN_HTML
+<video style="width:100%;margin:auto;" controls autoplay>
+  <source src="/img/bloguer_depuis_emacs.ogv" type="video/ogg">
+</video>
+#+END_HTML
+

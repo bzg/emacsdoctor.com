@@ -5,9 +5,27 @@
     <description>Everybody needs a good Emacs doctor.</description>
     <link>https://emacs-doctor.com/</link>
     <atom:link href="https://emacs-doctor.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 15 Jun 2017 07:46:00 +0200</pubDate>
-    <lastBuildDate>Thu, 15 Jun 2017 07:46:00 +0200</lastBuildDate>
+    <pubDate>Thu, 15 Jun 2017 09:23:40 +0200</pubDate>
+    <lastBuildDate>Thu, 15 Jun 2017 09:23:40 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>Bloguer avec Emacs, Org-mode, Git et Jekyll</title>
+        <description>
+&lt;video style=&quot;width:100%;margin:auto;&quot; controls autoplay&gt;
+  &lt;source src=&quot;/img/bloguer_depuis_emacs.ogv&quot; type=&quot;video/ogg&quot;&gt;
+&lt;/video&gt;
+
+
+</description>
+        <pubDate>Thu, 15 Jun 2017 00:00:00 +0200</pubDate>
+        <link>https://emacs-doctor.com/blog-avec-emacs-orgmode-git-jekyll.html</link>
+        <guid isPermaLink="true">https://emacs-doctor.com/blog-avec-emacs-orgmode-git-jekyll.html</guid>
+        
+        
+        <category>libre</category>
+        
+      </item>
     
       <item>
         <title>Tutorial introduction to searching in Emacs</title>
@@ -1718,24 +1736,6 @@ This will be the content of my blog entry.
         <pubDate>Sun, 26 May 2013 00:00:00 +0200</pubDate>
         <link>https://emacs-doctor.com/bastien_guerry_orgmode_emacs_chat.html</link>
         <guid isPermaLink="true">https://emacs-doctor.com/bastien_guerry_orgmode_emacs_chat.html</guid>
-        
-        
-        <category>libre</category>
-        
-      </item>
-    
-      <item>
-        <title>How to Become a Hacker (in the 21st century)?</title>
-        <description>
-&lt;center&gt;
-&lt;iframe src=&quot;http://www.slideshare.net/slideshow/embed_code/16070695&quot; width=&quot;768&quot; height=&quot;630&quot; frameborder=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; style=&quot;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px&quot; allowfullscreen webkitallowfullscreen mozallowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&quot;margin-bottom:5px&quot;&gt; &lt;strong&gt; &lt;a href=&quot;http://www.slideshare.net/bzg/how-to-become-a-hacker-16070695&quot; title=&quot;How to Become A Hacker?&quot; target=&quot;_blank&quot;&gt;How to Become A Hacker?&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&quot;http://www.slideshare.net/bzg&quot; target=&quot;_blank&quot;&gt;Bastien Guerry&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
-&lt;/center&gt;
-
-
-</description>
-        <pubDate>Fri, 18 Jan 2013 00:00:00 +0100</pubDate>
-        <link>https://emacs-doctor.com/how-to-become-a-hacker.html</link>
-        <guid isPermaLink="true">https://emacs-doctor.com/how-to-become-a-hacker.html</guid>
         
         
         <category>libre</category>
