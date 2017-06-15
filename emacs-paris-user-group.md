@@ -4,9 +4,9 @@ title: Emacs à Paris (fr)
 permalink: /emacs-paris-user-group/
 ---
 
-Nous sommes quelques emacsiens à nous réunir régulièrement à Paris
-pour apprendre les uns des autres : c'est ouvert aux non-emacsiens,
-aux débutants, aux utilisateurs avancés et aux vimistes !
+Nous sommes quelques emacsiens à nous réunir à Paris pour apprendre
+les uns des autres : c'est ouvert aux non-emacsiens, aux débutants,
+aux utilisateurs avancés et aux vimistes !
 
 ## Prochaines rencontres
     
