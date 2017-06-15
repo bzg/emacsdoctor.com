@@ -8,9 +8,6 @@ permalink: /about/
   <source src="/img/emacs-doctor.ogv" type="video/ogg">
 </video>
 
-If you need help with GNU Emacs, please
-check [this page](/emacs-training).
-
 If you enjoy my work, please consider making a donation.
 
 Donate through [gratipay](https://gratipay.com/~bzg/).
