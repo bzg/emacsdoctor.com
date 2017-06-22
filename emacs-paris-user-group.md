@@ -21,11 +21,7 @@ Les rencontres ont lieu chez [inno3.fr](http://inno3.fr) au 137 Boulevard de Mag
 
 ## Comment je m'inscris ?
 
-Envoyez un mail à [Bastien](mailto:bzg+emacs@bzg.fr?subject=EmacsParis) pour vous inscrire.
-
-Il y a 12 places disponibles pour chaque atelier.
-
-__Les débutants sont les bienvenus !__
+Envoyez un mail à [Bastien](mailto:bzg+emacs@bzg.fr?subject=EmacsParis).
 
 ## Rencontres passées
 
