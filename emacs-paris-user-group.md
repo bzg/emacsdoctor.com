@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Emacs à Paris (fr)
+title: Soirée Emacs à Paris (fr)
 permalink: /emacs-paris-user-group/
 ---
 
@@ -24,6 +24,8 @@ Les rencontres ont lieu chez [inno3.fr](http://inno3.fr) au 137 Boulevard de Mag
 Envoyez un mail à [Bastien](mailto:bzg+emacs@bzg.fr?subject=EmacsParis) pour vous inscrire.
 
 Il y a 12 places disponibles pour chaque atelier.
+
+__Les débutants sont les bienvenus !__
 
 ## Rencontres passées
 
