@@ -10,7 +10,7 @@ aux utilisateurs avancés et aux vimistes !
 
 ## Prochaines rencontres
     
-- Mardi 18 juillet 2017 de 19h à 22h
+- Mardi 18 juillet 2017 de 19h à 22h : introduction à Emacs Lisp
 - Mardi 19 septembre 2017 de 19h à 22h
 - ...
 
