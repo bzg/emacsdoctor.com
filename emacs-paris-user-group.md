@@ -16,8 +16,11 @@ aux utilisateurs avancés et aux vimistes !
 
 ## Où ?
 
-Les rencontres ont lieu chez [inno3.fr](http://inno3.fr) au 137 Boulevard de Magenta
-75010 Paris.
+Les rencontres ont lieu chez [inno3.fr](http://inno3.fr) au 137
+Boulevard de Magenta 75010 Paris
+([plan](http://www.openstreetmap.org/#map=16/48.8818/2.3514)).
+
+![Carte d'accès aux ateliers Emacs chez inno3.fr](/img/map.png "Carte d'accès aux ateliers Emacs chez inno3.fr")
 
 ## Comment je m'inscris ?
 
