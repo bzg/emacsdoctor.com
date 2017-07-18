@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Ateliers Emacs à Paris (fr)
+title: Ateliers Emacs
 permalink: /emacs-paris-user-group/
 ---
 
