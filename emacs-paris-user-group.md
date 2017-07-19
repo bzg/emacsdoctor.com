@@ -10,9 +10,8 @@ aux utilisateurs avancés et aux vimistes !
 
 ## Prochaines rencontres
     
-- Mardi 18 juillet 2017 de 19h à 22h : introduction à Emacs Lisp
 - Mardi 19 septembre 2017 de 19h à 22h
-- ...
+- Mardi 17 octobre 2017 de 19h à 22h
 
 ## Où ?
 
@@ -22,12 +21,13 @@ Boulevard de Magenta 75010 Paris
 
 ## Comment je m'inscris ?
 
-Envoyez un mail à [Bastien](mailto:bzg@bzg.fr?subject=EmacsParis).
+Envoyez un mail à [Bastien](mailto:bzg@bzg.fr?subject=AtelierEmacs).
 
 ## Rencontres passées
 
 Nous gardons des notes des soirées passées sur [ce dépôt](https://gitlab.com/bzg2/emacsparis/blob/master/README.org).
 
+- Mardi 18 juillet 2017
 - Mardi 20 juin 2017
 - Jeudi 29 octobre 2015
 
