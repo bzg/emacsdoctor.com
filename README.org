@@ -1,5 +1,5 @@
-#+TITLE: emacs-doctor.org
+#+TITLE: emacs-doctor.com
 
-Collaborative blog for https://emacs-doctor.org
+Collaborative blog for https://emacs-doctor.com
 
 Mostly in french, but occasionnally in english.
