@@ -10,8 +10,8 @@ aux utilisateurs avancés et aux vimistes !
 
 ## Prochaines rencontres
     
-- Mardi 19 septembre 2017 de 19h à 22h
 - Mardi 17 octobre 2017 de 19h à 22h
+- Mardi 21 novembre 2017 de 19h à 22h
 
 ## Où ?
 
@@ -30,5 +30,6 @@ Nous gardons des notes des soirées passées sur [ce dépôt](https://gitlab.com
 - Mardi 18 juillet 2017
 - Mardi 20 juin 2017
 - Jeudi 29 octobre 2015
+- Mardi 19 septembre 2017
 
 <!-- https://gitlab.com/bzg2/emacsparis -->
