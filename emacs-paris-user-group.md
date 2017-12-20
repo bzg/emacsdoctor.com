@@ -10,8 +10,8 @@ aux utilisateurs avancés et aux vimistes !
 
 ## Prochaines rencontres
     
-- Mardi 21 novembre 2017 de 19h à 22h
-- Mardi 19 décembre 2017 de 19h à 22h
+- Mardi 16 janvier 2017 de 19h à 22h
+- Mardi 20 février 2017 de 19h à 22h
 
 ## Où ?
 
@@ -27,6 +27,8 @@ Envoyez un mail à [Bastien](mailto:bzg@bzg.fr?subject=AtelierEmacs).
 
 Nous gardons des notes des soirées passées sur [ce dépôt](https://gitlab.com/bzg2/emacsparis/blob/master/README.org).
 
+- Mardi 19 décembre 2017
+- Mardi 21 novembre 2017
 - Mardi 17 octobre 2017
 - Mardi 19 septembre 2017
 - Jeudi 29 octobre 2015
