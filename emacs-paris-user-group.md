@@ -23,7 +23,7 @@ Boulevard de Magenta 75010 Paris
 
 Inscrivez-vous sur [la liste de
 discussion](https://framalistes.org/sympa/info/ateliers-emacs),
-présentez-vous rapidement et indiquez que vous êtes partant pour le
+présentez-vous rapidement et indiquez que vous êtes disponible pour le
 prochain rendez-vous.
 
 En cas de souci, envoyez un mail à
