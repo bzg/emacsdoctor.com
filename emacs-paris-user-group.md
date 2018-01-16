@@ -21,7 +21,13 @@ Boulevard de Magenta 75010 Paris
 
 ## Comment je m'inscris ?
 
-Envoyez un mail à [Bastien](mailto:bzg@bzg.fr?subject=AtelierEmacs).
+Inscrivez-vous sur [la liste de
+discussion](https://framalistes.org/sympa/info/ateliers-emacs),
+présentez-vous rapidement et indiquez que vous êtes partant pour le
+prochain rendez-vous.
+
+En cas de souci, envoyez un mail à
+[Bastien](mailto:bzg@bzg.fr?subject=AtelierEmacs).
 
 ## Rencontres passées
 
