@@ -10,7 +10,6 @@ aux utilisateurs avancés et aux vimistes !
 
 ## Prochaines rencontres
     
-- Mardi 16 janvier 2017 de 19h à 22h
 - Mardi 20 février 2017 de 19h à 22h
 
 ## Où ?
