@@ -19,9 +19,7 @@ Here are the notes I used during the demo.
 
 There use to be an editor war between Emacs and Vi(m).
 
-This is now history, as org-mode made Emacs won.
-
-[[https://orgmode.org]]
+This is now history, Emacs won thanks to [[https://orgmode.org][org-mode]].
 
 * Org-mode: key ideas
 
