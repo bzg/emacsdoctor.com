@@ -1,5 +1,5 @@
 #+title: Notes from an Org-mode demonstration
-#+date: 2018-03-05
+#+date: 2018-03-04
 #+author: Bastien
 #+layout: post
 #+author_url: /author/bzg

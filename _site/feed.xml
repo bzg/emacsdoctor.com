@@ -5,9 +5,118 @@
     <description>Everybody needs a good Emacs doctor.</description>
     <link>https://emacs-doctor.com/</link>
     <atom:link href="https://emacs-doctor.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 25 Feb 2018 11:37:43 +0100</pubDate>
-    <lastBuildDate>Sun, 25 Feb 2018 11:37:43 +0100</lastBuildDate>
+    <pubDate>Sun, 04 Mar 2018 16:26:13 +0100</pubDate>
+    <lastBuildDate>Sun, 04 Mar 2018 16:26:13 +0100</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>Notes from an Org-mode demonstration</title>
+        <description>
+&lt;p&gt;Thanks to the &lt;a href=&quot;https://www.medialab-prado.es/&quot;&gt;MediaLab Prado&lt;/a&gt; and &lt;a href=&quot;http://twitter.com/adolflow&quot;&gt;Adolfo Antón Bravo&lt;/a&gt; for inviting me to
+  make a small demonstration of org-mode.&lt;/p&gt;
+&lt;p&gt;Here are the notes I used during the demo.&lt;/p&gt;
+&lt;h1&gt;GNU Emacs&lt;/h1&gt;
+&lt;p&gt;There use to be an editor war between Emacs and Vi(m).&lt;/p&gt;
+&lt;p&gt;This is now history, as org-mode made Emacs won.&lt;/p&gt;
+&lt;p&gt;https://orgmode.org&lt;/p&gt;
+&lt;h1&gt;Org-mode: key ideas&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;You need a single tool for both notes and tasks.&lt;/li&gt;
+  &lt;li&gt;Your TODO list application should not be too rigid.  Ideally, it is
+    a pedagogical tool, one that helps to be &lt;i&gt;slightly&lt;/i&gt; better organized.&lt;/li&gt;
+  &lt;li&gt;org-mode is both a &lt;i&gt;format&lt;/i&gt; a la markdown and a &lt;i&gt;set of tools&lt;/i&gt; around
+    this format.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Org-mode history&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;2003 : Carsten Dominik starts writing org-mode as a usable
+    outline-mode&lt;/li&gt;
+  &lt;li&gt;2011 : Bastien becomes org-mode the maintainer&lt;/li&gt;
+  &lt;li&gt;2014 : Nicolas Goaziou becomes the main developer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the future:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;More closely integrate with Emacs ?&lt;/li&gt;
+  &lt;li&gt;More parsers and exporters outside Emacs ?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Notes on org-mode development&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;We don’t have a roadmap: user driven development.&lt;/li&gt;
+  &lt;li&gt;We don’t have a bug tracker: see the o&lt;a href=&quot;https://www.konmari.com/&quot;&gt;KonMari&lt;/a&gt; methodology: discard
+    beforing storing.&lt;/li&gt;
+  &lt;li&gt;We don’t have a business model.&lt;/li&gt;
+  &lt;li&gt;We DO have a strong culture of &lt;b&gt;being nice&lt;/b&gt; to newcomers.&lt;/li&gt;
+  &lt;li&gt;We DO have a strong culture of &lt;b&gt;not breaking things&lt;/b&gt;.&lt;/li&gt;
+  &lt;li&gt;We started Worg as a git-based community-driven documentation.&lt;/li&gt;
+  &lt;li&gt;We plan to write our documentation in .org &lt;code&gt;\o/&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Org-mode as structured text editing&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Headlines&lt;/li&gt;
+  &lt;li&gt;Tags&lt;/li&gt;
+  &lt;li&gt;TODO keywords&lt;/li&gt;
+  &lt;li&gt;Properties&lt;/li&gt;
+  &lt;li&gt;Lists&lt;/li&gt;
+  &lt;li&gt;Tables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Org-mode as a spreadsheet&lt;/h1&gt;
+&lt;p&gt;Let’s build a table!&lt;/p&gt;
+&lt;table&gt;
+  &lt;tr&gt;&lt;th&gt;A&lt;/th&gt;&lt;th&gt;Poetry&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Nick&lt;/td&gt;&lt;td&gt;10&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Bastien&lt;/td&gt;&lt;td&gt;12&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Élodie&lt;/td&gt;&lt;td&gt;14&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;12&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;pre class=&quot;example&quot;&gt;
+M-x org-table-import RET ~/test.csv
+&lt;/pre&gt;
+&lt;table&gt;
+  &lt;tr&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;B&lt;/td&gt;&lt;td&gt;C&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;h1&gt;Org-mode exporter&lt;/h1&gt;
+&lt;pre class=&quot;example&quot;&gt;
+M-x org-export-dispatch RET
+&lt;/pre&gt;
+&lt;h1&gt;Org-mode for literate programming&lt;/h1&gt;
+&lt;p&gt;Here are some explanations about &lt;code&gt;a-function&lt;/code&gt;.  Then here is the
+  function:&lt;/p&gt;
+&lt;pre class=&quot;src&quot; lang=&quot;emacs-lisp&quot;&gt;
+(defun a-function ()
+  (interactive)
+  (message &amp;quot;Hello!&amp;quot;))
+&lt;/pre&gt;
+&lt;p&gt;Now, pressing &lt;code&gt;C-c C-v t&lt;/code&gt; I will &amp;#8220;tangle&amp;#8221; these chunks of code in a
+  single file.&lt;/p&gt;
+&lt;h1&gt;Org-mode as a TODO list manager&lt;/h1&gt;
+&lt;pre class=&quot;example&quot;&gt;
+M-x org-todo RET
+&lt;/pre&gt;
+&lt;h1&gt;Org &amp;#8220;agenda&amp;#8221; views&lt;/h1&gt;
+&lt;pre class=&quot;example&quot;&gt;
+M-x org-agenda RET
+&lt;/pre&gt;
+&lt;h1&gt;Capturing items&lt;/h1&gt;
+&lt;pre class=&quot;example&quot;&gt;
+M-x org-capture RET
+&lt;/pre&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Come and play!&lt;/li&gt;
+&lt;/ul&gt;
+
+
+</description>
+        <pubDate>Sun, 04 Mar 2018 00:00:00 +0100</pubDate>
+        <link>https://emacs-doctor.com/org-mode-demo-notes.html</link>
+        <guid isPermaLink="true">https://emacs-doctor.com/org-mode-demo-notes.html</guid>
+        
+        
+        <category>libre</category>
+        
+      </item>
     
       <item>
         <title>Bloguer avec Emacs, Org-mode, Git et Jekyll</title>
@@ -1714,28 +1823,6 @@ This will be the content of my blog entry.
         <pubDate>Thu, 25 Jul 2013 00:00:00 +0200</pubDate>
         <link>https://emacs-doctor.com/apprendre-emacs-lisp-en-15-minutes.html</link>
         <guid isPermaLink="true">https://emacs-doctor.com/apprendre-emacs-lisp-en-15-minutes.html</guid>
-        
-        
-        <category>libre</category>
-        
-      </item>
-    
-      <item>
-        <title>Bastien Guerry Orgmode Emacs Chat with Sacha Chua</title>
-        <description>
-&lt;p&gt;Thanks to Sacha Chua for inviting me to chat with her!  (Check &lt;a href=&quot;http://sachachua.com/blog/2013/05/emacs-chat-bastien-guerry/&quot;&gt;her blog
-  post&lt;/a&gt; about it.)  So here are some bits about Emacs, Org-mode&amp;#8230; and a few
-  others things.&lt;/p&gt;
-&lt;center&gt;
-&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/fnk0TJC7iJI?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/center&gt;
-&lt;br/&gt;
-
-
-</description>
-        <pubDate>Sun, 26 May 2013 00:00:00 +0200</pubDate>
-        <link>https://emacs-doctor.com/bastien_guerry_orgmode_emacs_chat.html</link>
-        <guid isPermaLink="true">https://emacs-doctor.com/bastien_guerry_orgmode_emacs_chat.html</guid>
         
         
         <category>libre</category>
