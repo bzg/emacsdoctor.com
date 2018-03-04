@@ -1,0 +1,131 @@
+#+title: Notes from an Org-mode demonstration
+#+date: 2018-03-05
+#+author: Bastien
+#+layout: post
+#+author_url: /author/bzg
+#+author_avatar: bzg
+#+show_avatar: true
+#+category: libre
+#+show_related_posts: false
+#+feature_image: default
+#+excerpt: <p>Notes from an Org-mode demonstration.</p>
+
+Thanks to the [[https://www.medialab-prado.es/][MediaLab Prado]] and [[http://twitter.com/adolflow][Adolfo Antón Bravo]] for inviting me to
+make a small demonstration of org-mode.
+
+Here are the notes I used during the demo.
+
+* GNU Emacs
+
+There use to be an editor war between Emacs and Vi(m).
+
+This is now history, as org-mode made Emacs won.
+
+https://orgmode.org
+
+* Org-mode: key ideas
+
+- You need a single tool for both notes and tasks.
+
+- Your TODO list application should not be too rigid.  Ideally, it is
+  a pedagogical tool, one that helps to be /slightly/ better organized.
+
+- org-mode is both a /format/ a la markdown and a /set of tools/ around
+  this format.
+
+* Org-mode history
+
+- 2003 : Carsten Dominik starts writing org-mode as a usable
+  outline-mode
+
+- 2011 : Bastien becomes org-mode the maintainer
+
+- 2014 : Nicolas Goaziou becomes the main developer
+
+In the future:
+
+- More closely integrate with Emacs ?
+
+- More parsers and exporters outside Emacs ?
+
+* Notes on org-mode development
+
+- We don’t have a roadmap: user driven development.
+
+- We don’t have a bug tracker: see the o[[https://www.konmari.com/][KonMari]] methodology: discard
+  beforing storing.
+
+- We don’t have a business model.
+
+- We DO have a strong culture of *being nice* to newcomers.
+
+- We DO have a strong culture of *not breaking things*.
+
+- We started Worg as a git-based community-driven documentation.
+
+- We plan to write our documentation in .org =\o/=
+
+* Org-mode as structured text editing
+
+- Headlines
+- Tags
+- TODO keywords
+- Properties
+- Lists
+- Tables
+
+* Org-mode as a spreadsheet
+
+Let’s build a table!
+
+| A       | Poetry |
+|---------+--------|
+| Nick    |     10 |
+| Bastien |     12 |
+| Élodie  |     14 |
+|---------+--------|
+|         |     12 |
+#+TBLFM: @5$2=vmean(@2..@-1)
+
+: M-x org-table-import RET ~/test.csv
+
+| A | B | C |
+| 1 | 2 | 3 |
+| 4 | 5 | 6 |
+
+* Org-mode exporter
+
+: M-x org-export-dispatch RET
+
+* Org-mode for literate programming
+
+Here are some explanations about =a-function=.  Then here is the
+function:
+
+#+begin_src emacs-lisp
+(defun a-function ()
+  (interactive)
+  (message "Hello!"))
+#+end_src
+
+#+RESULTS:
+: a-function
+
+Now, pressing =C-c C-v t= I will "tangle" these chunks of code in a
+single file.
+
+* Org-mode as a TODO list manager
+
+: M-x org-todo RET
+
+* Org "agenda" views
+
+: M-x org-agenda RET
+
+* Capturing items
+
+: M-x org-capture RET
+
+* Conclusion
+
+- Come and play!
