@@ -21,7 +21,7 @@ There use to be an editor war between Emacs and Vi(m).
 
 This is now history, as org-mode made Emacs won.
 
-https://orgmode.org
+[[https://orgmode.org]]
 
 * Org-mode: key ideas
 
