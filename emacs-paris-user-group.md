@@ -9,8 +9,8 @@ les uns des autres : c'est ouvert aux non-emacsiens, aux débutants,
 aux utilisateurs avancés et aux vimistes !
 
 ## Prochaines rencontres
-    
-- Mardi 17 avril 2018 de 19h à 22h
+
+- Mardi 15 mai 2018 de 19h à 22h
 
 ## Où ?
 
