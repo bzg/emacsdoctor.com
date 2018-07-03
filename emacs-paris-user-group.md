@@ -10,7 +10,7 @@ aux utilisateurs avancés et aux vimistes !
 
 ## Prochaines rencontres
 
-- Mardi 19 juin 2018 de 19h à 22h
+- Mardi 17 juillet 2018 de 19h à 22h
 
 ## Où ?
 
