@@ -10,7 +10,6 @@ aux utilisateurs avancés et aux vimistes !
 
 ## Prochaines rencontres
 
-- Mardi 2018-09-18
 - Jeudi 2018-10-18
 - Mardi 2018-11-20
 - Jeudi 2018-12-20
@@ -35,6 +34,7 @@ En cas de souci, envoyez un mail à
 
 Nous gardons des notes des soirées passées sur [ce dépôt](https://gitlab.com/bzg2/emacsparis/blob/master/README.org).
 
+- Mardi 2018-09-18
 - Mardi 17 juillet 2018
 - Mardi 15 mai 2018
 - Mardi 20 mars 2018
