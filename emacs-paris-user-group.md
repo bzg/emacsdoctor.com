@@ -10,9 +10,15 @@ aux utilisateurs avancés et aux vimistes !
 
 ## Prochaines rencontres
 
-- Mardi 20 novembre 2018
-- Jeudi 20 décembre 2018
-
+- mardi 20 novembre 2018
+- jeudi 20 décembre 2018
+- mardi 15 janvier 2019
+- jeudi 21 février 2019
+- mardi 19 mars 2019
+- jeudi 18 avril 2019
+- mardi 21 mai 2019
+- jeudi 20 juin 2019
+	
 ## Où ?
 
 Les rencontres ont lieu chez [inno3.fr](http://inno3.fr) au 137
@@ -21,13 +27,11 @@ Boulevard de Magenta 75010 Paris
 
 ## Comment je m'inscris ?
 
-Inscrivez-vous sur [la liste de
-discussion](https://framalistes.org/sympa/info/ateliers-emacs),
-présentez-vous rapidement et indiquez que vous êtes disponible pour le
-prochain rendez-vous.
+En laissant votre nom ou pseudo sur [ce formulaire](https://framadate.org/HfvxoWP96tsYwlbV).
 
-En cas de souci, envoyez un mail à
-[Bastien](mailto:bzg@bzg.fr?subject=AtelierEmacs).
+Si vous êtes nouveau, présentez-vous rapidement sur [la liste de discussion](https://framalistes.org/sympa/info/ateliers-emacs).
+
+En cas de souci, envoyez un mail à [Bastien](mailto:bzg@bzg.fr?subject=AtelierEmacs).
 
 ## Rencontres passées
 
