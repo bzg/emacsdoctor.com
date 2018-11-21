@@ -10,20 +10,20 @@ aux utilisateurs avancés et aux vimistes !
 
 ## Prochaines rencontres
 
-- mardi 20 novembre 2018
-- jeudi 20 décembre 2018
-- mardi 15 janvier 2019
-- jeudi 21 février 2019
-- mardi 19 mars 2019
-- jeudi 18 avril 2019
-- mardi 21 mai 2019
-- jeudi 20 juin 2019
+- jeudi 20 décembre 2018 à 19h
+- mardi 15 janvier 2019 à 19h
+- jeudi 21 février 2019 à 19h
+- mardi 19 mars 2019 à 19h
+- jeudi 18 avril 2019 à 19h
+- mardi 21 mai 2019 à 19h
+- jeudi 20 juin 2019 à 19h
 	
 ## Où ?
 
 Les rencontres ont lieu chez [inno3.fr](http://inno3.fr) au 137
 Boulevard de Magenta 75010 Paris
-([plan](http://www.openstreetmap.org/#map=16/48.8818/2.3514)).
+([plan](http://www.openstreetmap.org/#map=16/48.8818/2.3514)) de 19h à
+22h.
 
 ## Comment je m'inscris ?
 
@@ -37,6 +37,7 @@ En cas de souci, envoyez un mail à [Bastien](mailto:bzg@bzg.fr?subject=AtelierE
 
 Nous gardons des notes des soirées passées sur [ce dépôt](https://gitlab.com/bzg2/emacsparis/blob/master/README.org).
 
+- mardi 20 novembre 2018 
 - Jeudi 18 octobre 2018
 - Mardi 18 septembre 2018
 - Mardi 17 juillet 2018
