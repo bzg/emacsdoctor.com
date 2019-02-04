@@ -10,7 +10,6 @@ aux utilisateurs avancés et aux vimistes !
 
 ## Prochaines rencontres
 
-- mardi 15 janvier 2019 à 19h
 - jeudi 21 février 2019 à 19h
 - mardi 19 mars 2019 à 19h
 - jeudi 18 avril 2019 à 19h
@@ -36,6 +35,7 @@ En cas de souci, envoyez un mail à [Bastien](mailto:bzg@bzg.fr?subject=AtelierE
 
 Nous gardons des notes des soirées passées sur [ce dépôt](https://gitlab.com/bzg2/emacsparis/blob/master/README.org).
 
+- mardi 15 janvier 2019
 - Jeudi 20 décembre 2018
 - mardi 20 novembre 2018 
 - Jeudi 18 octobre 2018
