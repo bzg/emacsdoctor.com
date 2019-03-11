@@ -18,11 +18,9 @@ débutants, aux utilisateurs avancés et aux vimistes !
 
 ## Comment je m'inscris ?
 
-En laissant votre nom ou pseudo sur [ce formulaire](https://framadate.org/HfvxoWP96tsYwlbV).
+En envoyant un mot sur [la liste de discussion](https://framalistes.org/sympa/info/ateliers-emacs).
 
-Si vous êtes nouveau, présentez-vous rapidement sur [la liste de discussion](https://framalistes.org/sympa/info/ateliers-emacs).
-
-Si vous n'êtes jamais venus, envoyez un mot à `bzg+emacs @ bzg.fr`.
+Si vous venez pour la première fois, envoyez un mot à `bzg+emacs @ bzg.fr`.
 
 ## Où ?
 
