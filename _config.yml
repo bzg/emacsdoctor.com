@@ -7,6 +7,7 @@ url: "https://emacs-doctor.com" # the base hostname & protocol for your site
 twitter_username: bzg2
 github_username:  bzg
 permalink: /:title.html
+destination: docs/
 
 # Build settings
 markdown: kramdown
