@@ -1,5 +1,3 @@
-#+TITLE: emacs-doctor.com
+#+TITLE: www.emacs-doctor.com
 
-Collaborative blog for https://emacs-doctor.com.
-
-Mostly in french, but occasionnally in english.
+Sources pour le site https://www.emacs-doctor.com.
