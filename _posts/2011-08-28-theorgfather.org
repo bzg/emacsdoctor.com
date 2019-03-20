@@ -7,7 +7,6 @@
 #+show_avatar: true
 #+category: libre
 #+show_related_posts: false
-#+excerpt: <p>When Carsten stepped down as the Org-mode maintainer.</p>
 
 #+begin_html
 <script type="text/javascript" src="https://amara.org/embedder-iframe">

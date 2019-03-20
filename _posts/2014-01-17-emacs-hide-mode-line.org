@@ -8,7 +8,6 @@
 #+category: libre
 #+show_related_posts: false
 #+feature_image: emacscrazy
-#+excerpt:
 
 Sometimes I don't want to display the =mode-line=.
 

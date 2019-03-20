@@ -9,7 +9,6 @@
 #+category: libre
 #+show_related_posts: false
 #+feature_image: default
-#+excerpt: <p>Org is great at handling plain lists.</p>
 
 #+SEQ_TODO:  TODO DONE
 #+LANGUAGE:  en

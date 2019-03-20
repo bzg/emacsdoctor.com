@@ -8,7 +8,6 @@
 #+category: libre
 #+show_related_posts: false
 #+feature_image: default
-#+excerpt: <p>Yes, blogging from Emacs is possible.</p>
 
 Yes, blogging from Emacs is possible.
 

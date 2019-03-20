@@ -9,7 +9,6 @@
 #+category: libre
 #+show_related_posts: false
 #+feature_image: emacscrazy
-#+excerpt: <p>Spending the rest of your life in Emacs is a feature, not a bug.</p>
 
 ** tl;dr
 

@@ -8,7 +8,6 @@
 #+category: libre
 #+show_related_posts: false
 #+feature_image: How-to-Learn-Emacs8
-#+excerpt: I was surprised not to find an introduction to Emacs Lisp on http://learnxinyminutes.com so I created one.  This page is now on http://learnxinyminutes.com/docs/elisp/ too.
 
 I was surprised not to find an introduction to Emacs Lisp on
 [[http://learnxinyminutes.com]] so I created one.  This page is now on

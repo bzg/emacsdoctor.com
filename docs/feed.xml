@@ -3,11 +3,11 @@
   <channel>
     <title>M-x doctor RET</title>
     <description>Everybody needs a good Emacs doctor.</description>
-    <link>https://emacs-doctor.com/</link>
-    <atom:link href="https://emacs-doctor.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 20 Mar 2019 16:11:36 +0100</pubDate>
-    <lastBuildDate>Wed, 20 Mar 2019 16:11:36 +0100</lastBuildDate>
-    <generator>Jekyll v3.1.2</generator>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 20 Mar 2019 17:10:49 +0100</pubDate>
+    <lastBuildDate>Wed, 20 Mar 2019 17:10:49 +0100</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
     
       <item>
         <title>Notes from an Org-mode demonstration</title>
@@ -109,8 +109,8 @@ M-x org-capture RET
 
 </description>
         <pubDate>Sun, 04 Mar 2018 00:00:00 +0100</pubDate>
-        <link>https://emacs-doctor.com/org-mode-demo-notes.html</link>
-        <guid isPermaLink="true">https://emacs-doctor.com/org-mode-demo-notes.html</guid>
+        <link>http://localhost:4000/org-mode-demo-notes.html</link>
+        <guid isPermaLink="true">http://localhost:4000/org-mode-demo-notes.html</guid>
         
         
         <category>libre</category>
@@ -127,8 +127,8 @@ M-x org-capture RET
 
 </description>
         <pubDate>Thu, 15 Jun 2017 00:00:00 +0200</pubDate>
-        <link>https://emacs-doctor.com/blog-avec-emacs-orgmode-git-jekyll.html</link>
-        <guid isPermaLink="true">https://emacs-doctor.com/blog-avec-emacs-orgmode-git-jekyll.html</guid>
+        <link>http://localhost:4000/blog-avec-emacs-orgmode-git-jekyll.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog-avec-emacs-orgmode-git-jekyll.html</guid>
         
         
         <category>libre</category>
@@ -220,8 +220,8 @@ M-x org-capture RET
 
 </description>
         <pubDate>Mon, 07 Nov 2016 00:00:00 +0100</pubDate>
-        <link>https://emacs-doctor.com/tutorial-introduction-searching-emacs.html</link>
-        <guid isPermaLink="true">https://emacs-doctor.com/tutorial-introduction-searching-emacs.html</guid>
+        <link>http://localhost:4000/tutorial-introduction-searching-emacs.html</link>
+        <guid isPermaLink="true">http://localhost:4000/tutorial-introduction-searching-emacs.html</guid>
         
         
         <category>libre</category>
@@ -405,8 +405,8 @@ M-x org-capture RET
 
 </description>
         <pubDate>Wed, 22 Jan 2014 00:00:00 +0100</pubDate>
-        <link>https://emacs-doctor.com/emacs-strip-tease.html</link>
-        <guid isPermaLink="true">https://emacs-doctor.com/emacs-strip-tease.html</guid>
+        <link>http://localhost:4000/emacs-strip-tease.html</link>
+        <guid isPermaLink="true">http://localhost:4000/emacs-strip-tease.html</guid>
         
         
         <category>libre</category>
@@ -451,8 +451,8 @@ M-x org-capture RET
 
 </description>
         <pubDate>Fri, 17 Jan 2014 00:00:00 +0100</pubDate>
-        <link>https://emacs-doctor.com/emacs-hide-mode-line.html</link>
-        <guid isPermaLink="true">https://emacs-doctor.com/emacs-hide-mode-line.html</guid>
+        <link>http://localhost:4000/emacs-hide-mode-line.html</link>
+        <guid isPermaLink="true">http://localhost:4000/emacs-hide-mode-line.html</guid>
         
         
         <category>libre</category>
@@ -562,8 +562,8 @@ Happiness is nothing more than good health and a bad memory.
 
 </description>
         <pubDate>Mon, 23 Dec 2013 00:00:00 +0100</pubDate>
-        <link>https://emacs-doctor.com/how-to-exit-emacs.html</link>
-        <guid isPermaLink="true">https://emacs-doctor.com/how-to-exit-emacs.html</guid>
+        <link>http://localhost:4000/how-to-exit-emacs.html</link>
+        <guid isPermaLink="true">http://localhost:4000/how-to-exit-emacs.html</guid>
         
         
         <category>libre</category>
@@ -885,8 +885,8 @@ data
 
 </description>
         <pubDate>Sat, 21 Dec 2013 00:00:00 +0100</pubDate>
-        <link>https://emacs-doctor.com/emacs-org-babel-overtone-intro.html</link>
-        <guid isPermaLink="true">https://emacs-doctor.com/emacs-org-babel-overtone-intro.html</guid>
+        <link>http://localhost:4000/emacs-org-babel-overtone-intro.html</link>
+        <guid isPermaLink="true">http://localhost:4000/emacs-org-babel-overtone-intro.html</guid>
         
         
         <category>libre</category>
@@ -1076,8 +1076,8 @@ This will be the content of my blog entry.
 
 </description>
         <pubDate>Wed, 25 Sep 2013 00:00:00 +0200</pubDate>
-        <link>https://emacs-doctor.com/blogging-from-emacs.html</link>
-        <guid isPermaLink="true">https://emacs-doctor.com/blogging-from-emacs.html</guid>
+        <link>http://localhost:4000/blogging-from-emacs.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blogging-from-emacs.html</guid>
         
         
         <category>libre</category>
@@ -1442,8 +1442,8 @@ This will be the content of my blog entry.
 
 </description>
         <pubDate>Thu, 25 Jul 2013 00:00:00 +0200</pubDate>
-        <link>https://emacs-doctor.com/learn-emacs-lisp-in-15-minutes.html</link>
-        <guid isPermaLink="true">https://emacs-doctor.com/learn-emacs-lisp-in-15-minutes.html</guid>
+        <link>http://localhost:4000/learn-emacs-lisp-in-15-minutes.html</link>
+        <guid isPermaLink="true">http://localhost:4000/learn-emacs-lisp-in-15-minutes.html</guid>
         
         
         <category>libre</category>
@@ -1820,8 +1820,8 @@ This will be the content of my blog entry.
 
 </description>
         <pubDate>Thu, 25 Jul 2013 00:00:00 +0200</pubDate>
-        <link>https://emacs-doctor.com/apprendre-emacs-lisp-en-15-minutes.html</link>
-        <guid isPermaLink="true">https://emacs-doctor.com/apprendre-emacs-lisp-en-15-minutes.html</guid>
+        <link>http://localhost:4000/apprendre-emacs-lisp-en-15-minutes.html</link>
+        <guid isPermaLink="true">http://localhost:4000/apprendre-emacs-lisp-en-15-minutes.html</guid>
         
         
         <category>libre</category>

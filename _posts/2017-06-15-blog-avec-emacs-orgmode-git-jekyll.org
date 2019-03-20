@@ -8,8 +8,6 @@
 #+category: libre
 #+show_related_posts: false
 #+feature_image: default
-#+excerpt: <p>Bloguer avec Emacs, Org-mode, Git et Jekyll.</p>
-
 
 #+BEGIN_HTML
 <video style="width:100%;margin:auto;" controls autoplay>

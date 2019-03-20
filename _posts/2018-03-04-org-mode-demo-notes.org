@@ -8,7 +8,6 @@
 #+category: libre
 #+show_related_posts: false
 #+feature_image: default
-#+excerpt: <p>Notes from an Org-mode demonstration.</p>
 
 Thanks to the [[https://www.medialab-prado.es/][MediaLab Prado]] and [[http://twitter.com/adolflow][Adolfo Antón Bravo]] for inviting me to
 make a small demonstration of org-mode.
