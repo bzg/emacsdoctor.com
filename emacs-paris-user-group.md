@@ -11,7 +11,6 @@ débutants, aux utilisateurs avancés et aux vimistes !
 
 ## Prochaines rencontres
 
-- mardi 19 mars 2019 à 19h
 - jeudi 18 avril 2019 à 19h
 - mardi 21 mai 2019 à 19h
 - jeudi 20 juin 2019 à 19h
@@ -31,6 +30,7 @@ Boulevard de Magenta 75010 Paris
 
 ## Rencontres passées
 
+- mardi 19 mars 2019 à 19h
 - jeudi 21 février 2019 à 19h
 - mardi 15 janvier 2019
 - Jeudi 20 décembre 2018
