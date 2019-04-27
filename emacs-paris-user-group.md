@@ -11,7 +11,6 @@ débutants, aux utilisateurs avancés et aux vimistes !
 
 ## Prochaines rencontres
 
-- jeudi 18 avril 2019 à 19h
 - mardi 21 mai 2019 à 19h
 - jeudi 20 juin 2019 à 19h
 
@@ -20,6 +19,8 @@ débutants, aux utilisateurs avancés et aux vimistes !
 En envoyant un mot sur [la liste de discussion](https://framalistes.org/sympa/info/ateliers-emacs).
 
 Si vous venez pour la première fois, envoyez un mot à `bzg+emacs @ bzg.fr`.
+
+Vous pouvez aussi vous inscrire via [meetup.com](https://www.meetup.com/fr-FR/Paris-Emacs-Meetup/).
 
 ## Où ?
 
@@ -30,6 +31,7 @@ Boulevard de Magenta 75010 Paris
 
 ## Rencontres passées
 
+- jeudi 18 avril 2019 à 19h
 - mardi 19 mars 2019 à 19h
 - jeudi 21 février 2019 à 19h
 - mardi 15 janvier 2019
