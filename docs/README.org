@@ -1,3 +1,0 @@
-#+TITLE: www.emacs-doctor.com
-
-Sources pour le site https://www.emacs-doctor.com.

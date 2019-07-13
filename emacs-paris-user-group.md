@@ -11,8 +11,7 @@ débutants, aux utilisateurs avancés et aux vimistes !
 
 ## Prochaines rencontres
 
-- mardi 21 mai 2019 à 19h
-- jeudi 20 juin 2019 à 19h
+- mardi 16 juillet 2019 à 19h chez Inno3
 
 ## Comment je m'inscris ?
 
@@ -31,6 +30,8 @@ Boulevard de Magenta 75010 Paris
 
 ## Rencontres passées
 
+- jeudi 20 juin 2019 à 19h
+- mardi 21 mai 2019 à 19h
 - jeudi 18 avril 2019 à 19h
 - mardi 19 mars 2019 à 19h
 - jeudi 21 février 2019 à 19h
