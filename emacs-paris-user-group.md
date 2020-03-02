@@ -11,7 +11,8 @@ débutants, aux utilisateurs avancés et aux vimistes !
 
 ## Prochaines rencontres
 
-- jeudi 20 février à 19h
+- mardi 17 mars 2020
+- jeudi 23 avril 2020
 
 ## Comment je m'inscris ?
 
@@ -30,6 +31,7 @@ Boulevard de Magenta 75010 Paris
 
 ## Rencontres passées
 
+- jeudi 20 février à 19h
 - mardi 21 janvier à 19h
 - jeudi 19 décembre 2019 à 19h
 - mardi 19 novembre 2019 à 19h
