@@ -1,6 +1,6 @@
 # Site settings
 title: M-x doctor RET
-email: bzg+emacsREMOVEME@bzg.fr
+email: bzg+emacs@bzg.fr
 description: Everybody needs a good Emacs doctor.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://www.emacs-doctor.com" # the base hostname & protocol for your site
