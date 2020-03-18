@@ -5,22 +5,31 @@ permalink: /emacs-paris-user-group/
 ---
 
 Nous sommes quelques utilisateurs de [GNU
-Emacs](https://www.gnu.org/software/emacs/) à nous réunir à Paris pour
-apprendre les uns des autres : c'est ouvert aux non-emacsiens, aux
-débutants, aux utilisateurs avancés et aux vimistes !
+Emacs](https://www.gnu.org/software/emacs/) à nous réunir à **Paris**
+et à **Montpellier** pour apprendre les uns des autres : c'est ouvert
+aux non-emacsiens, aux débutants, aux utilisateurs avancés et aux
+vimistes !
 
 ## Prochaines rencontres
 
-- mardi 17 mars 2020
-- jeudi 23 avril 2020
+- Paris : mardi 17 mars 2020
+- Paris : jeudi 23 avril 2020
+- Montpellier : à définir
 
 ## Comment je m'inscris ?
 
-En envoyant un mot sur [la liste de discussion](https://framalistes.org/sympa/info/ateliers-emacs).
+### Pour Paris
 
-Si vous venez pour la première fois, envoyez un mot à `bzg+emacs @ bzg.fr`.
+En envoyant un mot sur [la liste de
+discussion](https://framalistes.org/sympa/info/ateliers-emacs).  Si
+vous venez pour la première fois, envoyez un mot à `bzg+emacs @
+bzg.fr`.  Vous pouvez aussi vous inscrire via
+[meetup.com](https://www.meetup.com/fr-FR/Paris-Emacs-Meetup/).
 
-Vous pouvez aussi vous inscrire via [meetup.com](https://www.meetup.com/fr-FR/Paris-Emacs-Meetup/).
+### Pour Montpellier
+
+Envoyez un petit mot à `emacsem-owner@movoscope.org` et vous serez
+inscrit.
 
 ## Où ?
 
@@ -30,6 +39,8 @@ Boulevard de Magenta 75010 Paris
 22h.
 
 ## Rencontres passées
+
+### Paris
 
 - jeudi 20 février à 19h
 - mardi 21 janvier à 19h
