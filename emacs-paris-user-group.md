@@ -26,19 +26,20 @@ vous venez pour la première fois, envoyez un mot à `bzg+emacs @
 bzg.fr`.  Vous pouvez aussi vous inscrire via
 [meetup.com](https://www.meetup.com/fr-FR/Paris-Emacs-Meetup/).
 
-### Pour Montpellier
-
-Envoyez un petit mot à `emacsem-owner@movoscope.org` et vous serez
-inscrit.
-
-## Où ?
-
 Les rencontres ont lieu chez [inno3.fr](http://inno3.fr) au 137
 Boulevard de Magenta 75010 Paris
 ([plan](http://www.openstreetmap.org/#map=16/48.8818/2.3514)) de 19h à
 22h.
 
+### Pour Montpellier
+
+Envoyez un petit mot à `emacsem-owner@movoscope.org` et vous serez
+inscrit.
+
 ## Rencontres passées
+
+Nous gardons parfois des notes des soirées passées sur [ce
+dépôt](https://gitlab.com/bzg2/emacsparis/blob/master/README.org).
 
 ### Paris
 
@@ -69,8 +70,5 @@ Boulevard de Magenta 75010 Paris
 - Jeudi 29 octobre 2015
 - Mardi 18 juillet 2017
 - Mardi 20 juin 2017
-
-Nous gardons parfois des notes des soirées passées sur [ce
-dépôt](https://gitlab.com/bzg2/emacsparis/blob/master/README.org).
 
 <!-- https://gitlab.com/bzg2/emacsparis -->
