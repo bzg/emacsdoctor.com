@@ -12,8 +12,8 @@ vimistes !
 
 ## Prochaines rencontres
 
-- Paris : mardi 17 mars 2020
-- Paris : jeudi 23 avril 2020
+- Paris : mardi 17 mars 2020 (annulée)
+- Paris : jeudi 23 avril 2020 (en attente)
 - Montpellier : à définir
 
 ## Comment je m'inscris ?
