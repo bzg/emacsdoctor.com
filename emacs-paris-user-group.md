@@ -12,7 +12,7 @@ vimistes !
 
 ## Prochaines rencontres
 
-- Paris : à définir
+- Paris : 17 septembre de 19h à 21h en visio
 - Montpellier : à définir
 
 ## Comment je m'inscris ?
