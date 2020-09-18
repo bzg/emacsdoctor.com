@@ -10,25 +10,33 @@ et à **Montpellier** pour apprendre les uns des autres : c'est ouvert
 aux non-emacsiens, aux débutants, aux utilisateurs avancés et aux
 vimistes !
 
-## Prochaines rencontres
-
-- Paris : 17 septembre de 19h à 21h en visio
-- Montpellier : à définir
-
-## Comment je m'inscris ?
-
-### Pour Paris
+## Liste de discussion et forum
 
 Vous pouvez vous inscrire sur [la liste de
 discussion](https://emacs-doctor.com/lists/listinfo/ateliers-paris).
-Si vous venez pour la première fois, envoyez un mot à `bzg+emacs @
-bzg.fr`.  Vous pouvez aussi vous inscrire via
-[meetup.com](https://www.meetup.com/fr-FR/Paris-Emacs-Meetup/).
+
+Nous avons aussi un [forum](https://emacs-doctor.com/forum/), n'hésitez pas à échanger.
+
+## Prochaines rencontres
+
+- Paris : mardi 13 octobre de 18h à 19h30 en visio
+- Montpellier : à définir
+
+## Comment je m'inscris à un atelier ?
+
+### Pour Paris
 
 Nous faisons des rencontres en ligne.  Il y a parfois des rencontres
 physiques chez [inno3.fr](http://inno3.fr) au 137 Boulevard de Magenta
-75010 Paris ([plan](http://www.openstreetmap.org/#map=16/48.8818/2.3514)) de 19h à
+75010 Paris
+([plan](http://www.openstreetmap.org/#map=16/48.8818/2.3514)) de 19h à
 22h.
+
+Si vous venez pour la première fois à un atelier IRL, envoyez un mot à
+`bzg@bzg.fr`.  Pour la visio, vous pouvez simplement débarquer.
+
+Vous pouvez aussi vous inscrire via
+[meetup.com](https://www.meetup.com/fr-FR/Paris-Emacs-Meetup/).
 
 ### Pour Montpellier
 
