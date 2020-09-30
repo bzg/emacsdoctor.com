@@ -19,7 +19,7 @@ Nous avons aussi un [forum](https://emacs-doctor.com/forum/), n'hésitez pas à 
 
 ## Prochaines rencontres
 
-- Paris : mardi 13 octobre de 18h à 19h30 en visio
+- Paris : mardi 13 octobre de 19h à 21h en visio
 - Montpellier : à définir
 
 ## Comment je m'inscris à un atelier ?
