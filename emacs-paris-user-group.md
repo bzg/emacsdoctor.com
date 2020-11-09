@@ -35,9 +35,6 @@ physiques chez [inno3.fr](http://inno3.fr) au 137 Boulevard de Magenta
 Si vous venez pour la première fois à un atelier IRL, envoyez un mot à
 `bzg@bzg.fr`.  Pour la visio, vous pouvez simplement débarquer.
 
-Vous pouvez aussi vous inscrire via
-[meetup.com](https://www.meetup.com/fr-FR/Paris-Emacs-Meetup/).
-
 ### Pour Montpellier
 
 Envoyez un petit mot à `emacsem-owner@movoscope.org` et vous serez
