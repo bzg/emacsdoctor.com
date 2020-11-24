@@ -19,7 +19,13 @@ Nous avons aussi un [forum](https://emacs-doctor.com/forum/), n'hésitez pas à 
 
 ## Prochaines rencontres
 
-- Paris : jeudi 12 novembre 2020 de 17h30 à 19h en visio
+- Paris : mardi 8 décembre 2020 de 17h30 à 19h en visio
+- Paris : jeudi 7 janvier 2021 de 17h30 à 19h en visio
+- Paris : mardi 2 février 2021 de 17h30 à 19h en visio
+- Paris : jeudi 4 mars 2021 de 17h30 à 19h en visio
+- Paris : mardi 2 avril 2021 de 17h30 à 19h en visio
+- Paris : jeudi 6 mai 2021 de 17h30 à 19h en visio
+- Paris : mardi 1 juin 2021 de 17h30 à 19h en visio
 - Montpellier : à définir
 
 ## Comment je m'inscris à un atelier ?
