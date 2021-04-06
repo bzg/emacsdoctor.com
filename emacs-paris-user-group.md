@@ -19,10 +19,7 @@ Nous avons aussi un [forum](https://emacs-doctor.com/forum/), n'hésitez pas à 
 
 ## Prochaines rencontres
 
-- **Paris : mardi 2 février 2021 de 17h30 à 19h en visio**
-- Paris : jeudi 4 mars 2021 de 17h30 à 19h en visio
-- Paris : mardi 6 avril 2021 de 17h30 à 19h en visio
-- Paris : jeudi 6 mai 2021 de 17h30 à 19h en visio
+- **Paris : jeudi 6 mai 2021 de 17h30 à 19h en visio**
 - Paris : mardi 1 juin 2021 de 17h30 à 19h en visio
 - Montpellier : à définir
 
