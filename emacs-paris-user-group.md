@@ -23,7 +23,10 @@ Nous avons aussi un [forum](https://emacs-doctor.com/forum/), n'hésitez pas à 
 - Paris : mardi 1 juin 2021 de 17h30 à 19h en visio
 - Montpellier : à définir
 
-Les rencontres ont lieu sur [cette instance de BBB](https://testgreenlight.fsf.org/bas-ppx-t3w).
+Les rencontres ont lieu de façon temporaire sur [cette instance de
+BBB](https://visio.incubateur.net/b/bas-vwv-2ww).  Si vous pouvez
+proposer une instance BBB ou autre, n'hésitez pas à nous prévenir
+(`bzg@gnu.org`).
 
 Nous tentons d'annoncer les événements sur ce [groupe de la communauté
 francophone d'Emacs](https://mobilizon.fr/@communaute_emacs_francophone) (sur mobilizon.fr).
