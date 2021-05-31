@@ -20,6 +20,7 @@ Nous avons aussi un [forum](https://emacs-doctor.com/forum/), n'hésitez pas à 
 ## Prochaines rencontres
 
 - **Paris : mardi 1 juin 2021 de 17h30 à 19h en visio**
+- **Paris : jeudi 1 juillet 2021 de 17h30 à 19h en visio**
 - Montpellier : à définir
 
 Les rencontres ont lieu sur [ce
