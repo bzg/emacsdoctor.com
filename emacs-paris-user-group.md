@@ -25,9 +25,8 @@ Nous avons aussi un [forum](https://emacs-doctor.com/forum/), n'hésitez pas à 
 - Montpellier : à définir
 
 Les rencontres ont lieu sur [ce
-BigBlueButton](https://testgreenlight.fsf.org/bas-ppx-t3w/).  Si cette
-instance ne fonctionne pas, tentez [cette
-autre](https://visio.incubateur.net/b/bas-vwv-2ww).
+BigBlueButton](https://testgreenlight.fsf.org/bas-ppx-t3w/)
+ou sur [cette instance Jistsi Meet](https://visio.gnu.xyz/AtelierEmacsOctobre2021).
 
 Nous tentons d'annoncer les événements sur ce [groupe de la communauté
 francophone d'Emacs](https://mobilizon.fr/@communaute_emacs_francophone) (sur mobilizon.fr).
