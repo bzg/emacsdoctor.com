@@ -19,7 +19,6 @@ Nous avons aussi un [forum](https://emacs-doctor.com/forum/), n'hésitez pas à 
 
 ## Prochaines rencontres
 
-- **Paris : mardi 5 octobre 2021 de 17h30 à 19h en visio**
 - **Paris : jeudi 4 novembre 2021 de 17h30 à 19h en visio**
 - **Paris : mardi 7 décembre 2021 de 17h30 à 19h en visio**
 - Montpellier : à définir
