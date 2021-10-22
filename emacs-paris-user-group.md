@@ -23,7 +23,7 @@ Nous avons aussi un [forum](https://emacs-doctor.com/forum/), n'hésitez pas à 
 - **Paris : mardi 7 décembre 2021 de 17h30 à 19h en visio**
 - Montpellier : à définir
 
-Les rencontres ont lieu sur [cette instance de BigBlueButton](https://bbb.emacsverse.org/b/leo-mqk-ncb-tbr).
+Les rencontres ont lieu sur [cette instance de BigBlueButton](https://bbb.emacsverse.org/b/leo-mqk-ncb-tbr), gentiment fournie par [fosshost.org](https://fosshost.org/).
 
 Nous tentons d'annoncer les événements sur ce [groupe de la communauté
 francophone d'Emacs](https://mobilizon.fr/@communaute_emacs_francophone) (sur mobilizon.fr).
