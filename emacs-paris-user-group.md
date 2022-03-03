@@ -19,9 +19,10 @@ Nous avons aussi un [forum](https://emacs-doctor.com/forum/), n'hésitez pas à 
 
 ## Prochaines rencontres
 
-- **Paris : mardi 1 février 2022 de 17h30 à 19h en visio**
 - **Paris : jeudi 3 mars 2022 de 17h30 à 19h en visio**
 - **Paris : mardi 5 avril 2022 de 17h30 à 19h en visio**
+- **Paris : jeudi 5 mai 2022 de 17h30 à 19h en visio**
+- **Paris : mardi 7 juin 2022 de 17h30 à 19h en visio**
 
 Les rencontres ont lieu sur [cette instance de BigBlueButton](https://bbb.emacsverse.org/b/leo-mqk-ncb-tbr), gentiment fournie par [fosshost.org](https://fosshost.org/).
 
