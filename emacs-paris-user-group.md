@@ -10,17 +10,12 @@ et à **Montpellier** pour apprendre les uns des autres : c'est ouvert
 aux non-emacsiens, aux débutants, aux utilisateurs avancés et aux
 vimistes !
 
-## Liste de discussion et forum
+## Liste de discussion
 
-Vous pouvez vous inscrire sur [la liste de
-discussion](https://emacs-doctor.com/lists/listinfo/ateliers-paris).
-
-Nous avons aussi un [forum](https://emacs-doctor.com/forum/), n'hésitez pas à échanger.
+Vous pouvez vous inscrire sur [la liste de discussion](https://lists.sr.ht/~bzg/emacsfr).
 
 ## Prochaines rencontres
 
-- **Paris : jeudi 3 mars 2022 de 17h30 à 19h en visio**
-- **Paris : mardi 5 avril 2022 de 17h30 à 19h en visio**
 - **Paris : jeudi 5 mai 2022 de 17h30 à 19h en visio**
 - **Paris : mardi 7 juin 2022 de 17h30 à 19h en visio**
 
