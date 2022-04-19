@@ -1,3 +1,7 @@
 #+TITLE: www.emacs-doctor.com
 
 Sources pour le site https://www.emacs-doctor.com.
+
+*Ce dépôt est archivé !*
+
+Pour le dépôt actif, voir https://git.sr.ht/~bzg/emacs-doctor.com.
